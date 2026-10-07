@@ -87,12 +87,12 @@ export default function VirtualBinder() {
   return (
     <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-6">
       {/* Top Controls Bar */}
-      <div className={`flex flex-col lg:flex-row items-center justify-between gap-4 mb-6 p-4 rounded-2xl backdrop-blur-md border ${
+      <div className={`flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 sm:gap-4 mb-6 p-3.5 sm:p-4 rounded-2xl backdrop-blur-md border ${
         isDark ? 'bg-neutral-900/90 border-neutral-800' : 'bg-white/90 border-neutral-200 shadow-md'
       }`}>
         {/* Set Selector */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs uppercase font-bold text-neutral-400 mr-1 flex items-center gap-1.5">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+          <span className="text-xs uppercase font-bold text-neutral-400 mr-0.5 sm:mr-1 flex items-center gap-1.5 whitespace-nowrap shrink-0">
             <Layers className="w-4 h-4 text-amber-500" />
             {t('binderExpansion')}
           </span>
@@ -103,7 +103,7 @@ export default function VirtualBinder() {
                 setSelectedSet(set.id);
                 setCurrentPage(1);
               }}
-              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-semibold transition whitespace-nowrap ${
                 selectedSet === set.id
                   ? 'bg-amber-500 text-neutral-950 shadow-md shadow-amber-500/20'
                   : isDark 
@@ -117,14 +117,16 @@ export default function VirtualBinder() {
         </div>
 
         {/* Pocket Layout Toggle (9 vs 12) & Quick Page Nav */}
-        <div className="flex items-center gap-4">
-          <div className={`flex items-center border rounded-xl p-1 text-xs ${
+        <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <div className={`flex items-center border rounded-xl p-1 text-xs shrink-0 ${
             isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
           }`}>
-            <span className="text-neutral-500 px-2 font-medium">{t('binderPockets')}</span>
+            <span className="text-neutral-500 px-1.5 font-medium whitespace-nowrap text-[11px] sm:text-xs">
+              {t('binderPockets')}
+            </span>
             <button
               onClick={() => { setBinderPageSize(9); setCurrentPage(1); }}
-              className={`px-2.5 py-1 rounded-lg font-bold transition ${
+              className={`px-2 sm:px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap ${
                 binderPageSize === 9 
                   ? 'bg-amber-500 text-neutral-950 shadow' 
                   : 'text-neutral-400 hover:text-neutral-200'
@@ -134,7 +136,7 @@ export default function VirtualBinder() {
             </button>
             <button
               onClick={() => { setBinderPageSize(12); setCurrentPage(1); }}
-              className={`px-2.5 py-1 rounded-lg font-bold transition ${
+              className={`px-2 sm:px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap ${
                 binderPageSize === 12 
                   ? 'bg-amber-500 text-neutral-950 shadow' 
                   : 'text-neutral-400 hover:text-neutral-200'
@@ -145,25 +147,25 @@ export default function VirtualBinder() {
           </div>
 
           {/* Quick Page Nav Buttons */}
-          <div className={`flex items-center gap-2 border rounded-xl px-2 py-1 ${
+          <div className={`flex items-center gap-1.5 sm:gap-2 border rounded-xl px-2 py-1 shrink-0 ${
             isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
           }`}>
             <button
               onClick={goToPrevPage}
               disabled={currentPage === 1}
-              className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 disabled:opacity-30 transition"
+              className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 disabled:opacity-30 transition cursor-pointer"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
-            <span className={`text-xs font-mono font-bold px-1 ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
+            <span className={`text-xs font-mono font-bold px-1.5 whitespace-nowrap select-none ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
               {t('binderPage')} {currentPage} / {totalPages}
             </span>
             <button
               onClick={goToNextPage}
               disabled={currentPage === totalPages}
-              className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 disabled:opacity-30 transition"
+              className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 disabled:opacity-30 transition cursor-pointer"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
         </div>

@@ -27,6 +27,9 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
   * **Zona Derecha:** Píldora de estadísticas (`Colección: X | Wishlist: Y`) + separador vertical + Píldora interactiva de avatar con flecha indicadora.
 * **Sincronización Reactiva:**
   * Evento global de actualización para sincronizar avatar, nombre y rango en la barra de navegación en tiempo real al guardar cambios en el perfil.
+* **Corrección de Salto de Línea en la Barra del Álbum (VirtualBinder):**
+  * Solución al desbordamiento en español que forzaba a la barra a ocupar dos líneas verticales (`ST-01` en segunda fila y paginación partida).
+  * Optimización de espaciados, paddings y `whitespace-nowrap` para que todos los selectores de sets, bolsillos y paginador quepan en una sola fila compacta y homogénea en ambos idiomas.
 
 ---
 

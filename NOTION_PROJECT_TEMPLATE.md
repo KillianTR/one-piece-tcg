@@ -136,6 +136,7 @@ Para mantener el repositorio de GitHub limpio y profesional:
 - [x] Descongestión del header: distribución espaciosa en 3 zonas (Brand, Navegación central y Bloque de usuario).
 - [x] Cierre inteligente con detección de clic exterior y tecla Escape.
 - [x] Sincronización reactiva inmediata de foto de perfil y nombre en la barra de navegación mediante eventos personalizados.
+- [x] Ajuste visual de la barra de controles del Álbum (`VirtualBinder`): eliminación del salto a dos líneas en español mediante optimización de espaciados, paddings y `whitespace-nowrap`.
 
 ### 🏁 v0.4.0 — Perfil de Usuario, Personalización, Admin Accounts & Header Fix
 - [x] Modal de Personalización de Perfil (`ProfileModal`).
