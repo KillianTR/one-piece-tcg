@@ -25,7 +25,7 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
   * **Modo Oscuro (Vault X Black Edition):** Textura de piel negra, pespunte dorado y fundas transparentes ahumadas.
   * **Modo Claro (Vault X White Edition):** Textura de piel marfil/blanca, pespunte dorado y contraste nítido adaptado a navegación diurna.
 * **Actualización del README:**
-  * README bilingüe (Español e Inglés) y corrección de la URL de despliegue oficial a `https://grand-line-vault-tcg.vercel.app`.
+  * README bilingüe (Español e Inglés) y corrección de la URL de despliegue oficial a `https://grandlinevault-tcg.vercel.app`.
 
 ---
 
