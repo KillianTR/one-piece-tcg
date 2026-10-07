@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-neutral-950 text-neutral-100 antialiased selection:bg-amber-500 selection:text-black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* Vault X Binder Custom Textures & Leather Effect */
+.binder-leather {
+  background-color: #121316;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 100%),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 4px 4px, 4px 4px;
+  box-shadow: 
+    inset 0 0 40px rgba(0, 0, 0, 0.8),
+    0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.binder-stitching {
+  border: 2px dashed rgba(212, 175, 55, 0.35);
+}
+
+.binder-spine {
+  background: linear-gradient(90deg, #090a0c 0%, #1c1e24 40%, #121317 60%, #090a0c 100%);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.card-sleeve {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.6),
+    0 4px 12px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1px);
+}
+
+/* Holographic card shine for Alt-Art / Secret Rares */
+.holo-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.holo-shine::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.15) 40%,
+    rgba(255, 215, 0, 0.25) 50%,
+    rgba(0, 255, 255, 0.2) 60%,
+    transparent 80%
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.holo-shine:hover::after {
+  opacity: 1;
+  transform: rotate(25deg) translate(20%, 20%);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0e12;
+}
+::-webkit-scrollbar-thumb {
+  background: #272a34;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b3f4e;
+}
