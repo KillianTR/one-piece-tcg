@@ -29,19 +29,25 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
     * Mensaje explícito de tolerancia cero ante imágenes explícitas, violentas o protegidas, con advertencia de sanción o suspensión de cuenta.
   * **Datos Personales Opcionales & Rango de Coleccionista:**
     * Campo de Nombre y Apellidos opcional.
-    * Selector de Rango Pirata (*Novato del East Blue*, *Peor Generación*, *Guerrero del Mar*, *Comandante de Yonko*, *Rey de los Piratas*).
+    * Selector de Rango Pirata (*Novato del East Blue*, *Peor Generación*, *Guerrero del Mar*, *Comandante de Yonko*, *Rey de los Piratas*) con icono de insignia (`Award`), sin emojis ni estética de IA.
     * Biografía o frase pirata personalizada de hasta 160 caracteres.
   * **Seguridad & Correo Vinculado:**
     * Visualización de correo asociado e insignia de Google OAuth.
     * Cambio seguro de contraseña integrado con Supabase Auth.
   * **Suscripción a Novedades (Newsletter):**
     * Casilla de verificación para recibir avisos de nuevas funciones, salidas de cartas oficiales y eventos.
+  * **Feedback de Guardado Reasegurador:**
+    * Animación de confeti celebratorio + casilla de notificación verde con check + botón dinámico en verde esmeralda con `¡Guardado con éxito!` para confirmar al usuario que los cambios están en la nube antes de cerrar el modal.
 * **Esquema de Base de Datos Supabase (`supabase/profiles_schema.sql`):**
   * Tabla `public.profiles` con políticas RLS (lectura pública, escritura privada del propio usuario) y trigger automático para nuevos registros.
 
 #### 🐛 Correcciones y Mejoras Visuales (Fixes & UI)
 * **Header en Modo Claro:**
   * Corrección de contraste: el header en modo claro ahora tiene fondo blanco nítido (`bg-white/95 border-neutral-200`) eliminando el tono gris oscuro accidental.
+* **Iconografía Limpia:**
+  * Reemplazo de iconos de destellos tipo IA (`Sparkles`) por iconos limpios de condecoración (`Award`) en rangos e insignias.
+* **Pie de Página (Footer):**
+  * Inclusión de enlace y botón directo al portfolio de Killian Torrell (`killiantr.vercel.app`).
 * **Logo en Footer en Modo Claro:**
   * Inversión de color adaptativa para el logo en modo claro.
 

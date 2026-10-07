@@ -11,7 +11,7 @@ import {
   Save, 
   KeyRound, 
   Mail, 
-  Sparkles,
+  Award,
   Camera,
   Calendar
 } from 'lucide-react';
@@ -64,6 +64,7 @@ export default function ProfileModal({ isOpen, onClose }) {
 
   // Submit & feedback states
   const [isSaving, setIsSaving] = useState(false);
+  const [isSavedSuccess, setIsSavedSuccess] = useState(false);
   const [submitFeedback, setSubmitFeedback] = useState(null);
 
   // Load profile when modal opens
@@ -223,12 +224,16 @@ export default function ProfileModal({ isOpen, onClose }) {
 
       // Trigger celebratory mini confetti
       confetti({
-        particleCount: 40,
+        particleCount: 45,
         spread: 60,
         origin: { y: 0.6 }
       });
 
       setSubmitFeedback({ type: 'success', message: t('profileSaveSuccess') });
+      setIsSavedSuccess(true);
+      setTimeout(() => {
+        setIsSavedSuccess(false);
+      }, 5000);
     } catch (err) {
       setSubmitFeedback({ type: 'error', message: err.message || 'Error al guardar los cambios' });
     } finally {
@@ -420,7 +425,7 @@ export default function ProfileModal({ isOpen, onClose }) {
                       ? 'bg-purple-950/30 border-purple-800/50 text-purple-300' 
                       : 'bg-purple-50 border-purple-200 text-purple-900'
                   }`}>
-                    <Sparkles className="w-4 h-4 text-purple-400 shrink-0" />
+                    <Award className="w-4 h-4 text-purple-400 shrink-0" />
                     <span className="text-[11px] font-medium">
                       {t('profileAdminBypassBadge')}
                     </span>
@@ -496,7 +501,7 @@ export default function ProfileModal({ isOpen, onClose }) {
               }`}>
                 {/* Nombre y Apellidos (Opcional) */}
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-neutral-300 dark:text-neutral-300 light:text-neutral-700">
+                  <label className={`text-xs font-bold ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
                     {t('profileFullNameTitle')}
                   </label>
                   <input
@@ -516,7 +521,7 @@ export default function ProfileModal({ isOpen, onClose }) {
                 {/* Título de Coleccionista Pirata */}
                 <div className="space-y-1.5">
                   <label className="text-xs font-bold flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                    <Award className="w-3.5 h-3.5 text-amber-500" />
                     {t('profilePirateTitle')}
                   </label>
                   <select
@@ -649,18 +654,33 @@ export default function ProfileModal({ isOpen, onClose }) {
               </div>
 
               {/* Status & Error Feedback */}
-              {submitFeedback && (
+              {submitFeedback && submitFeedback.type === 'error' && (
                 <div className={`p-3 rounded-xl border text-xs flex items-center gap-2 ${
-                  submitFeedback.type === 'success'
-                    ? 'bg-emerald-950/30 border-emerald-800/50 text-emerald-300'
-                    : 'bg-rose-950/30 border-rose-800/50 text-rose-300'
+                  isDark ? 'bg-rose-950/30 border-rose-800/50 text-rose-300' : 'bg-rose-50 border-rose-200 text-rose-800'
                 }`}>
-                  {submitFeedback.type === 'success' ? (
-                    <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
-                  ) : (
-                    <AlertCircle className="w-4 h-4 shrink-0 text-rose-400" />
-                  )}
+                  <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
                   <span>{submitFeedback.message}</span>
+                </div>
+              )}
+
+              {/* Casilla Verde de Guardado con Éxito */}
+              {isSavedSuccess && (
+                <div className={`p-4 rounded-2xl border flex items-start gap-3 transition-all animate-fade-in ${
+                  isDark 
+                    ? 'bg-emerald-950/40 border-emerald-500/50 text-emerald-200' 
+                    : 'bg-emerald-50 border-emerald-300 text-emerald-900 shadow-sm'
+                }`}>
+                  <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                  </div>
+                  <div className="space-y-0.5">
+                    <h4 className="text-xs font-bold text-emerald-500 dark:text-emerald-400">
+                      {t('profileSavedNoticeTitle')}
+                    </h4>
+                    <p className={`text-[11px] ${isDark ? 'text-emerald-300/80' : 'text-emerald-800'}`}>
+                      {t('profileSavedNoticeSubtitle')}
+                    </p>
+                  </div>
                 </div>
               )}
             </form>
@@ -687,10 +707,28 @@ export default function ProfileModal({ isOpen, onClose }) {
             type="submit"
             form="profile-form"
             disabled={isSaving || (username !== initialUsername && usernameStatus === 'taken') || (username !== initialUsername && usernameStatus === 'invalid')}
-            className="flex items-center gap-2 px-5 py-2 rounded-xl text-xs font-bold bg-amber-500 text-neutral-950 hover:bg-amber-400 transition shadow-md shadow-amber-500/20 disabled:opacity-50 cursor-pointer"
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition shadow-md disabled:opacity-50 cursor-pointer ${
+              isSavedSuccess
+                ? 'bg-emerald-500 hover:bg-emerald-600 text-white shadow-emerald-500/30 ring-2 ring-emerald-400/40'
+                : 'bg-amber-500 text-neutral-950 hover:bg-amber-400 shadow-amber-500/20'
+            }`}
           >
-            <Save className="w-3.5 h-3.5" />
-            {isSaving ? t('profileSaving') : t('profileSaveBtn')}
+            {isSavedSuccess ? (
+              <>
+                <CheckCircle2 className="w-4 h-4 text-white" />
+                <span>{t('profileSavedSuccessBtn')}</span>
+              </>
+            ) : isSaving ? (
+              <>
+                <div className="w-3.5 h-3.5 border-2 border-neutral-950 border-t-transparent rounded-full animate-spin" />
+                <span>{t('profileSaving')}</span>
+              </>
+            ) : (
+              <>
+                <Save className="w-3.5 h-3.5" />
+                <span>{t('profileSaveBtn')}</span>
+              </>
+            )}
           </button>
         </div>
       </div>

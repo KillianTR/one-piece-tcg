@@ -136,7 +136,8 @@ Para mantener el repositorio de GitHub limpio y profesional:
 - [x] Advertencia obligatoria de Normas de la Comunidad y moderación.
 - [x] Nombres de usuario únicos con restricción de cambio cada 30 días para usuarios estándar.
 - [x] **Whitelist de Cuentas de Desarrollador / Admin:** `r3habhdyt@gmail.com`, `killian.carfox@gmail.com` y `killiantorrell@gmail.com` con bypass total del cooldown de 30 días para pruebas ilimitadas de cambio de nombre y avatar.
-- [x] Nombre y apellidos opcionales + Selector de Rango Pirata + Biografía.
+- [x] Selector de Rango Pirata estilizado con icono de insignia/condecoración (`Award`), sin emojis ni estética de IA.
+- [x] Feedback visual de guardado de perfil: confeti celebratorio + casilla verde destacada con check + botón dinámico en verde esmeralda (`¡Guardado con éxito!`) para confirmar que los cambios se guardaron antes de cerrar la ventana.
 - [x] Seguridad: Visualización de correo vinculado a Google OAuth y cambio de contraseña.
 - [x] Casilla para recibir novedades y salidas de cartas por correo (`newsletter_opt_in`).
 - [x] Corrección visual de contraste del Header en modo claro (fondo blanco nítido).
