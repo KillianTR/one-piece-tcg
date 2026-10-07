@@ -86,8 +86,8 @@ export default function ProfileModal({ isOpen, onClose }) {
       setBio(prof.bio || '');
       setNewsletterOptIn(Boolean(prof.newsletter_opt_in));
 
-      // Check cooldown on existing timestamp
-      const cd = checkUsernameCooldown(prof.username_changed_at);
+      // Check cooldown on existing timestamp (bypass for Killian's test emails)
+      const cd = checkUsernameCooldown(prof.username_changed_at, user.email);
       setCooldown(cd);
 
       setLoading(false);
@@ -219,7 +219,7 @@ export default function ProfileModal({ isOpen, onClose }) {
 
       setProfile(updated);
       setInitialUsername(updated.username);
-      setCooldown(checkUsernameCooldown(updated.username_changed_at));
+      setCooldown(checkUsernameCooldown(updated.username_changed_at, user.email));
 
       // Trigger celebratory mini confetti
       confetti({
@@ -413,8 +413,22 @@ export default function ProfileModal({ isOpen, onClose }) {
                   </span>
                 </div>
 
-                {/* Cooldown Lock Alert if less than 30 days */}
-                {!cooldown.allowed && (
+                {/* Admin / Dev Test Account Badge */}
+                {cooldown.isAdmin && (
+                  <div className={`p-2.5 rounded-xl border flex items-center gap-2 text-xs ${
+                    isDark 
+                      ? 'bg-purple-950/30 border-purple-800/50 text-purple-300' 
+                      : 'bg-purple-50 border-purple-200 text-purple-900'
+                  }`}>
+                    <Sparkles className="w-4 h-4 text-purple-400 shrink-0" />
+                    <span className="text-[11px] font-medium">
+                      {t('profileAdminBypassBadge')}
+                    </span>
+                  </div>
+                )}
+
+                {/* Cooldown Lock Alert if less than 30 days and not admin */}
+                {!cooldown.allowed && !cooldown.isAdmin && (
                   <div className={`p-3 rounded-xl border flex items-center gap-2 text-xs ${
                     isDark 
                       ? 'bg-amber-950/30 border-amber-800/50 text-amber-300' 

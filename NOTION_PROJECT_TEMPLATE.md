@@ -130,16 +130,32 @@ Para mantener el repositorio de GitHub limpio y profesional:
 - [x] Favicon y logo vectorial blanco transparente estilizado.
 - [x] README bilingüe con selector de idioma y URL oficial de Vercel.
 
-### 🏁 v0.4.0 — Perfil de Usuario, Personalización & Header Fix (Versión Actual)
+### 🏁 v0.4.0 — Perfil de Usuario, Personalización, Admin Accounts & Header Fix (Versión Actual)
 - [x] Modal de Personalización de Perfil (`ProfileModal`).
 - [x] Subida de foto de perfil con Canvas 300x300 px y compresión WebP/JPEG (~25-35 KB).
 - [x] Advertencia obligatoria de Normas de la Comunidad y moderación.
-- [x] Nombres de usuario únicos con restricción de cambio cada 30 días.
+- [x] Nombres de usuario únicos con restricción de cambio cada 30 días para usuarios estándar.
+- [x] **Whitelist de Cuentas de Desarrollador / Admin:** `r3habhdyt@gmail.com`, `killian.carfox@gmail.com` y `killiantorrell@gmail.com` con bypass total del cooldown de 30 días para pruebas ilimitadas de cambio de nombre y avatar.
 - [x] Nombre y apellidos opcionales + Selector de Rango Pirata + Biografía.
 - [x] Seguridad: Visualización de correo vinculado a Google OAuth y cambio de contraseña.
 - [x] Casilla para recibir novedades y salidas de cartas por correo (`newsletter_opt_in`).
 - [x] Corrección visual de contraste del Header en modo claro (fondo blanco nítido).
 - [x] Enlace directo en el footer hacia el Portfolio de Killian Torrell (`killiantr.vercel.app`).
+- [x] Limpieza del `README.md` eliminando el bloque teórico de SemVer para mayor claridad.
+
+---
+
+## 🛡️ CUENTAS DE DESARROLLADOR & TEST (ADMIN BYPASS)
+
+Cuentas con privilegios de pruebas para Killian:
+* 👑 **`r3habhdyt@gmail.com`** (Cuenta principal de pruebas)
+* 🧪 **`killian.carfox@gmail.com`** (Cuenta secundaria de testing)
+* 🧪 **`killiantorrell@gmail.com`** (Cuenta terciaria de testing)
+
+**Privilegios activos:**
+- Cambio de nombre de usuario en cualquier momento sin esperar 30 días.
+- Cambio y subida de fotos de avatar ilimitada.
+- Badge visual exclusivo de desarrollador en el modal de perfil.
 
 ### 📦 v0.5.0 — Ingestión Masiva de Cartas Oficiales (Próximo Sprint)
 - [ ] Script de importación para cargar sets completos OP-01 hasta OP-09 y barajas ST-01 a ST-15.

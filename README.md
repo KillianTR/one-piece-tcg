@@ -70,24 +70,6 @@
 
 ---
 
-### 🏷️ Sistema de Versionado SemVer (Estilo Blizzard / WoW)
-
-El proyecto sigue una nomenclatura estricta basada en tres cifras: **`MAJOR . MINOR . PATCH`** (ejemplo: `0.4.0`):
-
-```
-       ┌─────────── MAJOR : Gran actualización / Expansión (como en World of Warcraft)
-       │ ┌───────── MINOR : Nueva funcionalidad o módulo sin romper compatibilidad
-       │ │ ┌─────── PATCH : Hotfix, reparación de bugs o parche rápido
-       ▼ ▼ ▼
-       0 . 4 . 0
-```
-
-1. **MAJOR (`1.0.0` / `2.0.0`):** Expansiones de contenido, salto a versión oficial o cambios estructurales mayores.
-2. **MINOR (`0.4.0`):** Nuevas funcionalidades (ej. Perfil de Usuario, Multi-idioma, Modo Oscuro/Claro, Auth con Supabase).
-3. **PATCH (`0.0.1`):** Hotfixes, correcciones rápidas de bugs y pequeños parches.
-
----
-
 ### 🚀 Instalación y Puesta en Marcha Local
 
 ```bash
@@ -160,16 +142,6 @@ npm run dev
 * **Profile Picture (300x300 px):** Client-side Canvas crop and compression to WebP/JPEG (~25-35 KB) with community moderation safeguards.
 * **Pirate Identity:** Optional full name, custom pirate ranks (*East Blue Rookie*, *Worst Generation*, *Warlord of the Sea*, *Pirate King*), and bio.
 * **Security & Newsletter:** Google OAuth status badge, password updates, and optional email notifications for new card releases and app features.
-
----
-
-### 🏷️ Semantic Versioning (Blizzard / WoW Style)
-
-The project adheres to strict Semantic Versioning: **`MAJOR . MINOR . PATCH`** (e.g., `0.4.0`):
-
-* **MAJOR (`1.0.0` / `2.0.0`):** Expansions, public launch milestones, and database schema migrations.
-* **MINOR (`0.4.0`):** Substantial feature additions (User Profile Customization, Bilingual i18n, Theme System, Supabase Auth).
-* **PATCH (`0.0.1`):** Hotfixes, style adjustments, and quick code patches.
 
 ---
 

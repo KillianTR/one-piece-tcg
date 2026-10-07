@@ -4,6 +4,23 @@ const USERNAME_REGEX = /^[a-z0-9_]{3,20}$/;
 const COOLDOWN_DAYS = 30;
 
 /**
+ * Cuentas de desarrollador y pruebas de Killian con bypass de cooldown
+ */
+export const ADMIN_TEST_EMAILS = [
+  'r3habhdyt@gmail.com',
+  'killian.carfox@gmail.com',
+  'killiantorrell@gmail.com'
+];
+
+/**
+ * Comprueba si un correo pertenece a una cuenta de pruebas o admin
+ */
+export function isDeveloperOrAdminEmail(email) {
+  if (!email) return false;
+  return ADMIN_TEST_EMAILS.includes(email.toLowerCase().trim());
+}
+
+/**
  * Validates username format
  */
 export function validateUsernameFormat(username) {
@@ -16,11 +33,17 @@ export function validateUsernameFormat(username) {
 }
 
 /**
- * Calculates if username change is allowed (30-day cooldown)
+ * Calculates if username change is allowed (30-day cooldown).
+ * Bypass if user is one of Killian's developer/test accounts.
  */
-export function checkUsernameCooldown(usernameChangedAt) {
+export function checkUsernameCooldown(usernameChangedAt, userEmail = null) {
+  // Bypass total para las cuentas de pruebas de Killian
+  if (isDeveloperOrAdminEmail(userEmail)) {
+    return { allowed: true, daysRemaining: 0, nextAvailableDate: null, isAdmin: true };
+  }
+
   if (!usernameChangedAt) {
-    return { allowed: true, daysRemaining: 0, nextAvailableDate: null };
+    return { allowed: true, daysRemaining: 0, nextAvailableDate: null, isAdmin: false };
   }
 
   const lastChanged = new Date(usernameChangedAt).getTime();
@@ -33,11 +56,12 @@ export function checkUsernameCooldown(usernameChangedAt) {
     return {
       allowed: false,
       daysRemaining,
-      nextAvailableDate: new Date(cooldownEnd)
+      nextAvailableDate: new Date(cooldownEnd),
+      isAdmin: false
     };
   }
 
-  return { allowed: true, daysRemaining: 0, nextAvailableDate: null };
+  return { allowed: true, daysRemaining: 0, nextAvailableDate: null, isAdmin: false };
 }
 
 /**
@@ -188,7 +212,7 @@ export async function saveUserProfile(user, currentProfile, updates) {
 
   // Check username cooldown if username changed
   if (updates.username && updates.username !== currentProfile?.username) {
-    const cooldown = checkUsernameCooldown(currentProfile?.username_changed_at);
+    const cooldown = checkUsernameCooldown(currentProfile?.username_changed_at, user.email);
     if (!cooldown.allowed) {
       throw new Error(`Solo puedes cambiar tu nombre cada 30 días. Próximo cambio disponible: ${cooldown.nextAvailableDate?.toLocaleDateString()}`);
     }
