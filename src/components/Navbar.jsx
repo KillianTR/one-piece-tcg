@@ -119,23 +119,6 @@ export default function Navbar({
               }`}>
                 GRAND LINE <span className="text-amber-500 dark:text-amber-400">VAULT</span>
               </span>
-              {/* Clickable Version Badge */}
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onOpenVersionModal();
-                }}
-                className={`group/badge flex items-center gap-1 px-2 py-0.5 rounded-full border text-[10px] font-mono font-bold transition cursor-pointer ${
-                  isDark 
-                    ? 'bg-neutral-900 border-neutral-700/80 hover:border-amber-500 text-amber-400' 
-                    : 'bg-amber-50 border-amber-200 hover:border-amber-400 text-amber-800'
-                }`}
-                title={t('versionCurrentBadge')}
-              >
-                <span>v0.4.1</span>
-                <Info className={`w-3 h-3 ${isDark ? 'text-neutral-400 group-hover/badge:text-amber-400' : 'text-amber-600'}`} />
-              </button>
             </div>
             <p className={`text-[10px] uppercase tracking-widest font-semibold hidden sm:block ${
               isDark ? 'text-neutral-400' : 'text-neutral-500'
@@ -445,6 +428,26 @@ export default function Navbar({
                       </button>
                     </div>
                   </div>
+
+                  <div className={`my-1 border-t ${isDark ? 'border-neutral-800' : 'border-neutral-200'}`} />
+
+                  {/* Versión y Notas SemVer */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      onOpenVersionModal();
+                    }}
+                    className={`w-full flex items-center justify-between p-2 rounded-xl text-xs font-semibold transition cursor-pointer ${
+                      isDark ? 'hover:bg-neutral-800 text-neutral-400 hover:text-white' : 'hover:bg-neutral-100 text-neutral-600 hover:text-neutral-900'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <Info className="w-3.5 h-3.5 text-amber-500" />
+                      <span>{t('versionModalTitle') || 'Sistema SemVer'}</span>
+                    </div>
+                    <span className="text-[10px] font-mono font-bold text-amber-500/90">v0.5.0 →</span>
+                  </button>
 
                   <div className={`my-1 border-t ${isDark ? 'border-neutral-800' : 'border-neutral-200'}`} />
 

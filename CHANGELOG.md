@@ -10,6 +10,36 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
 
+## [0.5.0] - 2026-10-07
+### 📂 Minor Update — Carpetas Personalizadas, Ordenación Libre, Multicriterio & Limpieza de Cabecera Vault X
+
+#### ✨ Nuevas Características & Mejoras (Features & UI)
+* **Sistema de Carpetas Personalizadas ("Mis Carpetas"):**
+  * **Dos modos en el álbum:** Alternancia rápida entre `Catálogo Oficial (Sets)` (checklist canónico con siluetas de cartas faltantes) y `Mis Carpetas (Álbum Libre)` (organización personalizada sin restricciones).
+  * **Creación y gestión de carpetas:** Creación de múltiples carpetas con nombre propio, selección de portada y eliminación.
+  * **Páginas dinámicas:** Botones para `+ Añadir Página` o eliminar páginas sobrantes en cualquier carpeta.
+  * **Asignación libre por bolsillo:** Clic en cualquier bolsillo vacío para abrir el `CardPickerModal`, buscar por nombre/código, filtrar por tipo (Leader, Character, Event, Stage, DON!!) o mostrar solo cartas que el usuario ya posee en su colección.
+  * **Drag & Drop HTML5 nativo:** Arrastra cartas directamente de un bolsillo a otro para reordenar filas o páginas al instante.
+  * **Carpeta inicial preconfigurada:** Estructura realista con 4 Luffys en fila 1, 4 Zoros en fila 2, Sanji, Jinbe, páginas de Yonkos, Marines y sección de cartas DON!!.
+  * Persistencia en `localStorage` con migración automática.
+* **Navegación Oficial con "TODAS" las Expansiones y Multi-Página:**
+  * Opción `TODAS` en el selector de expansiones para explorar todo el catálogo paginado (página 1, 2, 3...) en formato de 9 o 12 bolsillos.
+  * Selector de ordenación multicriterio:
+    * Por Tipo de Carta (Leader, Character, Event, Stage, DON!!)
+    * Por Rareza
+    * Por Color
+    * Por Coste
+    * Por Poder
+    * Por Código de Carta (ID)
+* **Limpieza y Pulido del Vault X Header:**
+  * Eliminación de términos innecesarios: la placa ahora muestra limpiamente `VAULT X • ONE PIECE`.
+  * Eliminación del subtítulo físico no aplicable (*"Acid-free, side-loading 9-pocket archival binder pages"*).
+  * Retirada de la insignia de versión del navbar para despejar la cabecera; trasladada al menú desplegable de usuario (`Ajustes / Versión`) y al pie de página.
+* **Ampliación de Cartas Mock:**
+  * Incorporación de Sanji (`ST01-004`), Jinbe (`OP01-005`), Zoro Alt-Art (`OP01-026`), Sakazuki (`OP02-099`), Borsalino (`OP02-114`) y cartas de Don personalizadas (`DON-001`, `DON-002`).
+
+---
+
 ## [0.4.1] - 2026-10-07
 ### ⚓ Patch — Rediseño del Header, Menú Desplegable de Usuario y Descongestión Visual
 

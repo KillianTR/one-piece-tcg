@@ -8,11 +8,11 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Desarrollo Activo (Patch v0.4.1)
+* **Estado:** 🟢 En Desarrollo Activo (Minor v0.5.0)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.4.1` (Patch Update: Header Redesign, User Dropdown Menu & Visual Decongestion)
+* **Versión Actual:** `v0.5.0` (Minor Release: Custom Folders & Binders, Free Card Placement, Multi-Criteria Sorting & Clean Vault Header)
 
 ---
 
@@ -130,7 +130,20 @@ Para mantener el repositorio de GitHub limpio y profesional:
 - [x] Favicon y logo vectorial blanco transparente estilizado.
 - [x] README bilingüe con selector de idioma y URL oficial de Vercel.
 
-### 🏁 v0.4.1 — Rediseño del Header & Menú Desplegable de Usuario (Versión Actual)
+### 🏁 v0.5.0 — Carpetas Personalizadas, Ordenación Libre, Multicriterio & Limpieza de Cabecera Vault X (Versión Actual)
+- [x] Dos modos en el archivador: `Catálogo Oficial (Sets)` y `Mis Carpetas (Álbum Libre)`.
+- [x] Gestión de múltiples carpetas personalizadas (crear nuevas carpetas y eliminar con modal).
+- [x] Páginas dinámicas por carpeta (`+ Añadir Página` y eliminación de páginas).
+- [x] Asignación libre de cartas por bolsillo con `CardPickerModal` (buscador rápido, filtros por categoría y filtro "Solo en Colección").
+- [x] Drag & Drop interactivo HTML5 para mover o intercambiar cartas entre bolsillos con arrastre visual.
+- [x] Carpeta preconfigurada con ordenación realista de coleccionista (Fila 1 con 4 Luffys, Fila 2 con 4 Zoros, Sanji, Jinbe, páginas de Yonkos, Marines y sección de cartas DON!!).
+- [x] Opción `TODAS` en el selector de expansiones para navegar el catálogo completo repartido entre múltiples páginas sucesivas.
+- [x] Menú de ordenación multicriterio en el álbum: por Tipo de Carta (Líder, Personaje, Evento, Escenario, DON!!), Rareza, Color, Coste, Poder e ID.
+- [x] Limpieza del Vault X Header: eliminación de "OFFICIAL PORTFOLIO" (dejando solo `VAULT X • ONE PIECE`) y supresión de la descripción promocional física ("Acid-free, side-loading...").
+- [x] Reubicación del badge de versión del navbar a la sección de Ajustes del User Dropdown y pie de página.
+- [x] Ampliación del catálogo con cartas icónicas (Sanji, Jinbe, Sakazuki, Borsalino) y cartas especiales de DON!!.
+
+### 🏁 v0.4.1 — Rediseño del Header & Menú Desplegable de Usuario
 - [x] Menú desplegable unificado en el avatar del usuario con tarjeta de perfil, nombre, correo y rango.
 - [x] Reubicación integrada de ajustes de Idioma (ES/EN) y Tema (Modo Claro/Oscuro) dentro del desplegable.
 - [x] Descongestión del header: distribución espaciosa en 3 zonas (Brand, Navegación central y Bloque de usuario).
@@ -166,13 +179,12 @@ Cuentas con privilegios de pruebas para Killian:
 - Cambio y subida de fotos de avatar ilimitada.
 - Badge visual exclusivo de desarrollador en el modal de perfil.
 
-### 📦 v0.5.0 — Ingestión Masiva de Cartas Oficiales (Próximo Sprint)
+### 📦 v0.6.0 — Ingestión Masiva de Cartas Oficiales (Próximo Sprint)
 - [ ] Script de importación para cargar sets completos OP-01 hasta OP-09 y barajas ST-01 a ST-15.
 - [ ] Imágenes en alta definición con respaldo en CDN.
 - [ ] Filtro avanzado por tipo de carta (Leader, Character, Event, Stage) y atributos.
 
 ### 🟢 v1.0.0 — Official Launch en Vercel (Major Release)
-- [ ] Modo de álbumes personalizados (los usuarios pueden crear carpetas con nombre propio).
 - [ ] Exportación e importación de listas en formatos compatibles con OPTCG Sim y Cardmarket/CardTrader.
 - [ ] Optimización SEO y Open Graph para compartir colecciones en redes sociales.
 

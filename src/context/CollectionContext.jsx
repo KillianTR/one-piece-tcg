@@ -6,6 +6,36 @@ import { useAuth } from './AuthContext';
 const CollectionContext = createContext();
 
 const LOCAL_STORAGE_KEY = 'one_piece_vault_collection_v0.2.0';
+const CUSTOM_BINDERS_STORAGE_KEY = 'one_piece_vault_custom_binders_v1';
+
+export const DEFAULT_CUSTOM_BINDERS = [
+  {
+    id: 'vault-custom-1',
+    name: 'Mi Álbum Vault X (480 bolsillos)',
+    description: 'Organización libre por páginas y bolsillos',
+    pageSize: 12,
+    pages: [
+      {
+        pageNumber: 1,
+        // Fila 1: 4 Luffys! Fila 2: 4 Zoros! Fila 3: Sanji, Jinbe, Chopper, Nami!
+        slots: [
+          'OP01-004', 'ST01-001', 'OP05-060', 'OP05-060-MANGA',
+          'OP01-001', 'OP01-025', 'OP01-026', 'OP01-001',
+          'ST01-004', 'OP01-005', 'ST01-012', 'OP01-016'
+        ]
+      },
+      {
+        pageNumber: 2,
+        // Página 2: Yonkos y Marines
+        slots: [
+          'OP09-118', 'OP01-120', 'OP01-094', 'OP09-001',
+          'OP02-099', 'OP02-114', 'OP09-051', null,
+          'DON-001', 'DON-002', null, null
+        ]
+      }
+    ]
+  }
+];
 
 export function CollectionProvider({ children }) {
   const { user } = useAuth();
@@ -16,6 +46,128 @@ export function CollectionProvider({ children }) {
   const [binderPageSize, setBinderPageSize] = useState(9); // 9 for 3x3, 12 for 4x3
   const [isCloudSynced, setIsCloudSynced] = useState(false);
   const [isLoadingCollection, setIsLoadingCollection] = useState(false);
+
+  // Custom Binders System (Folders)
+  const [customBinders, setCustomBinders] = useState(() => {
+    try {
+      const saved = localStorage.getItem(CUSTOM_BINDERS_STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (e) {
+      console.error('Error loading custom binders from localStorage', e);
+    }
+    return DEFAULT_CUSTOM_BINDERS;
+  });
+
+  const [activeBinderId, setActiveBinderId] = useState(() => {
+    return customBinders[0]?.id || 'vault-custom-1';
+  });
+
+  // Save custom binders to localStorage on changes
+  useEffect(() => {
+    try {
+      localStorage.setItem(CUSTOM_BINDERS_STORAGE_KEY, JSON.stringify(customBinders));
+    } catch (e) {
+      console.error('Error saving custom binders to localStorage', e);
+    }
+  }, [customBinders]);
+
+  // Custom binder helper functions
+  const createCustomBinder = (name, pageSize = 12) => {
+    const newBinder = {
+      id: `binder-${Date.now()}`,
+      name: name || 'Nueva Carpeta Vault',
+      pageSize: pageSize || 12,
+      pages: [
+        {
+          pageNumber: 1,
+          slots: Array(pageSize || 12).fill(null)
+        }
+      ]
+    };
+    setCustomBinders((prev) => [...prev, newBinder]);
+    setActiveBinderId(newBinder.id);
+    return newBinder;
+  };
+
+  const deleteCustomBinder = (binderId) => {
+    setCustomBinders((prev) => {
+      const filtered = prev.filter((b) => b.id !== binderId);
+      if (filtered.length === 0) return DEFAULT_CUSTOM_BINDERS;
+      return filtered;
+    });
+    if (activeBinderId === binderId) {
+      const remaining = customBinders.filter((b) => b.id !== binderId);
+      setActiveBinderId(remaining[0]?.id || DEFAULT_CUSTOM_BINDERS[0].id);
+    }
+  };
+
+  const addPageToBinder = (binderId) => {
+    setCustomBinders((prev) =>
+      prev.map((b) => {
+        if (b.id !== binderId) return b;
+        const newPageNum = (b.pages?.length || 0) + 1;
+        const newPage = {
+          pageNumber: newPageNum,
+          slots: Array(b.pageSize || binderPageSize || 12).fill(null)
+        };
+        return {
+          ...b,
+          pages: [...(b.pages || []), newPage]
+        };
+      })
+    );
+  };
+
+  const deletePageFromBinder = (binderId, pageNumber) => {
+    setCustomBinders((prev) =>
+      prev.map((b) => {
+        if (b.id !== binderId || (b.pages?.length || 0) <= 1) return b;
+        const updatedPages = b.pages
+          .filter((p) => p.pageNumber !== pageNumber)
+          .map((p, idx) => ({ ...p, pageNumber: idx + 1 }));
+        return { ...b, pages: updatedPages };
+      })
+    );
+  };
+
+  const setSlotCard = (binderId, pageNumber, slotIndex, cardId) => {
+    setCustomBinders((prev) =>
+      prev.map((b) => {
+        if (b.id !== binderId) return b;
+        const updatedPages = b.pages.map((p) => {
+          if (p.pageNumber !== pageNumber) return p;
+          const newSlots = [...(p.slots || Array(b.pageSize || 12).fill(null))];
+          newSlots[slotIndex] = cardId;
+          return { ...p, slots: newSlots };
+        });
+        return { ...b, pages: updatedPages };
+      })
+    );
+  };
+
+  const removeSlotCard = (binderId, pageNumber, slotIndex) => {
+    setSlotCard(binderId, pageNumber, slotIndex, null);
+  };
+
+  const swapSlots = (binderId, pageNumber, fromIndex, toIndex) => {
+    setCustomBinders((prev) =>
+      prev.map((b) => {
+        if (b.id !== binderId) return b;
+        const updatedPages = b.pages.map((p) => {
+          if (p.pageNumber !== pageNumber) return p;
+          const newSlots = [...(p.slots || Array(b.pageSize || 12).fill(null))];
+          const temp = newSlots[fromIndex];
+          newSlots[fromIndex] = newSlots[toIndex];
+          newSlots[toIndex] = temp;
+          return { ...p, slots: newSlots };
+        });
+        return { ...b, pages: updatedPages };
+      })
+    );
+  };
 
   // Local guest collection state
   const [collection, setCollection] = useState(() => {
@@ -242,6 +394,17 @@ export function CollectionProvider({ children }) {
         totalWishlisted,
         isCloudSynced,
         isLoadingCollection,
+        customBinders,
+        setCustomBinders,
+        activeBinderId,
+        setActiveBinderId,
+        createCustomBinder,
+        deleteCustomBinder,
+        addPageToBinder,
+        deletePageFromBinder,
+        setSlotCard,
+        removeSlotCard,
+        swapSlots,
       }}
     >
       {children}

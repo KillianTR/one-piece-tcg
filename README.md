@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Versión](https://img.shields.io/badge/version-v0.4.1--patch-amber?style=for-the-badge&logo=git)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/version-v0.5.0--minor-amber?style=for-the-badge&logo=git)](CHANGELOG.md)
 [![Web en Vivo](https://img.shields.io/badge/Live_Demo-grand--line--vault--tcg.vercel.app-000000?style=for-the-badge&logo=vercel)](https://grand-line-vault-tcg.vercel.app)
 [![Portfolio](https://img.shields.io/badge/Creator-Killian_Torrell-000000?style=for-the-badge&logo=vercel)](https://killiantr.vercel.app)
 [![Supabase](https://img.shields.io/badge/Supabase-Auth%20&%20PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
@@ -32,9 +32,14 @@
 
 ### 🌟 Funcionalidades Principales
 
-#### 📖 1. Álbum Virtual Interactivo (Estilo Vault X)
+#### 📖 1. Álbum Virtual Interactivo (Estilo Vault X) & Carpetas Personalizadas
+* **Doble Modo de Visualización:**
+  * **Catálogo Oficial (Sets):** Visualiza los sets oficiales (`OP-01`, `OP-05`, `OP-09`, `ST-01`) o el catálogo completo (**TODAS las expansiones**) pasando páginas de 9 o 12 bolsillos con etiquetas de conseguidas vs faltantes.
+  * **Mis Carpetas (Álbum Libre Personalizado):** Crea tantas carpetas personalizadas como desees (ej. *Mi Álbum Vault X*, *Yonkos*, *Marines*, *Cartas DON!!*), añade páginas ilimitadas y coloca cualquier carta en el bolsillo exacto que quieras (como 4 Luffys en la fila superior o 4 Zoros en la siguiente).
+* **Organización y Drag & Drop:** Arrastra y suelta cartas entre bolsillos para reordenarlas a tu gusto.
+* **Ordenación Multicriterio:** Ordena por Número de Carta, Tipo de Carta (Líder, Personaje, Evento, Stage, DON!!), Rareza, Color, Coste o Poder.
+* **Formatos de bolsillo:** Conmuta entre **9 bolsillos (3x3)** y **12 bolsillos (4x3)**.
 * **Estética de archivador de alta gama:** Textura símil piel negra (*Black Edition*) o marfil (*White Edition*), pespunte cosido con hilo dorado y lomo central.
-* **Formatos de bolsillo:** Conmuta entre **9 bolsillos (3x3)** (estándar tipo Vault X Zip Binder) y **12 bolsillos (4x3)**.
 * **Visualización inteligente:**
   * **Cartas en posesión:** Se muestran a todo color con badge de copias (ej. `x1`, `x4`) y brillo holográfico al pasar el cursor (`holo-shine`) en cartas raras (SR, SEC, Alternate Art).
   * **Cartas faltantes:** Se muestran en silueta translúcida en escala de grises con etiqueta de `"FALTA"` y botones rápidos de hover para marcar como obtenidas, añadir a Wishlist o buscar en CardTrader.
