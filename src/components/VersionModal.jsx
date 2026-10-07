@@ -48,7 +48,7 @@ export default function VersionModal({ isOpen, onClose }) {
           <div>
             <span className="text-xs uppercase font-semibold text-neutral-400">{t('versionCurrentBadge')}</span>
             <div className="text-2xl font-mono font-extrabold text-amber-500">
-              v0.6.0 <span className="text-xs font-normal text-neutral-400 ml-2">(Minor: Ingestión Masiva de Cartas Oficiales, Estadísticas Financieras, Backups y Sonido Háptico)</span>
+              v0.6.1 <span className="text-xs font-normal text-neutral-400 ml-2">(Patch: Buy Me a Coffee Donaciones, Layout Simétrico ES/EN & Ajuste Legal Disclaimer)</span>
             </div>
           </div>
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-medium">

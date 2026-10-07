@@ -10,6 +10,19 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
 
+## [0.6.1] - 2026-10-07
+### ☕ Patch — Buy Me a Coffee (Donaciones), Layout Simétrico ES/EN en Controles del Álbum y Ajuste Legal del Disclaimer
+
+#### ✨ Nuevas Características & Mejoras (Features & UI)
+* **Botón 'Buy Me a Coffee' en el Footer:**
+  * Reemplazado el icono duplicado de portfolio web en la barra inferior por el icono oficial de la taza de café con corazón (*Buy Me a Coffee*), enlazado a la página de aportaciones y donaciones comunitarias de Killian Torrell.
+  * Efecto de hover dinámico con el color dorado oficial `#FFDD00` de la marca Buy Me a Coffee y tooltip bilingüe (*"Invítame a un café (Donaciones)"* / *"Buy Me a Coffee (Donations)"*).
+* **Ajuste Legal y Comunitario en el Disclaimer:**
+  * Actualizado el texto legal a: *"One Piece Card Game es propiedad de Eiichiro Oda / Shueisha, Toei Animation y Bandai. Proyecto fan-made independiente sin fines comerciales, mantenido con apoyo voluntario de la comunidad."* (protege la condición legal del proyecto comunitario no comercial al recibir donaciones voluntarias de servidores).
+* **Solución al Descuadre Vertical de Controles del Álbum (Español vs. Inglés):**
+  * Corrección del salto de línea que provocaba que en español el toolbar ocupara dos líneas verticales por diferencias de longitud tipográfica (*"Bolsillos"* vs *"Pockets"* y acento en *"Pág."*).
+  * Aplicado `flex-nowrap`, `whitespace-nowrap`, `shrink-0` y ancho mínimo consistente (`min-w-[72px]`) en el contador de páginas para garantizar una visualización simétrica, compacta y alineada en una sola fila en cualquier idioma y resolución.
+
 ## [0.6.0] - 2026-10-07
 ### 📦 Minor Update — Ingestión Masiva de Cartas Oficiales, Cobertura Completa OP-01 a OP-09 y ST-01/ST-02/ST-10, Accesibilidad Total de Estadísticas y Backups
 

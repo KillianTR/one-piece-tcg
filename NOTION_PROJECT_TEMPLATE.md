@@ -8,11 +8,11 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.0)
+* **Estado:** 🟢 En Producción & Desarrollo Activo (Patch v0.6.1)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.6.0` (Minor Release: Ingestión Masiva OP-01 a OP-09, Valoración Financiera, Backups y Audio Universal)
+* **Versión Actual:** `v0.6.1` (Patch: Buy Me a Coffee Donaciones, Layout Simétrico ES/EN & Ajuste Legal Disclaimer)
 
 ---
 
@@ -197,6 +197,11 @@ Cuentas con privilegios de pruebas para Killian:
 - Cambio de nombre de usuario en cualquier momento sin esperar 30 días.
 - Cambio y subida de fotos de avatar ilimitada.
 - Badge visual exclusivo de desarrollador en el modal de perfil.
+
+### ☕ v0.6.1 — Buy Me a Coffee, Layout Simétrico ES/EN & Ajuste Legal Disclaimer (Completado)
+- [x] Reemplazado icono duplicado de portfolio en el footer por el botón oficial de *Buy Me a Coffee* (donaciones comunitarias).
+- [x] Ajuste legal del disclaimer en español e inglés: proyecto fan-made independiente sin fines comerciales apoyado voluntariamente por la comunidad.
+- [x] Solución al descuadre y aumento de altura vertical en español de la barra de controles (`VirtualBinder.jsx`): prevención de wraps y ancho mínimo para paginación simétrica.
 
 ### 📦 v0.6.0 — Ingestión Masiva de Cartas Oficiales & Herramientas Completadas (Completado)
 - [x] Script de importación y base de datos masiva: 91 cartas auténticas cubriendo sets OP-01 hasta OP-09 y barajas de inicio ST-01, ST-02 y ST-10.

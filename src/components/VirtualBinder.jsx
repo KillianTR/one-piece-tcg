@@ -279,10 +279,10 @@ export default function VirtualBinder() {
         </div>
 
         {/* Pocket Size Toggle (9 vs 12) */}
-        <div className={`flex items-center border rounded-xl p-1 text-xs shrink-0 ${
+        <div className={`flex items-center border rounded-xl p-1 text-xs shrink-0 whitespace-nowrap ${
           isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-200'
         }`}>
-          <span className="text-neutral-500 px-2 font-medium whitespace-nowrap text-[11px] sm:text-xs">
+          <span className="text-neutral-500 px-2 font-medium whitespace-nowrap text-[11px] sm:text-xs shrink-0">
             {t('binderPockets')}
           </span>
           <button
@@ -386,10 +386,10 @@ export default function VirtualBinder() {
             ))}
           </div>
 
-          {/* Ordenación & Paginación */}
-          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 flex-wrap">
+          {/* Ordenación & Paginación (Fijo en una sola línea horizontal) */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0 flex-nowrap">
             {/* Selector de Ordenación */}
-            <div className={`flex items-center gap-1.5 border rounded-xl px-2.5 py-1 text-xs ${
+            <div className={`flex items-center gap-1.5 border rounded-xl px-2.5 py-1 text-xs shrink-0 whitespace-nowrap ${
               isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
             }`}>
               <ArrowUpDown className="w-3.5 h-3.5 text-amber-500 shrink-0" />
@@ -411,7 +411,7 @@ export default function VirtualBinder() {
             </div>
 
             {/* Quick Page Nav Buttons */}
-            <div className={`flex items-center gap-1.5 sm:gap-2 border rounded-xl px-2 py-1 shrink-0 ${
+            <div className={`flex items-center gap-1 sm:gap-1.5 border rounded-xl px-2 py-1 shrink-0 whitespace-nowrap ${
               isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
             }`}>
               <button
@@ -426,7 +426,7 @@ export default function VirtualBinder() {
               >
                 <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
-              <span className={`text-xs font-mono font-bold px-1.5 whitespace-nowrap select-none ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
+              <span className={`text-xs font-mono font-bold px-1.5 whitespace-nowrap shrink-0 min-w-[72px] text-center select-none ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
                 {t('binderPage')} {currentPage} / {officialTotalPages}
               </span>
               <button
@@ -506,8 +506,8 @@ export default function VirtualBinder() {
             )}
           </div>
 
-          {/* Gestión de Páginas en la Carpeta Actual */}
-          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 flex-wrap">
+          {/* Gestión de Páginas en la Carpeta Actual (Fijo en una sola línea horizontal) */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0 flex-nowrap">
             {/* Botón Añadir Página a la Carpeta */}
             <button
               type="button"
@@ -516,7 +516,7 @@ export default function VirtualBinder() {
                 setCustomPage(customTotalPages + 1);
                 playPageFlipSound();
               }}
-              className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-bold bg-neutral-800 hover:bg-neutral-700 text-amber-400 border border-neutral-700 transition cursor-pointer"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-bold bg-neutral-800 hover:bg-neutral-700 text-amber-400 border border-neutral-700 transition cursor-pointer whitespace-nowrap"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>{t('binderAddPage')}</span>
@@ -541,7 +541,7 @@ export default function VirtualBinder() {
             )}
 
             {/* Paginador de Carpeta Personalizada */}
-            <div className={`flex items-center gap-1.5 sm:gap-2 border rounded-xl px-2 py-1 shrink-0 ${
+            <div className={`flex items-center gap-1 sm:gap-1.5 border rounded-xl px-2 py-1 shrink-0 whitespace-nowrap ${
               isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
             }`}>
               <button
@@ -555,7 +555,7 @@ export default function VirtualBinder() {
               >
                 <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
-              <span className={`text-xs font-mono font-bold px-1.5 whitespace-nowrap select-none ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
+              <span className={`text-xs font-mono font-bold px-1.5 whitespace-nowrap shrink-0 min-w-[72px] text-center select-none ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
                 {t('binderPage')} {customPage} / {customTotalPages}
               </span>
               <button

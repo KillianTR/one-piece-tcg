@@ -204,7 +204,7 @@ export const translations = {
     versionUnderstood: 'Entendido',
 
     // Footer
-    footerDisclaimer: 'One Piece Card Game es propiedad de Eiichiro Oda / Shueisha, Toei Animation y Bandai. Web comunitaria sin ánimo de lucro para coleccionistas.',
+    footerDisclaimer: 'One Piece Card Game es propiedad de Eiichiro Oda / Shueisha, Toei Animation y Bandai. Proyecto fan-made independiente sin fines comerciales, mantenido con apoyo voluntario de la comunidad.',
     footerVersionLabel: 'Versión',
     footerSemVerNote: 'SemVer WoW Standard',
     footerChangelog: 'Changelog',
@@ -212,6 +212,7 @@ export const translations = {
     footerCreatorName: 'Killian Torrell',
     footerContact: 'Contacto',
     footerPortfolio: 'Portfolio Web',
+    footerBuyCoffee: 'Invítame a un café (Donaciones)',
     // Stats Modal
     navStatsModal: 'Estadísticas',
     navStatsDropdown: 'Estadísticas de Colección',
@@ -500,7 +501,7 @@ export const translations = {
     versionUnderstood: 'Got it',
 
     // Footer
-    footerDisclaimer: 'One Piece Card Game is a registered trademark of Eiichiro Oda / Shueisha, Toei Animation, and Bandai. Community fan tool with no commercial intent.',
+    footerDisclaimer: 'One Piece Card Game is a registered trademark of Eiichiro Oda / Shueisha, Toei Animation, and Bandai. Independent non-commercial fan project supported by voluntary community donations.',
     footerVersionLabel: 'Version',
     footerSemVerNote: 'SemVer WoW Standard',
     footerChangelog: 'Changelog',
@@ -508,6 +509,7 @@ export const translations = {
     footerCreatorName: 'Killian Torrell',
     footerContact: 'Contact',
     footerPortfolio: 'Web Portfolio',
+    footerBuyCoffee: 'Buy Me a Coffee (Donations)',
 
     // Themes
     themeDark: 'Dark Mode',
