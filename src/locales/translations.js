@@ -13,6 +13,11 @@ export const translations = {
     navSignIn: 'Entrar / Registro',
     navSignOut: 'Cerrar Sesión',
     navCloudSynced: 'Nube Conectada',
+    navMyProfile: 'Mi Perfil y Personalización',
+    navEditProfile: 'Editar',
+    navPreferences: 'Preferencias',
+    navLanguage: 'Idioma',
+    navTheme: 'Tema',
 
     // Binder
     binderExpansion: 'Expansión:',
@@ -190,6 +195,11 @@ export const translations = {
     navSignIn: 'Sign In / Register',
     navSignOut: 'Sign Out',
     navCloudSynced: 'Cloud Synced',
+    navMyProfile: 'My Profile & Customization',
+    navEditProfile: 'Edit',
+    navPreferences: 'Preferences',
+    navLanguage: 'Language',
+    navTheme: 'Theme',
 
     // Binder
     binderExpansion: 'Expansion:',

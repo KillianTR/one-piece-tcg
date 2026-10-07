@@ -8,11 +8,11 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Desarrollo Activo (Minor v0.4.0)
+* **Estado:** 🟢 En Desarrollo Activo (Patch v0.4.1)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.4.0` (Minor Update: User Profile Customization, 300x300 Avatar Upload & Light Mode Polish)
+* **Versión Actual:** `v0.4.1` (Patch Update: Header Redesign, User Dropdown Menu & Visual Decongestion)
 
 ---
 
@@ -130,7 +130,14 @@ Para mantener el repositorio de GitHub limpio y profesional:
 - [x] Favicon y logo vectorial blanco transparente estilizado.
 - [x] README bilingüe con selector de idioma y URL oficial de Vercel.
 
-### 🏁 v0.4.0 — Perfil de Usuario, Personalización, Admin Accounts & Header Fix (Versión Actual)
+### 🏁 v0.4.1 — Rediseño del Header & Menú Desplegable de Usuario (Versión Actual)
+- [x] Menú desplegable unificado en el avatar del usuario con tarjeta de perfil, nombre, correo y rango.
+- [x] Reubicación integrada de ajustes de Idioma (ES/EN) y Tema (Modo Claro/Oscuro) dentro del desplegable.
+- [x] Descongestión del header: distribución espaciosa en 3 zonas (Brand, Navegación central y Bloque de usuario).
+- [x] Cierre inteligente con detección de clic exterior y tecla Escape.
+- [x] Sincronización reactiva inmediata de foto de perfil y nombre en la barra de navegación mediante eventos personalizados.
+
+### 🏁 v0.4.0 — Perfil de Usuario, Personalización, Admin Accounts & Header Fix
 - [x] Modal de Personalización de Perfil (`ProfileModal`).
 - [x] Subida de foto de perfil con Canvas 300x300 px y compresión WebP/JPEG (~25-35 KB).
 - [x] Advertencia obligatoria de Normas de la Comunidad y moderación.

@@ -10,6 +10,24 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
 
+## [0.4.1] - 2026-10-07
+### ⚓ Patch — Rediseño del Header, Menú Desplegable de Usuario y Descongestión Visual
+
+#### ✨ Nuevas Características & Mejoras de UX (Features & UI)
+* **Menú Desplegable de Usuario en el Avatar (User Dropdown Menu):**
+  * Descongestión del header: sustitución de múltiples botones independientes (idioma, tema, perfil, cerrar sesión) por un desplegable flotante unificado al hacer clic en el avatar.
+  * Tarjeta de usuario con avatar en alta definición, @nombre, email y rango pirata con icono de condecoración (`Award`).
+  * Acceso directo a "Mi Perfil y Personalización" para abrir el modal de perfil.
+  * Ajustes integrados: cambio rápido de idioma (ES / EN) y alternancia de Modo Oscuro / Modo Claro dentro del propio desplegable.
+  * Botón estilizado de "Cerrar Sesión".
+  * Cierre inteligente al pulsar fuera del menú o con la tecla `Escape`.
+* **Distribución Espaciosa del Header (3 Zonas):**
+  * **Zona Izquierda:** Logotipo de Grand Line Vault, insignia de versión clickeable y subtítulo.
+  * **Zona Central:** Pestañas de navegación (Álbum, Catálogo, Intercambios) con protagonismo y espacio para respirar.
+  * **Zona Derecha:** Píldora de estadísticas (`Colección: X | Wishlist: Y`) + separador vertical + Píldora interactiva de avatar con flecha indicadora.
+* **Sincronización Reactiva:**
+  * Evento global de actualización para sincronizar avatar, nombre y rango en la barra de navegación en tiempo real al guardar cambios en el perfil.
+
 ---
 
 ## [0.4.0] - 2026-10-07

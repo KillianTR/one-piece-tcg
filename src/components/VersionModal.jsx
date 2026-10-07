@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Sparkles, GitBranch } from 'lucide-react';
+import { X, Award, GitBranch } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 
@@ -20,7 +20,7 @@ export default function VersionModal({ isOpen, onClose }) {
         <div className="flex items-center justify-between pb-4 border-b border-neutral-800/80">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-lg bg-amber-500/10 text-amber-500 border border-amber-500/20">
-              <Sparkles className="w-5 h-5" />
+              <Award className="w-5 h-5" />
             </div>
             <div>
               <h2 className={`text-xl font-bold tracking-wide ${isDark ? 'text-white' : 'text-neutral-900'}`}>
@@ -48,7 +48,7 @@ export default function VersionModal({ isOpen, onClose }) {
           <div>
             <span className="text-xs uppercase font-semibold text-neutral-400">{t('versionCurrentBadge')}</span>
             <div className="text-2xl font-mono font-extrabold text-amber-500">
-              v0.4.0 <span className="text-xs font-normal text-neutral-400 ml-2">(Minor: User Profile & Customization)</span>
+              v0.4.1 <span className="text-xs font-normal text-neutral-400 ml-2">(Patch: Header Redesign, User Dropdown & Spacing)</span>
             </div>
           </div>
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-medium">

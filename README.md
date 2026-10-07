@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Versión](https://img.shields.io/badge/version-v0.4.0--minor-amber?style=for-the-badge&logo=git)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/version-v0.4.1--patch-amber?style=for-the-badge&logo=git)](CHANGELOG.md)
 [![Web en Vivo](https://img.shields.io/badge/Live_Demo-grand--line--vault--tcg.vercel.app-000000?style=for-the-badge&logo=vercel)](https://grand-line-vault-tcg.vercel.app)
 [![Portfolio](https://img.shields.io/badge/Creator-Killian_Torrell-000000?style=for-the-badge&logo=vercel)](https://killiantr.vercel.app)
 [![Supabase](https://img.shields.io/badge/Supabase-Auth%20&%20PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
@@ -62,7 +62,8 @@
 * Tus cartas se guardan en una base de datos PostgreSQL protegida por políticas **RLS (Row Level Security)**.
 * Si navegas como invitado y decides registrarte, tus cartas locales se migran a la nube automáticamente.
 
-#### 👤 7. Perfil y Personalización de Usuario
+#### 👤 7. Perfil de Usuario y Menú Desplegable
+* **Menú Desplegable en el Avatar:** Descongestiona el header agrupando perfil, resumen de coleccionista, conmutador de tema e idioma y cierre de sesión en una tarjeta flotante elegante al hacer clic en tu avatar.
 * **Nombre de Usuario (@username):** Nombres únicos verificados contra la base de datos, con política de cambio restringido a una vez cada 30 días.
 * **Foto de Perfil (300x300 px):** Subida y compresión en cliente a WebP/JPEG (~25-35 KB) con aro de coleccionista pirata y advertencia de moderación comunitaria.
 * **Identidad Pirata:** Nombre y apellidos opcionales, rangos de coleccionista (*Novato del East Blue*, *Peor Generación*, *Shichibukai*, *Rey de los Piratas*) y biografía personalizada.
@@ -137,7 +138,8 @@ npm run dev
 * Your cards are securely stored in a cloud PostgreSQL database guarded by **Row Level Security (RLS)**.
 * Guest collections in local storage are automatically migrated upon sign-up.
 
-#### 👤 7. User Profile & Customization
+#### 👤 7. User Profile & Dropdown Menu
+* **User Avatar Dropdown Menu:** Decongests the header by combining profile settings, collection snapshot, theme & language switches, and secure sign-out into a floating glassmorphic card upon clicking the avatar.
 * **Username (@username):** Unique database-verified usernames with a strict 30-day change cooldown policy.
 * **Profile Picture (300x300 px):** Client-side Canvas crop and compression to WebP/JPEG (~25-35 KB) with community moderation safeguards.
 * **Pirate Identity:** Optional full name, custom pirate ranks (*East Blue Rookie*, *Worst Generation*, *Warlord of the Sea*, *Pirate King*), and bio.

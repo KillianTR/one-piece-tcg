@@ -222,6 +222,9 @@ export default function ProfileModal({ isOpen, onClose }) {
       setInitialUsername(updated.username);
       setCooldown(checkUsernameCooldown(updated.username_changed_at, user.email));
 
+      // Dispatch event to sync avatar and username immediately with Navbar
+      window.dispatchEvent(new CustomEvent('profile-updated', { detail: updated }));
+
       // Trigger celebratory mini confetti
       confetti({
         particleCount: 45,
