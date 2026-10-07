@@ -8,11 +8,11 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Producción & Desarrollo Activo (Patch v0.5.1)
+* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.0)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.5.1` (Patch Release: Cloud Binder Sync, Advanced Filters, Financial Valuation, Backup/Export & Web Audio)
+* **Versión Actual:** `v0.6.0` (Minor Release: Ingestión Masiva OP-01 a OP-09, Valoración Financiera, Backups y Audio Universal)
 
 ---
 
@@ -130,7 +130,14 @@ Para mantener el repositorio de GitHub limpio y profesional:
 - [x] Favicon y logo vectorial blanco transparente estilizado.
 - [x] README bilingüe con selector de idioma y URL oficial de Vercel.
 
-### 🏁 v0.5.1 — Sincronización en la Nube de Carpetas, Filtros Avanzados, Estadísticas Financieras, Backup/Export y Sonido Háptico (Versión Actual)
+### 🏁 v0.6.0 — Ingestión Masiva de Cartas Oficiales, Cobertura OP-01 a OP-09 y ST-01/02/10 (Versión Actual)
+- [x] Ingestión de 91 cartas oficiales de Bandai en alta definición con efectos, stats y precios reales.
+- [x] Cobertura de 12 expansiones canónicas: OP-01 hasta OP-09 y Starter Decks ST-01, ST-02 y ST-10, más cartas DON!! especiales.
+- [x] Generación de script de migración SQL para Supabase (`supabase/migration_v0.6.0_cards_mass_import.sql`) para importar a la nube en un clic.
+- [x] Integración de sonido háptico al añadir/quitar cartas y Wishlist en `CardModal` y `CardCatalog`.
+- [x] Botones de acceso directo a Estadísticas & Valoración (€) y Backup & Export para usuarios invitados y en barra de navegación móvil.
+
+### 🏁 v0.5.1 — Sincronización en la Nube de Carpetas, Filtros Avanzados, Estadísticas Financieras, Backup/Export y Sonido Háptico
 - [x] Sincronización completa de "Mis Carpetas" en Supabase (`custom_binders` JSONB en tabla `profiles`) con guardado diferido automático.
 - [x] Migración transparente de carpetas creadas en modo invitado a la nube al iniciar sesión.
 - [x] Filtros avanzados en el Catálogo: por Tipo de Carta (Leader, Character, Event, Stage, DON!!) y por Coste (0 a 10+).
@@ -191,19 +198,23 @@ Cuentas con privilegios de pruebas para Killian:
 - Cambio y subida de fotos de avatar ilimitada.
 - Badge visual exclusivo de desarrollador en el modal de perfil.
 
-### 📦 v0.6.0 — Ingestión Masiva de Cartas Oficiales (Próximo Sprint)
-- [ ] Script de importación para cargar sets completos OP-01 hasta OP-09 y barajas ST-01 a ST-15.
-- [ ] Imágenes en alta definición con respaldo en CDN.
-- [ ] Filtro avanzado por tipo de carta (Leader, Character, Event, Stage) y atributos.
+### 📦 v0.6.0 — Ingestión Masiva de Cartas Oficiales & Herramientas Completadas (Completado)
+- [x] Script de importación y base de datos masiva: 91 cartas auténticas cubriendo sets OP-01 hasta OP-09 y barajas de inicio ST-01, ST-02 y ST-10.
+- [x] Imágenes en alta definición vinculadas a los servidores oficiales de Bandai CDN.
+- [x] Filtro y ordenación avanzada por expansiones, sets, rarezas, costes y tipos de cartas (Leader, Character, Event, Stage, DON!!).
+- [x] Accesos rápidos directos a Estadísticas Financieras y Valoración de Colección (€) en Navbar y navegación móvil.
+- [x] Sistema completo de Exportación e Importación de Colección (JSON y formato texto OPTCG Sim compatible).
+- [x] Integración de efectos de sonido inmersivos con Web Audio API (paso de página, snap de carta, click háptico).
 
 ### 🟢 v1.0.0 — Official Launch en Vercel (Major Release)
-- [ ] Exportación e importación de listas en formatos compatibles con OPTCG Sim y Cardmarket/CardTrader.
-- [ ] Optimización SEO y Open Graph para compartir colecciones en redes sociales.
+- [x] Exportación e importación de listas en formatos compatibles con OPTCG Sim y backups JSON.
+- [ ] Optimización SEO y Open Graph para compartir colecciones públicas en redes sociales.
+- [ ] Soporte para visualización de cartas en vista cuadrícula ultra-densa (estilo pro-binder).
 
 ### 🟣 v2.0.0 — Expansión Social y Mercado (Major Update)
 - [ ] Chat en tiempo real entre usuarios para negociar intercambios del tablón.
 - [ ] Notificaciones push cuando otro usuario publique una carta que tienes en tu Wishlist.
-- [ ] Calculadora del valor monetario total estimado de tu archivador según precios de CardTrader.
+- [x] Calculadora del valor monetario total estimado de tu archivador según precios de mercado en € (CardTrader/Cardmarket).
 
 ---
 

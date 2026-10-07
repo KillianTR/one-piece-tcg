@@ -4,6 +4,7 @@ import { useCollection } from '../context/CollectionContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { RARITIES, COLORS, CARDTRADER_BASE_URL } from '../data/mockCards';
+import { playCardSnapSound } from '../utils/audioEffects';
 
 export default function CardModal() {
   const { selectedCard, setSelectedCard, addCard, removeCard, toggleWishlist, getCardCount, isCardWishlisted } = useCollection();
@@ -178,7 +179,10 @@ export default function CardModal() {
                 <span className="text-sm font-medium">{t('cardInCollection')}</span>
                 <div className={`flex items-center gap-2 border rounded-xl p-1 ${isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'}`}>
                   <button
-                    onClick={() => removeCard(selectedCard.id)}
+                    onClick={() => {
+                      removeCard(selectedCard.id);
+                      playCardSnapSound();
+                    }}
                     disabled={count === 0}
                     className="p-1.5 rounded-lg disabled:opacity-30 transition"
                   >
@@ -188,7 +192,10 @@ export default function CardModal() {
                     {count}
                   </span>
                   <button
-                    onClick={() => addCard(selectedCard.id)}
+                    onClick={() => {
+                      addCard(selectedCard.id);
+                      playCardSnapSound();
+                    }}
                     className="p-1.5 rounded-lg text-amber-500 hover:text-amber-400 transition"
                   >
                     <Plus className="w-4 h-4" />
@@ -203,7 +210,10 @@ export default function CardModal() {
 
               {/* Wishlist Button */}
               <button
-                onClick={() => toggleWishlist(selectedCard.id)}
+                onClick={() => {
+                  toggleWishlist(selectedCard.id);
+                  playCardSnapSound();
+                }}
                 className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold border transition ${
                   isWishlist
                     ? 'bg-amber-500/10 border-amber-500 text-amber-500'

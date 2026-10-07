@@ -10,6 +10,33 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
 
+## [0.6.0] - 2026-10-07
+### 📦 Minor Update — Ingestión Masiva de Cartas Oficiales, Cobertura Completa OP-01 a OP-09 y ST-01/ST-02/ST-10, Accesibilidad Total de Estadísticas y Backups
+
+#### ✨ Nuevas Características & Mejoras (Features & UI)
+* **Ingestión Masiva de Cartas Oficiales de One Piece TCG:**
+  * Ampliación del catálogo con cerca de 100 cartas auténticas con ilustraciones oficiales en alta resolución de Bandai.
+  * Cobertura de sets ampliada:
+    * **OP-01:** Romance Dawn
+    * **OP-02:** Paramount War (Whitebeard, Ace, Kuzan SEC, Borsalino, Uta SEC)
+    * **OP-03:** Pillars of Strength (Katakuri, Big Mom, Rob Lucci, Nami Alt-Win, Sogeking SEC)
+    * **OP-04:** Kingdoms of Intrigue (Vivi, Rebecca, Sabo, Corazon SEC)
+    * **OP-05:** Awakening of the New Era (Luffy Gear 5 SEC & Manga, Enel, Kid, Law)
+    * **OP-06:** Wings of the Captain (Zoro SEC & Manga, Gecko Moria, Perona, Reiju, Yamato)
+    * **OP-07:** 500 Years in the Future (Dragon, Bonney, Boa Hancock SEC & Manga, Lucci)
+    * **OP-08:** Two Legends (Chopper, Rayleigh SEC, Whitebeard SEC, Marco)
+    * **OP-09:** The Four Emperors (Blackbeard Teach, Buggy SEC & Manga, Shanks SEC, Gol.D.Roger SEC & Manga)
+    * **ST-01:** Straw Hat Crew (Luffy, Zoro, Sanji, Chopper, Nami, Brook)
+    * **ST-02:** Worst Generation (Kid, Killer, Bonney, Hawkins)
+    * **ST-10:** The Three Captains (Law, Luffy, Kid)
+    * **DON!! Cards:** Ilustraciones especiales (Gold Stamp, Manga Gear 5, Red Hair Pirates, Whitebeard Pirates, Blackbeard Darkness).
+* **Script de Migración SQL para Supabase (`supabase/migration_v0.6.0_cards_mass_import.sql`):**
+  * Script generado con todas las cartas estructuradas para inserción/actualización directa en la tabla `public.cards` de PostgreSQL.
+* **Integración Completa de Sonido Táctil Háptico:**
+  * Sonido de chasquido de funda (`playCardSnapSound`) conectado al añadir/quitar copias de cartas y al alternar la Wishlist en la ficha modal (`CardModal`) y en las acciones rápidas del catálogo (`CardCatalog`).
+* **Accesibilidad Universal para Estadísticas y Backups:**
+  * Añadidos botones directos de **Estadísticas & Valoración (€)** y **Copia de Seguridad & Exportar (JSON / OPTCG Sim)** en la barra de control para usuarios invitados y en la barra de navegación móvil para acceso instantáneo con un solo toque.
+
 ## [0.5.1] - 2026-10-07
 ### 💎 Patch — Sincronización en la Nube de Carpetas, Filtros Avanzados, Estadísticas Financieras, Backup/Export y Efectos de Sonido Hápticos
 

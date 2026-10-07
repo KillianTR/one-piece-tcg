@@ -521,7 +521,7 @@ export default function Navbar({
                       <Info className="w-3.5 h-3.5 text-amber-500" />
                       <span>{t('versionModalTitle') || 'Sistema SemVer'}</span>
                     </div>
-                    <span className="text-[10px] font-mono font-bold text-amber-500/90">v0.5.0 →</span>
+                    <span className="text-[10px] font-mono font-bold text-amber-500/90">v0.6.0 →</span>
                   </button>
 
                   <div className={`my-1 border-t ${isDark ? 'border-neutral-800' : 'border-neutral-200'}`} />
@@ -577,6 +577,36 @@ export default function Navbar({
                   EN
                 </button>
               </div>
+
+              {/* Estadísticas para invitados */}
+              <button
+                type="button"
+                onClick={() => setIsStatsModalOpen(true)}
+                className={`p-2 rounded-xl border transition cursor-pointer ${
+                  isDark 
+                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-emerald-400' 
+                    : 'bg-neutral-100 border-neutral-200 text-neutral-700 hover:text-emerald-600'
+                }`}
+                title={t('navStatsDropdown') || 'Estadísticas'}
+                aria-label="Collection Stats"
+              >
+                <Coins className="w-4 h-4 text-emerald-500" />
+              </button>
+
+              {/* Copia de Seguridad para invitados */}
+              <button
+                type="button"
+                onClick={() => setIsBackupModalOpen(true)}
+                className={`p-2 rounded-xl border transition cursor-pointer ${
+                  isDark 
+                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-amber-400' 
+                    : 'bg-neutral-100 border-neutral-200 text-neutral-700 hover:text-amber-600'
+                }`}
+                title={t('navBackupDropdown') || 'Backup & Export'}
+                aria-label="Backup & Export"
+              >
+                <Database className="w-4 h-4 text-amber-500" />
+              </button>
 
               {/* Tema rápido para invitados */}
               <button
@@ -652,6 +682,28 @@ export default function Navbar({
         >
           <Repeat className="w-3.5 h-3.5" />
           {t('navTrades')}
+        </button>
+        <button
+          type="button"
+          onClick={() => setIsStatsModalOpen(true)}
+          className={`flex items-center gap-1 py-1.5 px-2.5 rounded-lg font-bold cursor-pointer transition ${
+            isDark ? 'text-neutral-400 hover:text-emerald-400' : 'text-neutral-600 hover:text-emerald-600'
+          }`}
+          title={t('navStatsDropdown')}
+        >
+          <Coins className="w-3.5 h-3.5 text-emerald-500" />
+          <span>{t('navStatsModal')}</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => setIsBackupModalOpen(true)}
+          className={`flex items-center gap-1 py-1.5 px-2.5 rounded-lg font-bold cursor-pointer transition ${
+            isDark ? 'text-neutral-400 hover:text-amber-400' : 'text-neutral-600 hover:text-amber-600'
+          }`}
+          title={t('navBackupDropdown')}
+        >
+          <Database className="w-3.5 h-3.5 text-amber-500" />
+          <span>Backup</span>
         </button>
       </div>
 

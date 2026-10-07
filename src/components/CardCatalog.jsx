@@ -11,6 +11,7 @@ import { useCollection } from '../context/CollectionContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { SETS, COLORS, RARITIES, CARDTRADER_BASE_URL } from '../data/mockCards';
+import { playCardSnapSound } from '../utils/audioEffects';
 
 export default function CardCatalog() {
   const { 
@@ -412,7 +413,10 @@ export default function CardCatalog() {
                     isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
                   }`}>
                     <button
-                      onClick={() => removeCard(card.id)}
+                      onClick={() => {
+                        removeCard(card.id);
+                        playCardSnapSound();
+                      }}
                       disabled={count === 0}
                       className="p-1 hover:text-white text-neutral-400 disabled:opacity-20 transition"
                       title="Quitar"
@@ -423,7 +427,10 @@ export default function CardCatalog() {
                       {count}
                     </span>
                     <button
-                      onClick={() => addCard(card.id)}
+                      onClick={() => {
+                        addCard(card.id);
+                        playCardSnapSound();
+                      }}
                       className="p-1 hover:text-amber-400 text-neutral-400 transition"
                       title="Añadir"
                     >
@@ -433,7 +440,10 @@ export default function CardCatalog() {
 
                   <div className="flex items-center gap-1">
                     <button
-                      onClick={() => toggleWishlist(card.id)}
+                      onClick={() => {
+                        toggleWishlist(card.id);
+                        playCardSnapSound();
+                      }}
                       className={`p-1.5 rounded-lg border transition ${
                         wishlisted
                           ? 'bg-amber-500/20 border-amber-500/50 text-amber-400'

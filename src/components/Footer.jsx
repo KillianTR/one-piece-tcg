@@ -52,7 +52,7 @@ export default function Footer({ onOpenVersionModal }) {
                 isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
               }`}
             >
-              v0.5.1
+              v0.6.0
             </button>
             <span className="text-[11px] text-neutral-500">{t('footerSemVerNote')}</span>
           </div>
