@@ -12,6 +12,41 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 
 ---
 
+## [0.4.0] - 2026-10-07
+### 👤 Minor Update — Perfil de Usuario, Personalización, Subida de Avatar 300x300 & Header Modo Claro
+
+#### ✨ Nuevas Características (Features)
+* **Modal de Personalización de Perfil (`ProfileModal`):**
+  * Acceso directo haciendo clic en el avatar o nombre del usuario en la barra de navegación.
+  * **Nombre de Usuario (@username):**
+    * Validación de nombres únicos en Supabase (`public.profiles`).
+    * **Regla de 30 días:** Solo se puede cambiar el nombre de usuario una vez cada 30 días, bloqueando el campo con candado visual e indicando la fecha exacta del próximo cambio.
+  * **Subida y Procesamiento de Foto de Perfil (Avatar 300x300 px):**
+    * Carga de archivos PNG, JPG o WebP con redimensionado y recorte cuadrado automático a 300x300 mediante Canvas del navegador.
+    * Compresión inteligente a WebP/JPEG (~25-35 KB) para carga instantánea y nulo impacto en rendimiento.
+    * Borde dorado con aro de coleccionista pirata y opción de eliminar avatar.
+  * **Normas de la Comunidad y Advertencia de Moderación:**
+    * Mensaje explícito de tolerancia cero ante imágenes explícitas, violentas o protegidas, con advertencia de sanción o suspensión de cuenta.
+  * **Datos Personales Opcionales & Rango de Coleccionista:**
+    * Campo de Nombre y Apellidos opcional.
+    * Selector de Rango Pirata (*Novato del East Blue*, *Peor Generación*, *Guerrero del Mar*, *Comandante de Yonko*, *Rey de los Piratas*).
+    * Biografía o frase pirata personalizada de hasta 160 caracteres.
+  * **Seguridad & Correo Vinculado:**
+    * Visualización de correo asociado e insignia de Google OAuth.
+    * Cambio seguro de contraseña integrado con Supabase Auth.
+  * **Suscripción a Novedades (Newsletter):**
+    * Casilla de verificación para recibir avisos de nuevas funciones, salidas de cartas oficiales y eventos.
+* **Esquema de Base de Datos Supabase (`supabase/profiles_schema.sql`):**
+  * Tabla `public.profiles` con políticas RLS (lectura pública, escritura privada del propio usuario) y trigger automático para nuevos registros.
+
+#### 🐛 Correcciones y Mejoras Visuales (Fixes & UI)
+* **Header en Modo Claro:**
+  * Corrección de contraste: el header en modo claro ahora tiene fondo blanco nítido (`bg-white/95 border-neutral-200`) eliminando el tono gris oscuro accidental.
+* **Logo en Footer en Modo Claro:**
+  * Inversión de color adaptativa para el logo en modo claro.
+
+---
+
 ## [0.3.0] - 2026-10-07
 ### 🌐 Minor Update — Sistema Multi-Idioma (Español / Inglés) & Modo Claro / Oscuro
 

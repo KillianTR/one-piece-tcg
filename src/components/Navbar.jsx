@@ -17,19 +17,31 @@ import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 
-export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, onOpenAuthModal }) {
+export default function Navbar({ 
+  activeTab, 
+  setActiveTab, 
+  onOpenVersionModal, 
+  onOpenAuthModal,
+  onOpenProfileModal 
+}) {
   const { uniqueCardsOwned, totalWishlisted } = useCollection();
   const { user, signOut } = useAuth();
   const { language, setLanguage, t } = useLanguage();
   const { theme, toggleTheme, isDark } = useTheme();
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-neutral-950/90 dark:bg-neutral-950/90 light:bg-white/90 backdrop-blur-xl border-b border-neutral-800 dark:border-neutral-800 light:border-neutral-200 transition-colors">
+    <header className={`sticky top-0 z-40 w-full backdrop-blur-xl border-b transition-colors duration-200 ${
+      isDark 
+        ? 'bg-neutral-950/90 border-neutral-800' 
+        : 'bg-white/95 border-neutral-200 shadow-sm'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
         {/* Brand / Logo */}
         <div className="flex items-center gap-3 cursor-pointer shrink-0" onClick={() => setActiveTab('binder')}>
           <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-600 via-amber-500 to-yellow-400 p-0.5 shadow-lg shadow-amber-500/20 flex items-center justify-center">
-            <div className="w-full h-full bg-neutral-950 rounded-[14px] flex items-center justify-center p-1.5">
+            <div className={`w-full h-full rounded-[14px] flex items-center justify-center p-1.5 ${
+              isDark ? 'bg-neutral-950' : 'bg-neutral-900'
+            }`}>
               <img 
                 src="/one-piece-logo-white.webp" 
                 alt="Grand Line Vault Logo" 
@@ -39,7 +51,9 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-black text-lg sm:text-xl tracking-tight text-white dark:text-white light:text-neutral-900 flex items-center gap-1.5 font-sans">
+              <span className={`font-black text-lg sm:text-xl tracking-tight flex items-center gap-1.5 font-sans ${
+                isDark ? 'text-white' : 'text-neutral-900'
+              }`}>
                 GRAND LINE <span className="text-amber-500 dark:text-amber-400">VAULT</span>
               </span>
               {/* Clickable Version Badge */}
@@ -48,27 +62,39 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
                   e.stopPropagation();
                   onOpenVersionModal();
                 }}
-                className="group flex items-center gap-1 px-2 py-0.5 rounded-full bg-neutral-900 dark:bg-neutral-900 light:bg-neutral-100 border border-neutral-700/80 dark:border-neutral-700/80 light:border-neutral-300 hover:border-amber-500 text-[10px] font-mono font-bold text-amber-500 dark:text-amber-400 transition"
+                className={`group flex items-center gap-1 px-2 py-0.5 rounded-full border text-[10px] font-mono font-bold transition ${
+                  isDark 
+                    ? 'bg-neutral-900 border-neutral-700/80 hover:border-amber-500 text-amber-400' 
+                    : 'bg-amber-50 border-amber-200 hover:border-amber-400 text-amber-800'
+                }`}
                 title={t('versionCurrentBadge')}
               >
-                <span>v0.3.0</span>
-                <Info className="w-3 h-3 text-neutral-400 group-hover:text-amber-400" />
+                <span>v0.4.0</span>
+                <Info className={`w-3 h-3 ${isDark ? 'text-neutral-400 group-hover:text-amber-400' : 'text-amber-600'}`} />
               </button>
             </div>
-            <p className="text-[10px] uppercase tracking-widest text-neutral-400 font-semibold hidden sm:block">
+            <p className={`text-[10px] uppercase tracking-widest font-semibold hidden sm:block ${
+              isDark ? 'text-neutral-400' : 'text-neutral-500'
+            }`}>
               {t('brandTagline')}
             </p>
           </div>
         </div>
 
         {/* Navigation Tabs (Desktop) */}
-        <nav className="hidden lg:flex items-center gap-1 bg-neutral-900/90 dark:bg-neutral-900/90 light:bg-neutral-100 p-1.5 rounded-2xl border border-neutral-800 dark:border-neutral-800 light:border-neutral-300">
+        <nav className={`hidden lg:flex items-center gap-1 p-1.5 rounded-2xl border transition ${
+          isDark 
+            ? 'bg-neutral-900/90 border-neutral-800' 
+            : 'bg-neutral-100 border-neutral-200'
+        }`}>
           <button
             onClick={() => setActiveTab('binder')}
             className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition ${
               activeTab === 'binder'
                 ? 'bg-amber-500 text-neutral-950 shadow-md shadow-amber-500/20'
-                : 'text-neutral-400 dark:text-neutral-400 light:text-neutral-600 hover:text-white dark:hover:text-white light:hover:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-800 light:hover:bg-neutral-200'
+                : isDark 
+                  ? 'text-neutral-400 hover:text-white hover:bg-neutral-800' 
+                  : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/80'
             }`}
           >
             <BookOpen className="w-4 h-4" />
@@ -80,7 +106,9 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
             className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition ${
               activeTab === 'catalog'
                 ? 'bg-amber-500 text-neutral-950 shadow-md shadow-amber-500/20'
-                : 'text-neutral-400 dark:text-neutral-400 light:text-neutral-600 hover:text-white dark:hover:text-white light:hover:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-800 light:hover:bg-neutral-200'
+                : isDark 
+                  ? 'text-neutral-400 hover:text-white hover:bg-neutral-800' 
+                  : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/80'
             }`}
           >
             <Grid className="w-4 h-4" />
@@ -92,7 +120,9 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
             className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition ${
               activeTab === 'trades'
                 ? 'bg-amber-500 text-neutral-950 shadow-md shadow-amber-500/20'
-                : 'text-neutral-400 dark:text-neutral-400 light:text-neutral-600 hover:text-white dark:hover:text-white light:hover:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-800 light:hover:bg-neutral-200'
+                : isDark 
+                  ? 'text-neutral-400 hover:text-white hover:bg-neutral-800' 
+                  : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/80'
             }`}
           >
             <Repeat className="w-4 h-4" />
@@ -103,30 +133,38 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
         {/* Right Controls: Stats, Language, Theme & Auth */}
         <div className="flex items-center gap-2">
           {/* Quick Stats Pill (Desktop) */}
-          <div className="hidden xl:flex items-center gap-3 bg-neutral-900 dark:bg-neutral-900 light:bg-neutral-100 border border-neutral-800 dark:border-neutral-800 light:border-neutral-300 px-3 py-1.5 rounded-2xl text-xs">
+          <div className={`hidden xl:flex items-center gap-3 border px-3 py-1.5 rounded-2xl text-xs ${
+            isDark 
+              ? 'bg-neutral-900 border-neutral-800' 
+              : 'bg-neutral-100 border-neutral-200'
+          }`}>
             <div className="flex items-center gap-1.5" title={t('navCollection')}>
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span className="text-neutral-400 text-[11px]">{t('navCollection')}:</span>
-              <strong className="text-white dark:text-white light:text-neutral-900 font-mono">{uniqueCardsOwned}</strong>
+              <span className={`text-[11px] ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>{t('navCollection')}:</span>
+              <strong className={`font-mono ${isDark ? 'text-white' : 'text-neutral-900'}`}>{uniqueCardsOwned}</strong>
             </div>
 
-            <div className="w-px h-3.5 bg-neutral-800 dark:bg-neutral-800 light:bg-neutral-300" />
+            <div className={`w-px h-3.5 ${isDark ? 'bg-neutral-800' : 'bg-neutral-200'}`} />
 
             <div className="flex items-center gap-1.5" title={t('navWishlist')}>
               <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-              <span className="text-neutral-400 text-[11px]">{t('navWishlist')}:</span>
+              <span className={`text-[11px] ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>{t('navWishlist')}:</span>
               <strong className="text-amber-500 dark:text-amber-400 font-mono">{totalWishlisted}</strong>
             </div>
           </div>
 
           {/* LANGUAGE TOGGLE BUTTON (ES / EN) */}
-          <div className="flex items-center bg-neutral-900 dark:bg-neutral-900 light:bg-neutral-100 border border-neutral-800 dark:border-neutral-800 light:border-neutral-300 p-0.5 rounded-xl text-xs font-bold">
+          <div className={`flex items-center border p-0.5 rounded-xl text-xs font-bold ${
+            isDark 
+              ? 'bg-neutral-900 border-neutral-800' 
+              : 'bg-neutral-100 border-neutral-200'
+          }`}>
             <button
               onClick={() => setLanguage('es')}
               className={`px-2 py-1 rounded-lg transition ${
                 language === 'es'
                   ? 'bg-amber-500 text-neutral-950 shadow-sm'
-                  : 'text-neutral-400 hover:text-white dark:hover:text-white light:hover:text-neutral-900'
+                  : isDark ? 'text-neutral-400 hover:text-white' : 'text-neutral-600 hover:text-neutral-900'
               }`}
               title="Español"
             >
@@ -137,7 +175,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
               className={`px-2 py-1 rounded-lg transition ${
                 language === 'en'
                   ? 'bg-amber-500 text-neutral-950 shadow-sm'
-                  : 'text-neutral-400 hover:text-white dark:hover:text-white light:hover:text-neutral-900'
+                  : isDark ? 'text-neutral-400 hover:text-white' : 'text-neutral-600 hover:text-neutral-900'
               }`}
               title="English"
             >
@@ -148,7 +186,11 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
           {/* THEME TOGGLE BUTTON (Dark / Light Mode) */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-xl bg-neutral-900 dark:bg-neutral-900 light:bg-neutral-100 border border-neutral-800 dark:border-neutral-800 light:border-neutral-300 text-neutral-300 dark:text-neutral-300 light:text-neutral-700 hover:text-amber-400 transition"
+            className={`p-2 rounded-xl border transition ${
+              isDark 
+                ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-amber-400' 
+                : 'bg-neutral-100 border-neutral-200 text-neutral-700 hover:text-amber-600'
+            }`}
             title={isDark ? t('themeLight') : t('themeDark')}
             aria-label="Toggle Theme"
           >
@@ -157,8 +199,16 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
 
           {/* User Auth Button */}
           {user ? (
-            <div className="flex items-center gap-1.5 bg-neutral-900 dark:bg-neutral-900 light:bg-neutral-100 border border-neutral-800 dark:border-neutral-800 light:border-neutral-300 p-1 rounded-2xl">
-              <div className="flex items-center gap-1.5 px-2 text-xs">
+            <div className={`flex items-center gap-1.5 border p-1 rounded-2xl ${
+              isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-200'
+            }`}>
+              <button 
+                onClick={onOpenProfileModal}
+                className={`flex items-center gap-1.5 px-2 py-0.5 rounded-xl text-xs transition cursor-pointer hover:bg-neutral-800/50 ${
+                  isDark ? 'hover:bg-neutral-800 text-neutral-200' : 'hover:bg-neutral-200/60 text-neutral-800'
+                }`}
+                title="Configurar Perfil / Profile Settings"
+              >
                 {user.user_metadata?.avatar_url || user.user_metadata?.picture ? (
                   <img
                     src={user.user_metadata?.avatar_url || user.user_metadata?.picture}
@@ -169,14 +219,18 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
                 ) : (
                   <Cloud className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                 )}
-                <span className="text-neutral-200 dark:text-neutral-200 light:text-neutral-800 font-medium max-w-[120px] truncate" title={user.email}>
-                  {user.user_metadata?.full_name || user.user_metadata?.name || user.email?.split('@')[0]}
+                <span className="font-semibold max-w-[110px] truncate" title={user.email}>
+                  {user.user_metadata?.username || user.user_metadata?.full_name || user.user_metadata?.name || user.email?.split('@')[0]}
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" title="Conectado a la nube" />
-              </div>
+              </button>
               <button
                 onClick={() => signOut()}
-                className="p-1.5 hover:bg-neutral-800 dark:hover:bg-neutral-800 light:hover:bg-neutral-200 text-neutral-400 hover:text-rose-400 rounded-xl transition"
+                className={`p-1.5 rounded-xl transition ${
+                  isDark 
+                    ? 'hover:bg-neutral-800 text-neutral-400 hover:text-rose-400' 
+                    : 'hover:bg-neutral-200 text-neutral-500 hover:text-rose-600'
+                }`}
                 title={t('navSignOut')}
               >
                 <LogOut className="w-4 h-4" />
@@ -185,7 +239,11 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
           ) : (
             <button
               onClick={onOpenAuthModal}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-neutral-900 dark:bg-neutral-900 light:bg-neutral-100 hover:bg-neutral-800 dark:hover:bg-neutral-800 light:hover:bg-neutral-200 border border-neutral-700/70 dark:border-neutral-700/70 light:border-neutral-300 text-xs font-bold text-amber-500 dark:text-amber-400 transition shadow-sm whitespace-nowrap"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-2xl border text-xs font-bold transition shadow-sm whitespace-nowrap ${
+                isDark 
+                  ? 'bg-neutral-900 hover:bg-neutral-800 border-neutral-700/70 text-amber-400' 
+                  : 'bg-neutral-100 hover:bg-neutral-200 border-neutral-300 text-amber-700'
+              }`}
             >
               <User className="w-3.5 h-3.5" />
               <span>{t('navSignIn')}</span>
@@ -195,13 +253,17 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
       </div>
 
       {/* Mobile Sub-Navigation Bar */}
-      <div className="lg:hidden flex items-center justify-around p-2 bg-neutral-900 dark:bg-neutral-900 light:bg-neutral-100 border-t border-neutral-800 dark:border-neutral-800 light:border-neutral-300 text-xs">
+      <div className={`lg:hidden flex items-center justify-around p-2 border-t text-xs ${
+        isDark 
+          ? 'bg-neutral-900 border-neutral-800' 
+          : 'bg-white border-neutral-200'
+      }`}>
         <button
           onClick={() => setActiveTab('binder')}
           className={`flex items-center gap-1.5 py-1.5 px-3 rounded-lg font-bold ${
             activeTab === 'binder' 
-              ? 'text-amber-500 dark:text-amber-400 bg-neutral-950 dark:bg-neutral-950 light:bg-white shadow-sm' 
-              : 'text-neutral-400 light:text-neutral-600'
+              ? isDark ? 'text-amber-400 bg-neutral-950 shadow-sm' : 'text-amber-700 bg-amber-50 shadow-sm'
+              : isDark ? 'text-neutral-400' : 'text-neutral-600'
           }`}
         >
           <BookOpen className="w-3.5 h-3.5" />
@@ -211,8 +273,8 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
           onClick={() => setActiveTab('catalog')}
           className={`flex items-center gap-1.5 py-1.5 px-3 rounded-lg font-bold ${
             activeTab === 'catalog' 
-              ? 'text-amber-500 dark:text-amber-400 bg-neutral-950 dark:bg-neutral-950 light:bg-white shadow-sm' 
-              : 'text-neutral-400 light:text-neutral-600'
+              ? isDark ? 'text-amber-400 bg-neutral-950 shadow-sm' : 'text-amber-700 bg-amber-50 shadow-sm'
+              : isDark ? 'text-neutral-400' : 'text-neutral-600'
           }`}
         >
           <Grid className="w-3.5 h-3.5" />
@@ -222,8 +284,8 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
           onClick={() => setActiveTab('trades')}
           className={`flex items-center gap-1.5 py-1.5 px-3 rounded-lg font-bold ${
             activeTab === 'trades' 
-              ? 'text-amber-500 dark:text-amber-400 bg-neutral-950 dark:bg-neutral-950 light:bg-white shadow-sm' 
-              : 'text-neutral-400 light:text-neutral-600'
+              ? isDark ? 'text-amber-400 bg-neutral-950 shadow-sm' : 'text-amber-700 bg-amber-50 shadow-sm'
+              : isDark ? 'text-neutral-400' : 'text-neutral-600'
           }`}
         >
           <Repeat className="w-3.5 h-3.5" />

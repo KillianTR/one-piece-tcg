@@ -10,12 +10,14 @@ import TradeBoard from './components/TradeBoard';
 import CardModal from './components/CardModal';
 import VersionModal from './components/VersionModal';
 import AuthModal from './components/AuthModal';
+import ProfileModal from './components/ProfileModal';
 import Footer from './components/Footer';
 
 function MainApp() {
   const [activeTab, setActiveTab] = useState('binder'); // 'binder' | 'catalog' | 'trades'
   const [isVersionModalOpen, setIsVersionModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const { isDark } = useTheme();
 
   return (
@@ -29,6 +31,7 @@ function MainApp() {
           setActiveTab={setActiveTab} 
           onOpenVersionModal={() => setIsVersionModalOpen(true)}
           onOpenAuthModal={() => setIsAuthModalOpen(true)}
+          onOpenProfileModal={() => setIsProfileModalOpen(true)}
         />
 
         {/* Main Workspace Views */}
@@ -52,6 +55,12 @@ function MainApp() {
       <AuthModal 
         isOpen={isAuthModalOpen} 
         onClose={() => setIsAuthModalOpen(false)} 
+      />
+
+      {/* User Profile Customization Modal */}
+      <ProfileModal 
+        isOpen={isProfileModalOpen} 
+        onClose={() => setIsProfileModalOpen(false)} 
       />
 
       {/* Footer */}

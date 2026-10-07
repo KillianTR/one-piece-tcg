@@ -18,7 +18,7 @@ export default function Footer({ onOpenVersionModal }) {
             <img 
               src="/one-piece-logo-white.webp" 
               alt="Grand Line Vault Logo" 
-              className="w-5 h-5 object-contain filter invert-0 dark:invert-0 light:invert" 
+              className={`w-5 h-5 object-contain filter ${isDark ? '' : 'invert'}`} 
             />
             <span className={`font-bold tracking-wide ${isDark ? 'text-white' : 'text-neutral-900'}`}>
               GRAND LINE VAULT
@@ -33,7 +33,7 @@ export default function Footer({ onOpenVersionModal }) {
                 isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
               }`}
             >
-              v0.3.0 (Minor)
+              v0.4.0 (Minor)
             </button>
             <span className="text-[11px] text-neutral-500">{t('footerSemVerNote')}</span>
           </div>

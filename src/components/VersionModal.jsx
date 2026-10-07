@@ -48,7 +48,7 @@ export default function VersionModal({ isOpen, onClose }) {
           <div>
             <span className="text-xs uppercase font-semibold text-neutral-400">{t('versionCurrentBadge')}</span>
             <div className="text-2xl font-mono font-extrabold text-amber-500">
-              v0.3.0 <span className="text-xs font-normal text-neutral-400 ml-2">(Minor: Bilingual i18n & Theme System)</span>
+              v0.4.0 <span className="text-xs font-normal text-neutral-400 ml-2">(Minor: User Profile & Customization)</span>
             </div>
           </div>
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-medium">
@@ -82,7 +82,7 @@ export default function VersionModal({ isOpen, onClose }) {
               isDark ? 'bg-neutral-950/60 border-amber-500/20' : 'bg-neutral-50 border-amber-300'
             }`}>
               <div className="flex items-center gap-2 text-amber-500 font-bold mb-1">
-                <span className="text-lg font-mono">0 . 3 . 0</span>
+                <span className="text-lg font-mono">0 . 4 . 0</span>
               </div>
               <h4 className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>{t('versionMinorTitle')}</h4>
               <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
@@ -113,7 +113,7 @@ export default function VersionModal({ isOpen, onClose }) {
           <div>
             <span className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>{t('versionGitTipTitle')}</span>
             <p className="mt-0.5 text-neutral-400">
-              {t('versionGitTipDesc')}
+              Cada nueva feature se trabaja en su rama dedicada (ej. <code className="text-amber-400">feature/user-profiles-v0.4.0</code>) y se fusiona a main.
             </p>
           </div>
         </div>

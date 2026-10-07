@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Versión](https://img.shields.io/badge/version-v0.3.0--minor-amber?style=for-the-badge&logo=git)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/version-v0.4.0--minor-amber?style=for-the-badge&logo=git)](CHANGELOG.md)
 [![Web en Vivo](https://img.shields.io/badge/Live_Demo-grand--line--vault--tcg.vercel.app-000000?style=for-the-badge&logo=vercel)](https://grand-line-vault-tcg.vercel.app)
 [![Supabase](https://img.shields.io/badge/Supabase-Auth%20&%20PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
@@ -60,22 +60,28 @@
 * Tus cartas se guardan en una base de datos PostgreSQL protegida por políticas **RLS (Row Level Security)**.
 * Si navegas como invitado y decides registrarte, tus cartas locales se migran a la nube automáticamente.
 
+#### 👤 7. Perfil y Personalización de Usuario
+* **Nombre de Usuario (@username):** Nombres únicos verificados contra la base de datos, con política de cambio restringido a una vez cada 30 días.
+* **Foto de Perfil (300x300 px):** Subida y compresión en cliente a WebP/JPEG (~25-35 KB) con aro de coleccionista pirata y advertencia de moderación comunitaria.
+* **Identidad Pirata:** Nombre y apellidos opcionales, rangos de coleccionista (*Novato del East Blue*, *Peor Generación*, *Shichibukai*, *Rey de los Piratas*) y biografía personalizada.
+* **Seguridad y Boletín:** Vinculación con Google OAuth, cambio de contraseña y suscripción opcional a novedades de cartas y plataforma.
+
 ---
 
 ### 🏷️ Sistema de Versionado SemVer (Estilo Blizzard / WoW)
 
-El proyecto sigue una nomenclatura estricta basada en tres cifras: **`MAJOR . MINOR . PATCH`** (ejemplo: `0.3.0`):
+El proyecto sigue una nomenclatura estricta basada en tres cifras: **`MAJOR . MINOR . PATCH`** (ejemplo: `0.4.0`):
 
 ```
        ┌─────────── MAJOR : Gran actualización / Expansión (como en World of Warcraft)
        │ ┌───────── MINOR : Nueva funcionalidad o módulo sin romper compatibilidad
        │ │ ┌─────── PATCH : Hotfix, reparación de bugs o parche rápido
        ▼ ▼ ▼
-       0 . 3 . 0
+       0 . 4 . 0
 ```
 
 1. **MAJOR (`1.0.0` / `2.0.0`):** Expansiones de contenido, salto a versión oficial o cambios estructurales mayores.
-2. **MINOR (`0.3.0`):** Nuevas funcionalidades (ej. Multi-idioma, Modo Oscuro/Claro, Auth con Supabase).
+2. **MINOR (`0.4.0`):** Nuevas funcionalidades (ej. Perfil de Usuario, Multi-idioma, Modo Oscuro/Claro, Auth con Supabase).
 3. **PATCH (`0.0.1`):** Hotfixes, correcciones rápidas de bugs y pequeños parches.
 
 ---
@@ -146,14 +152,20 @@ npm run dev
 * Your cards are securely stored in a cloud PostgreSQL database guarded by **Row Level Security (RLS)**.
 * Guest collections in local storage are automatically migrated upon sign-up.
 
+#### 👤 7. User Profile & Customization
+* **Username (@username):** Unique database-verified usernames with a strict 30-day change cooldown policy.
+* **Profile Picture (300x300 px):** Client-side Canvas crop and compression to WebP/JPEG (~25-35 KB) with community moderation safeguards.
+* **Pirate Identity:** Optional full name, custom pirate ranks (*East Blue Rookie*, *Worst Generation*, *Warlord of the Sea*, *Pirate King*), and bio.
+* **Security & Newsletter:** Google OAuth status badge, password updates, and optional email notifications for new card releases and app features.
+
 ---
 
 ### 🏷️ Semantic Versioning (Blizzard / WoW Style)
 
-The project adheres to strict Semantic Versioning: **`MAJOR . MINOR . PATCH`** (e.g., `0.3.0`):
+The project adheres to strict Semantic Versioning: **`MAJOR . MINOR . PATCH`** (e.g., `0.4.0`):
 
 * **MAJOR (`1.0.0` / `2.0.0`):** Expansions, public launch milestones, and database schema migrations.
-* **MINOR (`0.3.0`):** Substantial feature additions (Bilingual i18n, Theme System, Supabase Auth).
+* **MINOR (`0.4.0`):** Substantial feature additions (User Profile Customization, Bilingual i18n, Theme System, Supabase Auth).
 * **PATCH (`0.0.1`):** Hotfixes, style adjustments, and quick code patches.
 
 ---
