@@ -8,7 +8,7 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Estado:** 🟢 En Desarrollo Activo (Minor v0.3.0)
-* **Despliegue Oficial:** Vercel (`https://grandlinevault-tcg.vercel.app`)
+* **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Stack Principal:** React 19 + Vite + Tailwind CSS v4 + Supabase + Vercel
 * **Versión Actual:** `v0.3.0` (Minor Update: Bilingual i18n & Theme System)
 
