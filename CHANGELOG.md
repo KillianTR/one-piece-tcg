@@ -12,6 +12,23 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 
 ---
 
+## [0.3.0] - 2026-10-07
+### 🌐 Minor Update — Sistema Multi-Idioma (Español / Inglés) & Modo Claro / Oscuro
+
+#### ✨ Nuevas Características (Features)
+* **Soporte Bilingüe Completo (Español / English):**
+  * Selector de idioma en la barra de navegación (`ES` / `EN`) con persistencia en `localStorage`.
+  * Traducción completa de todos los módulos: Álbum Virtual, Catálogo de Cartas, Ficha Técnica, Tablón de Intercambios, Modales de Autenticación y Versionado, y Pie de Página.
+  * Detección automática del idioma del navegador del usuario.
+* **Sistema de Temas: Modo Oscuro & Modo Claro:**
+  * Selector de tema en la barra de navegación (icono Sol / Luna) con persistencia en `localStorage`.
+  * **Modo Oscuro (Vault X Black Edition):** Textura de piel negra, pespunte dorado y fundas transparentes ahumadas.
+  * **Modo Claro (Vault X White Edition):** Textura de piel marfil/blanca, pespunte dorado y contraste nítido adaptado a navegación diurna.
+* **Actualización del README:**
+  * README bilingüe (Español e Inglés) y corrección de la URL de despliegue oficial a `https://grand-line-vault-tcg.vercel.app`.
+
+---
+
 ## [0.2.0] - 2026-10-07
 ### ⚡ Minor Update — Integración de Supabase (Auth & Base de Datos en la Nube)
 

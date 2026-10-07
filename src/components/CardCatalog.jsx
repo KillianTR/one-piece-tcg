@@ -1,25 +1,22 @@
 import React, { useState, useMemo } from 'react';
 import { 
   Search, 
-  Filter, 
   Plus, 
   Minus, 
   Star, 
   ExternalLink, 
-  Sparkles, 
-  Check, 
-  Eye, 
-  X,
-  SlidersHorizontal 
+  X
 } from 'lucide-react';
 import { useCollection } from '../context/CollectionContext';
+import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 import { SETS, COLORS, RARITIES, CARDTRADER_BASE_URL } from '../data/mockCards';
 
 export default function CardCatalog() {
   const { 
     cards, 
-    isCardOwned, 
     getCardCount, 
+    isCardOwned, 
     isCardWishlisted, 
     addCard, 
     removeCard, 
@@ -27,17 +24,19 @@ export default function CardCatalog() {
     setSelectedCard 
   } = useCollection();
 
+  const { t } = useLanguage();
+  const { isDark } = useTheme();
+
   // Search & Filters state
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSet, setSelectedSet] = useState('ALL');
   const [selectedColor, setSelectedColor] = useState('ALL');
   const [selectedRarity, setSelectedRarity] = useState('ALL');
-  const [ownershipFilter, setOwnershipFilter] = useState('ALL'); // 'ALL' | 'OWNED' | 'MISSING' | 'WISHLIST'
+  const [ownershipFilter, setOwnershipFilter] = useState('ALL');
 
   // Filter computation
   const filteredCards = useMemo(() => {
     return cards.filter((card) => {
-      // Search term filter
       if (searchTerm.trim()) {
         const term = searchTerm.toLowerCase();
         const matchesName = card.name.toLowerCase().includes(term);
@@ -47,16 +46,10 @@ export default function CardCatalog() {
         if (!matchesName && !matchesId && !matchesEffect && !matchesType) return false;
       }
 
-      // Set filter
       if (selectedSet !== 'ALL' && card.set !== selectedSet) return false;
-
-      // Color filter
       if (selectedColor !== 'ALL' && !card.color.includes(selectedColor)) return false;
-
-      // Rarity filter
       if (selectedRarity !== 'ALL' && card.rarity !== selectedRarity) return false;
 
-      // Ownership filter
       const owned = isCardOwned(card.id);
       const wishlisted = isCardWishlisted(card.id);
 
@@ -68,7 +61,6 @@ export default function CardCatalog() {
     });
   }, [cards, searchTerm, selectedSet, selectedColor, selectedRarity, ownershipFilter, isCardOwned, isCardWishlisted]);
 
-  // Reset filters
   const resetFilters = () => {
     setSearchTerm('');
     setSelectedSet('ALL');
@@ -82,17 +74,23 @@ export default function CardCatalog() {
   return (
     <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-6">
       {/* Search & Filter Header */}
-      <div className="bg-neutral-900 border border-neutral-800 rounded-3xl p-4 sm:p-6 mb-8 shadow-xl">
+      <div className={`border rounded-3xl p-4 sm:p-6 mb-8 shadow-xl ${
+        isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-white border-neutral-200'
+      }`}>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-5">
           {/* Search Input */}
           <div className="relative w-full md:w-96">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
             <input
               type="text"
-              placeholder="Buscar por nombre, ID (ej. OP05-060) o efecto..."
+              placeholder={t('catalogSearchPlaceholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-neutral-950 border border-neutral-800 rounded-xl text-sm text-neutral-100 placeholder:text-neutral-500 focus:outline-none focus:border-amber-500 transition"
+              className={`w-full pl-10 pr-4 py-2.5 rounded-xl text-sm focus:outline-none focus:border-amber-500 transition border ${
+                isDark 
+                  ? 'bg-neutral-950 border-neutral-800 text-neutral-100 placeholder:text-neutral-500' 
+                  : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder:text-neutral-400'
+              }`}
             />
             {searchTerm && (
               <button
@@ -105,12 +103,14 @@ export default function CardCatalog() {
           </div>
 
           {/* Quick Ownership Tabs */}
-          <div className="flex items-center gap-1.5 bg-neutral-950 p-1.5 rounded-xl border border-neutral-800 w-full md:w-auto overflow-x-auto">
+          <div className={`flex items-center gap-1.5 p-1.5 rounded-xl border w-full md:w-auto overflow-x-auto ${
+            isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
+          }`}>
             {[
-              { id: 'ALL', label: 'Todas' },
-              { id: 'OWNED', label: 'En Colección' },
-              { id: 'MISSING', label: 'Faltantes' },
-              { id: 'WISHLIST', label: 'Wishlist' },
+              { id: 'ALL', label: t('catalogTabAll') },
+              { id: 'OWNED', label: t('catalogTabOwned') },
+              { id: 'MISSING', label: t('catalogTabMissing') },
+              { id: 'WISHLIST', label: t('catalogTabWishlist') },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -118,7 +118,7 @@ export default function CardCatalog() {
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition ${
                   ownershipFilter === tab.id
                     ? 'bg-amber-500 text-neutral-950 shadow-sm'
-                    : 'text-neutral-400 hover:text-white'
+                    : 'text-neutral-400 hover:text-neutral-200'
                 }`}
               >
                 {tab.label}
@@ -129,15 +129,16 @@ export default function CardCatalog() {
 
         {/* Filter Pills */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-neutral-800/80">
-          {/* Sets */}
           <div>
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
-              Expansión / Set:
+              {t('catalogFilterSet')}
             </label>
             <select
               value={selectedSet}
               onChange={(e) => setSelectedSet(e.target.value)}
-              className="w-full bg-neutral-950 border border-neutral-800 text-xs text-neutral-200 rounded-xl px-3 py-2 focus:outline-none focus:border-amber-500"
+              className={`w-full border text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-amber-500 ${
+                isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
+              }`}
             >
               {SETS.map((s) => (
                 <option key={s.id} value={s.id}>
@@ -147,17 +148,18 @@ export default function CardCatalog() {
             </select>
           </div>
 
-          {/* Colors */}
           <div>
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
-              Color:
+              {t('catalogFilterColor')}
             </label>
             <select
               value={selectedColor}
               onChange={(e) => setSelectedColor(e.target.value)}
-              className="w-full bg-neutral-950 border border-neutral-800 text-xs text-neutral-200 rounded-xl px-3 py-2 focus:outline-none focus:border-amber-500"
+              className={`w-full border text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-amber-500 ${
+                isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
+              }`}
             >
-              <option value="ALL">Todos los Colores</option>
+              <option value="ALL">{t('catalogAllColors')}</option>
               {COLORS.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name}
@@ -166,17 +168,18 @@ export default function CardCatalog() {
             </select>
           </div>
 
-          {/* Rarities */}
           <div>
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
-              Rareza:
+              {t('catalogFilterRarity')}
             </label>
             <select
               value={selectedRarity}
               onChange={(e) => setSelectedRarity(e.target.value)}
-              className="w-full bg-neutral-950 border border-neutral-800 text-xs text-neutral-200 rounded-xl px-3 py-2 focus:outline-none focus:border-amber-500"
+              className={`w-full border text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-amber-500 ${
+                isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
+              }`}
             >
-              <option value="ALL">Todas las Rarezas</option>
+              <option value="ALL">{t('catalogAllRarities')}</option>
               {RARITIES.map((r) => (
                 <option key={r.id} value={r.id}>
                   {r.name} ({r.id})
@@ -186,15 +189,15 @@ export default function CardCatalog() {
           </div>
         </div>
 
-        {/* Status line */}
+        {/* Status bar */}
         <div className="flex items-center justify-between mt-4 pt-3 border-t border-neutral-800 text-xs text-neutral-400">
-          <span>Mostrando <strong>{filteredCards.length}</strong> cartas</span>
+          <span>{t('catalogShowing')} <strong>{filteredCards.length}</strong> {t('catalogCards')}</span>
           {hasActiveFilters && (
             <button
               onClick={resetFilters}
-              className="text-amber-400 hover:text-amber-300 font-medium underline text-xs"
+              className="text-amber-500 hover:text-amber-400 font-medium underline text-xs"
             >
-              Limpiar filtros
+              {t('catalogResetFilters')}
             </button>
           )}
         </div>
@@ -202,13 +205,15 @@ export default function CardCatalog() {
 
       {/* Cards Grid */}
       {filteredCards.length === 0 ? (
-        <div className="p-12 text-center bg-neutral-900 border border-neutral-800 rounded-3xl">
-          <p className="text-neutral-400 text-sm">No se encontraron cartas con los filtros seleccionados.</p>
+        <div className={`p-12 text-center border rounded-3xl ${
+          isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-white border-neutral-200'
+        }`}>
+          <p className="text-neutral-400 text-sm">{t('catalogNoCards')}</p>
           <button
             onClick={resetFilters}
             className="mt-3 px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-white rounded-xl text-xs font-semibold transition"
           >
-            Restablecer Filtros
+            {t('catalogResetFilters')}
           </button>
         </div>
       ) : (
@@ -222,11 +227,13 @@ export default function CardCatalog() {
             return (
               <div
                 key={card.id}
-                className="group relative bg-neutral-900/90 border border-neutral-800 hover:border-neutral-700 rounded-2xl overflow-hidden p-2 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/5 cursor-pointer"
+                className={`group relative border rounded-2xl overflow-hidden p-2 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/5 cursor-pointer ${
+                  isDark ? 'bg-neutral-900/90 border-neutral-800 hover:border-neutral-700' : 'bg-white border-neutral-200 hover:border-neutral-400'
+                }`}
                 onClick={() => setSelectedCard(card)}
               >
                 {/* Image & Badges */}
-                <div className="relative aspect-[2.5/3.5] rounded-xl overflow-hidden bg-neutral-950 mb-2.5">
+                <div className={`relative aspect-[2.5/3.5] rounded-xl overflow-hidden mb-2.5 ${isDark ? 'bg-neutral-950' : 'bg-neutral-100'}`}>
                   <img
                     src={card.image}
                     alt={card.name}
@@ -264,15 +271,15 @@ export default function CardCatalog() {
                 {/* Card Info */}
                 <div className="px-1 mb-2">
                   <div className="flex items-center justify-between text-[10px] font-mono text-neutral-400 mb-0.5">
-                    <span className="text-amber-400 font-bold">{card.id}</span>
+                    <span className="text-amber-500 font-bold">{card.id}</span>
                     <span>{card.set}</span>
                   </div>
-                  <h4 className="text-xs font-bold text-white truncate" title={card.name}>
+                  <h4 className={`text-xs font-bold truncate ${isDark ? 'text-white' : 'text-neutral-900'}`} title={card.name}>
                     {card.name}
                   </h4>
                   <div className="flex items-center justify-between text-[11px] text-neutral-400 mt-1">
                     <span>{card.category}</span>
-                    <span className="text-emerald-400 font-mono font-semibold">
+                    <span className="text-emerald-500 font-mono font-semibold">
                       ~{card.marketPriceEstimated?.toFixed(2)}€
                     </span>
                   </div>
@@ -283,22 +290,24 @@ export default function CardCatalog() {
                   className="flex items-center justify-between pt-2 border-t border-neutral-800/80 gap-1"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <div className="flex items-center bg-neutral-950 rounded-lg border border-neutral-800 p-0.5">
+                  <div className={`flex items-center rounded-lg border p-0.5 ${
+                    isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
+                  }`}>
                     <button
                       onClick={() => removeCard(card.id)}
                       disabled={count === 0}
                       className="p-1 hover:text-white text-neutral-400 disabled:opacity-20 transition"
-                      title="Quitar 1"
+                      title="Quitar"
                     >
                       <Minus className="w-3 h-3" />
                     </button>
-                    <span className="w-5 text-center text-xs font-mono font-bold text-neutral-200">
+                    <span className={`w-5 text-center text-xs font-mono font-bold ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
                       {count}
                     </span>
                     <button
                       onClick={() => addCard(card.id)}
                       className="p-1 hover:text-amber-400 text-neutral-400 transition"
-                      title="Añadir 1"
+                      title="Añadir"
                     >
                       <Plus className="w-3 h-3" />
                     </button>
@@ -310,7 +319,7 @@ export default function CardCatalog() {
                       className={`p-1.5 rounded-lg border transition ${
                         wishlisted
                           ? 'bg-amber-500/20 border-amber-500/50 text-amber-400'
-                          : 'bg-neutral-950 border-neutral-800 text-neutral-400 hover:text-white'
+                          : isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-400' : 'bg-neutral-100 border-neutral-300 text-neutral-600'
                       }`}
                       title="Wishlist"
                     >
@@ -321,8 +330,10 @@ export default function CardCatalog() {
                       href={`${CARDTRADER_BASE_URL}${encodeURIComponent(card.cardtraderSearch || card.name)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-1.5 rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-400 hover:text-amber-400 transition"
-                      title="Ver en CardTrader"
+                      className={`p-1.5 rounded-lg border transition ${
+                        isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-400 hover:text-amber-400' : 'bg-neutral-100 border-neutral-300 text-neutral-600 hover:text-amber-600'
+                      }`}
+                      title={t('binderCheckCardTrader')}
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>

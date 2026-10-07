@@ -7,10 +7,10 @@
 ## 📌 FICHA DEL PROYECTO
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
-* **Estado:** 🟢 En Desarrollo Activo (Minor v0.2.0)
-* **Despliegue Objetivo:** Vercel (`grand-line-vault-tcg.vercel.app`)
+* **Estado:** 🟢 En Desarrollo Activo (Minor v0.3.0)
+* **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Stack Principal:** React 19 + Vite + Tailwind CSS v4 + Supabase + Vercel
-* **Versión Actual:** `v0.2.0` (Minor Update: Supabase Cloud & Auth)
+* **Versión Actual:** `v0.3.0` (Minor Update: Bilingual i18n & Theme System)
 
 ---
 
@@ -102,9 +102,14 @@ Para mantener el repositorio de GitHub limpio y profesional:
 
 ### 🏁 v0.2.0 — Conexión con Supabase (Completada hoy)
 - [x] Crear proyecto en Supabase y aplicar el script SQL de tablas.
-- [x] Autenticación de usuarios (Registro / Login con Email).
+- [x] Autenticación de usuarios (Registro / Login con Email y OAuth Google/Apple).
 - [x] Sincronizar el estado de la colección con PostgreSQL en tiempo real y RLS.
 - [x] Migración automática de colección de invitado a cuenta de usuario.
+
+### 🏁 v0.3.0 — Multi-Idioma & Modo Oscuro / Claro (Completada hoy)
+- [x] Sistema bilingüe completo (Español / Inglés) con selector en la cabecera.
+- [x] Modo Oscuro (Vault X Black) y Modo Claro (Vault X White) con persistencia.
+- [x] README bilingüe con selector de idioma y enlace oficial corregido.
 
 ### 🟢 v1.0.0 — Official Launch en Vercel (Major Release)
 - [ ] Despliegue en subdominio de Vercel y vinculación con GitHub CI/CD.

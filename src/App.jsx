@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { LanguageProvider } from './context/LanguageContext';
 import { AuthProvider } from './context/AuthContext';
 import { CollectionProvider } from './context/CollectionContext';
 import Navbar from './components/Navbar';
@@ -14,9 +16,12 @@ function MainApp() {
   const [activeTab, setActiveTab] = useState('binder'); // 'binder' | 'catalog' | 'trades'
   const [isVersionModalOpen, setIsVersionModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const { isDark } = useTheme();
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col justify-between selection:bg-amber-500 selection:text-neutral-950">
+    <div className={`min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-neutral-950 transition-colors duration-200 ${
+      isDark ? 'bg-[#090a0f] text-neutral-100' : 'bg-[#f8fafc] text-neutral-900'
+    }`}>
       <div>
         {/* Navigation Bar */}
         <Navbar 
@@ -57,10 +62,14 @@ function MainApp() {
 
 export default function App() {
   return (
-    <AuthProvider>
-      <CollectionProvider>
-        <MainApp />
-      </CollectionProvider>
-    </AuthProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <AuthProvider>
+          <CollectionProvider>
+            <MainApp />
+          </CollectionProvider>
+        </AuthProvider>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }

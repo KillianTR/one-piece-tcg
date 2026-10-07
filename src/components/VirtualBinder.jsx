@@ -3,17 +3,15 @@ import {
   ChevronLeft, 
   ChevronRight, 
   Layers, 
-  Sparkles, 
   Plus, 
   Star, 
   ExternalLink, 
-  CheckCircle2, 
-  HelpCircle,
-  Eye,
   Trophy
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useCollection } from '../context/CollectionContext';
+import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 import { SETS, CARDTRADER_BASE_URL, RARITIES } from '../data/mockCards';
 
 export default function VirtualBinder() {
@@ -28,6 +26,9 @@ export default function VirtualBinder() {
     binderPageSize,
     setBinderPageSize
   } = useCollection();
+
+  const { t } = useLanguage();
+  const { isDark } = useTheme();
 
   const [selectedSet, setSelectedSet] = useState('OP-01');
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,7 +51,7 @@ export default function VirtualBinder() {
   const pockets = useMemo(() => {
     const list = [...currentPageCards];
     while (list.length < binderPageSize) {
-      list.push(null); // Empty slot placeholder
+      list.push(null);
     }
     return list;
   }, [currentPageCards, binderPageSize]);
@@ -86,12 +87,14 @@ export default function VirtualBinder() {
   return (
     <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-6">
       {/* Top Controls Bar */}
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-4 mb-6 bg-neutral-900/90 border border-neutral-800 p-4 rounded-2xl backdrop-blur-md">
+      <div className={`flex flex-col lg:flex-row items-center justify-between gap-4 mb-6 p-4 rounded-2xl backdrop-blur-md border ${
+        isDark ? 'bg-neutral-900/90 border-neutral-800' : 'bg-white/90 border-neutral-200 shadow-md'
+      }`}>
         {/* Set Selector */}
         <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs uppercase font-bold text-neutral-400 mr-1 flex items-center gap-1.5">
-            <Layers className="w-4 h-4 text-amber-400" />
-            Expansión:
+            <Layers className="w-4 h-4 text-amber-500" />
+            {t('binderExpansion')}
           </span>
           {SETS.filter(s => s.id !== 'ALL').map((set) => (
             <button
@@ -103,7 +106,9 @@ export default function VirtualBinder() {
               className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition ${
                 selectedSet === set.id
                   ? 'bg-amber-500 text-neutral-950 shadow-md shadow-amber-500/20'
-                  : 'bg-neutral-950 text-neutral-400 hover:text-white hover:bg-neutral-800 border border-neutral-800'
+                  : isDark 
+                    ? 'bg-neutral-950 text-neutral-400 hover:text-white hover:bg-neutral-800 border border-neutral-800'
+                    : 'bg-neutral-100 text-neutral-700 hover:text-neutral-900 hover:bg-neutral-200 border border-neutral-300'
               }`}
             >
               {set.id} <span className="opacity-75 font-normal">({set.name.split(':')[1] || set.name})</span>
@@ -111,14 +116,18 @@ export default function VirtualBinder() {
           ))}
         </div>
 
-        {/* Pocket Layout Toggle (9 vs 12) & Progress */}
+        {/* Pocket Layout Toggle (9 vs 12) & Quick Page Nav */}
         <div className="flex items-center gap-4">
-          <div className="flex items-center bg-neutral-950 border border-neutral-800 rounded-xl p-1 text-xs">
-            <span className="text-neutral-500 px-2 font-medium">Bolsillos:</span>
+          <div className={`flex items-center border rounded-xl p-1 text-xs ${
+            isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
+          }`}>
+            <span className="text-neutral-500 px-2 font-medium">{t('binderPockets')}</span>
             <button
               onClick={() => { setBinderPageSize(9); setCurrentPage(1); }}
               className={`px-2.5 py-1 rounded-lg font-bold transition ${
-                binderPageSize === 9 ? 'bg-neutral-800 text-amber-400 shadow' : 'text-neutral-400 hover:text-white'
+                binderPageSize === 9 
+                  ? 'bg-amber-500 text-neutral-950 shadow' 
+                  : 'text-neutral-400 hover:text-neutral-200'
               }`}
             >
               9 (3x3)
@@ -126,7 +135,9 @@ export default function VirtualBinder() {
             <button
               onClick={() => { setBinderPageSize(12); setCurrentPage(1); }}
               className={`px-2.5 py-1 rounded-lg font-bold transition ${
-                binderPageSize === 12 ? 'bg-neutral-800 text-amber-400 shadow' : 'text-neutral-400 hover:text-white'
+                binderPageSize === 12 
+                  ? 'bg-amber-500 text-neutral-950 shadow' 
+                  : 'text-neutral-400 hover:text-neutral-200'
               }`}
             >
               12 (4x3)
@@ -134,21 +145,23 @@ export default function VirtualBinder() {
           </div>
 
           {/* Quick Page Nav Buttons */}
-          <div className="flex items-center gap-2 bg-neutral-950 border border-neutral-800 rounded-xl px-2 py-1">
+          <div className={`flex items-center gap-2 border rounded-xl px-2 py-1 ${
+            isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
+          }`}>
             <button
               onClick={goToPrevPage}
               disabled={currentPage === 1}
-              className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-300 disabled:opacity-30 disabled:hover:bg-transparent transition"
+              className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 disabled:opacity-30 transition"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <span className="text-xs font-mono font-bold text-neutral-200 px-1">
-              Pág. {currentPage} / {totalPages}
+            <span className={`text-xs font-mono font-bold px-1 ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
+              {t('binderPage')} {currentPage} / {totalPages}
             </span>
             <button
               onClick={goToNextPage}
               disabled={currentPage === totalPages}
-              className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-300 disabled:opacity-30 disabled:hover:bg-transparent transition"
+              className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 disabled:opacity-30 transition"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -157,53 +170,67 @@ export default function VirtualBinder() {
       </div>
 
       {/* Set Progress Bar */}
-      <div className="mb-6 p-4 rounded-2xl bg-neutral-900 border border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-lg">
+      <div className={`mb-6 p-4 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-lg ${
+        isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-white border-neutral-200'
+      }`}>
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+          <div className="p-2 rounded-xl bg-amber-500/10 text-amber-500 border border-amber-500/20">
             <Trophy className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-white flex items-center gap-2">
-              Progreso del Álbum — {SETS.find(s => s.id === selectedSet)?.name || selectedSet}
+            <h3 className={`text-sm font-bold flex items-center gap-2 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+              {t('binderProgressTitle')} — {SETS.find(s => s.id === selectedSet)?.name || selectedSet}
             </h3>
             <p className="text-xs text-neutral-400">
-              {setOwnedCards} de {setTotalCards} cartas conseguidas ({progressPercent}%)
+              {setOwnedCards} {t('binderOf')} {setTotalCards} {t('binderProgressSub')} ({progressPercent}%)
             </p>
           </div>
         </div>
 
         <div className="flex items-center gap-3 sm:w-1/3">
-          <div className="w-full bg-neutral-950 rounded-full h-3 overflow-hidden border border-neutral-800">
+          <div className={`w-full rounded-full h-3 overflow-hidden border ${
+            isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-200 border-neutral-300'
+          }`}>
             <div 
               className="bg-gradient-to-r from-amber-500 to-emerald-500 h-full rounded-full transition-all duration-500"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
-          <span className="text-xs font-mono font-bold text-amber-400 w-10 text-right">
+          <span className="text-xs font-mono font-bold text-amber-500 w-10 text-right">
             {progressPercent}%
           </span>
         </div>
       </div>
 
       {/* THE VAULT X BINDER (Outer Leather Cover & Pages) */}
-      <div className="relative rounded-3xl binder-leather p-4 sm:p-8 lg:p-10 shadow-2xl border-4 border-neutral-900">
+      <div className={`relative rounded-3xl p-4 sm:p-8 lg:p-10 shadow-2xl border-4 ${
+        isDark 
+          ? 'binder-leather border-neutral-900' 
+          : 'binder-leather-light border-neutral-300 shadow-neutral-400/30'
+      }`}>
         {/* Decorative Gold Stitching (Vault X signature) */}
-        <div className="absolute inset-2 sm:inset-4 rounded-2xl binder-stitching pointer-events-none" />
+        <div className={`absolute inset-2 sm:inset-4 rounded-2xl pointer-events-none ${
+          isDark ? 'binder-stitching' : 'binder-stitching-light'
+        }`} />
 
-        {/* Binder Spine simulated line in the center if wide */}
-        <div className="hidden lg:block absolute top-6 bottom-6 left-1/2 w-3 -translate-x-1/2 binder-spine rounded-sm pointer-events-none opacity-40" />
+        {/* Binder Spine simulated line in center */}
+        <div className={`hidden lg:block absolute top-6 bottom-6 left-1/2 w-3 -translate-x-1/2 rounded-sm pointer-events-none opacity-40 ${
+          isDark ? 'binder-spine' : 'binder-spine-light'
+        }`} />
 
         {/* Binder Header Plate */}
         <div className="relative z-10 flex items-center justify-between mb-6 pb-4 border-b border-neutral-800/80">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-amber-500 shadow-sm shadow-amber-500" />
-            <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 font-bold">
+            <span className={`font-mono text-xs uppercase tracking-widest font-bold ${
+              isDark ? 'text-neutral-400' : 'text-neutral-600'
+            }`}>
               VAULT X • ONE PIECE OFFICIAL PORTFOLIO
             </span>
           </div>
 
-          <div className="text-xs text-neutral-500 font-medium">
-            Hojas protectoras anti-ácido de 9 bolsillos con carga lateral
+          <div className="text-xs text-neutral-400 font-medium hidden sm:block">
+            {t('binderHeaderSubtitle')}
           </div>
         </div>
 
@@ -216,17 +243,19 @@ export default function VirtualBinder() {
           }`}
         >
           {pockets.map((card, index) => {
-            // Case 1: Empty pocket slot (at the end of set)
+            // Empty slot
             if (!card) {
               return (
                 <div
                   key={`empty-${index}`}
-                  className="card-sleeve aspect-[2.5/3.5] rounded-xl border border-neutral-800/40 flex flex-col items-center justify-center p-4 text-neutral-700 select-none"
+                  className={`aspect-[2.5/3.5] rounded-xl border flex flex-col items-center justify-center p-4 text-neutral-500 select-none ${
+                    isDark ? 'card-sleeve border-neutral-800/40' : 'card-sleeve-light border-neutral-300'
+                  }`}
                 >
-                  <div className="w-8 h-8 rounded-full border border-dashed border-neutral-800 flex items-center justify-center text-xs">
+                  <div className="w-8 h-8 rounded-full border border-dashed border-neutral-500 flex items-center justify-center text-xs">
                     {index + 1}
                   </div>
-                  <span className="text-[11px] font-mono mt-2 text-neutral-600">Bolsillo Vacío</span>
+                  <span className="text-[11px] font-mono mt-2 text-neutral-400">{t('binderEmptySlot')}</span>
                 </div>
               );
             }
@@ -234,17 +263,19 @@ export default function VirtualBinder() {
             const owned = isCardOwned(card.id);
             const count = getCardCount(card.id);
             const wishlisted = isCardWishlisted(card.id);
-            const rarity = RARITIES.find((r) => r.id === card.rarity);
 
-            // Case 2: Card Slot (Owned or Missing)
             return (
               <div
                 key={card.id}
-                className="group relative aspect-[2.5/3.5] rounded-xl card-sleeve p-1 sm:p-1.5 transition-all duration-300 hover:scale-[1.02] hover:z-20 cursor-pointer"
+                className={`group relative aspect-[2.5/3.5] rounded-xl p-1 sm:p-1.5 transition-all duration-300 hover:scale-[1.02] hover:z-20 cursor-pointer ${
+                  isDark ? 'card-sleeve' : 'card-sleeve-light'
+                }`}
                 onClick={() => setSelectedCard(card)}
               >
-                {/* The Card Pocket Sleeve / Window */}
-                <div className="relative w-full h-full rounded-lg overflow-hidden flex items-center justify-center bg-neutral-950">
+                {/* The Card Pocket Sleeve Window */}
+                <div className={`relative w-full h-full rounded-lg overflow-hidden flex items-center justify-center ${
+                  isDark ? 'bg-neutral-950' : 'bg-neutral-200'
+                }`}>
                   
                   {/* Card Image */}
                   <img
@@ -266,9 +297,9 @@ export default function VirtualBinder() {
                     <div className="absolute inset-0 holo-shine pointer-events-none" />
                   )}
 
-                  {/* IF OWNED: Owned Badge (e.g. x1, x4) */}
+                  {/* IF OWNED: Owned Badge */}
                   {owned && (
-                    <div className="absolute top-1.5 right-1.5 px-2 py-0.5 rounded-md bg-amber-500/90 text-neutral-950 font-black font-mono text-xs shadow-md backdrop-blur-sm">
+                    <div className="absolute top-1.5 right-1.5 px-2 py-0.5 rounded-md bg-amber-500 text-neutral-950 font-black font-mono text-xs shadow-md">
                       x{count}
                     </div>
                   )}
@@ -277,7 +308,7 @@ export default function VirtualBinder() {
                   {!owned && (
                     <div className="absolute inset-0 flex flex-col items-center justify-between p-2.5 bg-neutral-950/60 backdrop-blur-[1px]">
                       <div className="w-full flex items-center justify-between">
-                        <span className="text-[10px] font-mono font-bold text-neutral-400 bg-neutral-900/80 px-1.5 py-0.5 rounded border border-neutral-800">
+                        <span className="text-[10px] font-mono font-bold text-neutral-300 bg-neutral-900/80 px-1.5 py-0.5 rounded border border-neutral-700">
                           {card.id}
                         </span>
                         {wishlisted && (
@@ -290,14 +321,14 @@ export default function VirtualBinder() {
                       {/* Missing Tag */}
                       <div className="text-center">
                         <div className="text-xs font-bold uppercase tracking-wider text-rose-400/90 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/30">
-                          FALTA
+                          {t('binderMissing')}
                         </div>
-                        <div className="text-[11px] font-semibold text-neutral-300 mt-1 line-clamp-1 px-1">
+                        <div className="text-[11px] font-semibold text-white mt-1 line-clamp-1 px-1">
                           {card.name}
                         </div>
                       </div>
 
-                      {/* Quick Action Buttons on Missing Card Hover */}
+                      {/* Quick Action Buttons on Hover */}
                       <div 
                         className="w-full flex items-center justify-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity bg-neutral-950/90 p-1 rounded-lg border border-neutral-800"
                         onClick={(e) => e.stopPropagation()}
@@ -307,14 +338,14 @@ export default function VirtualBinder() {
                             addCard(card.id);
                             triggerConfetti();
                           }}
-                          title="Marcar como conseguida (+1)"
+                          title={t('binderAddOwned')}
                           className="p-1 rounded bg-amber-500 text-neutral-950 hover:bg-amber-400 transition"
                         >
                           <Plus className="w-3.5 h-3.5" />
                         </button>
                         <button
                           onClick={() => toggleWishlist(card.id)}
-                          title="Alternar Wishlist"
+                          title={t('binderToggleWishlist')}
                           className={`p-1 rounded transition ${
                             wishlisted ? 'bg-amber-500/20 text-amber-400' : 'bg-neutral-800 text-neutral-300 hover:text-white'
                           }`}
@@ -325,7 +356,7 @@ export default function VirtualBinder() {
                           href={`${CARDTRADER_BASE_URL}${encodeURIComponent(card.cardtraderSearch || card.name)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          title="Ver en CardTrader"
+                          title={t('binderCheckCardTrader')}
                           className="p-1 rounded bg-neutral-800 text-neutral-300 hover:text-white transition"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
@@ -335,7 +366,7 @@ export default function VirtualBinder() {
                   )}
 
                   {/* Card ID footer badge */}
-                  <div className="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-neutral-950/80 backdrop-blur-sm text-[9px] font-mono text-neutral-400 border border-neutral-800 pointer-events-none">
+                  <div className="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-neutral-950/80 backdrop-blur-sm text-[9px] font-mono text-neutral-300 border border-neutral-700 pointer-events-none">
                     {card.id}
                   </div>
                 </div>
@@ -346,28 +377,36 @@ export default function VirtualBinder() {
 
         {/* Binder Bottom Footer with Pagination */}
         <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-neutral-800/80">
-          <div className="text-xs text-neutral-400 flex items-center gap-2">
-            <span>💡 <strong>Tip de coleccionista:</strong> Haz clic en cualquier carta para ver sus detalles, habilidades y comparador de precios en CardTrader.</span>
+          <div className="text-xs text-neutral-400">
+            {t('binderCollectorTip')}
           </div>
 
           <div className="flex items-center gap-3">
             <button
               onClick={goToPrevPage}
               disabled={currentPage === 1}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-neutral-900 hover:bg-neutral-800 disabled:opacity-30 disabled:hover:bg-neutral-900 text-xs font-bold text-neutral-200 border border-neutral-800 transition"
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold border transition ${
+                isDark 
+                  ? 'bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border-neutral-800 disabled:opacity-30'
+                  : 'bg-white hover:bg-neutral-100 text-neutral-800 border-neutral-300 disabled:opacity-30'
+              }`}
             >
               <ChevronLeft className="w-4 h-4" />
-              Página Anterior
+              {t('binderPrevPage')}
             </button>
-            <div className="text-xs font-mono font-bold text-amber-400 px-2">
+            <div className="text-xs font-mono font-bold text-amber-500 px-2">
               {currentPage} / {totalPages}
             </div>
             <button
               onClick={goToNextPage}
               disabled={currentPage === totalPages}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-neutral-900 hover:bg-neutral-800 disabled:opacity-30 disabled:hover:bg-neutral-900 text-xs font-bold text-neutral-200 border border-neutral-800 transition"
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold border transition ${
+                isDark 
+                  ? 'bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border-neutral-800 disabled:opacity-30'
+                  : 'bg-white hover:bg-neutral-100 text-neutral-800 border-neutral-300 disabled:opacity-30'
+              }`}
             >
-              Siguiente Página
+              {t('binderNextPage')}
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
