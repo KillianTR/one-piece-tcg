@@ -59,7 +59,7 @@ export default function AuthModal({ isOpen, onClose }) {
     } catch (err) {
       setErrorMsg(
         err.message ||
-        `Para usar ${provider === 'google' ? 'Google' : 'Apple'}, debes activar el proveedor en el panel de Supabase (Authentication -> Providers).`
+        'Para usar Google, debes activar el proveedor en el panel de Supabase (Authentication -> Providers).'
       );
       setOauthLoading(null);
     }
@@ -197,7 +197,7 @@ export default function AuthModal({ isOpen, onClose }) {
             </div>
           </div>
 
-          {/* Social OAuth Buttons (Google & Apple) */}
+          {/* Social OAuth Button (Google) */}
           <div className="space-y-2.5">
             {/* Continue with Google */}
             <button
@@ -226,20 +226,6 @@ export default function AuthModal({ isOpen, onClose }) {
                 />
               </svg>
               <span>{oauthLoading === 'google' ? 'Redirecting to Google...' : 'Continue with Google'}</span>
-            </button>
-
-            {/* Continue with Apple */}
-            <button
-              type="button"
-              onClick={() => handleOAuth('apple')}
-              disabled={oauthLoading !== null}
-              className="w-full py-2.5 px-4 rounded-xl bg-[#21262d] hover:bg-[#30363d] text-neutral-100 font-semibold text-sm flex items-center justify-center gap-3 border border-neutral-700/60 transition cursor-pointer disabled:opacity-50"
-            >
-              {/* Apple icon */}
-              <svg className="w-4 h-4 shrink-0 fill-current text-white" viewBox="0 0 170 170">
-                <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.66-7.85-11.87-14.43-6.42-10.13-11.39-21.78-14.92-34.93-3.53-13.16-5.3-25.5-5.3-37.03 0-14.7 3.59-26.96 10.77-36.78 7.18-9.82 16.32-14.85 27.42-15.08 4.7 0 10.12 1.34 16.27 4.02 6.15 2.68 10.11 4.13 11.88 4.35 1.57-.22 5.66-1.74 12.28-4.57 6.62-2.82 12.02-4.08 16.2-3.77 15.12.78 26.65 6.46 34.6 17.03-13.49 8.16-20.08 19.3-19.77 33.43.32 10.99 4.41 20.09 12.28 27.29 8 7.33 17.51 11.45 28.53 12.37-2.61 8.28-5.83 16.14-9.66 23.58zM119.22 33.15c0-7.72 2.76-14.97 8.27-21.75 5.52-6.78 12.22-10.99 20.1-12.63.11 1.09.16 2.07.16 2.94 0 7.61-2.91 14.94-8.73 21.99-5.82 7.05-12.63 11.16-20.44 12.33-.44-.98-.67-1.98-.67-2.99z" />
-              </svg>
-              <span>{oauthLoading === 'apple' ? 'Redirecting to Apple...' : 'Continue with Apple'}</span>
             </button>
           </div>
         </div>
