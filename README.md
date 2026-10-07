@@ -1,6 +1,7 @@
 # 🏴‍☠️ Grand Line Vault — One Piece TCG Virtual Binder & Tracker
 
-[![Versión](https://img.shields.io/badge/version-v0.1.0--alpha-amber?style=for-the-badge&logo=git)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/version-v0.2.0--minor-amber?style=for-the-badge&logo=git)](CHANGELOG.md)
+[![Supabase](https://img.shields.io/badge/Supabase-Auth%20&%20PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)

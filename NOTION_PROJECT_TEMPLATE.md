@@ -7,10 +7,10 @@
 ## 📌 FICHA DEL PROYECTO
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
-* **Estado:** 🟡 En Desarrollo Activo (Alpha v0.1.0)
-* **Despliegue Objetivo:** Vercel (`onepiece-tcg-killiantr.vercel.app` o subdominio similar)
+* **Estado:** 🟢 En Desarrollo Activo (Minor v0.2.0)
+* **Despliegue Objetivo:** Vercel (`grand-line-vault-tcg.vercel.app`)
 * **Stack Principal:** React 19 + Vite + Tailwind CSS v4 + Supabase + Vercel
-* **Versión Actual:** `v0.1.0` (Alpha)
+* **Versión Actual:** `v0.2.0` (Minor Update: Supabase Cloud & Auth)
 
 ---
 
@@ -100,11 +100,11 @@ Para mantener el repositorio de GitHub limpio y profesional:
 - [x] Persistencia en `localStorage`.
 - [x] Modal explicativo del sistema de versiones SemVer WoW.
 
-### 🟡 v0.2.0 — Conexión con Supabase (Próxima Minor Update)
-- [ ] Crear proyecto en Supabase y aplicar el script SQL de tablas.
-- [ ] Autenticación de usuarios (Registro / Login con Email o Google).
-- [ ] Migrar el estado de `localStorage` a PostgreSQL con sincronización en tiempo real.
-- [ ] Barra de búsqueda con atajo rápido (`Cmd+K` / `Ctrl+K`).
+### 🏁 v0.2.0 — Conexión con Supabase (Completada hoy)
+- [x] Crear proyecto en Supabase y aplicar el script SQL de tablas.
+- [x] Autenticación de usuarios (Registro / Login con Email).
+- [x] Sincronizar el estado de la colección con PostgreSQL en tiempo real y RLS.
+- [x] Migración automática de colección de invitado a cuenta de usuario.
 
 ### 🟢 v1.0.0 — Official Launch en Vercel (Major Release)
 - [ ] Despliegue en subdominio de Vercel y vinculación con GitHub CI/CD.

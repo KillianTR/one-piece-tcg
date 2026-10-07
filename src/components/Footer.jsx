@@ -18,7 +18,7 @@ export default function Footer({ onOpenVersionModal }) {
               onClick={onOpenVersionModal}
               className="font-mono text-amber-400 hover:text-amber-300 font-bold bg-neutral-900 px-2 py-0.5 rounded border border-neutral-800 hover:border-amber-500/50 transition cursor-pointer"
             >
-              v0.1.0 (Alpha)
+              v0.2.0 (Minor)
             </button>
             <span className="text-[11px] text-neutral-500">SemVer WoW Standard</span>
           </div>

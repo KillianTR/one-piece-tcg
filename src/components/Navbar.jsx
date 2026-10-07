@@ -4,15 +4,19 @@ import {
   Grid, 
   Repeat, 
   Star, 
-  Sparkles, 
   Compass, 
   Info,
-  ShieldAlert
+  User,
+  LogOut,
+  Cloud,
+  HardDrive
 } from 'lucide-react';
 import { useCollection } from '../context/CollectionContext';
+import { useAuth } from '../context/AuthContext';
 
-export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal }) {
-  const { totalCardsOwned, uniqueCardsOwned, totalWishlisted } = useCollection();
+export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, onOpenAuthModal }) {
+  const { uniqueCardsOwned, totalWishlisted, isCloudSynced } = useCollection();
+  const { user, signOut } = useAuth();
 
   return (
     <header className="sticky top-0 z-40 w-full bg-neutral-950/85 backdrop-blur-xl border-b border-neutral-800">
@@ -38,7 +42,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal }) 
                 className="group flex items-center gap-1 px-2 py-0.5 rounded-full bg-neutral-900 border border-neutral-700/80 hover:border-amber-500 text-[10px] font-mono font-bold text-amber-400 transition"
                 title="Ver detalles del sistema de versiones"
               >
-                <span>v0.1.0</span>
+                <span>v0.2.0</span>
                 <Info className="w-3 h-3 text-neutral-400 group-hover:text-amber-400" />
               </button>
             </div>
@@ -87,9 +91,10 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal }) 
           </button>
         </nav>
 
-        {/* Quick Stats Pill */}
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-3 bg-neutral-900 border border-neutral-800 px-3.5 py-1.5 rounded-2xl text-xs">
+        {/* Right Action Bar: Quick Stats & Auth */}
+        <div className="flex items-center gap-2.5">
+          {/* Quick Stats Pill */}
+          <div className="hidden sm:flex items-center gap-3 bg-neutral-900 border border-neutral-800 px-3 py-1.5 rounded-2xl text-xs">
             <div className="flex items-center gap-1.5" title="Cartas únicas conseguidas">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
               <span className="text-neutral-400 text-[11px]">Colección:</span>
@@ -104,6 +109,33 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal }) 
               <strong className="text-amber-400 font-mono">{totalWishlisted}</strong>
             </div>
           </div>
+
+          {/* User Auth Button */}
+          {user ? (
+            <div className="flex items-center gap-2 bg-neutral-900 border border-neutral-800 p-1.5 rounded-2xl">
+              <div className="flex items-center gap-1.5 px-2 text-xs">
+                <Cloud className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="text-neutral-300 font-medium max-w-[120px] truncate" title={user.email}>
+                  {user.email?.split('@')[0]}
+                </span>
+              </div>
+              <button
+                onClick={() => signOut()}
+                className="p-1.5 hover:bg-neutral-800 text-neutral-400 hover:text-rose-400 rounded-xl transition"
+                title="Cerrar Sesión"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={onOpenAuthModal}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-2xl bg-neutral-900 hover:bg-neutral-800 border border-neutral-700/70 text-xs font-bold text-amber-400 hover:text-amber-300 transition shadow-sm"
+            >
+              <User className="w-3.5 h-3.5" />
+              <span>Entrar / Registro</span>
+            </button>
+          )}
         </div>
       </div>
 
@@ -136,6 +168,15 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal }) 
           <Repeat className="w-3.5 h-3.5" />
           Cambios
         </button>
+        {!user && (
+          <button
+            onClick={onOpenAuthModal}
+            className="flex items-center gap-1 py-1.5 px-2.5 rounded-lg font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20"
+          >
+            <User className="w-3.5 h-3.5" />
+            Login
+          </button>
+        )}
       </div>
     </header>
   );

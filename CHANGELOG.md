@@ -12,6 +12,22 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 
 ---
 
+## [0.2.0] - 2026-10-07
+### ⚡ Minor Update — Integración de Supabase (Auth & Base de Datos en la Nube)
+
+#### ✨ Nuevas Características (Features)
+* **Autenticación con Supabase (`AuthModal`):**
+  * Sistema de registro e inicio de sesión mediante Email y Contraseña.
+  * Manejo de estados de sesión con `AuthProvider` y `@supabase/supabase-js`.
+  * Menú de usuario en la barra de navegación con indicador de estado en la nube 🟢 y opción para cerrar sesión.
+* **Sincronización de Colección en la Nube (`user_collections`):**
+  * Persistencia en tiempo real en PostgreSQL con seguridad RLS (*Row Level Security*).
+  * Migración automática: si un usuario navega como invitado y luego crea su cuenta, sus cartas de `localStorage` se migran automáticamente a su cuenta de Supabase.
+* **Seguridad y Variables de Entorno:**
+  * Configuración segura mediante `.env` (`VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`).
+
+---
+
 ## [0.1.0] - 2026-10-07
 ### 🚀 Alpha Release — Álbum Virtual Vault X & Catálogo Inicial
 

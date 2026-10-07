@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AuthProvider } from './context/AuthContext';
 import { CollectionProvider } from './context/CollectionContext';
 import Navbar from './components/Navbar';
 import VirtualBinder from './components/VirtualBinder';
@@ -6,11 +7,13 @@ import CardCatalog from './components/CardCatalog';
 import TradeBoard from './components/TradeBoard';
 import CardModal from './components/CardModal';
 import VersionModal from './components/VersionModal';
+import AuthModal from './components/AuthModal';
 import Footer from './components/Footer';
 
 function MainApp() {
   const [activeTab, setActiveTab] = useState('binder'); // 'binder' | 'catalog' | 'trades'
   const [isVersionModalOpen, setIsVersionModalOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col justify-between selection:bg-amber-500 selection:text-neutral-950">
@@ -20,6 +23,7 @@ function MainApp() {
           activeTab={activeTab} 
           setActiveTab={setActiveTab} 
           onOpenVersionModal={() => setIsVersionModalOpen(true)}
+          onOpenAuthModal={() => setIsAuthModalOpen(true)}
         />
 
         {/* Main Workspace Views */}
@@ -39,6 +43,12 @@ function MainApp() {
         onClose={() => setIsVersionModalOpen(false)} 
       />
 
+      {/* Supabase Authentication Modal */}
+      <AuthModal 
+        isOpen={isAuthModalOpen} 
+        onClose={() => setIsAuthModalOpen(false)} 
+      />
+
       {/* Footer */}
       <Footer onOpenVersionModal={() => setIsVersionModalOpen(true)} />
     </div>
@@ -47,8 +57,10 @@ function MainApp() {
 
 export default function App() {
   return (
-    <CollectionProvider>
-      <MainApp />
-    </CollectionProvider>
+    <AuthProvider>
+      <CollectionProvider>
+        <MainApp />
+      </CollectionProvider>
+    </AuthProvider>
   );
 }

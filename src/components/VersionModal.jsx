@@ -37,7 +37,7 @@ export default function VersionModal({ isOpen, onClose }) {
           <div>
             <span className="text-xs uppercase font-semibold text-neutral-500">Versión actual en despliegue</span>
             <div className="text-2xl font-mono font-extrabold text-amber-400">
-              v0.1.0 <span className="text-xs font-normal text-neutral-400 ml-2">(Alpha: Virtual Binder Release)</span>
+              v0.2.0 <span className="text-xs font-normal text-neutral-400 ml-2">(Minor: Supabase Auth & Cloud Database)</span>
             </div>
           </div>
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
