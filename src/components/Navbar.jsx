@@ -159,10 +159,20 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
           {user ? (
             <div className="flex items-center gap-1.5 bg-neutral-900 dark:bg-neutral-900 light:bg-neutral-100 border border-neutral-800 dark:border-neutral-800 light:border-neutral-300 p-1 rounded-2xl">
               <div className="flex items-center gap-1.5 px-2 text-xs">
-                <Cloud className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span className="text-neutral-200 dark:text-neutral-200 light:text-neutral-800 font-medium max-w-[100px] truncate" title={user.email}>
-                  {user.email?.split('@')[0]}
+                {user.user_metadata?.avatar_url || user.user_metadata?.picture ? (
+                  <img
+                    src={user.user_metadata?.avatar_url || user.user_metadata?.picture}
+                    alt="Avatar"
+                    referrerPolicy="no-referrer"
+                    className="w-5 h-5 rounded-full object-cover border border-amber-500/50"
+                  />
+                ) : (
+                  <Cloud className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                )}
+                <span className="text-neutral-200 dark:text-neutral-200 light:text-neutral-800 font-medium max-w-[120px] truncate" title={user.email}>
+                  {user.user_metadata?.full_name || user.user_metadata?.name || user.email?.split('@')[0]}
                 </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" title="Conectado a la nube" />
               </div>
               <button
                 onClick={() => signOut()}
