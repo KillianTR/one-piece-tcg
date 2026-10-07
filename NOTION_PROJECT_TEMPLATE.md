@@ -8,11 +8,11 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Desarrollo Activo (Minor v0.5.0)
+* **Estado:** 🟢 En Producción & Desarrollo Activo (Patch v0.5.1)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.5.0` (Minor Release: Custom Folders & Binders, Free Card Placement, Multi-Criteria Sorting & Clean Vault Header)
+* **Versión Actual:** `v0.5.1` (Patch Release: Cloud Binder Sync, Advanced Filters, Financial Valuation, Backup/Export & Web Audio)
 
 ---
 
@@ -130,7 +130,18 @@ Para mantener el repositorio de GitHub limpio y profesional:
 - [x] Favicon y logo vectorial blanco transparente estilizado.
 - [x] README bilingüe con selector de idioma y URL oficial de Vercel.
 
-### 🏁 v0.5.0 — Carpetas Personalizadas, Ordenación Libre, Multicriterio & Limpieza de Cabecera Vault X (Versión Actual)
+### 🏁 v0.5.1 — Sincronización en la Nube de Carpetas, Filtros Avanzados, Estadísticas Financieras, Backup/Export y Sonido Háptico (Versión Actual)
+- [x] Sincronización completa de "Mis Carpetas" en Supabase (`custom_binders` JSONB en tabla `profiles`) con guardado diferido automático.
+- [x] Migración transparente de carpetas creadas en modo invitado a la nube al iniciar sesión.
+- [x] Filtros avanzados en el Catálogo: por Tipo de Carta (Leader, Character, Event, Stage, DON!!) y por Coste (0 a 10+).
+- [x] Ordenación multicriterio en el Catálogo: por ID, Coste asc/desc, Poder, Rareza, Precio en € y Nombre A-Z.
+- [x] Modal de Estadísticas del Coleccionista & Valoración Financiera (`CollectionStatsModal`): valor total de la colección en €, coste para completar Wishlist, desglose de rarezas, barras de progreso por expansión y top de cartas más valiosas con enlaces directos a CardTrader.
+- [x] Insignia con valor aproximado en euros (`~XXX€`) en el pill de estadísticas del header.
+- [x] Modal de Copias de Seguridad & Exportación (`BackupModal`): exportación/restauración de backups completos en JSON, exportación para OPTCG Sim (`4 OP01-001`) e importación de texto plano en lote.
+- [x] Efectos de sonido hápticos con Web Audio API: sonido de paso de página al navegar y chasquido al enfundar/mover cartas en bolsillos, con botón de silenciar (🔊 / 🔇) y persistencia en `localStorage`.
+- [x] Soporte de mayúsculas en nombres de usuario (`@username`), validando unicidad case-insensitive en PostgreSQL.
+
+### 🏁 v0.5.0 — Carpetas Personalizadas, Ordenación Libre, Multicriterio & Limpieza de Cabecera Vault X
 - [x] Dos modos en el archivador: `Catálogo Oficial (Sets)` y `Mis Carpetas (Álbum Libre)`.
 - [x] Gestión de múltiples carpetas personalizadas (crear nuevas carpetas y eliminar con modal).
 - [x] Páginas dinámicas por carpeta (`+ Añadir Página` y eliminación de páginas).
@@ -207,13 +218,17 @@ Cuentas con privilegios de pruebas para Killian:
 - [x] Soporte multi-idioma ES / EN en el 100% de componentes
 - [x] Modal de personalización de perfil de usuario (`ProfileModal.jsx`)
 - [x] Enlace al portfolio personal (`killiantr.vercel.app`) en el pie de página
-- [ ] Añadir sonido sutil de paso de página al cambiar de hoja en el álbum
+- [x] Añadir efectos de sonido táctiles (paso de página y enfundado de cartas) con Web Audio API sintetizado
+- [x] Modal de Estadísticas del Coleccionista y Valoración Financiera en € (`CollectionStatsModal.jsx`)
+- [x] Modal de Backup completo en JSON y exportación para OPTCG Sim (`BackupModal.jsx`)
+- [x] Filtros por Categoría (Líder, Personaje...) y Coste (0-10+) con ordenación multicriterio en `CardCatalog.jsx`
 
 ### Backend & Datos
 - [x] Crear dataset inicial con cartas reales de OP-01, OP-05, OP-09 y ST-01
 - [x] Redactar script SQL de tablas y RLS para Supabase (`supabase/schema.sql`)
 - [x] Configurar autenticación con Google OAuth en Supabase y Google Cloud Console
 - [x] Crear esquema y RLS para tabla de perfiles (`supabase/profiles_schema.sql`)
+- [x] Migración SQL v0.5.1 en Supabase para almacenamiento de `custom_binders` JSONB en `public.profiles`
 - [ ] Importar dataset masivo de todas las cartas oficiales de Bandai
 
 ### DevOps & Publicación

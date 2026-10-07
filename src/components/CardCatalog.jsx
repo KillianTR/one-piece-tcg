@@ -30,13 +30,18 @@ export default function CardCatalog() {
   // Search & Filters state
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSet, setSelectedSet] = useState('ALL');
+  const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [selectedColor, setSelectedColor] = useState('ALL');
   const [selectedRarity, setSelectedRarity] = useState('ALL');
+  const [selectedCost, setSelectedCost] = useState('ALL');
+  const [sortBy, setSortBy] = useState('id-asc');
   const [ownershipFilter, setOwnershipFilter] = useState('ALL');
 
   // Filter computation
   const filteredCards = useMemo(() => {
-    return cards.filter((card) => {
+    const rarityWeight = { SP: 7, SEC: 6, SR: 5, R: 4, L: 3, UC: 2, C: 1 };
+
+    const result = cards.filter((card) => {
       if (searchTerm.trim()) {
         const term = searchTerm.toLowerCase();
         const matchesName = card.name.toLowerCase().includes(term);
@@ -47,8 +52,17 @@ export default function CardCatalog() {
       }
 
       if (selectedSet !== 'ALL' && card.set !== selectedSet) return false;
+      if (selectedCategory !== 'ALL' && card.category !== selectedCategory) return false;
       if (selectedColor !== 'ALL' && !card.color.includes(selectedColor)) return false;
       if (selectedRarity !== 'ALL' && card.rarity !== selectedRarity) return false;
+
+      if (selectedCost !== 'ALL') {
+        if (selectedCost === '10+') {
+          if ((card.cost || 0) < 10) return false;
+        } else {
+          if (card.cost !== Number(selectedCost)) return false;
+        }
+      }
 
       const owned = isCardOwned(card.id);
       const wishlisted = isCardWishlisted(card.id);
@@ -59,17 +73,53 @@ export default function CardCatalog() {
 
       return true;
     });
-  }, [cards, searchTerm, selectedSet, selectedColor, selectedRarity, ownershipFilter, isCardOwned, isCardWishlisted]);
+
+    result.sort((a, b) => {
+      if (sortBy === 'id-asc') return a.id.localeCompare(b.id);
+      if (sortBy === 'cost-asc') return (a.cost ?? 99) - (b.cost ?? 99);
+      if (sortBy === 'cost-desc') return (b.cost ?? -1) - (a.cost ?? -1);
+      if (sortBy === 'power-desc') return (b.power ?? -1) - (a.power ?? -1);
+      if (sortBy === 'rarity-desc') return (rarityWeight[b.rarity] || 0) - (rarityWeight[a.rarity] || 0);
+      if (sortBy === 'price-desc') return (b.marketPriceEstimated || 0) - (a.marketPriceEstimated || 0);
+      if (sortBy === 'name-asc') return a.name.localeCompare(b.name);
+      return 0;
+    });
+
+    return result;
+  }, [
+    cards, 
+    searchTerm, 
+    selectedSet, 
+    selectedCategory, 
+    selectedColor, 
+    selectedRarity, 
+    selectedCost, 
+    sortBy, 
+    ownershipFilter, 
+    isCardOwned, 
+    isCardWishlisted
+  ]);
 
   const resetFilters = () => {
     setSearchTerm('');
     setSelectedSet('ALL');
+    setSelectedCategory('ALL');
     setSelectedColor('ALL');
     setSelectedRarity('ALL');
+    setSelectedCost('ALL');
+    setSortBy('id-asc');
     setOwnershipFilter('ALL');
   };
 
-  const hasActiveFilters = searchTerm || selectedSet !== 'ALL' || selectedColor !== 'ALL' || selectedRarity !== 'ALL' || ownershipFilter !== 'ALL';
+  const hasActiveFilters = 
+    searchTerm || 
+    selectedSet !== 'ALL' || 
+    selectedCategory !== 'ALL' ||
+    selectedColor !== 'ALL' || 
+    selectedRarity !== 'ALL' || 
+    selectedCost !== 'ALL' ||
+    sortBy !== 'id-asc' ||
+    ownershipFilter !== 'ALL';
 
   return (
     <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-6">
@@ -115,7 +165,7 @@ export default function CardCatalog() {
               <button
                 key={tab.id}
                 onClick={() => setOwnershipFilter(tab.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
                   ownershipFilter === tab.id
                     ? 'bg-amber-500 text-neutral-950 shadow-sm'
                     : 'text-neutral-400 hover:text-neutral-200'
@@ -127,8 +177,9 @@ export default function CardCatalog() {
           </div>
         </div>
 
-        {/* Filter Pills */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-neutral-800/80">
+        {/* Filter Pills Grid (6 dropdowns) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-4 border-t border-neutral-800/80">
+          {/* 1. Expansión */}
           <div>
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
               {t('catalogFilterSet')}
@@ -136,18 +187,40 @@ export default function CardCatalog() {
             <select
               value={selectedSet}
               onChange={(e) => setSelectedSet(e.target.value)}
-              className={`w-full border text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-amber-500 ${
+              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer ${
                 isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
               }`}
             >
               {SETS.map((s) => (
                 <option key={s.id} value={s.id}>
-                  {s.name}
+                  {s.id === 'ALL' ? t('binderAllSets') : `${s.id} (${s.name.split(':')[1] || s.name})`}
                 </option>
               ))}
             </select>
           </div>
 
+          {/* 2. Tipo de Carta */}
+          <div>
+            <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
+              {t('catalogFilterCategory')}
+            </label>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer ${
+                isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
+              }`}
+            >
+              <option value="ALL">{t('catalogAllCategories')}</option>
+              <option value="Leader">{t('catalogCategoryLeader')}</option>
+              <option value="Character">{t('catalogCategoryCharacter')}</option>
+              <option value="Event">{t('catalogCategoryEvent')}</option>
+              <option value="Stage">{t('catalogCategoryStage')}</option>
+              <option value="DON!!">{t('catalogCategoryDon')}</option>
+            </select>
+          </div>
+
+          {/* 3. Color */}
           <div>
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
               {t('catalogFilterColor')}
@@ -155,7 +228,7 @@ export default function CardCatalog() {
             <select
               value={selectedColor}
               onChange={(e) => setSelectedColor(e.target.value)}
-              className={`w-full border text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-amber-500 ${
+              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer ${
                 isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
               }`}
             >
@@ -168,6 +241,7 @@ export default function CardCatalog() {
             </select>
           </div>
 
+          {/* 4. Rareza */}
           <div>
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
               {t('catalogFilterRarity')}
@@ -175,7 +249,7 @@ export default function CardCatalog() {
             <select
               value={selectedRarity}
               onChange={(e) => setSelectedRarity(e.target.value)}
-              className={`w-full border text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-amber-500 ${
+              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer ${
                 isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
               }`}
             >
@@ -187,6 +261,50 @@ export default function CardCatalog() {
               ))}
             </select>
           </div>
+
+          {/* 5. Coste */}
+          <div>
+            <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
+              {t('catalogFilterCost')}
+            </label>
+            <select
+              value={selectedCost}
+              onChange={(e) => setSelectedCost(e.target.value)}
+              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer ${
+                isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
+              }`}
+            >
+              <option value="ALL">{t('catalogAllCosts')}</option>
+              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((cost) => (
+                <option key={cost} value={cost}>
+                  {t('cardCost')} {cost}
+                </option>
+              ))}
+              <option value="10+">{t('cardCost')} 10+</option>
+            </select>
+          </div>
+
+          {/* 6. Ordenar por */}
+          <div>
+            <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
+              {t('catalogSortBy')}
+            </label>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer font-medium ${
+                isDark ? 'bg-neutral-950 border-neutral-800 text-amber-400' : 'bg-neutral-50 border-neutral-300 text-amber-700'
+              }`}
+            >
+              <option value="id-asc">{t('catalogSortIdAsc')}</option>
+              <option value="cost-asc">{t('catalogSortCostAsc')}</option>
+              <option value="cost-desc">{t('catalogSortCostDesc')}</option>
+              <option value="power-desc">{t('catalogSortPowerDesc')}</option>
+              <option value="rarity-desc">{t('catalogSortRarityDesc')}</option>
+              <option value="price-desc">{t('catalogSortPriceDesc')}</option>
+              <option value="name-asc">{t('catalogSortNameAsc')}</option>
+            </select>
+          </div>
         </div>
 
         {/* Status bar */}
@@ -195,7 +313,7 @@ export default function CardCatalog() {
           {hasActiveFilters && (
             <button
               onClick={resetFilters}
-              className="text-amber-500 hover:text-amber-400 font-medium underline text-xs"
+              className="text-amber-500 hover:text-amber-400 font-medium underline text-xs cursor-pointer"
             >
               {t('catalogResetFilters')}
             </button>

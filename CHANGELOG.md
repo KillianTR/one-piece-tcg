@@ -10,6 +10,37 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
 
+## [0.5.1] - 2026-10-07
+### 💎 Patch — Sincronización en la Nube de Carpetas, Filtros Avanzados, Estadísticas Financieras, Backup/Export y Efectos de Sonido Hápticos
+
+#### ✨ Nuevas Características & Mejoras (Features & UI)
+* **Sincronización en la Nube de "Mis Carpetas" (Supabase Cloud Sync):**
+  * Columna `custom_binders` (JSONB) integrada en `public.profiles` con políticas RLS seguras.
+  * Sincronización automática con guardado diferido (*debounced*) en segundo plano para optimizar el rendimiento.
+  * Migración transparente de carpetas creadas como invitado hacia la cuenta de usuario al iniciar sesión.
+* **Filtros Avanzados y Ordenación Multicriterio en el Catálogo (`CardCatalog`):**
+  * Filtro por **Categoría / Tipo de Carta**: Leader, Character, Event, Stage, DON!!.
+  * Filtro por **Coste de Invocación**: 0 a 10+.
+  * Nuevo selector de ordenación: por ID Oficial, Coste (menor a mayor / mayor a menor), Poder, Rareza, Precio en € y Nombre A-Z.
+* **Estadísticas del Coleccionista & Valoración Financiera (`CollectionStatsModal`):**
+  * Valor total de la colección estimado en euros (€) basado en cotizaciones reales de CardTrader.
+  * Estimación del coste total para completar las cartas en la lista de deseos (*Wishlist*).
+  * Desglose visual por rareza (Líderes, Raras, Super Raras, Secretas, Mangas) con contadores exactos.
+  * Barras de progreso individuales por expansión con cálculo dinámico.
+  * Sección "Joyas de la Corona": ranking de las cartas más valiosas poseídas con enlaces directos a CardTrader.
+  * Acceso directo con insignia de valor monetario (`~XXX€`) en el pill de estadísticas del header y opción dedicada en el menú desplegable.
+* **Copias de Seguridad, Exportación e Importación (`BackupModal`):**
+  * Exportación de backup completo en formato `.json` (colección, wishlist y carpetas personalizadas) y restauración desde archivo.
+  * Exportación estándar para el simulador competitivo **OPTCG Sim** (formato texto `4 OP01-001`) con copia al portapapeles y descarga `.txt`.
+  * Importación rápida por pegado de texto plano o subida de listas para añadir cartas en lote a la colección.
+* **Efectos de Sonido Táctiles (Web Audio API Synthesizer):**
+  * Síntesis en tiempo real con cero dependencias externas ni peso de archivos MP3:
+    * Sonido de paso de hoja (*whoosh*) al cambiar de página en el archivador.
+    * Sonido de chasquido (*snap/click*) al enfundar o mover una carta entre bolsillos.
+  * Conmutador con icono y estado (🔊 Activado / 🔇 Silenciado) guardado en `localStorage`.
+* **Soporte de Mayúsculas en Nombres de Usuario:**
+  * Permitido el uso de caracteres en mayúsculas en el `@username` (ej. `@Killian_TR`) manteniendo la unicidad insensible a mayúsculas (*case-insensitive*) en PostgreSQL.
+
 ## [0.5.0] - 2026-10-07
 ### 📂 Minor Update — Carpetas Personalizadas, Ordenación Libre, Multicriterio & Limpieza de Cabecera Vault X
 

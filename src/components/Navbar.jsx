@@ -12,13 +12,18 @@ import {
   Moon, 
   Languages,
   ChevronDown,
-  Award
+  Award,
+  TrendingUp,
+  Coins,
+  Database
 } from 'lucide-react';
 import { useCollection } from '../context/CollectionContext';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { getUserProfile } from '../services/profileService';
+import CollectionStatsModal from './CollectionStatsModal';
+import BackupModal from './BackupModal';
 
 export default function Navbar({ 
   activeTab, 
@@ -27,13 +32,15 @@ export default function Navbar({
   onOpenAuthModal, 
   onOpenProfileModal 
 }) {
-  const { uniqueCardsOwned, totalWishlisted } = useCollection();
+  const { uniqueCardsOwned, totalWishlisted, estimatedCollectionValue } = useCollection();
   const { user, signOut } = useAuth();
   const { language, setLanguage, t } = useLanguage();
   const { toggleTheme, isDark } = useTheme();
 
-  // Dropdown & User profile state
+  // Dropdown, Stats & User profile state
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isStatsModalOpen, setIsStatsModalOpen] = useState(false);
+  const [isBackupModalOpen, setIsBackupModalOpen] = useState(false);
   const [profileData, setProfileData] = useState(null);
   const dropdownRef = useRef(null);
 
@@ -186,14 +193,19 @@ export default function Navbar({
         {/* 3. RIGHT CONTROLS: STATS & USER DROPDOWN (OR GUEST BAR)  */}
         {/* ========================================================= */}
         <div className="flex items-center gap-3">
-          {/* Quick Stats Pill (Desktop) */}
-          <div className={`hidden md:flex items-center gap-3 border px-3.5 py-2 rounded-2xl text-xs transition ${
-            isDark 
-              ? 'bg-neutral-900 border-neutral-800' 
-              : 'bg-neutral-100 border-neutral-200'
-          }`}>
+          {/* Quick Stats Pill (Desktop) - Clic para ver Estadísticas y Valor */}
+          <button
+            type="button"
+            onClick={() => setIsStatsModalOpen(true)}
+            className={`hidden md:flex items-center gap-3 border px-3.5 py-2 rounded-2xl text-xs transition cursor-pointer group ${
+              isDark 
+                ? 'bg-neutral-900 border-neutral-800 hover:border-amber-500/50 hover:bg-neutral-800/70' 
+                : 'bg-neutral-100 border-neutral-200 hover:border-amber-400 hover:bg-white shadow-xs'
+            }`}
+            title="Ver estadísticas y valor estimado de la colección"
+          >
             <div className="flex items-center gap-1.5" title={t('navCollection')}>
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400 group-hover:scale-125 transition" />
               <span className={`text-[11px] font-medium ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>
                 {t('navCollection')}:
               </span>
@@ -213,7 +225,17 @@ export default function Navbar({
                 {totalWishlisted}
               </strong>
             </div>
-          </div>
+
+            {estimatedCollectionValue > 0 && (
+              <>
+                <div className={`w-px h-3.5 ${isDark ? 'bg-neutral-800' : 'bg-neutral-200'}`} />
+                <div className="flex items-center gap-1.5 text-emerald-500 font-mono font-bold text-xs">
+                  <TrendingUp className="w-3.5 h-3.5" />
+                  <span>~{estimatedCollectionValue.toFixed(0)}€</span>
+                </div>
+              </>
+            )}
+          </button>
 
           {/* Divisor vertical sutil entre Stats y Usuario */}
           <div className={`hidden md:block w-px h-6 ${isDark ? 'bg-neutral-800' : 'bg-neutral-200'}`} />
@@ -316,9 +338,16 @@ export default function Navbar({
                   </div>
 
                   {/* Resumen de Colección en móvil o acceso rápido */}
-                  <div className={`grid grid-cols-2 gap-2 p-2 rounded-xl mb-1.5 border text-xs md:hidden ${
-                    isDark ? 'bg-neutral-950/40 border-neutral-800/50' : 'bg-neutral-50/70 border-neutral-200/60'
-                  }`}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      setIsStatsModalOpen(true);
+                    }}
+                    className={`w-full grid grid-cols-2 gap-2 p-2 rounded-xl mb-1.5 border text-xs md:hidden cursor-pointer transition text-left ${
+                      isDark ? 'bg-neutral-950/40 border-neutral-800/50 hover:border-amber-500/40' : 'bg-neutral-50/70 border-neutral-200/60 hover:border-amber-400'
+                    }`}
+                  >
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
                       <div className="leading-tight">
@@ -333,7 +362,7 @@ export default function Navbar({
                         <strong className="font-mono text-xs text-amber-500 dark:text-amber-400">{totalWishlisted}</strong>
                       </div>
                     </div>
-                  </div>
+                  </button>
 
                   {/* Botón: Mi Perfil y Personalización */}
                   <button
@@ -354,6 +383,52 @@ export default function Navbar({
                     </div>
                     <span className="text-[10px] font-bold text-amber-500 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-lg border border-amber-500/20">
                       {t('navEditProfile')} →
+                    </span>
+                  </button>
+
+                  {/* Botón: Estadísticas de Colección */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      setIsStatsModalOpen(true);
+                    }}
+                    className={`w-full flex items-center justify-between p-2.5 rounded-xl text-xs font-semibold transition cursor-pointer ${
+                      isDark 
+                        ? 'hover:bg-neutral-800 text-neutral-200 hover:text-white' 
+                        : 'hover:bg-neutral-100 text-neutral-800 hover:text-neutral-950'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <TrendingUp className="w-4 h-4 text-emerald-500" />
+                      <span>{t('navStatsDropdown')}</span>
+                    </div>
+                    {estimatedCollectionValue > 0 && (
+                      <span className="text-[11px] font-mono font-bold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-lg border border-emerald-500/20">
+                        ~{estimatedCollectionValue.toFixed(0)}€
+                      </span>
+                    )}
+                  </button>
+
+                  {/* Botón: Copia de Seguridad & Exportar */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      setIsBackupModalOpen(true);
+                    }}
+                    className={`w-full flex items-center justify-between p-2.5 rounded-xl text-xs font-semibold transition cursor-pointer ${
+                      isDark 
+                        ? 'hover:bg-neutral-800 text-neutral-200 hover:text-white' 
+                        : 'hover:bg-neutral-100 text-neutral-800 hover:text-neutral-950'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <Database className="w-4 h-4 text-amber-500" />
+                      <span>{t('navBackupDropdown')}</span>
+                    </div>
+                    <span className="text-[10px] font-bold text-neutral-400 bg-neutral-800/40 px-2 py-0.5 rounded-lg border border-neutral-700/50">
+                      JSON / TXT
                     </span>
                   </button>
 
@@ -579,6 +654,18 @@ export default function Navbar({
           {t('navTrades')}
         </button>
       </div>
+
+      {/* Modal de Estadísticas del Coleccionista y Valor Financiero */}
+      <CollectionStatsModal
+        isOpen={isStatsModalOpen}
+        onClose={() => setIsStatsModalOpen(false)}
+      />
+
+      {/* Modal de Copia de Seguridad y Exportación */}
+      <BackupModal
+        isOpen={isBackupModalOpen}
+        onClose={() => setIsBackupModalOpen(false)}
+      />
     </header>
   );
 }

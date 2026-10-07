@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { INITIAL_CARDS } from '../data/mockCards';
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import { INITIAL_CARDS, SETS } from '../data/mockCards';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import { useAuth } from './AuthContext';
 
@@ -414,10 +414,136 @@ export function CollectionProvider({ children }) {
     return !!collection[cardId]?.isWishlist;
   };
 
+  // Backup & Import Helpers
+  const restoreBackup = (backupData) => {
+    if (!backupData || typeof backupData !== 'object') {
+      throw new Error('Formato de archivo inválido');
+    }
+    if (backupData.collection && typeof backupData.collection === 'object') {
+      setCollection(backupData.collection);
+    }
+    if (backupData.customBinders && Array.isArray(backupData.customBinders)) {
+      setCustomBinders(backupData.customBinders);
+      if (backupData.customBinders[0]?.id) {
+        setActiveBinderId(backupData.customBinders[0].id);
+      }
+    }
+  };
+
+  const importTextList = (text) => {
+    if (!text || typeof text !== 'string') return 0;
+    const lines = text.split('\n');
+    let addedCount = 0;
+    setCollection((prev) => {
+      const next = { ...prev };
+      lines.forEach((line) => {
+        const trimmed = line.trim();
+        if (!trimmed) return;
+        // Matches: "4 OP01-001" or "OP01-001 x4" or "OP01-001 4" or "OP01-001"
+        const match = trimmed.match(/^(\d+)?\s*([A-Za-z0-9-]+)(?:\s*[xX]?\s*(\d+))?$/);
+        if (match) {
+          const qty = parseInt(match[1] || match[3] || '1', 10);
+          const rawId = match[2].toUpperCase();
+          const foundCard = cards.find((c) => c.id.toUpperCase() === rawId);
+          if (foundCard) {
+            const cardId = foundCard.id;
+            const current = next[cardId] || { count: 0, isWishlist: false };
+            next[cardId] = {
+              ...current,
+              count: current.count + qty,
+              isWishlist: false,
+            };
+            addedCount += qty;
+          }
+        }
+      });
+      return next;
+    });
+    return addedCount;
+  };
+
   // Stats calculation
-  const totalCardsOwned = Object.values(collection).reduce((acc, curr) => acc + (curr.count || 0), 0);
-  const uniqueCardsOwned = Object.values(collection).filter((curr) => (curr.count || 0) > 0).length;
-  const totalWishlisted = Object.values(collection).filter((curr) => curr.isWishlist).length;
+  const totalCardsOwned = useMemo(() => {
+    return Object.values(collection).reduce((acc, curr) => acc + (curr.count || 0), 0);
+  }, [collection]);
+
+  const uniqueCardsOwned = useMemo(() => {
+    return Object.values(collection).filter((curr) => (curr.count || 0) > 0).length;
+  }, [collection]);
+
+  const totalWishlisted = useMemo(() => {
+    return Object.values(collection).filter((curr) => curr.isWishlist).length;
+  }, [collection]);
+
+  // Estimated Collection Value (€)
+  const estimatedCollectionValue = useMemo(() => {
+    return Object.entries(collection).reduce((acc, [cardId, item]) => {
+      if (!item.count || item.count <= 0) return acc;
+      const card = cards.find((c) => c.id === cardId);
+      if (!card || !card.marketPriceEstimated) return acc;
+      return acc + (item.count * card.marketPriceEstimated);
+    }, 0);
+  }, [collection, cards]);
+
+  // Estimated Wishlist Value (€)
+  const estimatedWishlistValue = useMemo(() => {
+    return Object.entries(collection).reduce((acc, [cardId, item]) => {
+      if (!item.isWishlist) return acc;
+      const card = cards.find((c) => c.id === cardId);
+      if (!card || !card.marketPriceEstimated) return acc;
+      return acc + card.marketPriceEstimated;
+    }, 0);
+  }, [collection, cards]);
+
+  // Rarity Counts
+  const rarityCounts = useMemo(() => {
+    const counts = { SP: 0, SEC: 0, SR: 0, R: 0, L: 0, UC: 0, C: 0, DON: 0 };
+    Object.entries(collection).forEach(([cardId, item]) => {
+      if (!item.count || item.count <= 0) return;
+      const card = cards.find((c) => c.id === cardId);
+      if (!card) return;
+      if (card.category === 'DON!!' || card.id.startsWith('DON')) {
+        counts.DON = (counts.DON || 0) + item.count;
+      } else if (counts[card.rarity] !== undefined) {
+        counts[card.rarity] += item.count;
+      }
+    });
+    return counts;
+  }, [collection, cards]);
+
+  // Top 5 Most Valuable Cards Owned
+  const topValuedOwnedCards = useMemo(() => {
+    return Object.entries(collection)
+      .filter(([_, item]) => (item.count || 0) > 0)
+      .map(([cardId, item]) => {
+        const card = cards.find((c) => c.id === cardId);
+        if (!card) return null;
+        return {
+          ...card,
+          ownedCount: item.count,
+          totalVal: item.count * (card.marketPriceEstimated || 0),
+        };
+      })
+      .filter((item) => item && item.id && item.marketPriceEstimated > 0)
+      .sort((a, b) => b.marketPriceEstimated - a.marketPriceEstimated)
+      .slice(0, 5);
+  }, [collection, cards]);
+
+  // Completion Percentage per Set
+  const setCompletionStats = useMemo(() => {
+    return SETS.filter((s) => s.id !== 'ALL').map((set) => {
+      const setCards = cards.filter((c) => c.set === set.id);
+      const totalInSet = setCards.length || set.totalCards || 1;
+      const ownedInSet = setCards.filter((c) => (collection[c.id]?.count || 0) > 0).length;
+      const percentage = totalInSet > 0 ? Math.round((ownedInSet / totalInSet) * 100) : 0;
+      return {
+        ...set,
+        totalInSet,
+        ownedInSet,
+        percentage,
+      };
+    });
+  }, [cards, collection]);
 
   return (
     <CollectionContext.Provider
@@ -437,6 +563,11 @@ export function CollectionProvider({ children }) {
         totalCardsOwned,
         uniqueCardsOwned,
         totalWishlisted,
+        estimatedCollectionValue,
+        estimatedWishlistValue,
+        rarityCounts,
+        topValuedOwnedCards,
+        setCompletionStats,
         isCloudSynced,
         isLoadingCollection,
         customBinders,
@@ -450,6 +581,8 @@ export function CollectionProvider({ children }) {
         setSlotCard,
         removeSlotCard,
         swapSlots,
+        restoreBackup,
+        importTextList,
       }}
     >
       {children}

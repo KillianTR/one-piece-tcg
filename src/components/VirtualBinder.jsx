@@ -16,13 +16,21 @@ import {
   Search,
   X,
   Sparkles,
-  GripHorizontal
+  GripHorizontal,
+  Volume2,
+  VolumeX
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useCollection } from '../context/CollectionContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { SETS, CARDTRADER_BASE_URL, RARITIES, COLORS } from '../data/mockCards';
+import { 
+  playPageFlipSound, 
+  playCardSnapSound, 
+  isSoundEnabled, 
+  toggleSound 
+} from '../utils/audioEffects';
 
 export default function VirtualBinder() {
   const { 
@@ -52,6 +60,7 @@ export default function VirtualBinder() {
 
   // Mode: 'official' (Official Checklist by Expansion/All) | 'custom' (Free Custom Binders)
   const [binderMode, setBinderMode] = useState('official');
+  const [soundActive, setSoundActive] = useState(isSoundEnabled);
 
   // Official Mode States
   const [selectedSet, setSelectedSet] = useState('ALL');
@@ -195,6 +204,7 @@ export default function VirtualBinder() {
     e.preventDefault();
     if (draggedSlotIndex !== null && draggedSlotIndex !== targetIndex && currentCustomBinder) {
       swapSlots(currentCustomBinder.id, customPage, draggedSlotIndex, targetIndex);
+      playCardSnapSound();
     }
     setDraggedSlotIndex(null);
   };
@@ -298,6 +308,30 @@ export default function VirtualBinder() {
             12 (4x3)
           </button>
         </div>
+
+        {/* Botón de Sonidos Inmersivos (Web Audio API) */}
+        <button
+          type="button"
+          onClick={() => {
+            const next = toggleSound();
+            setSoundActive(next);
+          }}
+          className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border text-xs font-semibold transition cursor-pointer shrink-0 ${
+            soundActive
+              ? isDark 
+                ? 'bg-neutral-900 border-neutral-800 text-amber-400 hover:bg-neutral-800' 
+                : 'bg-white border-neutral-200 text-amber-600 hover:bg-neutral-50 shadow-xs'
+              : isDark
+                ? 'bg-neutral-950 border-neutral-800 text-neutral-500 hover:text-neutral-300'
+                : 'bg-neutral-100 border-neutral-300 text-neutral-400 hover:text-neutral-600'
+          }`}
+          title={soundActive ? 'Silenciar sonidos del archivador' : 'Activar sonidos del archivador'}
+        >
+          {soundActive ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5" />}
+          <span className="hidden sm:inline text-[11px] font-medium">
+            {soundActive ? 'Sonido ON' : 'Sonido OFF'}
+          </span>
+        </button>
       </div>
 
       {/* ========================================================= */}
@@ -382,7 +416,10 @@ export default function VirtualBinder() {
             }`}>
               <button
                 type="button"
-                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                onClick={() => {
+                  setCurrentPage(p => Math.max(1, p - 1));
+                  playPageFlipSound();
+                }}
                 disabled={currentPage === 1}
                 className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 disabled:opacity-30 transition cursor-pointer"
                 title={t('binderPrevPage')}
@@ -394,7 +431,10 @@ export default function VirtualBinder() {
               </span>
               <button
                 type="button"
-                onClick={() => setCurrentPage(p => Math.min(officialTotalPages, p + 1))}
+                onClick={() => {
+                  setCurrentPage(p => Math.min(officialTotalPages, p + 1));
+                  playPageFlipSound();
+                }}
                 disabled={currentPage === officialTotalPages}
                 className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 disabled:opacity-30 transition cursor-pointer"
                 title={t('binderNextPage')}
@@ -474,6 +514,7 @@ export default function VirtualBinder() {
               onClick={() => {
                 addPageToBinder(currentCustomBinder.id);
                 setCustomPage(customTotalPages + 1);
+                playPageFlipSound();
               }}
               className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-bold bg-neutral-800 hover:bg-neutral-700 text-amber-400 border border-neutral-700 transition cursor-pointer"
             >
@@ -489,6 +530,7 @@ export default function VirtualBinder() {
                   if (window.confirm(`¿Eliminar la página ${customPage} de este álbum?`)) {
                     deletePageFromBinder(currentCustomBinder.id, customPage);
                     setCustomPage(p => Math.max(1, p - 1));
+                    playPageFlipSound();
                   }
                 }}
                 className="p-1.5 rounded-xl border border-neutral-800 hover:bg-rose-950/30 text-rose-400 transition cursor-pointer"
@@ -504,7 +546,10 @@ export default function VirtualBinder() {
             }`}>
               <button
                 type="button"
-                onClick={() => setCustomPage(p => Math.max(1, p - 1))}
+                onClick={() => {
+                  setCustomPage(p => Math.max(1, p - 1));
+                  playPageFlipSound();
+                }}
                 disabled={customPage === 1}
                 className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 disabled:opacity-30 transition cursor-pointer"
               >
@@ -515,7 +560,10 @@ export default function VirtualBinder() {
               </span>
               <button
                 type="button"
-                onClick={() => setCustomPage(p => Math.min(customTotalPages, p + 1))}
+                onClick={() => {
+                  setCustomPage(p => Math.min(customTotalPages, p + 1));
+                  playPageFlipSound();
+                }}
                 disabled={customPage === customTotalPages}
                 className="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 disabled:opacity-30 transition cursor-pointer"
               >
@@ -991,6 +1039,7 @@ export default function VirtualBinder() {
                   key={`picker-card-${card.id}`}
                   onClick={() => {
                     setSlotCard(currentCustomBinder.id, cardPickerSlot.pageNumber, cardPickerSlot.slotIndex, card.id);
+                    playCardSnapSound();
                     setCardPickerSlot(null);
                   }}
                   className={`group relative aspect-[2.5/3.5] rounded-xl overflow-hidden border cursor-pointer transition-all duration-200 hover:scale-105 hover:border-amber-500 shadow-md ${
