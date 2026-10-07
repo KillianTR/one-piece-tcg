@@ -24,8 +24,12 @@ export default function Navbar({ activeTab, setActiveTab, onOpenVersionModal, on
         {/* Brand / Logo */}
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => setActiveTab('binder')}>
           <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-600 via-amber-500 to-yellow-400 p-0.5 shadow-lg shadow-amber-500/20 flex items-center justify-center">
-            <div className="w-full h-full bg-neutral-950 rounded-[14px] flex items-center justify-center text-amber-400">
-              <Compass className="w-6 h-6 animate-spin-slow" />
+            <div className="w-full h-full bg-neutral-950 rounded-[14px] flex items-center justify-center p-1.5">
+              <img 
+                src="/one-piece-logo-white.webp" 
+                alt="Grand Line Vault Logo" 
+                className="w-full h-full object-contain filter drop-shadow" 
+              />
             </div>
           </div>
           <div>
