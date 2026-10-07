@@ -62,6 +62,19 @@ export function AuthProvider({ children }) {
     if (error) throw error;
   };
 
+  // Sign In with OAuth (Google, Apple, etc.)
+  const signInWithOAuth = async (provider) => {
+    if (!supabase) throw new Error('Supabase no está configurado');
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider,
+      options: {
+        redirectTo: window.location.origin,
+      },
+    });
+    if (error) throw error;
+    return data;
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -72,6 +85,7 @@ export function AuthProvider({ children }) {
         signIn,
         signUp,
         signOut,
+        signInWithOAuth,
       }}
     >
       {children}
