@@ -140,6 +140,7 @@ Para mantener el repositorio de GitHub limpio y profesional:
 - [x] Modal de Copias de Seguridad & Exportación (`BackupModal`): exportación/restauración de backups completos en JSON, exportación para OPTCG Sim (`4 OP01-001`) e importación de texto plano en lote.
 - [x] Efectos de sonido hápticos con Web Audio API: sonido de paso de página al navegar y chasquido al enfundar/mover cartas en bolsillos, con botón de silenciar (🔊 / 🔇) y persistencia en `localStorage`.
 - [x] Soporte de mayúsculas en nombres de usuario (`@username`), validando unicidad case-insensitive en PostgreSQL.
+- [x] Rediseño y limpieza del Footer: eliminación del botón de portfolio redundante, adición del año 2026, enlace de LinkedIn (`/in/killiantorrell`), GitHub (`@KillianTR`), web personal y botón de contacto por correo electrónico.
 
 ### 🏁 v0.5.0 — Carpetas Personalizadas, Ordenación Libre, Multicriterio & Limpieza de Cabecera Vault X
 - [x] Dos modos en el archivador: `Catálogo Oficial (Sets)` y `Mis Carpetas (Álbum Libre)`.

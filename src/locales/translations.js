@@ -210,6 +210,8 @@ export const translations = {
     footerChangelog: 'Changelog',
     footerCreatedBy: 'Creado y desarrollado por',
     footerCreatorName: 'Killian Torrell',
+    footerContact: 'Contacto',
+    footerPortfolio: 'Portfolio Web',
     // Stats Modal
     navStatsModal: 'Estadísticas',
     navStatsDropdown: 'Estadísticas de Colección',
@@ -504,7 +506,8 @@ export const translations = {
     footerChangelog: 'Changelog',
     footerCreatedBy: 'Created & developed by',
     footerCreatorName: 'Killian Torrell',
-    footerPortfolioButton: 'View Portfolio (killiantr.vercel.app)',
+    footerContact: 'Contact',
+    footerPortfolio: 'Web Portfolio',
 
     // Themes
     themeDark: 'Dark Mode',

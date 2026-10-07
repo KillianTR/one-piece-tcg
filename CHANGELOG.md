@@ -40,6 +40,11 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
   * Conmutador con icono y estado (🔊 Activado / 🔇 Silenciado) guardado en `localStorage`.
 * **Soporte de Mayúsculas en Nombres de Usuario:**
   * Permitido el uso de caracteres en mayúsculas en el `@username` (ej. `@Killian_TR`) manteniendo la unicidad insensible a mayúsculas (*case-insensitive*) en PostgreSQL.
+* **Rediseño del Footer & Barra de Enlaces y Contacto:**
+  * Eliminación del botón duplicado de portfolio en el pie de página para un diseño mucho más limpio y profesional.
+  * Inclusión del año oficial de creación: `© 2026 Grand Line Vault • Creado y desarrollado por Killian Torrell` con enlace directo a [killiantr.vercel.app](https://killiantr.vercel.app).
+  * Nueva barra de iconos de redes y contacto: perfil de **LinkedIn** ([in/killiantorrell](https://www.linkedin.com/in/killiantorrell)), **GitHub** ([@KillianTR](https://github.com/KillianTR)), **Portfolio Web** y botón de **Contacto** directo por correo electrónico.
+  * Actualización de la insignia del footer a `v0.5.1`.
 
 ## [0.5.0] - 2026-10-07
 ### 📂 Minor Update — Carpetas Personalizadas, Ordenación Libre, Multicriterio & Limpieza de Cabecera Vault X

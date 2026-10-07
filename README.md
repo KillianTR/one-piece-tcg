@@ -209,6 +209,7 @@ npm run dev
 
 * **Killian Torrell** — Full-Stack Developer & Collector
 * 🌐 **Portfolio Oficial:** [https://killiantr.vercel.app](https://killiantr.vercel.app)
+* 💼 **LinkedIn:** [https://www.linkedin.com/in/killiantorrell](https://www.linkedin.com/in/killiantorrell)
 * 🐙 **GitHub:** [@KillianTR](https://github.com/KillianTR)
 * 🏴‍☠️ **Proyecto:** [Grand Line Vault (OPTCG Tracker)](https://grand-line-vault-tcg.vercel.app)
 
