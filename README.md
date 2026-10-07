@@ -4,6 +4,7 @@
 
 [![Versión](https://img.shields.io/badge/version-v0.4.0--minor-amber?style=for-the-badge&logo=git)](CHANGELOG.md)
 [![Web en Vivo](https://img.shields.io/badge/Live_Demo-grand--line--vault--tcg.vercel.app-000000?style=for-the-badge&logo=vercel)](https://grand-line-vault-tcg.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Creator-Killian_Torrell-000000?style=for-the-badge&logo=vercel)](https://killiantr.vercel.app)
 [![Supabase](https://img.shields.io/badge/Supabase-Auth%20&%20PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
@@ -24,7 +25,8 @@
 
 > **Grand Line Vault** es una aplicación web interactiva diseñada para coleccionistas y jugadores del **One Piece Card Game (OPTCG)**. Permite gestionar tu colección, hacer seguimiento de cartas faltantes y disfrutar de tu archivador virtual inspirado en los álbumes físicos **Vault X** (con hojas de 9 y 12 bolsillos, modo oscuro y claro, multi-idioma, persistencia en la nube con Supabase y conexión directa con CardTrader).
 
-🔗 **Enlace Oficial de Producción:** [https://grand-line-vault-tcg.vercel.app](https://grand-line-vault-tcg.vercel.app)
+🔗 **Enlace Oficial de Producción:** [https://grand-line-vault-tcg.vercel.app](https://grand-line-vault-tcg.vercel.app)  
+👨‍💻 **Creado por:** [Killian Torrell — Portfolio Web (killiantr.vercel.app)](https://killiantr.vercel.app)
 
 ---
 
@@ -116,7 +118,8 @@ npm run dev
 
 > **Grand Line Vault** is an interactive web application crafted for collectors and competitive players of the **One Piece Card Game (OPTCG)**. It lets you manage your personal collection, track missing cards, and experience your cards through a digital binder inspired by physical **Vault X** portfolios (featuring 9 and 12-pocket pages, Dark & Light modes, bilingual support, cloud persistence with Supabase, and direct CardTrader integration).
 
-🔗 **Official Production URL:** [https://grand-line-vault-tcg.vercel.app](https://grand-line-vault-tcg.vercel.app)
+🔗 **Official Production URL:** [https://grand-line-vault-tcg.vercel.app](https://grand-line-vault-tcg.vercel.app)  
+👨‍💻 **Created by:** [Killian Torrell — Portfolio (killiantr.vercel.app)](https://killiantr.vercel.app)
 
 ---
 
@@ -188,6 +191,15 @@ cp .env.example .env
 # 5. Start development server
 npm run dev
 ```
+
+---
+
+## 👨‍💻 Autor & Portfolio / Author & Portfolio
+
+* **Killian Torrell** — Full-Stack Developer & Collector
+* 🌐 **Portfolio Oficial:** [https://killiantr.vercel.app](https://killiantr.vercel.app)
+* 🐙 **GitHub:** [@KillianTR](https://github.com/KillianTR)
+* 🏴‍☠️ **Proyecto:** [Grand Line Vault (OPTCG Tracker)](https://grand-line-vault-tcg.vercel.app)
 
 ---
 

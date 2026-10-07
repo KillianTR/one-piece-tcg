@@ -163,6 +163,9 @@ export const translations = {
     footerVersionLabel: 'Versión',
     footerSemVerNote: 'SemVer WoW Standard',
     footerChangelog: 'Changelog',
+    footerCreatedBy: 'Creado y desarrollado por',
+    footerCreatorName: 'Killian Torrell',
+    footerPortfolioButton: 'Ver Portfolio (killiantr.vercel.app)',
 
     // Themes
     themeDark: 'Modo Oscuro',
@@ -333,6 +336,9 @@ export const translations = {
     footerVersionLabel: 'Version',
     footerSemVerNote: 'SemVer WoW Standard',
     footerChangelog: 'Changelog',
+    footerCreatedBy: 'Created & developed by',
+    footerCreatorName: 'Killian Torrell',
+    footerPortfolioButton: 'View Portfolio (killiantr.vercel.app)',
 
     // Themes
     themeDark: 'Dark Mode',

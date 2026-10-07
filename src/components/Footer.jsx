@@ -64,6 +64,40 @@ export default function Footer({ onOpenVersionModal }) {
           </button>
         </div>
       </div>
+
+      {/* Creator Portfolio Bar */}
+      <div className={`max-w-7xl mx-auto px-4 mt-8 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4 text-xs ${
+        isDark ? 'border-neutral-800/60' : 'border-neutral-200'
+      }`}>
+        <div className="flex items-center gap-2">
+          <span className={isDark ? 'text-neutral-400' : 'text-neutral-500'}>
+            {t('footerCreatedBy')}
+          </span>
+          <a 
+            href="https://killiantr.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-bold text-amber-500 hover:text-amber-400 transition inline-flex items-center gap-1 group"
+          >
+            <span className="group-hover:underline">{t('footerCreatorName')}</span>
+            <ExternalLink className="w-3 h-3 text-amber-500/70 group-hover:text-amber-400" />
+          </a>
+        </div>
+
+        <a 
+          href="https://killiantr.vercel.app" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border text-xs font-semibold transition cursor-pointer shadow-sm ${
+            isDark 
+              ? 'bg-neutral-900 border-neutral-800 text-neutral-200 hover:text-white hover:border-amber-500 hover:bg-neutral-800' 
+              : 'bg-neutral-50 border-neutral-300 text-neutral-800 hover:text-neutral-900 hover:border-amber-500 hover:bg-neutral-100'
+          }`}
+        >
+          <span>{t('footerPortfolioButton')}</span>
+          <ExternalLink className="w-3.5 h-3.5 text-amber-500" />
+        </a>
+      </div>
     </footer>
   );
 }
