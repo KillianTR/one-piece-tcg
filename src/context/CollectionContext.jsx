@@ -65,14 +65,32 @@ export function CollectionProvider({ children }) {
     return customBinders[0]?.id || 'vault-custom-1';
   });
 
-  // Save custom binders to localStorage on changes
+  // Save custom binders to localStorage and sync to Supabase (debounced)
   useEffect(() => {
     try {
       localStorage.setItem(CUSTOM_BINDERS_STORAGE_KEY, JSON.stringify(customBinders));
     } catch (e) {
       console.error('Error saving custom binders to localStorage', e);
     }
-  }, [customBinders]);
+
+    if (!user || !supabase) return;
+
+    const timer = setTimeout(async () => {
+      try {
+        await supabase
+          .from('profiles')
+          .update({
+            custom_binders: customBinders,
+            updated_at: new Date().toISOString(),
+          })
+          .eq('id', user.id);
+      } catch (err) {
+        console.warn('Notice syncing custom_binders to Supabase:', err);
+      }
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, [customBinders, user]);
 
   // Custom binder helper functions
   const createCustomBinder = (name, pageSize = 12) => {
@@ -269,6 +287,33 @@ export function CollectionProvider({ children }) {
             await supabase.from('user_collections').upsert(rowsToInsert);
           }
         }
+
+        // Also sync custom binders from profiles
+        try {
+          const { data: profileRow } = await supabase
+            .from('profiles')
+            .select('custom_binders')
+            .eq('id', user.id)
+            .maybeSingle();
+
+          if (profileRow?.custom_binders && Array.isArray(profileRow.custom_binders) && profileRow.custom_binders.length > 0) {
+            setCustomBinders(profileRow.custom_binders);
+            if (!profileRow.custom_binders.some((b) => b.id === activeBinderId)) {
+              setActiveBinderId(profileRow.custom_binders[0].id);
+            }
+          } else if (profileRow && (!profileRow.custom_binders || profileRow.custom_binders.length === 0)) {
+            // Upload local custom binders if cloud is empty
+            if (customBinders && customBinders.length > 0) {
+              await supabase
+                .from('profiles')
+                .update({ custom_binders: customBinders })
+                .eq('id', user.id);
+            }
+          }
+        } catch (binderSyncErr) {
+          console.warn('Custom binders cloud sync notice:', binderSyncErr);
+        }
+
         setIsCloudSynced(true);
       } catch (err) {
         console.error('Failed to load or sync cloud collection', err);

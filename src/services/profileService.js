@@ -1,6 +1,6 @@
 import { supabase } from '../lib/supabase';
 
-const USERNAME_REGEX = /^[a-z0-9_]{3,20}$/;
+const USERNAME_REGEX = /^[a-zA-Z0-9_]{3,20}$/;
 const COOLDOWN_DAYS = 30;
 
 /**
@@ -25,7 +25,7 @@ export function isDeveloperOrAdminEmail(email) {
  */
 export function validateUsernameFormat(username) {
   if (!username) return { valid: false, error: 'profileUsernameInvalid' };
-  const clean = username.toLowerCase().trim();
+  const clean = username.trim();
   if (!USERNAME_REGEX.test(clean)) {
     return { valid: false, error: 'profileUsernameInvalid' };
   }
@@ -227,7 +227,7 @@ export async function saveUserProfile(user, currentProfile, updates) {
 
   const profilePayload = {
     id: user.id,
-    username: updates.username?.toLowerCase().trim() || currentProfile.username,
+    username: updates.username?.trim() || currentProfile.username,
     full_name: updates.full_name?.trim() ?? currentProfile.full_name,
     avatar_url: updates.avatar_url ?? currentProfile.avatar_url,
     pirate_title: updates.pirate_title ?? currentProfile.pirate_title,

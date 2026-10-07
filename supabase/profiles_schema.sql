@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS public.profiles (
     bio VARCHAR(160),
     newsletter_opt_in BOOLEAN DEFAULT FALSE,
     username_changed_at TIMESTAMP WITH TIME ZONE,
+    custom_binders JSONB DEFAULT '[]'::jsonb,
     is_banned BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL

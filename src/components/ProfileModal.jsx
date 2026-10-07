@@ -458,7 +458,7 @@ export default function ProfileModal({ isOpen, onClose }) {
                   <input
                     type="text"
                     value={username}
-                    onChange={(e) => setUsername(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, ''))}
+                    onChange={(e) => setUsername(e.target.value.replace(/[^a-zA-Z0-9_]/g, ''))}
                     disabled={!cooldown.allowed}
                     maxLength={20}
                     placeholder="nombre_usuario"
