@@ -7,9 +7,33 @@ const GITHUB_CHANGELOG_URL = 'https://github.com/KillianTR/one-piece-tcg/blob/ma
 
 const RELEASES = [
   {
-    version: 'v0.6.3',
+    version: 'v0.6.4',
     date: '08/10/2026',
     isLatest: true,
+    tagType: 'minor',
+    title: {
+      es: 'Botón Flotante de Reporte de Errores (OPlayTCG) y Changelog Bilingüe en GitHub',
+      en: 'Floating Bug Report System (OPlayTCG-Style) & Fully Bilingual GitHub Changelog'
+    },
+    changes: {
+      es: [
+        { icon: '🐛', title: 'Botón Flotante de Reporte', desc: 'Botón interactivo fijado en esquina inferior derecha con icono de Bug idéntico a OPlayTCG y acceso en footer.' },
+        { icon: '📨', title: 'Envío Directo a Soporte', desc: 'Envío de incidencias directamente a killiantorrell@gmail.com con mailto, acceso directo a Gmail Web y guardado en base de datos.' },
+        { icon: '💻', title: 'Diagnóstico Técnico Automático', desc: 'Detección automática de versión, navegador, pantalla, URL e idioma para reproducir y resolver cualquier fallo.' },
+        { icon: '🌐', title: 'Changelog Bilingüe en GitHub', desc: 'Documentación completa de CHANGELOG.md en español e inglés para coleccionistas de todo el mundo.' }
+      ],
+      en: [
+        { icon: '🐛', title: 'Floating Bug Report Button', desc: 'Interactive pill button fixed to bottom right corner with Bug icon matching OPlayTCG, plus footer link.' },
+        { icon: '📨', title: 'Direct Support Email Dispatch', desc: 'Instant reporting to killiantorrell@gmail.com with mailto, direct Gmail Web compose window, and database sync.' },
+        { icon: '💻', title: 'Automated System Diagnostics', desc: 'Auto-detects app version, browser, screen dimensions, URL, and language for instant reproduction.' },
+        { icon: '🌐', title: 'Bilingual GitHub Changelog', desc: 'Full CHANGELOG.md documentation in Spanish and English for collectors worldwide.' }
+      ]
+    }
+  },
+  {
+    version: 'v0.6.3',
+    date: '08/10/2026',
+    isLatest: false,
     tagType: 'minor',
     title: {
       es: 'Subpágina de Novedades OPlayTCG, Ilustraciones Reales de Cartas DON!! y Nuevos Logos One Piece',
@@ -209,7 +233,7 @@ export default function VersionModal({ isOpen, onClose }) {
           <div className="flex items-center gap-2.5">
             <span className="text-xs font-semibold text-neutral-400">{t('versionCurrentBadge')}:</span>
             <span className="font-mono text-xs font-extrabold text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/20">
-              v0.6.3
+              v0.6.4
             </span>
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-[11px] font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

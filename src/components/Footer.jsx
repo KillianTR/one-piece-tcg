@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, GitBranch, Mail } from 'lucide-react';
+import { ExternalLink, GitBranch, Mail, Bug } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 
@@ -33,7 +33,7 @@ function BuyMeACoffeeIcon({ className = "w-4 h-4" }) {
   );
 }
 
-export default function Footer({ onOpenVersionModal }) {
+export default function Footer({ onOpenVersionModal, onOpenBugReport }) {
   const { t } = useLanguage();
   const { isDark } = useTheme();
 
@@ -65,7 +65,7 @@ export default function Footer({ onOpenVersionModal }) {
                 isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
               }`}
             >
-              v0.6.3
+              v0.6.4
             </button>
           </div>
         </div>
@@ -92,6 +92,14 @@ export default function Footer({ onOpenVersionModal }) {
           >
             <GitBranch className="w-3.5 h-3.5" />
             <span>{t('footerChangelog')}</span>
+          </button>
+          <button
+            onClick={onOpenBugReport}
+            className="flex items-center gap-1 hover:text-amber-500 transition cursor-pointer"
+            title={t('bugReportButton')}
+          >
+            <Bug className="w-3.5 h-3.5 text-amber-500" />
+            <span>{t('footerReportBug')}</span>
           </button>
         </div>
       </div>

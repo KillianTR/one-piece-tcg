@@ -21,13 +21,71 @@ const GITHUB_CHANGELOG_URL = 'https://github.com/KillianTR/one-piece-tcg/blob/ma
 
 const CHANGELOG_DATA = [
   {
-    version: 'v0.6.3',
+    version: 'v0.6.4',
     date: '08/10/2026',
     dateFormatted: {
       es: '8 de octubre de 2026',
       en: 'October 8, 2026'
     },
     isLatest: true,
+    tagType: 'minor',
+    tagLabel: {
+      es: 'Soporte & Reporte de Errores',
+      en: 'Support & Bug Reporting'
+    },
+    title: {
+      es: 'Botón Flotante de Reporte de Errores (Estilo OPlayTCG) y Changelog Bilingüe en GitHub',
+      en: 'Floating Bug Report System (OPlayTCG-Style) & Fully Bilingual GitHub Changelog'
+    },
+    summary: {
+      es: 'Integrado el botón flotante y modal de reporte de errores idéntico a oplaytcg.com/es con envío directo a killiantorrell@gmail.com, telemetría técnica automática, y traducción completa al inglés del CHANGELOG.md de GitHub.',
+      en: 'Introduced the floating bug reporting pill and modal inspired by oplaytcg.com/es with direct email dispatch to killiantorrell@gmail.com, system diagnostics, and complete English translation of the GitHub CHANGELOG.md.'
+    },
+    sections: [
+      {
+        category: { es: 'Reporte de Errores & Calidad (OPlayTCG Style)', en: 'Bug Reporting & Quality (OPlayTCG Style)' },
+        icon: '🐛',
+        items: {
+          es: [
+            'Botón flotante fijado en la esquina inferior derecha con icono de Bug y texto adaptativo según el dispositivo, idéntico al formato de OPlayTCG.',
+            'Modal interactivo de reporte con categorías (Cartas, Fallo visual, Álbum, Cuenta o Sugerencia).',
+            'Telemetría técnica del sistema recopilada automáticamente (Versión, Navegador, Resolución de pantalla, URL e Idioma) para acelerar diagnósticos y correcciones.',
+            'Envío directo por correo a killiantorrell@gmail.com (vía mailto, acceso directo a Gmail Web o copia al portapapeles).',
+            'Enlace directo añadido en el pie de página junto a las demás opciones de soporte.'
+          ],
+          en: [
+            'Floating button fixed to the bottom right corner with Bug icon and responsive text, matching the format on OPlayTCG.',
+            'Interactive report modal categorized by issue type (Cards, Visual UI, Binder, Account, or Suggestions).',
+            'Automatic technical system telemetry (Version, Browser, Screen resolution, URL, and Language) for immediate bug reproduction.',
+            'Direct email dispatch to killiantorrell@gmail.com (via mailto, direct Gmail Web compose window, or clipboard copy).',
+            'Direct access button added to the footer navigation.'
+          ]
+        }
+      },
+      {
+        category: { es: 'GitHub & Documentación Bilingüe', en: 'GitHub & Bilingual Documentation' },
+        icon: '🌐',
+        items: {
+          es: [
+            'CHANGELOG.md en GitHub completamente bilingüe con selector de idioma directo y traducción integral al inglés para toda la comunidad internacional.',
+            'Script de migración SQL para base de datos (supabase/migration_v0.6.4_bug_reports.sql) para registrar reportes en PostgreSQL.'
+          ],
+          en: [
+            'Fully bilingual CHANGELOG.md on GitHub with fast language selector and complete English documentation for international visitors.',
+            'Database SQL migration script (supabase/migration_v0.6.4_bug_reports.sql) for optional PostgreSQL tracking in Supabase.'
+          ]
+        }
+      }
+    ]
+  },
+  {
+    version: 'v0.6.3',
+    date: '08/10/2026',
+    dateFormatted: {
+      es: '8 de octubre de 2026',
+      en: 'October 8, 2026'
+    },
+    isLatest: false,
     tagType: 'minor',
     tagLabel: {
       es: 'Función & Mejoras',

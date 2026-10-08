@@ -8,12 +8,12 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.3)
+* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.4)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Donaciones Comunitarias:** [buymeacoffee.com/grandlinevault](https://buymeacoffee.com/grandlinevault)
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.6.3` (Minor: Subpágina Changelog estilo OPlayTCG, Ilustraciones Oficiales DON!! & Logos One Piece)
+* **Versión Actual:** `v0.6.4` (Minor: Botón Flotante Reportar Error estilo OPlayTCG, Despacho por Correo & Changelog Bilingüe GitHub)
 
 ---
 
@@ -198,6 +198,15 @@ Cuentas con privilegios de pruebas para Killian:
 - Cambio de nombre de usuario en cualquier momento sin esperar 30 días.
 - Cambio y subida de fotos de avatar ilimitada.
 - Badge visual exclusivo de desarrollador en el modal de perfil.
+
+### 🐛 v0.6.4 — Botón Flotante Reportar Error (OPlayTCG) & Changelog Bilingüe GitHub (Completado)
+- [x] Botón flotante fijado en esquina inferior derecha con icono de Bug y estilo responsivo idéntico al de `oplaytcg.com/es`.
+- [x] Modal interactivo de reporte de errores (`BugReportModal.jsx`) con selección de categoría (Cartas, Visual, Álbum, Cuenta, Sugerencias).
+- [x] Detección y adjuntado automático de diagnóstico del sistema (Versión v0.6.4, Navegador, Resolución de pantalla, URL e Idioma).
+- [x] Despacho directo por correo a `killiantorrell@gmail.com` mediante enlace `mailto:`, botón directo a Gmail Web y copia al portapapeles.
+- [x] Botón directo de reporte añadido al pie de página (`Footer.jsx`).
+- [x] Script de migración SQL para tabla de incidencias en Supabase (`supabase/migration_v0.6.4_bug_reports.sql`).
+- [x] Documentación completa de `CHANGELOG.md` en GitHub 100% bilingüe (Español e Inglés) con selector directo en cabecera.
 
 ### 📜 v0.6.3 — Subpágina Changelog OPlayTCG, Ilustraciones DON!! & Logos One Piece (Completado)
 - [x] Subpágina completa de Novedades e Historial de Versiones (`ChangelogView.jsx`) inspirada en `oplaytcg.com/es/changelog` con timeline vertical interactivo, badges y filtros dinámicos.

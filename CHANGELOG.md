@@ -1,14 +1,63 @@
-# Changelog — Grand Line Vault
+# 🏴‍☠️ Changelog — Grand Line Vault
+
+<div align="center">
+
+[![Versión](https://img.shields.io/badge/version-v0.6.4--minor-blue?style=for-the-badge&logo=git)](CHANGELOG.md)
+[![Web en Vivo](https://img.shields.io/badge/Live_Demo-grand--line--vault--tcg.vercel.app-000000?style=for-the-badge&logo=vercel)](https://grand-line-vault-tcg.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Creator-Killian_Torrell-000000?style=for-the-badge&logo=vercel)](https://killiantr.vercel.app)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-grandlinevault-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/grandlinevault)
+
+---
+
+### 🌐 Selecciona tu Idioma / Select Language:
+**[🇪🇸 Ir a la versión en Español](#-versión-en-español)** &nbsp;•&nbsp; **[🇬🇧 Jump to English Version](#-english-version)**
+
+---
+
+</div>
+
+<br>
+
+<a name="-versión-en-español"></a>
+## 🇪🇸 Versión en Español
 
 Todas las versiones notables de este proyecto están documentadas en este archivo según el estándar **SemVer (Semantic Versioning)** adaptado con la filosofía de ciclo de vida de **Blizzard / World of Warcraft**.
 
 ---
 
-## 📌 Guía de Estructura de Versiones: `[MAJOR] . [MINOR] . [PATCH]`
+### 📌 Guía de Estructura de Versiones: `[MAJOR] . [MINOR] . [PATCH]`
 
 * **MAJOR (ej. `2.0.0`):** Expansión mayor (*Major Update*). Rediseño estructural, nueva arquitectura de base de datos, salto de versión o cambio que rompe compatibilidad (equivalente a las expansiones del WoW como *The War Within* o *Dragonflight*).
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
+
+---
+
+## [0.6.4] - 2026-10-08
+### 🐛 Minor Update — Botón Flotante de Reporte de Errores (Estilo OPlayTCG), Envío por Email a Soporte y Changelog Bilingüe en GitHub
+
+#### ✨ Nuevas Características & Experiencia de Usuario (Features & UX)
+* **Botón Flotante de Reporte de Errores ("Report a Bug"):**
+  * Diseñado e integrado un botón flotante fijado en la esquina inferior derecha (`fixed bottom-4 right-4 z-40`) con el icono de `Bug` en dorado ámbar y etiqueta responsiva, exactamente en el mismo formato de **[oplaytcg.com/es](https://oplaytcg.com/es)**.
+  * En dispositivos móviles se muestra como una píldora compacta circular no invasiva, y en pantallas de ordenador y tablet despliega el texto *"Reportar un error"* / *"Report a bug"*.
+  * Enlace directo adicional integrado en la barra de navegación del pie de página (`Footer.jsx`).
+* **Modal Completo de Envío de Incidencias (`BugReportModal.jsx`):**
+  * **Categorización Inteligente:** Selector con píldoras visuales por tipo de error:
+    * 🃏 *Carta o scan incorrecto*
+    * 🖼️ *Fallo visual / Interfaz*
+    * 📖 *Álbum o carpetas*
+    * 🔐 *Cuenta o perfil*
+    * 💡 *Sugerencia / Otro*
+  * **Telemetría y Diagnóstico Técnico Automático:** Recopilación automática no intrusiva de los datos clave del sistema para que el desarrollador pueda reproducir el fallo al instante: versión de la web (`v0.6.4`), navegador y sistema operativo (`navigator.userAgent`), dimensiones de pantalla, URL/pestaña activa e idioma.
+  * **Despacho Directo por Correo a `killiantorrell@gmail.com`:**
+    * Botón principal **"Enviar por correo"**: Abre el cliente de correo del usuario (`mailto:`) con asunto y cuerpo preformateados.
+    * Botón alternativo **"Abrir en Gmail Web"**: Redirige directamente a la ventana de redacción de Gmail en el navegador web con todos los campos precompletados (ideal para usuarios sin cliente local).
+    * Botón **"Copiar reporte"**: Copia el informe completo estructurado al portapapeles con confirmación visual en verde.
+  * **Pantalla de Confirmación y Agradecimiento:** Feedback tranquilizador con resumen de la incidencia y confirmación de recepción.
+* **Base de Datos & Script de Migración SQL (`supabase/migration_v0.6.4_bug_reports.sql`):**
+  * Creación de la tabla `public.bug_reports` con políticas RLS para registro opcional de reportes en PostgreSQL.
+* **Changelog de GitHub 100% Bilingüe (Español e Inglés):**
+  * Documentación completa de todas las versiones del proyecto traducida al inglés para coleccionistas y visitantes internacionales.
 
 ## [0.6.3] - 2026-10-08
 ### 📜 Minor Update — Subpágina Dedicada de Novedades (Estilo OPlayTCG), 19 Ilustraciones Oficiales de Cartas DON!! y Nuevos Logos One Piece
@@ -74,13 +123,12 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 #### ✨ Nuevas Características & Identidad Visual (Features & Assets)
 * **Rediseño del Modal de Versiones a 'Registro de Cambios & Novedades' (Changelog):**
   * Eliminada la explicación teórica de desarrollo (SemVer y flujo de ramas de Git) que no aportaba valor a los usuarios o coleccionistas.
-  * Transformado en un modal interactivo con notas de parches reales (v0.6.2 hasta v0.4.0), badges de versión y botón directo a `CHANGELOG.md` en GitHub (`https://github.com/KillianTR/one-piece-tcg/blob/main/CHANGELOG.md`).
+  * Transformado en un modal interactivo con notas de parches reales (v0.6.2 hasta v0.4.0), badges de versión y botón directo a `CHANGELOG.md` en GitHub.
   * Limpieza del footer: eliminado el texto técnico *"SemVer WoW Standard"*, dejando una visualización limpia de la versión `v0.6.2` y el enlace `Changelog`.
 * **Logotipos Oficiales de Grand Line Vault:**
-  * **Versión Cuadrada (1:1):** Log Pose (brújula náutica), letras oficiales de "ONE PIECE CARD GAME" y relieve 3D en oro pirata "GRAND LINE VAULT". Integrado en el Navbar (`Navbar.jsx`) y pie de página (`Footer.jsx`).
-  * **Versión Banner (16:9):** Composición cinematográfica náutica con mascarones de proa y madera tallada pirata con bronce. Configurado en `index.html` mediante etiquetas Open Graph y Twitter Cards (`og:image`) para que se muestre como vista previa al compartir el enlace de la web por WhatsApp, Discord, X/Twitter, etc.
+  * **Versión Cuadrada (1:1):** Log Pose (brújula náutica), letras oficiales de "ONE PIECE CARD GAME" y relieve en madera noble pirata "GRAND LINE VAULT". Integrado en el Navbar (`Navbar.jsx`) y pie de página (`Footer.jsx`).
 * **Integración del Enlace Oficial de Buy Me a Coffee:**
-  * Conectado el enlace oficial definitivo `https://buymeacoffee.com/grandlinevault`.
+  * Conectado el enlace oficial definitivo `https://buymeacoffee.com/grandlinevault` en el pie de página.
 
 ## [0.6.1] - 2026-10-07
 ### ☕ Patch — Buy Me a Coffee (Donaciones), Layout Simétrico ES/EN en Controles del Álbum y Ajuste Legal del Disclaimer
@@ -90,7 +138,7 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
   * Reemplazado el icono duplicado de portfolio web en la barra inferior por el icono oficial de la taza de café con corazón (*Buy Me a Coffee*), enlazado a la página oficial de aportaciones y donaciones comunitarias (`https://buymeacoffee.com/grandlinevault`).
   * Efecto de hover dinámico con el color dorado oficial `#FFDD00` de la marca Buy Me a Coffee y tooltip bilingüe (*"Invítame a un café (Donaciones)"* / *"Buy Me a Coffee (Donations)"*).
 * **Ajuste Legal y Comunitario en el Disclaimer:**
-  * Actualizado el texto legal a: *"One Piece Card Game es propiedad de Eiichiro Oda / Shueisha, Toei Animation y Bandai. Proyecto fan-made independiente sin fines comerciales, mantenido con apoyo voluntario de la comunidad."* (protege la condición legal del proyecto comunitario no comercial al recibir donaciones voluntarias de servidores).
+  * Actualizado el texto legal a: *"One Piece Card Game es propiedad de Eiichiro Oda / Shueisha, Toei Animation y Bandai. Proyecto fan-made independiente sin fines comerciales, mantenido con apoyo voluntario de la comunidad."*
 * **Solución al Descuadre Vertical de Controles del Álbum (Español vs. Inglés):**
   * Corrección del salto de línea que provocaba que en español el toolbar ocupara dos líneas verticales por diferencias de longitud tipográfica (*"Bolsillos"* vs *"Pockets"* y acento en *"Pág."*).
   * Aplicado `flex-nowrap`, `whitespace-nowrap`, `shrink-0` y ancho mínimo consistente (`min-w-[72px]`) en el contador de páginas para garantizar una visualización simétrica, compacta y alineada en una sola fila en cualquier idioma y resolución.
@@ -100,21 +148,8 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 
 #### ✨ Nuevas Características & Mejoras (Features & UI)
 * **Ingestión Masiva de Cartas Oficiales de One Piece TCG:**
-  * Ampliación del catálogo con cerca de 100 cartas auténticas con ilustraciones oficiales en alta resolución de Bandai.
-  * Cobertura de sets ampliada:
-    * **OP-01:** Romance Dawn
-    * **OP-02:** Paramount War (Whitebeard, Ace, Kuzan SEC, Borsalino, Uta SEC)
-    * **OP-03:** Pillars of Strength (Katakuri, Big Mom, Rob Lucci, Nami Alt-Win, Sogeking SEC)
-    * **OP-04:** Kingdoms of Intrigue (Vivi, Rebecca, Sabo, Corazon SEC)
-    * **OP-05:** Awakening of the New Era (Luffy Gear 5 SEC & Manga, Enel, Kid, Law)
-    * **OP-06:** Wings of the Captain (Zoro SEC & Manga, Gecko Moria, Perona, Reiju, Yamato)
-    * **OP-07:** 500 Years in the Future (Dragon, Bonney, Boa Hancock SEC & Manga, Lucci)
-    * **OP-08:** Two Legends (Chopper, Rayleigh SEC, Whitebeard SEC, Marco)
-    * **OP-09:** The Four Emperors (Blackbeard Teach, Buggy SEC & Manga, Shanks SEC, Gol.D.Roger SEC & Manga)
-    * **ST-01:** Straw Hat Crew (Luffy, Zoro, Sanji, Chopper, Nami, Brook)
-    * **ST-02:** Worst Generation (Kid, Killer, Bonney, Hawkins)
-    * **ST-10:** The Three Captains (Law, Luffy, Kid)
-    * **DON!! Cards:** Ilustraciones especiales (Gold Stamp, Manga Gear 5, Red Hair Pirates, Whitebeard Pirates, Blackbeard Darkness).
+  * Ampliación del catálogo con cerca de 100 cartas auténticas con ilustraciones oficiales en alta resolución.
+  * Cobertura de sets ampliada: OP-01 (Romance Dawn), OP-02 (Paramount War), OP-03 (Pillars of Strength), OP-04 (Kingdoms of Intrigue), OP-05 (Awakening of the New Era), OP-06 (Wings of the Captain), OP-07 (500 Years in the Future), OP-08 (Two Legends), OP-09 (The Four Emperors), ST-01, ST-02, ST-10 y cartas DON!!.
 * **Script de Migración SQL para Supabase (`supabase/migration_v0.6.0_cards_mass_import.sql`):**
   * Script generado con todas las cartas estructuradas para inserción/actualización directa en la tabla `public.cards` de PostgreSQL.
 * **Integración Completa de Sonido Táctil Háptico:**
@@ -125,205 +160,179 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 ## [0.5.1] - 2026-10-07
 ### 💎 Patch — Sincronización en la Nube de Carpetas, Filtros Avanzados, Estadísticas Financieras, Backup/Export y Efectos de Sonido Hápticos
 
-#### ✨ Nuevas Características & Mejoras (Features & UI)
-* **Sincronización en la Nube de "Mis Carpetas" (Supabase Cloud Sync):**
-  * Columna `custom_binders` (JSONB) integrada en `public.profiles` con políticas RLS seguras.
-  * Sincronización automática con guardado diferido (*debounced*) en segundo plano para optimizar el rendimiento.
-  * Migración transparente de carpetas creadas como invitado hacia la cuenta de usuario al iniciar sesión.
-* **Filtros Avanzados y Ordenación Multicriterio en el Catálogo (`CardCatalog`):**
-  * Filtro por **Categoría / Tipo de Carta**: Leader, Character, Event, Stage, DON!!.
-  * Filtro por **Coste de Invocación**: 0 a 10+.
-  * Nuevo selector de ordenación: por ID Oficial, Coste (menor a mayor / mayor a menor), Poder, Rareza, Precio en € y Nombre A-Z.
-* **Estadísticas del Coleccionista & Valoración Financiera (`CollectionStatsModal`):**
-  * Valor total de la colección estimado en euros (€) basado en cotizaciones reales de CardTrader.
-  * Estimación del coste total para completar las cartas en la lista de deseos (*Wishlist*).
-  * Desglose visual por rareza (Líderes, Raras, Super Raras, Secretas, Mangas) con contadores exactos.
-  * Barras de progreso individuales por expansión con cálculo dinámico.
-  * Sección "Joyas de la Corona": ranking de las cartas más valiosas poseídas con enlaces directos a CardTrader.
-  * Acceso directo con insignia de valor monetario (`~XXX€`) en el pill de estadísticas del header y opción dedicada en el menú desplegable.
-* **Copias de Seguridad, Exportación e Importación (`BackupModal`):**
-  * Exportación de backup completo en formato `.json` (colección, wishlist y carpetas personalizadas) y restauración desde archivo.
-  * Exportación estándar para el simulador competitivo **OPTCG Sim** (formato texto `4 OP01-001`) con copia al portapapeles y descarga `.txt`.
-  * Importación rápida por pegado de texto plano o subida de listas para añadir cartas en lote a la colección.
-* **Efectos de Sonido Táctiles (Web Audio API Synthesizer):**
-  * Síntesis en tiempo real con cero dependencias externas ni peso de archivos MP3:
-    * Sonido de paso de hoja (*whoosh*) al cambiar de página en el archivador.
-    * Sonido de chasquido (*snap/click*) al enfundar o mover una carta entre bolsillos.
-  * Conmutador con icono y estado (🔊 Activado / 🔇 Silenciado) guardado en `localStorage`.
-* **Soporte de Mayúsculas en Nombres de Usuario:**
-  * Permitido el uso de caracteres en mayúsculas en el `@username` (ej. `@Killian_TR`) manteniendo la unicidad insensible a mayúsculas (*case-insensitive*) en PostgreSQL.
-* **Rediseño del Footer & Barra de Enlaces y Contacto:**
-  * Eliminación del botón duplicado de portfolio en el pie de página para un diseño mucho más limpio y profesional.
-  * Inclusión del año oficial de creación: `© 2026 Grand Line Vault • Creado y desarrollado por Killian Torrell` con enlace directo a [killiantr.vercel.app](https://killiantr.vercel.app).
-  * Nueva barra de iconos de redes y contacto: perfil de **LinkedIn** ([in/killiantorrell](https://www.linkedin.com/in/killiantorrell)), **GitHub** ([@KillianTR](https://github.com/KillianTR)), **Portfolio Web** y botón de **Contacto** directo por correo electrónico.
-  * Actualización de la insignia del footer a `v0.5.1`.
+* **Sincronización en la Nube de "Mis Carpetas":** Columna `custom_binders` (JSONB) en Supabase con políticas RLS y sincronización diferida en segundo plano.
+* **Filtros Avanzados y Ordenación Multicriterio:** Por categoría (Líder, Personaje, Evento, Escenario, DON!!), por coste (0 a 10+) y por 6 criterios de ordenación.
+* **Estadísticas del Coleccionista & Valoración Financiera (€):** Valor de mercado total de la colección según cotizaciones de CardTrader, coste de wishlist, desglose por rarezas y ranking "Joyas de la Corona".
+* **Copias de Seguridad (Backup & Export):** Exportación completa a JSON y exportación para OPTCG Sim (`4 OP01-001`).
+* **Efectos de Sonido Táctiles (Web Audio API):** Sonidos de paso de página y de enfundado de cartas sin librerías externas.
+* **Soporte de Mayúsculas en Nombres de Usuario:** Soporte para `@username` con mayúsculas y minúsculas manteniendo unicidad insensible a mayúsculas.
 
 ## [0.5.0] - 2026-10-07
 ### 📂 Minor Update — Carpetas Personalizadas, Ordenación Libre, Multicriterio & Limpieza de Cabecera Vault X
 
-#### ✨ Nuevas Características & Mejoras (Features & UI)
-* **Sistema de Carpetas Personalizadas ("Mis Carpetas"):**
-  * **Dos modos en el álbum:** Alternancia rápida entre `Catálogo Oficial (Sets)` (checklist canónico con siluetas de cartas faltantes) y `Mis Carpetas (Álbum Libre)` (organización personalizada sin restricciones).
-  * **Creación y gestión de carpetas:** Creación de múltiples carpetas con nombre propio, selección de portada y eliminación.
-  * **Páginas dinámicas:** Botones para `+ Añadir Página` o eliminar páginas sobrantes en cualquier carpeta.
-  * **Asignación libre por bolsillo:** Clic en cualquier bolsillo vacío para abrir el `CardPickerModal`, buscar por nombre/código, filtrar por tipo (Leader, Character, Event, Stage, DON!!) o mostrar solo cartas que el usuario ya posee en su colección.
-  * **Drag & Drop HTML5 nativo:** Arrastra cartas directamente de un bolsillo a otro para reordenar filas o páginas al instante.
-  * **Carpeta inicial preconfigurada:** Estructura realista con 4 Luffys en fila 1, 4 Zoros en fila 2, Sanji, Jinbe, páginas de Yonkos, Marines y sección de cartas DON!!.
-  * Persistencia en `localStorage` con migración automática.
-* **Navegación Oficial con "TODAS" las Expansiones y Multi-Página:**
-  * Opción `TODAS` en el selector de expansiones para explorar todo el catálogo paginado (página 1, 2, 3...) en formato de 9 o 12 bolsillos.
-  * Selector de ordenación multicriterio:
-    * Por Tipo de Carta (Leader, Character, Event, Stage, DON!!)
-    * Por Rareza
-    * Por Color
-    * Por Coste
-    * Por Poder
-    * Por Código de Carta (ID)
-* **Limpieza y Pulido del Vault X Header:**
-  * Eliminación de términos innecesarios: la placa ahora muestra limpiamente `VAULT X • ONE PIECE`.
-  * Eliminación del subtítulo físico no aplicable (*"Acid-free, side-loading 9-pocket archival binder pages"*).
-  * Retirada de la insignia de versión del navbar para despejar la cabecera; trasladada al menú desplegable de usuario (`Ajustes / Versión`) y al pie de página.
-* **Ampliación de Cartas Mock:**
-  * Incorporación de Sanji (`ST01-004`), Jinbe (`OP01-005`), Zoro Alt-Art (`OP01-026`), Sakazuki (`OP02-099`), Borsalino (`OP02-114`) y cartas de Don personalizadas (`DON-001`, `DON-002`).
-
----
+* **Sistema de Carpetas Personalizadas ("Mis Carpetas"):** Alternancia entre Catálogo Oficial y Álbum Libre con páginas ilimitadas y Drag & Drop nativo entre bolsillos.
+* **Navegación Oficial con "TODAS" las Expansiones:** Exploración de todo el catálogo unificado en páginas de 9 o 12 bolsillos.
 
 ## [0.4.1] - 2026-10-07
 ### ⚓ Patch — Rediseño del Header, Menú Desplegable de Usuario y Descongestión Visual
 
-#### ✨ Nuevas Características & Mejoras de UX (Features & UI)
-* **Menú Desplegable de Usuario en el Avatar (User Dropdown Menu):**
-  * Descongestión del header: sustitución de múltiples botones independientes (idioma, tema, perfil, cerrar sesión) por un desplegable flotante unificado al hacer clic en el avatar.
-  * Tarjeta de usuario con avatar en alta definición, @nombre, email y rango pirata con icono de condecoración (`Award`).
-  * Acceso directo a "Mi Perfil y Personalización" para abrir el modal de perfil.
-  * Ajustes integrados: cambio rápido de idioma (ES / EN) y alternancia de Modo Oscuro / Modo Claro dentro del propio desplegable.
-  * Botón estilizado de "Cerrar Sesión".
-  * Cierre inteligente al pulsar fuera del menú o con la tecla `Escape`.
-* **Distribución Espaciosa del Header (3 Zonas):**
-  * **Zona Izquierda:** Logotipo de Grand Line Vault, insignia de versión clickeable y subtítulo.
-  * **Zona Central:** Pestañas de navegación (Álbum, Catálogo, Intercambios) con protagonismo y espacio para respirar.
-  * **Zona Derecha:** Píldora de estadísticas (`Colección: X | Wishlist: Y`) + separador vertical + Píldora interactiva de avatar con flecha indicadora.
-* **Sincronización Reactiva:**
-  * Evento global de actualización para sincronizar avatar, nombre y rango en la barra de navegación en tiempo real al guardar cambios en el perfil.
-* **Corrección de Salto de Línea en la Barra del Álbum (VirtualBinder):**
-  * Solución al desbordamiento en español que forzaba a la barra a ocupar dos líneas verticales (`ST-01` en segunda fila y paginación partida).
-  * Optimización de espaciados, paddings y `whitespace-nowrap` para que todos los selectores de sets, bolsillos y paginador quepan en una sola fila compacta y homogénea en ambos idiomas.
-
----
+* Menú flotante al hacer clic en el avatar agrupando perfil, estadísticas, copias de seguridad, selector de tema e idioma y cierre de sesión.
+* Corrección del salto de línea en la barra de controles de paginación del álbum.
 
 ## [0.4.0] - 2026-10-07
 ### 👤 Minor Update — Perfil de Usuario, Personalización, Subida de Avatar 300x300 & Header Modo Claro
 
-#### ✨ Nuevas Características (Features)
-* **Modal de Personalización de Perfil (`ProfileModal`):**
-  * Acceso directo haciendo clic en el avatar o nombre del usuario en la barra de navegación.
-  * **Nombre de Usuario (@username):**
-    * Validación de nombres únicos en Supabase (`public.profiles`).
-    * **Regla de 30 días:** Solo se puede cambiar el nombre de usuario una vez cada 30 días, bloqueando el campo con candado visual e indicando la fecha exacta del próximo cambio.
-  * **Subida y Procesamiento de Foto de Perfil (Avatar 300x300 px):**
-    * Carga de archivos PNG, JPG o WebP con redimensionado y recorte cuadrado automático a 300x300 mediante Canvas del navegador.
-    * Compresión inteligente a WebP/JPEG (~25-35 KB) para carga instantánea y nulo impacto en rendimiento.
-    * Borde dorado con aro de coleccionista pirata y opción de eliminar avatar.
-  * **Normas de la Comunidad y Advertencia de Moderación:**
-    * Mensaje explícito de tolerancia cero ante imágenes explícitas, violentas o protegidas, con advertencia de sanción o suspensión de cuenta.
-  * **Datos Personales Opcionales & Rango de Coleccionista:**
-    * Campo de Nombre y Apellidos opcional.
-    * Selector de Rango Pirata (*Novato del East Blue*, *Peor Generación*, *Guerrero del Mar*, *Comandante de Yonko*, *Rey de los Piratas*) con icono de insignia (`Award`), sin emojis ni estética de IA.
-    * Biografía o frase pirata personalizada de hasta 160 caracteres.
-  * **Seguridad & Correo Vinculado:**
-    * Visualización de correo asociado e insignia de Google OAuth.
-    * Cambio seguro de contraseña integrado con Supabase Auth.
-  * **Suscripción a Novedades (Newsletter):**
-    * Casilla de verificación para recibir avisos de nuevas funciones, salidas de cartas oficiales y eventos.
-  * **Feedback de Guardado Reasegurador:**
-    * Animación de confeti celebratorio + casilla de notificación verde con check + botón dinámico en verde esmeralda con `¡Guardado con éxito!` para confirmar al usuario que los cambios están en la nube antes de cerrar el modal.
-* **Esquema de Base de Datos Supabase (`supabase/profiles_schema.sql`):**
-  * Tabla `public.profiles` con políticas RLS (lectura pública, escritura privada del propio usuario) y trigger automático para nuevos registros.
-
-#### 🐛 Correcciones y Mejoras Visuales (Fixes & UI)
-* **Header en Modo Claro:**
-  * Corrección de contraste: el header en modo claro ahora tiene fondo blanco nítido (`bg-white/95 border-neutral-200`) eliminando el tono gris oscuro accidental.
-* **Iconografía Limpia:**
-  * Reemplazo de iconos de destellos tipo IA (`Sparkles`) por iconos limpios de condecoración (`Award`) en rangos e insignias.
-* **Pie de Página (Footer):**
-  * Inclusión de enlace y botón directo al portfolio de Killian Torrell (`killiantr.vercel.app`).
-* **Logo en Footer en Modo Claro:**
-  * Inversión de color adaptativa para el logo en modo claro.
-
----
+* Modal de perfil con validación de nombre único, regla de cambio cada 30 días, recorte y compresión de avatar a 300x300 px WebP/JPEG, rangos de coleccionista pirata y biografía.
+* Integración de tabla `public.profiles` en Supabase con RLS.
 
 ## [0.3.0] - 2026-10-07
 ### 🌐 Minor Update — Sistema Multi-Idioma (Español / Inglés) & Modo Claro / Oscuro
 
-#### ✨ Nuevas Características (Features)
-* **Soporte Bilingüe Completo (Español / English):**
-  * Selector de idioma en la barra de navegación (`ES` / `EN`) con persistencia en `localStorage`.
-  * Traducción completa de todos los módulos: Álbum Virtual, Catálogo de Cartas, Ficha Técnica, Tablón de Intercambios, Modales de Autenticación y Versionado, y Pie de Página.
-  * Detección automática del idioma del navegador del usuario.
-* **Sistema de Temas: Modo Oscuro & Modo Claro:**
-  * Selector de tema en la barra de navegación (icono Sol / Luna) con persistencia en `localStorage`.
-  * **Modo Oscuro (Vault X Black Edition):** Textura de piel negra, pespunte dorado y fundas transparentes ahumadas.
-  * **Modo Claro (Vault X White Edition):** Textura de piel marfil/blanca, pespunte dorado y contraste nítido adaptado a navegación diurna.
-* **Actualización del README:**
-  * README bilingüe (Español e Inglés) y corrección de la URL de despliegue oficial a `https://grand-line-vault-tcg.vercel.app`.
-
----
+* Soporte bilingüe completo (ES / EN) en toda la interfaz con persistencia local.
+* Modos visuales Vault X: Dark Edition (piel negra) y Light Edition (piel marfil).
 
 ## [0.2.0] - 2026-10-07
 ### ⚡ Minor Update — Integración de Supabase (Auth & Base de Datos en la Nube)
 
-#### ✨ Nuevas Características (Features)
-* **Autenticación con Supabase (`AuthModal`):**
-  * Sistema de registro e inicio de sesión mediante Email y Contraseña.
-  * Manejo de estados de sesión con `AuthProvider` y `@supabase/supabase-js`.
-  * Menú de usuario en la barra de navegación con indicador de estado en la nube 🟢 y opción para cerrar sesión.
-* **Sincronización de Colección en la Nube (`user_collections`):**
-  * Persistencia en tiempo real en PostgreSQL con seguridad RLS (*Row Level Security*).
-  * Migración automática: si un usuario navega como invitado y luego crea su cuenta, sus cartas de `localStorage` se migran automáticamente a su cuenta de Supabase.
-* **Seguridad y Variables de Entorno:**
-  * Configuración segura mediante `.env` (`VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`).
-
----
+* Autenticación con email/contraseña y Google OAuth.
+* Sincronización de colección con PostgreSQL y migración automática desde el modo invitado.
 
 ## [0.1.0] - 2026-10-07
 ### 🚀 Alpha Release — Álbum Virtual Vault X & Catálogo Inicial
 
-#### ✨ Nuevas Características (Features)
-* **Álbum Virtual Interactivo (Vault X Style):**
-  * Simulación de archivador físico con textura de piel negra (`binder-leather`), bordes con pespunte dorado (`binder-stitching`) y lomo central.
-  * Hojas de 9 bolsillos (cuadrícula 3x3) y soporte conmutable a 12 bolsillos (4x3).
-  * Renderizado diferencial: cartas en posesión a todo color y con brillo holográfico al pasar el ratón (`holo-shine`); cartas faltantes en escala de grises/silueta translúcida con etiqueta distintiva de "FALTA".
-  * Barra de progreso de completitud por expansión en tiempo real (porcentaje y número de cartas).
-  * Animación de celebración con confeti al añadir cartas al álbum.
-* **Catálogo & Base de Datos One Piece TCG:**
-  * Dataset inicial con cartas oficiales de las expansiones **OP-01 (Romance Dawn)**, **OP-05 (Awakening of the New Era)**, **OP-09 (The Four Emperors)** y **ST-01 (Straw Hat Crew)**.
-  * Filtros dinámicos por nombre, código ID (`OP05-060`), texto de efecto, expansión, color (Rojo, Verde, Azul, Púrpura, Negro, Amarillo) y rarezas (`L`, `C`, `UC`, `R`, `SR`, `SEC`, `SP`).
-  * Filtro rápido de inventario: *Todas*, *En Colección*, *Faltantes* y *Wishlist*.
-* **Ficha Detallada de Carta (`CardModal`):**
-  * Arte en alta resolución con badges oficiales de estadísticas (Coste, Vidas, Poder de ataque, Counter, Atributo, Tipo de tripulación).
-  * Contador rápido de copias (`+` / `-`) y botón para marcar en Wishlist.
-  * Conexión directa y botón de búsqueda a **CardTrader** para consultar precios y disponibilidad de mercado en tiempo real.
-* **Persistencia Local (`localStorage`):**
-  * El estado de las cartas guardadas, copias y wishlist se almacena en el navegador del usuario sin requerir backend inicial.
-* **Tablón de Intercambio P2P (`TradeBoard`):**
-  * Vista previa del tablón comunitario para publicar cartas repetidas y cartas buscadas entre usuarios.
-* **Modal Educativo de Versiones (`VersionModal`):**
-  * Modal interactivo accesible desde el badge de versión en la barra de navegación para consultar la versión activa y el estándar SemVer WoW.
+* Álbum interactivo con vistas de 9 y 12 bolsillos, cartas conseguidas vs faltantes y confeti.
+* Ficha modal de carta con enlace de compra a CardTrader y catálogo filtrable.
 
 ---
 
-## [Próximas Versiones Planificadas]
+<br>
+<hr>
+<br>
 
-### [0.2.0] - Próximamente (Minor Update)
-* Conexión con Supabase para autenticación multi-usuario (Email y Google OAuth).
-* Sincronización de colección en la nube (PostgreSQL + RLS).
-* Buscador global con atajo de teclado (`Ctrl + K`).
+<a name="-english-version"></a>
+## 🇬🇧 English Version
 
-### [1.0.0] - Próximamente (Major Release — Lanzamiento Oficial Vercel)
-* Primera versión oficial pública y estable.
-* Álbumes personalizados con nombres propios creados por el usuario (ej. *"Mis Líderes Favoritos"*, *"Carpeta Manga Art"*).
-* Exportación e importación de listas de cartas a formato CSV / JSON y formatos de simuladores de juego (OPTCG Sim).
+All notable versions and milestones for **Grand Line Vault** are documented here following the **SemVer (Semantic Versioning)** standard adapted with the release philosophy of **Blizzard / World of Warcraft**.
 
-### [2.0.0] - Próximamente (Major Update — Expansión Social y Mercado)
-* Sistema completo de chat directo y notificaciones entre usuarios para el tablón de intercambios.
-* Valoración total estimada del álbum en euros según cotización de mercado.
+---
+
+### 📌 Version Structure Guide: `[MAJOR] . [MINOR] . [PATCH]`
+
+* **MAJOR (e.g. `2.0.0`):** Major Expansion (*Major Update*). Structural redesign, database schema overhaul, breaking changes, or major architectural jumps (analogous to WoW expansions like *The War Within* or *Dragonflight*).
+* **MINOR (e.g. `0.1.0`):** Feature or Content Patch (*Minor Update*). Substantial new features added in a backward-compatible manner (such as custom binders, trading boards, advanced filters).
+* **PATCH (e.g. `0.0.1`):** Hotfix / Bug Fix (*Patch*). Fast code repairs, visual styling adjustments, performance tweaks, or minor text polish.
+
+---
+
+## [0.6.4] - 2026-10-08
+### 🐛 Minor Update — Floating Bug Report Button (OPlayTCG Style), Direct Email Support Dispatch & Bilingual GitHub Changelog
+
+#### ✨ New Features & User Experience (Features & UX)
+* **Floating Bug Report Button ("Report a Bug"):**
+  * Designed and integrated a floating button fixed to the bottom right corner (`fixed bottom-4 right-4 z-40`) featuring an amber-gold `Bug` icon and responsive pill styling, matching the exact format from **[oplaytcg.com/es](https://oplaytcg.com/es)**.
+  * Displays as an unobtrusive round icon on mobile viewports, and expands to show the full label *"Report a bug"* / *"Reportar un error"* on tablets and desktop screens.
+  * Direct access link also added to the bottom footer navigation (`Footer.jsx`).
+* **Interactive Bug Reporting Modal (`BugReportModal.jsx`):**
+  * **Categorized Issue Selector:** Quick visual pills for issue categorization:
+    * 🃏 *Card or scan issue*
+    * 🖼️ *Visual / UI glitch*
+    * 📖 *Binder or custom folders*
+    * 🔐 *Account or profile*
+    * 💡 *Suggestion / Other*
+  * **Automated System Telemetry & Diagnostics:** Non-invasive automatic capture of system parameters so the developer can diagnose and reproduce issues instantly: app version (`v0.6.4`), browser & OS (`navigator.userAgent`), screen resolution, current URL / active tab, and language.
+  * **Direct Email Dispatch to `killiantorrell@gmail.com`:**
+    * Primary button **"Send via Email"**: Launches the user's default email client (`mailto:`) with pre-filled subject and structured diagnostic body.
+    * Secondary button **"Open in Gmail Web"**: Directly opens Gmail's web compose window in a new tab with all fields pre-populated (ideal for webmail users without local mail clients).
+    * Secondary button **"Copy Report"**: Copies the full formatted report to the clipboard with emerald green visual feedback.
+  * **Confirmation & Thank You Screen:** Clear user reassurance modal showing recipient confirmation and support pledge.
+* **Database & SQL Migration Script (`supabase/migration_v0.6.4_bug_reports.sql`):**
+  * Schema creation for `public.bug_reports` table with secure RLS policies for optional cloud issue tracking in PostgreSQL.
+* **Fully Bilingual GitHub Changelog (English & Spanish):**
+  * Full translation of all project releases and technical notes into English for global collectors and international GitHub visitors.
+
+## [0.6.3] - 2026-10-08
+### 📜 Minor Update — Dedicated OPlayTCG-Style Changelog Subpage, 19 Genuine Illustrated DON!! Cards & Authentic One Piece Logos
+
+#### ✨ New Features & UX Improvements
+* **Dedicated In-App Changelog Subpage (`ChangelogView.jsx`):**
+  * Subpage modeled after `https://oplaytcg.com/es/changelog` with chronological vertical timeline, pulsing glow status nodes, and categorized cards (Features, Bug Fixes, Catalog & Visual Branding).
+  * Filter pills: *All Versions*, *Updates / Features*, and *Patches / Hotfixes*.
+  * Accessible via navbar tab, footer link (`#changelog`), or one-click back button returning to the virtual binder.
+  * Bilingual support (ES / EN) and adaptive dark/light themes with direct link to GitHub's `CHANGELOG.md`.
+* **DON!! Cards Resolution & 19 Authentic Illustrated Cards:**
+  * Resolved `DON-005`: reclassified to authentic Bandai base standard DON!! illustration.
+  * Integrated 19 official illustrated DON!! cards with manga artwork by Eiichiro Oda (Luffy "King of the Pirates", Shanks Marineford, Vivi Alabasta, Crocodile, Corazon "I LOVE YOU!!", Red Roc Luffy vs Kaido, Zoro & Sanji Wano, Shichibukai Warlords, Three Captains Sabaody, Whitebeard Marineford, Katakuri, Doflamingo, etc.).
+  * 100% card scan audit: 105 official cards verified via automated Node.js test returning HTTP 200 OK with zero broken assets.
+* **Authentic One Piece Logo Redesign:**
+  * Replaced metallic gold design with authentic One Piece aesthetic (weathered WANTED bounty poster font, carved ship timber, Log Pose compass, and Straw Hat Jolly Roger anchor).
+  * Standardized layout: *"GRAND LINE VAULT"* on top, official *"ONE PIECE CARD GAME"* logo on the bottom.
+  * Cleaned up legacy `og-preview.jpg` and updated metadata.
+
+## [0.6.2] - 2026-10-08
+### 🎨 Patch — High-Definition TCGPlayer CDN Scans, Modal Close Button Fix & Official Grand Line Vault Logos
+
+* **Card Image CORP Policy Resolution:** Solved Bandai's strict `Cross-Origin-Resource-Policy: same-site` block by routing catalog scans through high-definition Cloudflare R2 proxy synchronized with TCGPlayer.
+* **Modal Close Button Fix (`CardModal.jsx`):** Eliminated visual overlap between the `(X)` close button and the set badge with safety padding (`pr-12`) and wider container (`max-w-5xl`).
+* **Official Grand Line Vault Visual Branding:** Official square logo in Navbar and Footer.
+* **Buy Me a Coffee Link Integration:** Official community donation link connected in footer (`buymeacoffee.com/grandlinevault`).
+
+## [0.6.1] - 2026-10-07
+### ☕ Patch — Buy Me a Coffee Donations, Symmetrical ES/EN Layout & Legal Disclaimer Polish
+
+* **Buy Me a Coffee Button in Footer:** Replaced duplicate portfolio link with official coffee cup icon linking to `buymeacoffee.com/grandlinevault` with brand hover colors.
+* **Legal Disclaimer Polish:** Clarified non-commercial fan-made project status supported by voluntary community contributions.
+* **Symmetrical Binder Toolbar Layout:** Resolved line wraps and vertical jumps in pagination controls across ES and EN translations.
+
+## [0.6.0] - 2026-10-07
+### 📦 Minor Update — Mass Import of Official Bandai Cards, Full OP-01 to OP-09 & Starter Decks, Stats & Backups Everywhere
+
+* **Mass Import of Official Cards:** Catalog expanded with nearly 100 authentic cards covering OP-01 through OP-09 and starter decks ST-01, ST-02, and ST-10.
+* **Supabase SQL Migration (`supabase/migration_v0.6.0_cards_mass_import.sql`):** Direct PostgreSQL batch import script for `public.cards`.
+* **Full Haptic Audio Integration:** Satisfying card sleeve snaps (`playCardSnapSound`) across binder, modal, and catalog.
+* **Universal Access to Stats & Backups:** Quick-access buttons added to binder toolbar and mobile navigation.
+
+## [0.5.1] - 2026-10-07
+### 💎 Patch — Cloud Folder Sync, Advanced Filters, Collector Financial Valuation, Backup/Export & Haptic Sounds
+
+* **Cloud Folder Sync ("My Binders"):** `custom_binders` column (JSONB) in Supabase with RLS policies and debounced background sync.
+* **Advanced Catalog Filters & Multi-Criteria Sorting:** Filter by category, summon cost (0-10+), and 6 sorting options.
+* **Collector Stats & Market Valuation (€):** Estimated binder value based on live CardTrader market prices, wishlist completion cost, and rarity breakdowns.
+* **Full JSON Backups & OPTCG Sim Export:** Complete export/restore and standard format text export (`4 OP01-001`).
+* **Tactile Web Audio API Synthesizer:** Real-time page turn whooshes and card snapping clicks with zero dependencies.
+* **Uppercase Support in Usernames:** Allowed uppercase characters in `@username` with case-insensitive database uniqueness.
+
+## [0.5.0] - 2026-10-07
+### 📂 Minor Update — Custom Folders ("My Binders"), Free-form Organization, Multi-Criteria & Vault X Header Polish
+
+* **Custom Folders ("My Binders"):** Toggle between Official Sets and Free Binder with unlimited pages and native HTML5 Drag & Drop.
+* **"ALL" Expansions Browsing:** View the entire card catalog continuously in 9 or 12-pocket pages.
+
+## [0.4.1] - 2026-10-07
+### ⚓ Patch — Header Redesign, User Dropdown Menu & Decongested Navigation
+
+* Avatar dropdown menu consolidating profile settings, statistics, backup tools, theme/language switches, and sign-out.
+* Optimized responsive padding in binder toolbar.
+
+## [0.4.0] - 2026-10-07
+### 👤 Minor Update — User Profile, Customization, 300x300 Avatar Upload & Light Mode Header
+
+* Profile modal with unique username validation, 30-day cooldown policy, 300x300 px client-side avatar crop/compression, pirate collector ranks, and bio.
+* Integration of `public.profiles` table in Supabase with RLS.
+
+## [0.3.0] - 2026-10-07
+### 🌐 Minor Update — Bilingual Support (Spanish / English) & Dark / Light Theme System
+
+* Complete bilingual support (ES / EN) throughout all views and modals.
+* Vault X Black Edition (Dark Mode) and White Edition (Light Mode) textures.
+
+## [0.2.0] - 2026-10-07
+### ⚡ Minor Update — Supabase Integration (Cloud Auth & Database Persistence)
+
+* Authentication with email/password and Google OAuth.
+* Cloud database synchronization with PostgreSQL and automatic guest migration.
+
+## [0.1.0] - 2026-10-07
+### 🚀 Alpha Release — Vault X Virtual Binder & Initial Catalog
+
+* Interactive virtual binder with 9 and 12-pocket layouts, owned vs missing card silhouettes, and celebration confetti.
+* Card detail modal with CardTrader live market link and searchable card catalog.
