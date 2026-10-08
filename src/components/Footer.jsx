@@ -5,7 +5,7 @@ import { useTheme } from '../context/ThemeContext';
 
 // Enlaces de contacto y soporte de Killian Torrell
 const SUPPORT_EMAIL = 'killiantorrell@gmail.com';
-const BUY_ME_A_COFFEE_URL = 'https://buymeacoffee.com/killiantorrell';
+const BUY_ME_A_COFFEE_URL = 'https://buymeacoffee.com/grandlinevault';
 
 function LinkedInIcon({ className = "w-4 h-4" }) {
   return (

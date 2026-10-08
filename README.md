@@ -5,6 +5,7 @@
 [![Versión](https://img.shields.io/badge/version-v0.6.1--patch-blue?style=for-the-badge&logo=git)](CHANGELOG.md)
 [![Web en Vivo](https://img.shields.io/badge/Live_Demo-grand--line--vault--tcg.vercel.app-000000?style=for-the-badge&logo=vercel)](https://grand-line-vault-tcg.vercel.app)
 [![Portfolio](https://img.shields.io/badge/Creator-Killian_Torrell-000000?style=for-the-badge&logo=vercel)](https://killiantr.vercel.app)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-grandlinevault-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/grandlinevault)
 [![Supabase](https://img.shields.io/badge/Supabase-Auth%20&%20PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)

@@ -15,7 +15,7 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 
 #### ✨ Nuevas Características & Mejoras (Features & UI)
 * **Botón 'Buy Me a Coffee' en el Footer:**
-  * Reemplazado el icono duplicado de portfolio web en la barra inferior por el icono oficial de la taza de café con corazón (*Buy Me a Coffee*), enlazado a la página de aportaciones y donaciones comunitarias de Killian Torrell.
+  * Reemplazado el icono duplicado de portfolio web en la barra inferior por el icono oficial de la taza de café con corazón (*Buy Me a Coffee*), enlazado a la página oficial de aportaciones y donaciones comunitarias (`https://buymeacoffee.com/grandlinevault`).
   * Efecto de hover dinámico con el color dorado oficial `#FFDD00` de la marca Buy Me a Coffee y tooltip bilingüe (*"Invítame a un café (Donaciones)"* / *"Buy Me a Coffee (Donations)"*).
 * **Ajuste Legal y Comunitario en el Disclaimer:**
   * Actualizado el texto legal a: *"One Piece Card Game es propiedad de Eiichiro Oda / Shueisha, Toei Animation y Bandai. Proyecto fan-made independiente sin fines comerciales, mantenido con apoyo voluntario de la comunidad."* (protege la condición legal del proyecto comunitario no comercial al recibir donaciones voluntarias de servidores).

@@ -11,6 +11,7 @@
 * **Estado:** 🟢 En Producción & Desarrollo Activo (Patch v0.6.1)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
+* **Donaciones Comunitarias:** [buymeacoffee.com/grandlinevault](https://buymeacoffee.com/grandlinevault)
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
 * **Versión Actual:** `v0.6.1` (Patch: Buy Me a Coffee Donaciones, Layout Simétrico ES/EN & Ajuste Legal Disclaimer)
 
