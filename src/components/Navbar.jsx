@@ -15,7 +15,8 @@ import {
   Award,
   TrendingUp,
   Coins,
-  Database
+  Database,
+  Sparkles
 } from 'lucide-react';
 import { useCollection } from '../context/CollectionContext';
 import { useAuth } from '../context/AuthContext';
@@ -187,6 +188,21 @@ export default function Navbar({
           >
             <Repeat className="w-4 h-4" />
             {t('navTrades')}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setActiveTab('changelog')}
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer ${
+              activeTab === 'changelog'
+                ? 'bg-amber-500 text-neutral-950 shadow-md shadow-amber-500/20'
+                : isDark 
+                  ? 'text-neutral-400 hover:text-white hover:bg-neutral-800' 
+                  : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/80'
+            }`}
+          >
+            <Sparkles className="w-4 h-4" />
+            {t('navChangelog')}
           </button>
         </nav>
 

@@ -65,7 +65,7 @@ export default function Footer({ onOpenVersionModal }) {
                 isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
               }`}
             >
-              v0.6.2
+              v0.6.3
             </button>
           </div>
         </div>

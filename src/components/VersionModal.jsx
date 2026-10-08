@@ -7,9 +7,31 @@ const GITHUB_CHANGELOG_URL = 'https://github.com/KillianTR/one-piece-tcg/blob/ma
 
 const RELEASES = [
   {
-    version: 'v0.6.2',
+    version: 'v0.6.3',
     date: '08/10/2026',
     isLatest: true,
+    tagType: 'minor',
+    title: {
+      es: 'Subpágina de Novedades OPlayTCG, Ilustraciones Reales de Cartas DON!! y Nuevos Logos One Piece',
+      en: 'Dedicated OPlayTCG Changelog Subpage, Real DON!! Card Illustrations & Authentic One Piece Logos'
+    },
+    changes: {
+      es: [
+        { icon: '📜', title: 'Subpágina de Novedades', desc: 'Historial completo de versiones interactivo (/changelog) inspirado en oplaytcg.com/es/changelog con timeline y filtros.' },
+        { icon: '🃏', title: 'Ilustraciones Reales de DON!!', desc: 'Corregido DON-005 con arte oficial clásico e integradas 19 cartas DON!! ilustradas auténticas (Luffy Rey de los Piratas, Marineford, Alabasta, etc.). 105 cartas en total verificadas al 100%.' },
+        { icon: '🏴‍☠️', title: 'Nuevos Logos One Piece', desc: 'Diseño estilo cartel WANTED pirata con "GRAND LINE VAULT" en la cabecera y el logo "ONE PIECE CARD GAME" abajo. Retirada previsualización antigua.' }
+      ],
+      en: [
+        { icon: '📜', title: 'Dedicated Changelog Page', desc: 'Full interactive version history subpage (/changelog) inspired by oplaytcg.com/es/changelog with timeline & filters.' },
+        { icon: '🃏', title: 'Real DON!! Illustrations', desc: 'Resolved DON-005 with authentic base art and integrated 19 genuine illustrated DON!! cards (Luffy King of Pirates, Marineford, etc.). 105 total cards 100% verified.' },
+        { icon: '🏴‍☠️', title: 'Authentic One Piece Logos', desc: 'WANTED pirate aesthetic with "GRAND LINE VAULT" on top and "ONE PIECE CARD GAME" below. Cleaned up legacy preview assets.' }
+      ]
+    }
+  },
+  {
+    version: 'v0.6.2',
+    date: '08/10/2026',
+    isLatest: false,
     tagType: 'patch',
     title: {
       es: 'Scans CDN TCGPlayer en Alta Definición, Fix Botón Cerrar Modal & Logos Oficiales GLV',
@@ -187,7 +209,7 @@ export default function VersionModal({ isOpen, onClose }) {
           <div className="flex items-center gap-2.5">
             <span className="text-xs font-semibold text-neutral-400">{t('versionCurrentBadge')}:</span>
             <span className="font-mono text-xs font-extrabold text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/20">
-              v0.6.2
+              v0.6.3
             </span>
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-[11px] font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

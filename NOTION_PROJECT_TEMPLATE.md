@@ -8,12 +8,12 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Producción & Desarrollo Activo (Patch v0.6.2)
+* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.3)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Donaciones Comunitarias:** [buymeacoffee.com/grandlinevault](https://buymeacoffee.com/grandlinevault)
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.6.2` (Patch: Scans CDN de TCGPlayer, Fix Botón Cerrar Modal & Logos Oficiales GLV)
+* **Versión Actual:** `v0.6.3` (Minor: Subpágina Changelog estilo OPlayTCG, Ilustraciones Oficiales DON!! & Logos One Piece)
 
 ---
 
@@ -198,6 +198,15 @@ Cuentas con privilegios de pruebas para Killian:
 - Cambio de nombre de usuario en cualquier momento sin esperar 30 días.
 - Cambio y subida de fotos de avatar ilimitada.
 - Badge visual exclusivo de desarrollador en el modal de perfil.
+
+### 📜 v0.6.3 — Subpágina Changelog OPlayTCG, Ilustraciones DON!! & Logos One Piece (Completado)
+- [x] Subpágina completa de Novedades e Historial de Versiones (`ChangelogView.jsx`) inspirada en `oplaytcg.com/es/changelog` con timeline vertical interactivo, badges y filtros dinámicos.
+- [x] Enlace directo en barra superior, pie de página (`#changelog`) y botón de retorno al archivador virtual sin recarga.
+- [x] Corrección definitiva de `DON-005` (asignación de arte oficial base clásica de Bandai).
+- [x] Cobertura de 19 cartas DON!! ilustradas oficiales de Bandai (Luffy Rey de los Piratas, Shanks en Marineford, Vivi Alabasta, Crocodile, Corazon "I LOVE YOU", Red Roc Luffy vs Kaido, Zoro & Sanji Wano, Shichibukai, etc.).
+- [x] Auditoría exhaustiva del 100% de cartas del catálogo (105 cartas oficiales con HTTP 200 OK en CDN proxy de TCGPlayer).
+- [x] Rediseño de identidad gráfica One Piece: estética cartel de Se Busca (WANTED) y madera tallada pirata con "GRAND LINE VAULT" en cabecera y "ONE PIECE CARD GAME" abajo.
+- [x] Retirada y eliminación de `og-preview.jpg` antigua y limpieza de metadatos.
 
 ### 🎨 v0.6.2 — Scans CDN de TCGPlayer, Fix Botón Cerrar Modal & Logos Oficiales GLV (Completado)
 - [x] Solución definitiva a imágenes rotas de Bandai (CORP block): proxy CDN de Cloudflare R2 / TCGPlayer con 100% de cartas y scans HD.

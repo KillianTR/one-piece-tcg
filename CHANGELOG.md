@@ -10,6 +10,52 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
 
+## [0.6.3] - 2026-10-08
+### 📜 Minor Update — Subpágina Dedicada de Novedades (Estilo OPlayTCG), 19 Ilustraciones Oficiales de Cartas DON!! y Nuevos Logos One Piece
+
+#### ✨ Nuevas Características & Experiencia de Usuario (Features & UX)
+* **Subpágina Dedicada de Novedades e Historial de Versiones (`ChangelogView.jsx`):**
+  * Creación de una subpágina completa dentro de la aplicación inspirada en la arquitectura y diseño de `https://oplaytcg.com/es/changelog`.
+  * Visualización interactiva con timeline vertical cronológico, nodos de estado con pulso lumínico y tarjetas expandidas por categorías (Novedades, Correcciones, Base de Datos e Identidad).
+  * Selector dinámico de filtros: *Todas las Versiones*, *Actualizaciones / Features* y *Parches / Hotfixes*.
+  * Navegación instantánea mediante pestaña en el Navbar, enlace en el pie de página (`#changelog`) y botón de retorno rápido al archivador virtual con preservación del estado.
+  * Soporte bilingüe completo (Español e Inglés) y adaptación automática a temas claro y oscuro.
+  * Botón integrado para inspeccionar el archivo `CHANGELOG.md` en el repositorio de GitHub.
+
+#### 🃏 Catálogo Oficial & Auditoría de Cartas DON!!
+* **Corrección de Metadatos e Imagen de `DON-005`:**
+  * Subsanado el desfase entre nombre e imagen: `DON-005` queda correctamente clasificado como la carta base oficial clásica estándar de Bandai en lugar del nombre provisional erróneo.
+* **Integración de 19 Cartas DON!! Ilustradas Auténticas:**
+  * Ampliada la base de datos de DONs para incorporar las 19 cartas ilustradas oficiales con arte del manga de Eiichiro Oda:
+    * `DON-004`: Monkey.D.Luffy (*"I'm gonna be King of the Pirates!!"*)
+    * `DON-007`: Shanks en Marineford (*"I've come to put an end to this war!!"*)
+    * `DON-008`: Nefertari Vivi en Alabasta (*"Will you still call me your friend?!"*)
+    * `DON-009`: Sir Crocodile (*"There's no justice here, only sand"*)
+    * `DON-010`: Donquixote Rosinante (Corazon *"I LOVE YOU!!"*)
+    * `DON-011`: Luffy Red Roc vs Kaido en Onigashima
+    * `DON-012`: Roronoa Zoro & Sanji en Wano Kuni
+    * `DON-013`: Los Siete Señores de la Guerra del Mar (Shichibukai)
+    * `DON-014`: Los Tres Capitanes en Sabaody (Luffy, Law y Kid)
+    * `DON-015`: Edward Newgate (Barbablanca en Marineford)
+    * `DON-016`: Charlotte Katakuri (*"I will not let you pass"*)
+    * `DON-017`: Donquixote Doflamingo (*"Pirates are evil? The Marines are righteous?"*)
+    * `DON-018`: Monkey.D.Luffy Sombrero de Paja Promocional (2Y)
+    * `DON-019`: Monkey.D.Luffy Tatuaje 3D2Y
+    * `DON-020`: Trafalgar Law (*"Room - Shambles"*)
+    * `DON-021`: Eustass "Captain" Kid (*"Punk Gibson"*)
+    * `DON-022`: Marshall.D.Teach (Barbanegra *"A man's dream will never die!"*)
+    * `DON-023`: Portgas.D.Ace (*"Fire Fist"*)
+    * `DON-024`: Sabo (*"Dragon Claw"*)
+* **Verificación al 100% de los Scans del Catálogo (105 Cartas Oficiales):**
+  * Auditoría automatizada ejecutada con Node.js validando una a una las URLs del proxy CDN de TCGPlayer: 105/105 respuestas HTTP 200 OK con 0 errores de carga y 0 bloqueos por políticas CORS/CORP.
+
+#### 🏴‍☠️ Identidad Gráfica & Logos Oficiales One Piece
+* **Rediseño Tipográfico y Simbólico de Logotipos:**
+  * Nuevas variantes de identidad visual que sustituyen el estilo metálico por una estética auténtica del mundo de One Piece (madera tallada de navío pirata, pergaminos de recompensas WANTED y emblema de ancla con el sombrero de paja).
+  * Distribución compositiva ajustada a las directrices: *"GRAND LINE VAULT"* en la parte superior y el logo oficial *"ONE PIECE CARD GAME"* en la parte inferior.
+* **Eliminación Definitiva de `og-preview.jpg`:**
+  * Retirada la imagen de vista previa previa y limpiadas las referencias en `index.html` para asegurar coherencia gráfica en redes sociales.
+
 ## [0.6.2] - 2026-10-08
 ### 🎨 Patch — Scans CDN de TCGPlayer en Alta Definición, Fix Solapamiento Modal y Logos Oficiales Grand Line Vault
 
