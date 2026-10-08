@@ -204,6 +204,8 @@ Cuentas con privilegios de pruebas para Killian:
 - [x] Corrección de solapamiento del botón de cierre (X) con `Set: ...` en `CardModal.jsx` (`max-w-5xl` y `pr-12`).
 - [x] Generación de logotipos oficiales de Grand Line Vault en 2 versiones: Cuadrado 1:1 (`glv-logo-square.jpg`) para UI y Banner 16:9 (`og-preview.jpg`) para compartir en redes.
 - [x] Configuración de Open Graph y Twitter Cards (`og:image`) en `index.html`.
+- [x] Rediseño del modal de versiones a 'Registro de Cambios & Novedades' (Changelog): eliminación de teoría SemVer/Git para usuarios, inclusión de historial interactivo de parches y enlace directo a `CHANGELOG.md` en GitHub.
+- [x] Limpieza del footer eliminando el texto técnico 'SemVer WoW Standard'.
 
 ### ☕ v0.6.1 — Buy Me a Coffee, Layout Simétrico ES/EN & Ajuste Legal Disclaimer (Completado)
 - [x] Reemplazado icono duplicado de portfolio en el footer por el botón oficial de *Buy Me a Coffee* (donaciones comunitarias).

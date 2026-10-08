@@ -60,13 +60,13 @@ export default function Footer({ onOpenVersionModal }) {
             <span>{t('footerVersionLabel')}</span>
             <button
               onClick={onOpenVersionModal}
+              title={t('versionModalTitle')}
               className={`font-mono text-amber-500 hover:text-amber-400 font-bold px-2 py-0.5 rounded border transition cursor-pointer ${
                 isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
               }`}
             >
               v0.6.2
             </button>
-            <span className="text-[11px] text-neutral-500">{t('footerSemVerNote')}</span>
           </div>
         </div>
 

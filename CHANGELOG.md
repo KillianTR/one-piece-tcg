@@ -26,6 +26,10 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
   * Reposicionado el botón `(X)` a `top-4 right-4 z-30` e incorporado un padding de seguridad (`pr-12 sm:pr-14`) en el contenedor de cabecera para evitar cualquier colisión espacial en cualquier tamaño de pantalla.
 
 #### ✨ Nuevas Características & Identidad Visual (Features & Assets)
+* **Rediseño del Modal de Versiones a 'Registro de Cambios & Novedades' (Changelog):**
+  * Eliminada la explicación teórica de desarrollo (SemVer y flujo de ramas de Git) que no aportaba valor a los usuarios o coleccionistas.
+  * Transformado en un modal interactivo con notas de parches reales (v0.6.2 hasta v0.4.0), badges de versión y botón directo a `CHANGELOG.md` en GitHub (`https://github.com/KillianTR/one-piece-tcg/blob/main/CHANGELOG.md`).
+  * Limpieza del footer: eliminado el texto técnico *"SemVer WoW Standard"*, dejando una visualización limpia de la versión `v0.6.2` y el enlace `Changelog`.
 * **Logotipos Oficiales de Grand Line Vault:**
   * **Versión Cuadrada (1:1):** Log Pose (brújula náutica), letras oficiales de "ONE PIECE CARD GAME" y relieve 3D en oro pirata "GRAND LINE VAULT". Integrado en el Navbar (`Navbar.jsx`) y pie de página (`Footer.jsx`).
   * **Versión Banner (16:9):** Composición cinematográfica náutica con mascarones de proa y madera tallada pirata con bronce. Configurado en `index.html` mediante etiquetas Open Graph y Twitter Cards (`og:image`) para que se muestre como vista previa al compartir el enlace de la web por WhatsApp, Discord, X/Twitter, etc.
