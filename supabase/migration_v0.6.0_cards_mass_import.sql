@@ -24,7 +24,7 @@ INSERT INTO public.cards (
     'L',
     '[DON!! x1] [Your Turn] All of your Characters gain +1000 power.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-001',
     FALSE,
     'Roronoa Zoro OP01-001',
     14.50
@@ -44,7 +44,7 @@ INSERT INTO public.cards (
     'L',
     '[Activate: Main] [Once Per Turn] (2): If you have 5 Characters, return 1 of your Characters to the owner''s hand. Then, play up to 1 Character with a cost of 4 or less from your hand with a color different from the returned Character.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-002.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-002',
     FALSE,
     'Trafalgar Law OP01-002',
     22.00
@@ -64,7 +64,7 @@ INSERT INTO public.cards (
     'L',
     '[Activate: Main] [Once Per Turn] Give this Leader or 1 of your Characters up to 1 rested DON!! card.',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-004.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-004',
     FALSE,
     'Monkey D Luffy OP01-004',
     4.80
@@ -84,7 +84,7 @@ INSERT INTO public.cards (
     'R',
     '[DON!! x1] [When Attacking] Give up to 1 of your opponent''s Characters -2000 power during this turn.',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-005.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-005',
     FALSE,
     'Jinbe OP01-005',
     3.50
@@ -104,7 +104,7 @@ INSERT INTO public.cards (
     'R',
     '[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type card other than [Nami] and add it to your hand. Place the rest at the bottom of your deck in any order.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-016.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-016',
     FALSE,
     'Nami OP01-016',
     18.00
@@ -124,7 +124,7 @@ INSERT INTO public.cards (
     'SR',
     '<Rush> (This card can attack on the turn in which it is played.)',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-025.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-025',
     FALSE,
     'Roronoa Zoro OP01-025',
     28.50
@@ -144,7 +144,7 @@ INSERT INTO public.cards (
     'SR',
     '<Rush> (This card can attack on the turn in which it is played.)',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-025_p1.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-026',
     TRUE,
     'Roronoa Zoro OP01-025 parallel',
     95.00
@@ -164,7 +164,7 @@ INSERT INTO public.cards (
     'UC',
     '[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, if you have 2 or fewer Life cards, that card gains an additional +2000 power.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-029.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-029',
     FALSE,
     'Radical Beam OP01-029',
     5.20
@@ -184,7 +184,7 @@ INSERT INTO public.cards (
     'SR',
     '<Blocker> [On Play] Return 1 of your Characters to the owner''s hand: Play up to 1 Character card with a cost of 3 or less from your hand.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-047.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-047',
     FALSE,
     'Trafalgar Law OP01-047',
     16.00
@@ -204,7 +204,7 @@ INSERT INTO public.cards (
     'L',
     '[Activate: Main] [Once Per Turn] Trash 1 {Land of Wano} type card from your hand: Set up to 2 of your DON!! cards as active.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-054.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-054',
     FALSE,
     'Kozuki Oden OP01-054',
     6.50
@@ -224,7 +224,7 @@ INSERT INTO public.cards (
     'L',
     '[DON!! x2] [When Attacking] (1): Look at up to 5 cards from the top of your deck and place them at the top or bottom of your deck in any order. Then, reveal the top card of your deck. If that card is a {The Seven Warlords of the Sea} type Character card with a cost of 4 or less, you may play it rested.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-060.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-060',
     FALSE,
     'Donquixote Doflamingo OP01-060',
     12.00
@@ -244,7 +244,7 @@ INSERT INTO public.cards (
     'SR',
     '[On Play] Place up to 1 Character with a cost of 7 or less at the bottom of the owner''s deck.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-070.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-070',
     FALSE,
     'Dracule Mihawk OP01-070',
     24.00
@@ -264,7 +264,7 @@ INSERT INTO public.cards (
     'SR',
     '[On Play] DON!! -6: K.O. all Characters other than this card.',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-094.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-094',
     FALSE,
     'Kaido OP01-094',
     19.50
@@ -284,7 +284,7 @@ INSERT INTO public.cards (
     'SEC',
     '<Rush> [When Attacking] This Character cannot be blocked by Characters with 2000 or less power.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-120.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-120',
     FALSE,
     'Shanks OP01-120',
     42.00
@@ -304,7 +304,7 @@ INSERT INTO public.cards (
     'SEC',
     '<Double Attack> <Banish> (When this card deals damage, the target card is trashed without activating its trigger.)',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-121.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-121',
     FALSE,
     'Yamato OP01-121',
     35.00
@@ -324,7 +324,7 @@ INSERT INTO public.cards (
     'L',
     '[End of Your Turn] Add 1 card from the top of your Life cards to your hand.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-001',
     FALSE,
     'Edward Newgate OP02-001',
     15.00
@@ -344,7 +344,7 @@ INSERT INTO public.cards (
     'SR',
     '[On Play] During this turn, your Leader cannot lose Life from your opponent''s effects or attacks, and your Leader gains +2000 power until the start of your next turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-004.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-004',
     FALSE,
     'Edward Newgate OP02-004',
     32.00
@@ -364,7 +364,7 @@ INSERT INTO public.cards (
     'SR',
     '<Rush> [On Play] Give up to 2 of your opponent''s Characters -3000 power during this turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-013.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-013',
     FALSE,
     'Portgas D Ace OP02-013',
     26.00
@@ -384,7 +384,7 @@ INSERT INTO public.cards (
     'SP',
     '<Rush> [On Play] Give up to 2 of your opponent''s Characters -3000 power during this turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-013_p1.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-013_p2',
     TRUE,
     'Portgas D Ace manga OP02-013',
     850.00
@@ -404,7 +404,7 @@ INSERT INTO public.cards (
     'L',
     '[DON!! x1] [Activate: Main] [Once Per Turn] Give up to 1 of your opponent''s Characters -1 cost during this turn. Then, if there is a Character with a cost of 0, this Leader gains +1000 power during this turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-071.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-071',
     FALSE,
     'Smoker OP02-071',
     8.50
@@ -424,7 +424,7 @@ INSERT INTO public.cards (
     'SR',
     '<Blocker> [Opponent''s Turn] This Character gains +1000 power and cannot be K.O.''d by effects.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-096.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-096',
     FALSE,
     'Borsalino OP02-096',
     29.00
@@ -444,7 +444,7 @@ INSERT INTO public.cards (
     'SR',
     '[On Play] K.O. up to 1 of your opponent''s Characters with a cost of 5 or less.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-099.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-099',
     FALSE,
     'Sakazuki OP02-099',
     12.00
@@ -464,7 +464,7 @@ INSERT INTO public.cards (
     'R',
     '[On Play] K.O. up to 1 of your opponent''s Characters with a cost of 4 or less.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-114.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-114',
     FALSE,
     'Borsalino OP02-114',
     6.50
@@ -484,7 +484,7 @@ INSERT INTO public.cards (
     'SEC',
     '<Blocker> [On Play] DON!! -2: Rest up to 2 of your opponent''s Characters with a cost of 5 or less.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-120.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-120',
     FALSE,
     'Uta OP02-120',
     38.00
@@ -504,7 +504,7 @@ INSERT INTO public.cards (
     'SEC',
     '[Your Turn] All of your opponent''s Characters get -5 cost. [Activate: Main] [Once Per Turn] K.O. up to 1 of your opponent''s Characters with a cost of 0.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-121.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-121',
     FALSE,
     'Kuzan OP02-121',
     55.00
@@ -524,7 +524,7 @@ INSERT INTO public.cards (
     'L',
     '[When Attacking] Reveal 1 card from the top of your deck. If that card is an Event or Stage card, you may add it to your hand.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-001',
     FALSE,
     'Portgas D Ace OP03-001',
     9.00
@@ -544,7 +544,7 @@ INSERT INTO public.cards (
     'L',
     '[Game Win Condition] When your deck has 0 cards, you win the match instead of losing. [When Attacking] Trash 1 card from the top of your deck.',
     'Wisdom',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-040.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-040',
     FALSE,
     'Nami OP03-040',
     35.00
@@ -564,7 +564,7 @@ INSERT INTO public.cards (
     'SR',
     '[On Play] Trash 2 cards with the {CP} type from your hand or trash: K.O. up to 1 of your opponent''s Characters with a cost of 5 or less and up to 1 with a cost of 3 or less.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-076.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-076',
     FALSE,
     'Rob Lucci OP03-076',
     18.00
@@ -584,7 +584,7 @@ INSERT INTO public.cards (
     'L',
     '[DON!! x2] [When Attacking] (1): If you have 2 or fewer Life cards, add 1 card from the top of your deck to the top of your Life cards.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-077.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-077',
     FALSE,
     'Charlotte Linlin OP03-077',
     8.00
@@ -604,7 +604,7 @@ INSERT INTO public.cards (
     'L',
     '[DON!! x1] [When Attacking] Look at up to 1 Life card from the top of your or your opponent''s Life cards, and place it at the top or bottom of the Life cards. Then, this Leader gains +1000 power during this turn.',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-099.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-099',
     FALSE,
     'Charlotte Katakuri OP03-099',
     32.00
@@ -624,7 +624,7 @@ INSERT INTO public.cards (
     'R',
     '[On Play] Look at 4 cards from the top of your deck; reveal up to 1 {Big Mom Pirates} type card and add it to your hand.',
     'Wisdom',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-112.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-112',
     FALSE,
     'Charlotte Pudding OP03-112',
     12.00
@@ -644,7 +644,7 @@ INSERT INTO public.cards (
     'SR',
     '[On Play] Put 1 card from the top of your opponent''s Life cards into their trash, and add 1 card from the top of your deck to the top of your Life cards.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-114.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-114',
     FALSE,
     'Charlotte Linlin OP03-114',
     34.00
@@ -664,7 +664,7 @@ INSERT INTO public.cards (
     'SEC',
     '[On Play] Return up to 1 Character with a cost of 6 or less to the owner''s hand. Then, draw 2 cards and trash 2 cards from your hand.',
     'Ranged',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-122.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-122',
     FALSE,
     'Sogeking OP03-122',
     25.00
@@ -684,7 +684,7 @@ INSERT INTO public.cards (
     'SP',
     '[On Play] Return up to 1 Character with a cost of 6 or less to the owner''s hand. Then, draw 2 cards and trash 2 cards from your hand.',
     'Ranged',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-122_p1.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-122_p2',
     TRUE,
     'Sogeking manga OP03-122',
     750.00
@@ -704,7 +704,7 @@ INSERT INTO public.cards (
     'L',
     '[This Leader cannot attack.] [Activate: Main] [Once Per Turn] (2): Draw 1 card and give up to 1 of your Characters <Rush> during this turn.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP04-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP04-001',
     FALSE,
     'Nefertari Vivi OP04-001',
     7.50
@@ -724,7 +724,7 @@ INSERT INTO public.cards (
     'L',
     '[This Leader cannot attack.] [Activate: Main] [Once Per Turn] (1): If you have 6 or fewer cards in hand, look at 2 cards from the top of your deck; reveal up to 1 {Dressrosa} type card and add it to your hand.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP04-039.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP04-039',
     FALSE,
     'Rebecca OP04-039',
     14.00
@@ -744,7 +744,7 @@ INSERT INTO public.cards (
     'SR',
     '<Blocker> [On Play] Draw 2 cards and trash 2 cards from your hand. Then, none of your Characters can be K.O.''d by effects until the start of your next turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP04-083.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP04-083',
     FALSE,
     'Sabo OP04-083',
     26.00
@@ -764,7 +764,7 @@ INSERT INTO public.cards (
     'SP',
     '<Blocker> [On Play] Draw 2 cards and trash 2 cards from your hand. Then, none of your Characters can be K.O.''d by effects until the start of your next turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP04-083_p1.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP04-083_p2',
     TRUE,
     'Sabo manga OP04-083',
     650.00
@@ -784,7 +784,7 @@ INSERT INTO public.cards (
     'SEC',
     '<Blocker> [End of Your Turn] Set this Character as active.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP04-119.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP04-119',
     FALSE,
     'Donquixote Rosinante OP04-119',
     22.00
@@ -804,7 +804,7 @@ INSERT INTO public.cards (
     'L',
     '[DON!! x1] [Activate: Main] [Once Per Turn] Give up to 1 of your Characters with 5000 or more power +1000 power during this turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-001',
     FALSE,
     'Sabo OP05-001',
     12.00
@@ -824,7 +824,7 @@ INSERT INTO public.cards (
     'L',
     '[Activate: Main] [Once Per Turn] Trash 1 card from your hand: Draw 1 card. [When Attacking] Give up to 1 of your opponent''s Characters -1 cost during this turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-041.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-041',
     FALSE,
     'Sakazuki OP05-041',
     28.00
@@ -844,7 +844,7 @@ INSERT INTO public.cards (
     'SEC',
     '[On Play] Return all DON!! cards from your field to your DON!! deck: Take an extra turn after this one! This Character cannot attack during the extra turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-060.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-060',
     FALSE,
     'Monkey D Luffy Gear 5 OP05-060',
     65.00
@@ -864,7 +864,7 @@ INSERT INTO public.cards (
     'SP',
     '[On Play] Return all DON!! cards from your field to your DON!! deck: Take an extra turn after this one!',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-060_p1.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-060_p2',
     TRUE,
     'Monkey D Luffy Gear 5 Manga OP05-060',
     2800.00
@@ -884,7 +884,7 @@ INSERT INTO public.cards (
     'SR',
     '[On Play] DON!! -1: Your opponent puts 2 cards from their hand at the bottom of their deck in any order.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-069.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-069',
     FALSE,
     'Trafalgar Law OP05-069',
     21.00
@@ -904,7 +904,7 @@ INSERT INTO public.cards (
     'SR',
     '<Blocker> [Your Turn] When you take a DON!! card from your field, add 1 active DON!! card from your DON!! deck.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-074.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-074',
     FALSE,
     'Eustass Captain Kid OP05-074',
     24.50
@@ -924,7 +924,7 @@ INSERT INTO public.cards (
     'L',
     '[Opponent''s Turn] [Once Per Turn] When your Life drops to 0, trash 1 card from your hand: Add 1 card from the top of your deck to the top of your Life cards.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-098.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-098',
     FALSE,
     'Enel OP05-098',
     35.00
@@ -944,7 +944,7 @@ INSERT INTO public.cards (
     'R',
     '[Main] Rest up to 1 of your opponent''s Characters with a cost of 4 or less. Then, K.O. up to 1 of your opponent''s rested Characters with a cost of 2 or less.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-115.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-115',
     FALSE,
     'Two-Sword Style Draw Slash OP05-115',
     2.50
@@ -964,7 +964,7 @@ INSERT INTO public.cards (
     'SEC',
     '[On Play] Return up to 1 Character with a cost of 8 or less to the bottom of the owner''s deck. Then, draw 1 card.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-118.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-118',
     FALSE,
     'Kaido OP05-118',
     44.00
@@ -984,7 +984,7 @@ INSERT INTO public.cards (
     'L',
     '[DON!! x1] [When Attacking] (1): If you have a {FILM} type Character, draw 1 card.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP06-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-001',
     FALSE,
     'Uta OP06-001',
     11.00
@@ -1004,7 +1004,7 @@ INSERT INTO public.cards (
     'L',
     '[Activate: Main] [Once Per Turn] Choose 1: Rest up to 1 of your opponent''s Characters with a cost of 4 or less, or give up to 1 of your opponent''s Characters -1 cost during this turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP06-021.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-021',
     FALSE,
     'Perona OP06-021',
     16.50
@@ -1024,7 +1024,7 @@ INSERT INTO public.cards (
     'L',
     '<Double Attack> [Opponent''s Turn] If you have 2 or fewer Life cards, this Leader gains +1000 power.',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP06-042.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-042',
     FALSE,
     'Yamato OP06-042',
     25.00
@@ -1044,7 +1044,7 @@ INSERT INTO public.cards (
     'L',
     '[Activate: Main] [Once Per Turn] Trash 2 cards from the top of your deck: If there are 4 or more cards in your trash with {Thriller Bark Pirates}, give up to 1 of your Characters +1000 power.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP06-080.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-080',
     FALSE,
     'Gecko Moria OP06-080',
     28.00
@@ -1064,7 +1064,7 @@ INSERT INTO public.cards (
     'SR',
     '[On Play] Choose up to 2 Character cards with a cost of 4 or less and different names from your trash: Play 1 rested and 1 active.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP06-086.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-086',
     FALSE,
     'Gecko Moria OP06-086',
     48.00
@@ -1084,7 +1084,7 @@ INSERT INTO public.cards (
     'SEC',
     '[Activate: Main] [Once Per Turn] (1): Set this Character as active. This card can attack up to 3 times in total per turn.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP06-118.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-118',
     FALSE,
     'Roronoa Zoro OP06-118',
     60.00
@@ -1104,7 +1104,7 @@ INSERT INTO public.cards (
     'SP',
     '[Activate: Main] [Once Per Turn] (1): Set this Character as active. This card can attack up to 3 times in total per turn.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP06-118_p1.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-118_p2',
     TRUE,
     'Roronoa Zoro manga OP06-118',
     1200.00
@@ -1124,7 +1124,7 @@ INSERT INTO public.cards (
     'L',
     '[Opponent''s Turn] [Once Per Turn] (1): When your opponent attacks, rest up to 1 of your opponent''s Characters.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP07-019.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP07-019',
     FALSE,
     'Jewelry Bonney OP07-019',
     22.00
@@ -1144,7 +1144,7 @@ INSERT INTO public.cards (
     'L',
     '[When Attacking] If you have 5 or fewer cards in your hand, draw 1 card.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP07-038.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP07-038',
     FALSE,
     'Boa Hancock OP07-038',
     18.00
@@ -1164,7 +1164,7 @@ INSERT INTO public.cards (
     'SP',
     '[When Attacking] If you have 5 or fewer cards in your hand, draw 1 card.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP07-038_p1.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP07-038_p2',
     TRUE,
     'Boa Hancock manga OP07-038',
     1400.00
@@ -1184,7 +1184,7 @@ INSERT INTO public.cards (
     'L',
     '[When Attacking] Trash 2 cards from the top of your deck: Give up to 1 of your opponent''s Characters -1 cost during this turn.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP07-059.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP07-059',
     FALSE,
     'Rob Lucci OP07-059',
     24.00
@@ -1204,7 +1204,7 @@ INSERT INTO public.cards (
     'SEC',
     '<Rush> [On Play] If you have 2 or fewer Life cards, add 1 card from the top of your deck to your Life cards.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP07-109.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP07-109',
     FALSE,
     'Portgas D Ace OP07-109',
     52.00
@@ -1224,7 +1224,7 @@ INSERT INTO public.cards (
     'L',
     '[DON!! x1] [When Attacking] Give up to 1 of your {Animal} type Characters +2000 power during this turn.',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP08-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP08-001',
     FALSE,
     'Tony Tony Chopper OP08-001',
     8.00
@@ -1244,7 +1244,7 @@ INSERT INTO public.cards (
     'L',
     '[When Attacking] You may trash 1 card from your hand: Give up to 1 of your opponent''s Characters -2000 power during this turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP08-057.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP08-057',
     FALSE,
     'Marco OP08-057',
     14.00
@@ -1264,7 +1264,7 @@ INSERT INTO public.cards (
     'SEC',
     '[On Play] Give up to 2 of your opponent''s Characters -3000 power during this turn. Then, K.O. up to 1 of your opponent''s Characters with 3000 or less power.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP08-118.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP08-118',
     FALSE,
     'Silvers Rayleigh OP08-118',
     45.00
@@ -1284,7 +1284,7 @@ INSERT INTO public.cards (
     'SEC',
     '[On Play] Bottom deck up to 1 Character with 7000 or less power.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP08-119.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP08-119',
     FALSE,
     'Edward Newgate OP08-119',
     40.00
@@ -1304,7 +1304,7 @@ INSERT INTO public.cards (
     'L',
     '[Your Turn] Negate all [On Play] effects of your opponent''s Characters. [End of Your Turn] Draw 1 card.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP09-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-001',
     FALSE,
     'Marshall D Teach OP09-001',
     38.00
@@ -1324,7 +1324,7 @@ INSERT INTO public.cards (
     'L',
     '[When Attacking] (1): Reveal cards from the top of your deck until you reveal a {Cross Guild} Character. Play it rested.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP09-004.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-004',
     FALSE,
     'Buggy OP09-004',
     25.00
@@ -1344,7 +1344,7 @@ INSERT INTO public.cards (
     'SP',
     '[When Attacking] (1): Reveal cards from the top of your deck until you reveal a {Cross Guild} Character. Play it rested.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP09-004_p1.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-004_p2',
     TRUE,
     'Buggy manga OP09-004',
     1100.00
@@ -1364,7 +1364,7 @@ INSERT INTO public.cards (
     'L',
     '[DON!! x1] [When Attacking] Give up to 1 of your opponent''s Characters -1000 power during this turn.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP09-021.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-021',
     FALSE,
     'Shanks OP09-021',
     26.00
@@ -1384,7 +1384,7 @@ INSERT INTO public.cards (
     'SR',
     '[On Play] Choose up to 1 of your opponent''s Characters and give it -4 cost during this turn.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP09-051.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-051',
     FALSE,
     'Kuzan OP09-051',
     15.00
@@ -1404,7 +1404,7 @@ INSERT INTO public.cards (
     'SR',
     '[On Play] Negate the effect of your opponent''s Leader and trash up to 1 Character with a cost of 6 or less.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP09-081.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-081',
     FALSE,
     'Marshall D Teach OP09-081',
     40.00
@@ -1424,7 +1424,7 @@ INSERT INTO public.cards (
     'SEC',
     '<Rush> <Cannot be K.O.''d> [When Attacking] Trash 1 of your opponent''s Life cards.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP09-118.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-118',
     FALSE,
     'Gol D Roger OP09-118',
     95.00
@@ -1444,7 +1444,7 @@ INSERT INTO public.cards (
     'SP',
     '<Rush> <Cannot be K.O.''d> [When Attacking] Trash 1 of your opponent''s Life cards.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP09-118_p1.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-118_p2',
     TRUE,
     'Gol D Roger manga OP09-118',
     3200.00
@@ -1464,7 +1464,7 @@ INSERT INTO public.cards (
     'SEC',
     '<Rush> [When Attacking] K.O. up to 1 of your opponent''s Characters with 10000 or less power.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/OP09-119.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-119',
     FALSE,
     'Shanks OP09-119',
     75.00
@@ -1484,7 +1484,7 @@ INSERT INTO public.cards (
     'L',
     '[Activate: Main] [Once Per Turn] Give this Leader or 1 of your Characters up to 1 rested DON!! card.',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST01-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-001',
     FALSE,
     'Monkey D Luffy ST01-001',
     2.50
@@ -1504,7 +1504,7 @@ INSERT INTO public.cards (
     'C',
     '<Rush> (This card can attack on the turn in which it is played.)',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST01-004.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-004',
     FALSE,
     'Sanji ST01-004',
     1.50
@@ -1524,7 +1524,7 @@ INSERT INTO public.cards (
     'C',
     '<Blocker> (After your opponent declares an attack, you may rest this card to make it the new target.)',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST01-006.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-006',
     FALSE,
     'Chopper ST01-006',
     2.00
@@ -1544,7 +1544,7 @@ INSERT INTO public.cards (
     'C',
     '[On Play] Give up to 2 rested DON!! cards to your Leader or Character.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST01-011.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-011',
     FALSE,
     'Brook ST01-011',
     1.00
@@ -1564,7 +1564,7 @@ INSERT INTO public.cards (
     'SR',
     '[DON!! x1] This Character gains +1000 power.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST01-012.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-012',
     FALSE,
     'Roronoa Zoro ST01-012',
     14.00
@@ -1584,7 +1584,7 @@ INSERT INTO public.cards (
     'C',
     '[Counter] Up to 1 of your Leader or Character cards gains +3000 power during this battle.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST01-014.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-014',
     FALSE,
     'Guard Point ST01-014',
     1.20
@@ -1604,7 +1604,7 @@ INSERT INTO public.cards (
     'L',
     '[Activate: Main] [Once Per Turn] (3) Trash 1 card from your hand: Set this Leader as active.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST02-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST02-001',
     FALSE,
     'Eustass Captain Kid ST02-001',
     3.50
@@ -1624,7 +1624,7 @@ INSERT INTO public.cards (
     'C',
     '<Blocker> (After your opponent declares an attack, you may rest this card to make it the new target.)',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST02-004.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST02-004',
     FALSE,
     'Killer ST02-004',
     2.20
@@ -1644,7 +1644,7 @@ INSERT INTO public.cards (
     'C',
     '[Activate: Main] (1) Rest this card: Look at 5 cards from the top of your deck; reveal up to 1 {Supernovas} type card and add it to your hand.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST02-007.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST02-007',
     FALSE,
     'Jewelry Bonney ST02-007',
     9.50
@@ -1664,7 +1664,7 @@ INSERT INTO public.cards (
     'SR',
     '<Double Attack> [DON!! x1] [End of Your Turn] Set this Character as active.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST02-013.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST02-013',
     FALSE,
     'Eustass Captain Kid ST02-013',
     12.00
@@ -1684,7 +1684,7 @@ INSERT INTO public.cards (
     'L',
     '[Activate: Main] [Once Per Turn] DON!! -3: Bottom deck up to 1 of your opponent''s Characters with 3000 or less power. Then, play up to 1 Character with 4 or less cost from your hand.',
     'Slash',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST10-001.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST10-001',
     FALSE,
     'Trafalgar Law ST10-001',
     28.00
@@ -1704,7 +1704,7 @@ INSERT INTO public.cards (
     'L',
     '[Activate: Main] [Once Per Turn] Trash 1 card from your Life cards: Add 1 active DON!! card from your DON!! deck.',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST10-002.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST10-002',
     FALSE,
     'Monkey D Luffy ST10-002',
     19.00
@@ -1724,7 +1724,7 @@ INSERT INTO public.cards (
     'SR',
     '<Rush> [On Play] DON!! -1: This Character gains +1000 power during this turn.',
     'Strike',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/ST10-006.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/ST10-006',
     FALSE,
     'Monkey D Luffy ST10-006',
     16.00
@@ -1744,7 +1744,7 @@ INSERT INTO public.cards (
     'C',
     '[Your Turn] Give 1 of your Leaders or Characters +1000 power.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/DON.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/DON-001',
     FALSE,
     'DON!! card gold stamp one piece',
     5.00
@@ -1764,7 +1764,7 @@ INSERT INTO public.cards (
     'SP',
     '[Your Turn] Give 1 of your Leaders or Characters +1000 power.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/DON_p1.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/DON-002',
     TRUE,
     'DON!! gear 5 manga one piece',
     35.00
@@ -1784,7 +1784,7 @@ INSERT INTO public.cards (
     'SP',
     '[Your Turn] Give 1 of your Leaders or Characters +1000 power.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/DON_p2.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/DON-003',
     TRUE,
     'DON!! shanks one piece',
     28.00
@@ -1804,7 +1804,7 @@ INSERT INTO public.cards (
     'SP',
     '[Your Turn] Give 1 of your Leaders or Characters +1000 power.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/DON_p3.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/DON-004',
     TRUE,
     'DON!! whitebeard one piece',
     22.00
@@ -1824,7 +1824,7 @@ INSERT INTO public.cards (
     'SP',
     '[Your Turn] Give 1 of your Leaders or Characters +1000 power.',
     'Special',
-    'https://en.onepiece-cardgame.com/images/cardlist/card/DON_p4.png',
+    'https://optcg-api.arjunbansal-ai.workers.dev/images/DON-005',
     TRUE,
     'DON!! blackbeard one piece',
     25.00

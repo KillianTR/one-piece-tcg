@@ -8,12 +8,12 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Producción & Desarrollo Activo (Patch v0.6.1)
+* **Estado:** 🟢 En Producción & Desarrollo Activo (Patch v0.6.2)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Donaciones Comunitarias:** [buymeacoffee.com/grandlinevault](https://buymeacoffee.com/grandlinevault)
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.6.1` (Patch: Buy Me a Coffee Donaciones, Layout Simétrico ES/EN & Ajuste Legal Disclaimer)
+* **Versión Actual:** `v0.6.2` (Patch: Scans CDN de TCGPlayer, Fix Botón Cerrar Modal & Logos Oficiales GLV)
 
 ---
 
@@ -199,6 +199,12 @@ Cuentas con privilegios de pruebas para Killian:
 - Cambio y subida de fotos de avatar ilimitada.
 - Badge visual exclusivo de desarrollador en el modal de perfil.
 
+### 🎨 v0.6.2 — Scans CDN de TCGPlayer, Fix Botón Cerrar Modal & Logos Oficiales GLV (Completado)
+- [x] Solución definitiva a imágenes rotas de Bandai (CORP block): proxy CDN de Cloudflare R2 / TCGPlayer con 100% de cartas y scans HD.
+- [x] Corrección de solapamiento del botón de cierre (X) con `Set: ...` en `CardModal.jsx` (`max-w-5xl` y `pr-12`).
+- [x] Generación de logotipos oficiales de Grand Line Vault en 2 versiones: Cuadrado 1:1 (`glv-logo-square.jpg`) para UI y Banner 16:9 (`og-preview.jpg`) para compartir en redes.
+- [x] Configuración de Open Graph y Twitter Cards (`og:image`) en `index.html`.
+
 ### ☕ v0.6.1 — Buy Me a Coffee, Layout Simétrico ES/EN & Ajuste Legal Disclaimer (Completado)
 - [x] Reemplazado icono duplicado de portfolio en el footer por el botón oficial de *Buy Me a Coffee* (donaciones comunitarias).
 - [x] Ajuste legal del disclaimer en español e inglés: proyecto fan-made independiente sin fines comerciales apoyado voluntariamente por la comunidad.
@@ -214,7 +220,7 @@ Cuentas con privilegios de pruebas para Killian:
 
 ### 🟢 v1.0.0 — Official Launch en Vercel (Major Release)
 - [x] Exportación e importación de listas en formatos compatibles con OPTCG Sim y backups JSON.
-- [ ] Optimización SEO y Open Graph para compartir colecciones públicas en redes sociales.
+- [x] Optimización SEO y Open Graph para compartir colecciones públicas en redes sociales (`og:image` banner 16:9).
 - [ ] Soporte para visualización de cartas en vista cuadrícula ultra-densa (estilo pro-binder).
 
 ### 🟣 v2.0.0 — Expansión Social y Mercado (Major Update)

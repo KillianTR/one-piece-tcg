@@ -356,12 +356,13 @@ export default function CardCatalog() {
                   <img
                     src={card.image}
                     alt={card.name}
+                    referrerPolicy="no-referrer"
                     className={`w-full h-full object-cover transition duration-300 ${
                       owned ? 'opacity-100 group-hover:scale-105' : 'opacity-50 grayscale hover:opacity-75'
                     }`}
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = `https://placehold.co/300x420/121316/888888?text=${encodeURIComponent(card.id)}`;
+                      e.target.src = `https://placehold.co/300x420/121316/888888?text=${encodeURIComponent(card.id + '\n' + card.name)}`;
                     }}
                   />
 

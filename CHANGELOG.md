@@ -10,6 +10,28 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
 
+## [0.6.2] - 2026-10-08
+### 🎨 Patch — Scans CDN de TCGPlayer en Alta Definición, Fix Solapamiento Modal y Logos Oficiales Grand Line Vault
+
+#### 🐛 Corrección de Errores (Bug Fixes)
+* **Solución Definitiva a Imágenes de Cartas Rotas (CORP Policy):**
+  * Diagnóstico del fallo de carga: los servidores oficiales de Bandai (`en.onepiece-cardgame.com`) aplican cabeceras estrictas `Cross-Origin-Resource-Policy: same-site` que bloqueaban las imágenes en dominios externos (`grand-line-vault-tcg.vercel.app` y `localhost`), mostrando iconos de archivo roto.
+  * Migración de todo el catálogo al CDN proxy optimizado de Cloudflare R2 sincronizado con TCGPlayer (`https://optcg-api.arjunbansal-ai.workers.dev/images/{id}`), devolviendo scans en alta definición con cabecera `Access-Control-Allow-Origin: *`.
+  * Cobertura del 100% de cartas probada con éxito: cartas regulares, cartas especiales DON!! (`DON-001` a `DON-005`) y cartas Manga Rare (`_p2`).
+  * Añadido `referrerPolicy="no-referrer"` y manejador automático `onError` en `VirtualBinder.jsx`, `CardCatalog.jsx` y `CardModal.jsx`.
+  * Regenerados `src/data/mockCards.js` y el script de migración SQL `supabase/migration_v0.6.0_cards_mass_import.sql`.
+* **Fix Solapamiento del Botón de Cierre en `CardModal.jsx`:**
+  * Corregido el problema visual donde el botón `(X)` de cierre se superponía con la etiqueta del set (ej. `Set: OP-02`).
+  * Se aumentó el ancho máximo de la ventana modal a `max-w-5xl`.
+  * Reposicionado el botón `(X)` a `top-4 right-4 z-30` e incorporado un padding de seguridad (`pr-12 sm:pr-14`) en el contenedor de cabecera para evitar cualquier colisión espacial en cualquier tamaño de pantalla.
+
+#### ✨ Nuevas Características & Identidad Visual (Features & Assets)
+* **Logotipos Oficiales de Grand Line Vault:**
+  * **Versión Cuadrada (1:1):** Log Pose (brújula náutica), letras oficiales de "ONE PIECE CARD GAME" y relieve 3D en oro pirata "GRAND LINE VAULT". Integrado en el Navbar (`Navbar.jsx`) y pie de página (`Footer.jsx`).
+  * **Versión Banner (16:9):** Composición cinematográfica náutica con mascarones de proa y madera tallada pirata con bronce. Configurado en `index.html` mediante etiquetas Open Graph y Twitter Cards (`og:image`) para que se muestre como vista previa al compartir el enlace de la web por WhatsApp, Discord, X/Twitter, etc.
+* **Integración del Enlace Oficial de Buy Me a Coffee:**
+  * Conectado el enlace oficial definitivo `https://buymeacoffee.com/grandlinevault`.
+
 ## [0.6.1] - 2026-10-07
 ### ☕ Patch — Buy Me a Coffee (Donaciones), Layout Simétrico ES/EN en Controles del Álbum y Ajuste Legal del Disclaimer
 

@@ -109,13 +109,14 @@ export default function Navbar({
           onClick={() => setActiveTab('binder')}
         >
           <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-600 via-amber-500 to-yellow-400 p-0.5 shadow-lg shadow-amber-500/20 flex items-center justify-center transition group-hover:scale-105">
-            <div className={`w-full h-full rounded-[14px] flex items-center justify-center p-1.5 ${
+            <div className={`w-full h-full rounded-[14px] overflow-hidden flex items-center justify-center ${
               isDark ? 'bg-neutral-950' : 'bg-neutral-900'
             }`}>
               <img 
-                src="/one-piece-logo-white.webp" 
+                src="/glv-logo-square.jpg" 
                 alt="Grand Line Vault Logo" 
-                className="w-full h-full object-contain filter drop-shadow" 
+                className="w-full h-full object-cover filter drop-shadow" 
+                onError={(e) => { e.currentTarget.src = '/one-piece-logo-white.webp'; }}
               />
             </div>
           </div>

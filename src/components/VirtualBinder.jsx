@@ -697,12 +697,17 @@ export default function VirtualBinder() {
                 <img
                   src={card.image}
                   alt={card.name}
+                  referrerPolicy="no-referrer"
                   className={`w-full h-full object-cover rounded-lg transition-all duration-300 ${
                     owned 
                       ? 'filter drop-shadow-md' 
                       : 'grayscale opacity-30 contrast-75 brightness-75'
                   }`}
                   loading="lazy"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = `https://placehold.co/400x560/1a1a24/ffffff?text=${encodeURIComponent(card.id + '\n' + card.name)}`;
+                  }}
                 />
 
                 {/* Copies badge */}
@@ -824,8 +829,13 @@ export default function VirtualBinder() {
                 <img
                   src={card.image}
                   alt={card.name}
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover rounded-lg filter drop-shadow-md"
                   loading="lazy"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = `https://placehold.co/400x560/1a1a24/ffffff?text=${encodeURIComponent(card.id + '\n' + card.name)}`;
+                  }}
                 />
 
                 {/* Slot Number Badge */}
@@ -1049,8 +1059,13 @@ export default function VirtualBinder() {
                   <img
                     src={card.image}
                     alt={card.name}
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = `https://placehold.co/400x560/1a1a24/ffffff?text=${encodeURIComponent(card.id + '\n' + card.name)}`;
+                    }}
                   />
                   <div className="absolute inset-x-0 bottom-0 p-1.5 bg-black/80 text-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-[10px] font-bold text-amber-400 block truncate">

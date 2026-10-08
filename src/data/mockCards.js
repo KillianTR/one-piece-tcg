@@ -200,7 +200,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[DON!! x1] [Your Turn] All of your Characters gain +1000 power.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-001",
     "isAltArt": false,
     "cardtraderSearch": "Roronoa Zoro OP01-001",
     "marketPriceEstimated": 14.5
@@ -220,7 +220,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Activate: Main] [Once Per Turn] (2): If you have 5 Characters, return 1 of your Characters to the owner's hand. Then, play up to 1 Character with a cost of 4 or less from your hand with a color different from the returned Character.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-002.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-002",
     "isAltArt": false,
     "cardtraderSearch": "Trafalgar Law OP01-002",
     "marketPriceEstimated": 22
@@ -240,7 +240,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Activate: Main] [Once Per Turn] Give this Leader or 1 of your Characters up to 1 rested DON!! card.",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-004.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-004",
     "isAltArt": false,
     "cardtraderSearch": "Monkey D Luffy OP01-004",
     "marketPriceEstimated": 4.8
@@ -260,7 +260,7 @@ export const INITIAL_CARDS = [
     "rarity": "R",
     "effect": "[DON!! x1] [When Attacking] Give up to 1 of your opponent's Characters -2000 power during this turn.",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-005.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-005",
     "isAltArt": false,
     "cardtraderSearch": "Jinbe OP01-005",
     "marketPriceEstimated": 3.5
@@ -280,7 +280,7 @@ export const INITIAL_CARDS = [
     "rarity": "R",
     "effect": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type card other than [Nami] and add it to your hand. Place the rest at the bottom of your deck in any order.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-016.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-016",
     "isAltArt": false,
     "cardtraderSearch": "Nami OP01-016",
     "marketPriceEstimated": 18
@@ -300,7 +300,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "<Rush> (This card can attack on the turn in which it is played.)",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-025.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-025",
     "isAltArt": false,
     "cardtraderSearch": "Roronoa Zoro OP01-025",
     "marketPriceEstimated": 28.5
@@ -320,7 +320,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "<Rush> (This card can attack on the turn in which it is played.)",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-025_p1.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-026",
     "isAltArt": true,
     "cardtraderSearch": "Roronoa Zoro OP01-025 parallel",
     "marketPriceEstimated": 95
@@ -340,7 +340,7 @@ export const INITIAL_CARDS = [
     "rarity": "UC",
     "effect": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, if you have 2 or fewer Life cards, that card gains an additional +2000 power.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-029.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-029",
     "isAltArt": false,
     "cardtraderSearch": "Radical Beam OP01-029",
     "marketPriceEstimated": 5.2
@@ -360,7 +360,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "<Blocker> [On Play] Return 1 of your Characters to the owner's hand: Play up to 1 Character card with a cost of 3 or less from your hand.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-047.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-047",
     "isAltArt": false,
     "cardtraderSearch": "Trafalgar Law OP01-047",
     "marketPriceEstimated": 16
@@ -380,7 +380,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Activate: Main] [Once Per Turn] Trash 1 {Land of Wano} type card from your hand: Set up to 2 of your DON!! cards as active.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-054.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-054",
     "isAltArt": false,
     "cardtraderSearch": "Kozuki Oden OP01-054",
     "marketPriceEstimated": 6.5
@@ -400,7 +400,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[DON!! x2] [When Attacking] (1): Look at up to 5 cards from the top of your deck and place them at the top or bottom of your deck in any order. Then, reveal the top card of your deck. If that card is a {The Seven Warlords of the Sea} type Character card with a cost of 4 or less, you may play it rested.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-060.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-060",
     "isAltArt": false,
     "cardtraderSearch": "Donquixote Doflamingo OP01-060",
     "marketPriceEstimated": 12
@@ -420,7 +420,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[On Play] Place up to 1 Character with a cost of 7 or less at the bottom of the owner's deck.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-070.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-070",
     "isAltArt": false,
     "cardtraderSearch": "Dracule Mihawk OP01-070",
     "marketPriceEstimated": 24
@@ -440,7 +440,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[On Play] DON!! -6: K.O. all Characters other than this card.",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-094.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-094",
     "isAltArt": false,
     "cardtraderSearch": "Kaido OP01-094",
     "marketPriceEstimated": 19.5
@@ -460,7 +460,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "<Rush> [When Attacking] This Character cannot be blocked by Characters with 2000 or less power.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-120.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-120",
     "isAltArt": false,
     "cardtraderSearch": "Shanks OP01-120",
     "marketPriceEstimated": 42
@@ -480,7 +480,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "<Double Attack> <Banish> (When this card deals damage, the target card is trashed without activating its trigger.)",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-121.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP01-121",
     "isAltArt": false,
     "cardtraderSearch": "Yamato OP01-121",
     "marketPriceEstimated": 35
@@ -500,7 +500,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[End of Your Turn] Add 1 card from the top of your Life cards to your hand.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-001",
     "isAltArt": false,
     "cardtraderSearch": "Edward Newgate OP02-001",
     "marketPriceEstimated": 15
@@ -520,7 +520,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[On Play] During this turn, your Leader cannot lose Life from your opponent's effects or attacks, and your Leader gains +2000 power until the start of your next turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-004.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-004",
     "isAltArt": false,
     "cardtraderSearch": "Edward Newgate OP02-004",
     "marketPriceEstimated": 32
@@ -540,7 +540,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "<Rush> [On Play] Give up to 2 of your opponent's Characters -3000 power during this turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-013.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-013",
     "isAltArt": false,
     "cardtraderSearch": "Portgas D Ace OP02-013",
     "marketPriceEstimated": 26
@@ -560,7 +560,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "<Rush> [On Play] Give up to 2 of your opponent's Characters -3000 power during this turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-013_p1.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-013_p2",
     "isAltArt": true,
     "cardtraderSearch": "Portgas D Ace manga OP02-013",
     "marketPriceEstimated": 850
@@ -580,7 +580,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[DON!! x1] [Activate: Main] [Once Per Turn] Give up to 1 of your opponent's Characters -1 cost during this turn. Then, if there is a Character with a cost of 0, this Leader gains +1000 power during this turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-071.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-071",
     "isAltArt": false,
     "cardtraderSearch": "Smoker OP02-071",
     "marketPriceEstimated": 8.5
@@ -600,7 +600,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "<Blocker> [Opponent's Turn] This Character gains +1000 power and cannot be K.O.'d by effects.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-096.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-096",
     "isAltArt": false,
     "cardtraderSearch": "Borsalino OP02-096",
     "marketPriceEstimated": 29
@@ -620,7 +620,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[On Play] K.O. up to 1 of your opponent's Characters with a cost of 5 or less.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-099.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-099",
     "isAltArt": false,
     "cardtraderSearch": "Sakazuki OP02-099",
     "marketPriceEstimated": 12
@@ -640,7 +640,7 @@ export const INITIAL_CARDS = [
     "rarity": "R",
     "effect": "[On Play] K.O. up to 1 of your opponent's Characters with a cost of 4 or less.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-114.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-114",
     "isAltArt": false,
     "cardtraderSearch": "Borsalino OP02-114",
     "marketPriceEstimated": 6.5
@@ -660,7 +660,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "<Blocker> [On Play] DON!! -2: Rest up to 2 of your opponent's Characters with a cost of 5 or less.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-120.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-120",
     "isAltArt": false,
     "cardtraderSearch": "Uta OP02-120",
     "marketPriceEstimated": 38
@@ -680,7 +680,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "[Your Turn] All of your opponent's Characters get -5 cost. [Activate: Main] [Once Per Turn] K.O. up to 1 of your opponent's Characters with a cost of 0.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-121.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP02-121",
     "isAltArt": false,
     "cardtraderSearch": "Kuzan OP02-121",
     "marketPriceEstimated": 55
@@ -700,7 +700,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[When Attacking] Reveal 1 card from the top of your deck. If that card is an Event or Stage card, you may add it to your hand.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-001",
     "isAltArt": false,
     "cardtraderSearch": "Portgas D Ace OP03-001",
     "marketPriceEstimated": 9
@@ -720,7 +720,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Game Win Condition] When your deck has 0 cards, you win the match instead of losing. [When Attacking] Trash 1 card from the top of your deck.",
     "attribute": "Wisdom",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-040.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-040",
     "isAltArt": false,
     "cardtraderSearch": "Nami OP03-040",
     "marketPriceEstimated": 35
@@ -740,7 +740,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[On Play] Trash 2 cards with the {CP} type from your hand or trash: K.O. up to 1 of your opponent's Characters with a cost of 5 or less and up to 1 with a cost of 3 or less.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-076.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-076",
     "isAltArt": false,
     "cardtraderSearch": "Rob Lucci OP03-076",
     "marketPriceEstimated": 18
@@ -760,7 +760,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[DON!! x2] [When Attacking] (1): If you have 2 or fewer Life cards, add 1 card from the top of your deck to the top of your Life cards.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-077.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-077",
     "isAltArt": false,
     "cardtraderSearch": "Charlotte Linlin OP03-077",
     "marketPriceEstimated": 8
@@ -780,7 +780,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[DON!! x1] [When Attacking] Look at up to 1 Life card from the top of your or your opponent's Life cards, and place it at the top or bottom of the Life cards. Then, this Leader gains +1000 power during this turn.",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-099.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-099",
     "isAltArt": false,
     "cardtraderSearch": "Charlotte Katakuri OP03-099",
     "marketPriceEstimated": 32
@@ -800,7 +800,7 @@ export const INITIAL_CARDS = [
     "rarity": "R",
     "effect": "[On Play] Look at 4 cards from the top of your deck; reveal up to 1 {Big Mom Pirates} type card and add it to your hand.",
     "attribute": "Wisdom",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-112.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-112",
     "isAltArt": false,
     "cardtraderSearch": "Charlotte Pudding OP03-112",
     "marketPriceEstimated": 12
@@ -820,7 +820,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[On Play] Put 1 card from the top of your opponent's Life cards into their trash, and add 1 card from the top of your deck to the top of your Life cards.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-114.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-114",
     "isAltArt": false,
     "cardtraderSearch": "Charlotte Linlin OP03-114",
     "marketPriceEstimated": 34
@@ -840,7 +840,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "[On Play] Return up to 1 Character with a cost of 6 or less to the owner's hand. Then, draw 2 cards and trash 2 cards from your hand.",
     "attribute": "Ranged",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-122.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-122",
     "isAltArt": false,
     "cardtraderSearch": "Sogeking OP03-122",
     "marketPriceEstimated": 25
@@ -860,7 +860,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "[On Play] Return up to 1 Character with a cost of 6 or less to the owner's hand. Then, draw 2 cards and trash 2 cards from your hand.",
     "attribute": "Ranged",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-122_p1.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP03-122_p2",
     "isAltArt": true,
     "cardtraderSearch": "Sogeking manga OP03-122",
     "marketPriceEstimated": 750
@@ -880,7 +880,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[This Leader cannot attack.] [Activate: Main] [Once Per Turn] (2): Draw 1 card and give up to 1 of your Characters <Rush> during this turn.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP04-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP04-001",
     "isAltArt": false,
     "cardtraderSearch": "Nefertari Vivi OP04-001",
     "marketPriceEstimated": 7.5
@@ -900,7 +900,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[This Leader cannot attack.] [Activate: Main] [Once Per Turn] (1): If you have 6 or fewer cards in hand, look at 2 cards from the top of your deck; reveal up to 1 {Dressrosa} type card and add it to your hand.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP04-039.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP04-039",
     "isAltArt": false,
     "cardtraderSearch": "Rebecca OP04-039",
     "marketPriceEstimated": 14
@@ -920,7 +920,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "<Blocker> [On Play] Draw 2 cards and trash 2 cards from your hand. Then, none of your Characters can be K.O.'d by effects until the start of your next turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP04-083.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP04-083",
     "isAltArt": false,
     "cardtraderSearch": "Sabo OP04-083",
     "marketPriceEstimated": 26
@@ -940,7 +940,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "<Blocker> [On Play] Draw 2 cards and trash 2 cards from your hand. Then, none of your Characters can be K.O.'d by effects until the start of your next turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP04-083_p1.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP04-083_p2",
     "isAltArt": true,
     "cardtraderSearch": "Sabo manga OP04-083",
     "marketPriceEstimated": 650
@@ -960,7 +960,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "<Blocker> [End of Your Turn] Set this Character as active.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP04-119.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP04-119",
     "isAltArt": false,
     "cardtraderSearch": "Donquixote Rosinante OP04-119",
     "marketPriceEstimated": 22
@@ -980,7 +980,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[DON!! x1] [Activate: Main] [Once Per Turn] Give up to 1 of your Characters with 5000 or more power +1000 power during this turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-001",
     "isAltArt": false,
     "cardtraderSearch": "Sabo OP05-001",
     "marketPriceEstimated": 12
@@ -1000,7 +1000,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Activate: Main] [Once Per Turn] Trash 1 card from your hand: Draw 1 card. [When Attacking] Give up to 1 of your opponent's Characters -1 cost during this turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-041.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-041",
     "isAltArt": false,
     "cardtraderSearch": "Sakazuki OP05-041",
     "marketPriceEstimated": 28
@@ -1020,7 +1020,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "[On Play] Return all DON!! cards from your field to your DON!! deck: Take an extra turn after this one! This Character cannot attack during the extra turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-060.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-060",
     "isAltArt": false,
     "cardtraderSearch": "Monkey D Luffy Gear 5 OP05-060",
     "marketPriceEstimated": 65
@@ -1040,7 +1040,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "[On Play] Return all DON!! cards from your field to your DON!! deck: Take an extra turn after this one!",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-060_p1.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-060_p2",
     "isAltArt": true,
     "cardtraderSearch": "Monkey D Luffy Gear 5 Manga OP05-060",
     "marketPriceEstimated": 2800
@@ -1060,7 +1060,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[On Play] DON!! -1: Your opponent puts 2 cards from their hand at the bottom of their deck in any order.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-069.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-069",
     "isAltArt": false,
     "cardtraderSearch": "Trafalgar Law OP05-069",
     "marketPriceEstimated": 21
@@ -1080,7 +1080,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "<Blocker> [Your Turn] When you take a DON!! card from your field, add 1 active DON!! card from your DON!! deck.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-074.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-074",
     "isAltArt": false,
     "cardtraderSearch": "Eustass Captain Kid OP05-074",
     "marketPriceEstimated": 24.5
@@ -1100,7 +1100,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Opponent's Turn] [Once Per Turn] When your Life drops to 0, trash 1 card from your hand: Add 1 card from the top of your deck to the top of your Life cards.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-098.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-098",
     "isAltArt": false,
     "cardtraderSearch": "Enel OP05-098",
     "marketPriceEstimated": 35
@@ -1120,7 +1120,7 @@ export const INITIAL_CARDS = [
     "rarity": "R",
     "effect": "[Main] Rest up to 1 of your opponent's Characters with a cost of 4 or less. Then, K.O. up to 1 of your opponent's rested Characters with a cost of 2 or less.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-115.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-115",
     "isAltArt": false,
     "cardtraderSearch": "Two-Sword Style Draw Slash OP05-115",
     "marketPriceEstimated": 2.5
@@ -1140,7 +1140,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "[On Play] Return up to 1 Character with a cost of 8 or less to the bottom of the owner's deck. Then, draw 1 card.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-118.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP05-118",
     "isAltArt": false,
     "cardtraderSearch": "Kaido OP05-118",
     "marketPriceEstimated": 44
@@ -1160,7 +1160,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[DON!! x1] [When Attacking] (1): If you have a {FILM} type Character, draw 1 card.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-001",
     "isAltArt": false,
     "cardtraderSearch": "Uta OP06-001",
     "marketPriceEstimated": 11
@@ -1180,7 +1180,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Activate: Main] [Once Per Turn] Choose 1: Rest up to 1 of your opponent's Characters with a cost of 4 or less, or give up to 1 of your opponent's Characters -1 cost during this turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-021.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-021",
     "isAltArt": false,
     "cardtraderSearch": "Perona OP06-021",
     "marketPriceEstimated": 16.5
@@ -1200,7 +1200,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "<Double Attack> [Opponent's Turn] If you have 2 or fewer Life cards, this Leader gains +1000 power.",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-042.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-042",
     "isAltArt": false,
     "cardtraderSearch": "Yamato OP06-042",
     "marketPriceEstimated": 25
@@ -1220,7 +1220,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Activate: Main] [Once Per Turn] Trash 2 cards from the top of your deck: If there are 4 or more cards in your trash with {Thriller Bark Pirates}, give up to 1 of your Characters +1000 power.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-080.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-080",
     "isAltArt": false,
     "cardtraderSearch": "Gecko Moria OP06-080",
     "marketPriceEstimated": 28
@@ -1240,7 +1240,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[On Play] Choose up to 2 Character cards with a cost of 4 or less and different names from your trash: Play 1 rested and 1 active.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-086.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-086",
     "isAltArt": false,
     "cardtraderSearch": "Gecko Moria OP06-086",
     "marketPriceEstimated": 48
@@ -1260,7 +1260,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "[Activate: Main] [Once Per Turn] (1): Set this Character as active. This card can attack up to 3 times in total per turn.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-118.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-118",
     "isAltArt": false,
     "cardtraderSearch": "Roronoa Zoro OP06-118",
     "marketPriceEstimated": 60
@@ -1280,7 +1280,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "[Activate: Main] [Once Per Turn] (1): Set this Character as active. This card can attack up to 3 times in total per turn.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-118_p1.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP06-118_p2",
     "isAltArt": true,
     "cardtraderSearch": "Roronoa Zoro manga OP06-118",
     "marketPriceEstimated": 1200
@@ -1300,7 +1300,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Opponent's Turn] [Once Per Turn] (1): When your opponent attacks, rest up to 1 of your opponent's Characters.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-019.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP07-019",
     "isAltArt": false,
     "cardtraderSearch": "Jewelry Bonney OP07-019",
     "marketPriceEstimated": 22
@@ -1320,7 +1320,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[When Attacking] If you have 5 or fewer cards in your hand, draw 1 card.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-038.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP07-038",
     "isAltArt": false,
     "cardtraderSearch": "Boa Hancock OP07-038",
     "marketPriceEstimated": 18
@@ -1340,7 +1340,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "[When Attacking] If you have 5 or fewer cards in your hand, draw 1 card.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-038_p1.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP07-038_p2",
     "isAltArt": true,
     "cardtraderSearch": "Boa Hancock manga OP07-038",
     "marketPriceEstimated": 1400
@@ -1360,7 +1360,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[When Attacking] Trash 2 cards from the top of your deck: Give up to 1 of your opponent's Characters -1 cost during this turn.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-059.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP07-059",
     "isAltArt": false,
     "cardtraderSearch": "Rob Lucci OP07-059",
     "marketPriceEstimated": 24
@@ -1380,7 +1380,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "<Rush> [On Play] If you have 2 or fewer Life cards, add 1 card from the top of your deck to your Life cards.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-109.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP07-109",
     "isAltArt": false,
     "cardtraderSearch": "Portgas D Ace OP07-109",
     "marketPriceEstimated": 52
@@ -1400,7 +1400,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[DON!! x1] [When Attacking] Give up to 1 of your {Animal} type Characters +2000 power during this turn.",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP08-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP08-001",
     "isAltArt": false,
     "cardtraderSearch": "Tony Tony Chopper OP08-001",
     "marketPriceEstimated": 8
@@ -1420,7 +1420,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[When Attacking] You may trash 1 card from your hand: Give up to 1 of your opponent's Characters -2000 power during this turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP08-057.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP08-057",
     "isAltArt": false,
     "cardtraderSearch": "Marco OP08-057",
     "marketPriceEstimated": 14
@@ -1440,7 +1440,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "[On Play] Give up to 2 of your opponent's Characters -3000 power during this turn. Then, K.O. up to 1 of your opponent's Characters with 3000 or less power.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP08-118.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP08-118",
     "isAltArt": false,
     "cardtraderSearch": "Silvers Rayleigh OP08-118",
     "marketPriceEstimated": 45
@@ -1460,7 +1460,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "[On Play] Bottom deck up to 1 Character with 7000 or less power.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP08-119.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP08-119",
     "isAltArt": false,
     "cardtraderSearch": "Edward Newgate OP08-119",
     "marketPriceEstimated": 40
@@ -1480,7 +1480,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Your Turn] Negate all [On Play] effects of your opponent's Characters. [End of Your Turn] Draw 1 card.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-001",
     "isAltArt": false,
     "cardtraderSearch": "Marshall D Teach OP09-001",
     "marketPriceEstimated": 38
@@ -1500,7 +1500,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[When Attacking] (1): Reveal cards from the top of your deck until you reveal a {Cross Guild} Character. Play it rested.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-004.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-004",
     "isAltArt": false,
     "cardtraderSearch": "Buggy OP09-004",
     "marketPriceEstimated": 25
@@ -1520,7 +1520,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "[When Attacking] (1): Reveal cards from the top of your deck until you reveal a {Cross Guild} Character. Play it rested.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-004_p1.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-004_p2",
     "isAltArt": true,
     "cardtraderSearch": "Buggy manga OP09-004",
     "marketPriceEstimated": 1100
@@ -1540,7 +1540,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[DON!! x1] [When Attacking] Give up to 1 of your opponent's Characters -1000 power during this turn.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-021.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-021",
     "isAltArt": false,
     "cardtraderSearch": "Shanks OP09-021",
     "marketPriceEstimated": 26
@@ -1560,7 +1560,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[On Play] Choose up to 1 of your opponent's Characters and give it -4 cost during this turn.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-051.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-051",
     "isAltArt": false,
     "cardtraderSearch": "Kuzan OP09-051",
     "marketPriceEstimated": 15
@@ -1580,7 +1580,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[On Play] Negate the effect of your opponent's Leader and trash up to 1 Character with a cost of 6 or less.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-081.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-081",
     "isAltArt": false,
     "cardtraderSearch": "Marshall D Teach OP09-081",
     "marketPriceEstimated": 40
@@ -1600,7 +1600,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "<Rush> <Cannot be K.O.'d> [When Attacking] Trash 1 of your opponent's Life cards.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-118.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-118",
     "isAltArt": false,
     "cardtraderSearch": "Gol D Roger OP09-118",
     "marketPriceEstimated": 95
@@ -1620,7 +1620,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "<Rush> <Cannot be K.O.'d> [When Attacking] Trash 1 of your opponent's Life cards.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-118_p1.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-118_p2",
     "isAltArt": true,
     "cardtraderSearch": "Gol D Roger manga OP09-118",
     "marketPriceEstimated": 3200
@@ -1640,7 +1640,7 @@ export const INITIAL_CARDS = [
     "rarity": "SEC",
     "effect": "<Rush> [When Attacking] K.O. up to 1 of your opponent's Characters with 10000 or less power.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-119.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/OP09-119",
     "isAltArt": false,
     "cardtraderSearch": "Shanks OP09-119",
     "marketPriceEstimated": 75
@@ -1660,7 +1660,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Activate: Main] [Once Per Turn] Give this Leader or 1 of your Characters up to 1 rested DON!! card.",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST01-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-001",
     "isAltArt": false,
     "cardtraderSearch": "Monkey D Luffy ST01-001",
     "marketPriceEstimated": 2.5
@@ -1680,7 +1680,7 @@ export const INITIAL_CARDS = [
     "rarity": "C",
     "effect": "<Rush> (This card can attack on the turn in which it is played.)",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST01-004.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-004",
     "isAltArt": false,
     "cardtraderSearch": "Sanji ST01-004",
     "marketPriceEstimated": 1.5
@@ -1700,7 +1700,7 @@ export const INITIAL_CARDS = [
     "rarity": "C",
     "effect": "<Blocker> (After your opponent declares an attack, you may rest this card to make it the new target.)",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST01-006.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-006",
     "isAltArt": false,
     "cardtraderSearch": "Chopper ST01-006",
     "marketPriceEstimated": 2
@@ -1720,7 +1720,7 @@ export const INITIAL_CARDS = [
     "rarity": "C",
     "effect": "[On Play] Give up to 2 rested DON!! cards to your Leader or Character.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST01-011.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-011",
     "isAltArt": false,
     "cardtraderSearch": "Brook ST01-011",
     "marketPriceEstimated": 1
@@ -1740,7 +1740,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "[DON!! x1] This Character gains +1000 power.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST01-012.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-012",
     "isAltArt": false,
     "cardtraderSearch": "Roronoa Zoro ST01-012",
     "marketPriceEstimated": 14
@@ -1760,7 +1760,7 @@ export const INITIAL_CARDS = [
     "rarity": "C",
     "effect": "[Counter] Up to 1 of your Leader or Character cards gains +3000 power during this battle.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST01-014.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST01-014",
     "isAltArt": false,
     "cardtraderSearch": "Guard Point ST01-014",
     "marketPriceEstimated": 1.2
@@ -1780,7 +1780,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Activate: Main] [Once Per Turn] (3) Trash 1 card from your hand: Set this Leader as active.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST02-001",
     "isAltArt": false,
     "cardtraderSearch": "Eustass Captain Kid ST02-001",
     "marketPriceEstimated": 3.5
@@ -1800,7 +1800,7 @@ export const INITIAL_CARDS = [
     "rarity": "C",
     "effect": "<Blocker> (After your opponent declares an attack, you may rest this card to make it the new target.)",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-004.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST02-004",
     "isAltArt": false,
     "cardtraderSearch": "Killer ST02-004",
     "marketPriceEstimated": 2.2
@@ -1820,7 +1820,7 @@ export const INITIAL_CARDS = [
     "rarity": "C",
     "effect": "[Activate: Main] (1) Rest this card: Look at 5 cards from the top of your deck; reveal up to 1 {Supernovas} type card and add it to your hand.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-007.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST02-007",
     "isAltArt": false,
     "cardtraderSearch": "Jewelry Bonney ST02-007",
     "marketPriceEstimated": 9.5
@@ -1840,7 +1840,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "<Double Attack> [DON!! x1] [End of Your Turn] Set this Character as active.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-013.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST02-013",
     "isAltArt": false,
     "cardtraderSearch": "Eustass Captain Kid ST02-013",
     "marketPriceEstimated": 12
@@ -1860,7 +1860,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Activate: Main] [Once Per Turn] DON!! -3: Bottom deck up to 1 of your opponent's Characters with 3000 or less power. Then, play up to 1 Character with 4 or less cost from your hand.",
     "attribute": "Slash",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST10-001.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST10-001",
     "isAltArt": false,
     "cardtraderSearch": "Trafalgar Law ST10-001",
     "marketPriceEstimated": 28
@@ -1880,7 +1880,7 @@ export const INITIAL_CARDS = [
     "rarity": "L",
     "effect": "[Activate: Main] [Once Per Turn] Trash 1 card from your Life cards: Add 1 active DON!! card from your DON!! deck.",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST10-002.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST10-002",
     "isAltArt": false,
     "cardtraderSearch": "Monkey D Luffy ST10-002",
     "marketPriceEstimated": 19
@@ -1900,7 +1900,7 @@ export const INITIAL_CARDS = [
     "rarity": "SR",
     "effect": "<Rush> [On Play] DON!! -1: This Character gains +1000 power during this turn.",
     "attribute": "Strike",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/ST10-006.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/ST10-006",
     "isAltArt": false,
     "cardtraderSearch": "Monkey D Luffy ST10-006",
     "marketPriceEstimated": 16
@@ -1920,7 +1920,7 @@ export const INITIAL_CARDS = [
     "rarity": "C",
     "effect": "[Your Turn] Give 1 of your Leaders or Characters +1000 power.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/DON.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/DON-001",
     "isAltArt": false,
     "cardtraderSearch": "DON!! card gold stamp one piece",
     "marketPriceEstimated": 5
@@ -1940,7 +1940,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "[Your Turn] Give 1 of your Leaders or Characters +1000 power.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/DON_p1.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/DON-002",
     "isAltArt": true,
     "cardtraderSearch": "DON!! gear 5 manga one piece",
     "marketPriceEstimated": 35
@@ -1960,7 +1960,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "[Your Turn] Give 1 of your Leaders or Characters +1000 power.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/DON_p2.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/DON-003",
     "isAltArt": true,
     "cardtraderSearch": "DON!! shanks one piece",
     "marketPriceEstimated": 28
@@ -1980,7 +1980,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "[Your Turn] Give 1 of your Leaders or Characters +1000 power.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/DON_p3.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/DON-004",
     "isAltArt": true,
     "cardtraderSearch": "DON!! whitebeard one piece",
     "marketPriceEstimated": 22
@@ -2000,7 +2000,7 @@ export const INITIAL_CARDS = [
     "rarity": "SP",
     "effect": "[Your Turn] Give 1 of your Leaders or Characters +1000 power.",
     "attribute": "Special",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/DON_p4.png",
+    "image": "https://optcg-api.arjunbansal-ai.workers.dev/images/DON-005",
     "isAltArt": true,
     "cardtraderSearch": "DON!! blackbeard one piece",
     "marketPriceEstimated": 25

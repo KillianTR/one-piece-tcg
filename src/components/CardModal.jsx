@@ -23,17 +23,19 @@ export default function CardModal() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn">
       <div 
-        className={`relative w-full max-w-4xl border rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[92vh] ${
+        className={`relative w-full max-w-5xl border rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[92vh] ${
           isDark ? 'bg-neutral-900 border-neutral-800 text-neutral-200' : 'bg-white border-neutral-200 text-neutral-800'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
+        {/* Close Button (posicionado arriba con z-30 para no interferir con el contenido) */}
         <button
           onClick={() => setSelectedCard(null)}
-          className={`absolute top-4 right-4 z-20 p-2 rounded-full border transition ${
-            isDark ? 'bg-neutral-950/70 hover:bg-neutral-800 text-neutral-400 hover:text-white border-neutral-700/50' : 'bg-white/80 hover:bg-neutral-100 text-neutral-600 hover:text-neutral-900 border-neutral-300'
+          className={`absolute top-4 right-4 z-30 p-2 rounded-full border shadow-md transition cursor-pointer ${
+            isDark ? 'bg-neutral-950/80 hover:bg-neutral-800 text-neutral-400 hover:text-white border-neutral-700/60' : 'bg-white/90 hover:bg-neutral-100 text-neutral-600 hover:text-neutral-900 border-neutral-300'
           }`}
+          aria-label="Cerrar modal"
+          title="Cerrar (Esc)"
         >
           <X className="w-5 h-5" />
         </button>
@@ -52,6 +54,7 @@ export default function CardModal() {
             <img
               src={selectedCard.image}
               alt={selectedCard.name}
+              referrerPolicy="no-referrer"
               className="w-full h-auto object-cover rounded-2xl border border-neutral-800/80"
               onError={(e) => {
                 e.target.onerror = null;
@@ -75,9 +78,9 @@ export default function CardModal() {
         {/* Right Side: Details & Stats & Actions */}
         <div className="md:w-7/12 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
           <div>
-            {/* Header / ID & Set */}
-            <div className="flex items-center justify-between text-xs text-neutral-400 mb-1">
-              <span className="font-mono font-bold tracking-wider text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+            {/* Header / ID & Set (Con margen derecho pr-12 para dejar espacio libre al botón X) */}
+            <div className="flex items-center justify-between text-xs text-neutral-400 mb-2 pr-12 sm:pr-14">
+              <span className="font-mono font-bold tracking-wider text-amber-500 bg-amber-500/10 px-2.5 py-0.5 rounded border border-amber-500/20">
                 {selectedCard.id}
               </span>
               <span className="text-neutral-400 font-medium">

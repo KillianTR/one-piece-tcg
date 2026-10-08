@@ -46,9 +46,10 @@ export default function Footer({ onOpenVersionModal }) {
         <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
           <div className="flex items-center gap-2">
             <img 
-              src="/one-piece-logo-white.webp" 
+              src="/glv-logo-square.jpg" 
               alt="Grand Line Vault Logo" 
-              className={`w-5 h-5 object-contain filter ${isDark ? '' : 'invert'}`} 
+              className="w-5 h-5 rounded-md object-cover shadow-sm" 
+              onError={(e) => { e.currentTarget.src = '/one-piece-logo-white.webp'; }}
             />
             <span className={`font-bold tracking-wide ${isDark ? 'text-white' : 'text-neutral-900'}`}>
               GRAND LINE VAULT
@@ -63,7 +64,7 @@ export default function Footer({ onOpenVersionModal }) {
                 isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
               }`}
             >
-              v0.6.1
+              v0.6.2
             </button>
             <span className="text-[11px] text-neutral-500">{t('footerSemVerNote')}</span>
           </div>
