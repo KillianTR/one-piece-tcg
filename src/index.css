@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
 @layer base {
-  body {
+  html, body {
     @apply antialiased selection:bg-amber-500 selection:text-black transition-colors duration-200;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+  #root {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
   }
 }
 
@@ -110,18 +118,69 @@ html.light body {
   transform: rotate(25deg) translate(20%, 20%);
 }
 
-/* Custom scrollbars */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* Sleek, natural One Piece nautical scrollbars (Zero Windows 11 default look) */
+* {
+  scrollbar-width: thin;
 }
+
+html.dark * {
+  scrollbar-color: rgba(212, 175, 55, 0.3) transparent;
+}
+
+html.light * {
+  scrollbar-color: rgba(180, 130, 20, 0.35) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-::-webkit-scrollbar-thumb {
-  background: #333642;
-  border-radius: 4px;
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.25);
+  border-radius: 9999px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #4b5063;
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.55);
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(180, 130, 20, 0.25);
+  border-radius: 9999px;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 130, 20, 0.55);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 9999px;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+html.light .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(180, 130, 20, 0.3);
+  border-radius: 9999px;
+}
+
+html.light .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 130, 20, 0.6);
 }

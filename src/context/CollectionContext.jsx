@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback, use
 import { INITIAL_CARDS, SETS } from '../data/mockCards';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import { useAuth } from './AuthContext';
+import { playAddToCollectionSound, playAddToWishlistSound } from '../utils/audioEffects';
 
 const CollectionContext = createContext();
 
@@ -355,6 +356,7 @@ export function CollectionProvider({ children }) {
 
   // Actions
   const addCard = (cardId, amount = 1) => {
+    playAddToCollectionSound();
     setCollection((prev) => {
       const current = prev[cardId] || { count: 0, isWishlist: false };
       const newCount = current.count + amount;
@@ -391,6 +393,9 @@ export function CollectionProvider({ children }) {
     setCollection((prev) => {
       const current = prev[cardId] || { count: 0, isWishlist: false };
       const nextWishlist = !current.isWishlist;
+      if (nextWishlist) {
+        playAddToWishlistSound();
+      }
       syncCardToCloud(cardId, current.count, nextWishlist);
       return {
         ...prev,

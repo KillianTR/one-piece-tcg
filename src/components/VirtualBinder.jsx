@@ -32,6 +32,7 @@ import {
   toggleSound 
 } from '../utils/audioEffects';
 import HeroBanner from './HeroBanner';
+import CustomDropdown from './CustomDropdown';
 
 export default function VirtualBinder({ onNavigateTab }) {
   const { 
@@ -390,29 +391,24 @@ export default function VirtualBinder({ onNavigateTab }) {
             ))}
           </div>
 
-          {/* Ordenación & Paginación (Fijo en una sola línea horizontal) */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0 flex-nowrap">
-            {/* Selector de Ordenación */}
-            <div className={`flex items-center gap-1.5 border rounded-xl px-2.5 py-1 text-xs shrink-0 whitespace-nowrap ${
-              isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
-            }`}>
-              <ArrowUpDown className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-              <select
-                value={sortBy}
-                onChange={(e) => { setSortBy(e.target.value); setCurrentPage(1); }}
-                className={`bg-transparent text-xs font-semibold focus:outline-none cursor-pointer ${
-                  isDark ? 'text-neutral-200' : 'text-neutral-800'
-                }`}
-              >
-                <option value="id" className={isDark ? 'bg-neutral-900 text-white' : 'bg-white text-neutral-900'}>{t('binderSortId')}</option>
-                <option value="category" className={isDark ? 'bg-neutral-900 text-white' : 'bg-white text-neutral-900'}>{t('binderSortCategory')}</option>
-                <option value="rarity" className={isDark ? 'bg-neutral-900 text-white' : 'bg-white text-neutral-900'}>{t('binderSortRarity')}</option>
-                <option value="color" className={isDark ? 'bg-neutral-900 text-white' : 'bg-white text-neutral-900'}>{t('binderSortColor')}</option>
-                <option value="cost_desc" className={isDark ? 'bg-neutral-900 text-white' : 'bg-white text-neutral-900'}>{t('binderSortCost')} (Max ↓)</option>
-                <option value="cost_asc" className={isDark ? 'bg-neutral-900 text-white' : 'bg-white text-neutral-900'}>{t('binderSortCost')} (Min ↑)</option>
-                <option value="power_desc" className={isDark ? 'bg-neutral-900 text-white' : 'bg-white text-neutral-900'}>{t('binderSortPower')} (Max ↓)</option>
-              </select>
-            </div>
+          {/* Ordenación & Paginación */}
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 w-full sm:w-auto justify-between sm:justify-end">
+            {/* Selector de Ordenación Flotante */}
+            <CustomDropdown
+              value={sortBy}
+              onChange={(val) => { setSortBy(val); setCurrentPage(1); }}
+              options={[
+                { value: 'id', label: t('binderSortId') },
+                { value: 'category', label: t('binderSortCategory') },
+                { value: 'rarity', label: t('binderSortRarity') },
+                { value: 'color', label: t('binderSortColor') },
+                { value: 'cost_desc', label: `${t('binderSortCost')} (Max ↓)` },
+                { value: 'cost_asc', label: `${t('binderSortCost')} (Min ↑)` },
+                { value: 'power_desc', label: `${t('binderSortPower')} (Max ↓)` },
+              ]}
+              icon={ArrowUpDown}
+              size="sm"
+            />
 
             {/* Quick Page Nav Buttons */}
             <div className={`flex items-center gap-1 sm:gap-1.5 border rounded-xl px-2 py-1 shrink-0 whitespace-nowrap ${
@@ -616,7 +612,7 @@ export default function VirtualBinder({ onNavigateTab }) {
       {/* ========================================================= */}
       {/* 3. EL ARCHIVADOR VAULT X (PIEL, PESPUNTES & PÁGINAS)       */}
       {/* ========================================================= */}
-      <div className={`relative rounded-3xl p-4 sm:p-8 lg:p-10 shadow-2xl border-4 ${
+      <div className={`relative rounded-2xl sm:rounded-3xl p-2.5 sm:p-8 lg:p-10 shadow-2xl border-2 sm:border-4 ${
         isDark 
           ? 'binder-leather border-neutral-900' 
           : 'binder-leather-light border-neutral-300 shadow-neutral-400/30'
@@ -1029,19 +1025,18 @@ export default function VirtualBinder({ onNavigateTab }) {
                     Solo en Colección
                   </button>
 
-                  <select
+                  <CustomDropdown
                     value={pickerCategoryFilter}
-                    onChange={(e) => setPickerCategoryFilter(e.target.value)}
-                    className={`px-3 py-2 rounded-xl border text-xs font-semibold focus:outline-none cursor-pointer ${
-                      isDark ? 'bg-neutral-900 border-neutral-700 text-white' : 'bg-white border-neutral-300 text-neutral-900'
-                    }`}
-                  >
-                    <option value="ALL">Todas las Categorías</option>
-                    <option value="Leader">Leader</option>
-                    <option value="Character">Character</option>
-                    <option value="Event">Event</option>
-                    <option value="DON!!">DON!! Card</option>
-                  </select>
+                    onChange={(val) => setPickerCategoryFilter(val)}
+                    options={[
+                      { value: 'ALL', label: 'Todas las Categorías' },
+                      { value: 'Leader', label: 'Leader' },
+                      { value: 'Character', label: 'Character' },
+                      { value: 'Event', label: 'Event' },
+                      { value: 'DON!!', label: 'DON!! Card' },
+                    ]}
+                    size="sm"
+                  />
                 </div>
               </div>
             </div>

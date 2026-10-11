@@ -19,6 +19,7 @@ import confetti from 'canvas-confetti';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
+import CustomDropdown from './CustomDropdown';
 import { 
   getUserProfile, 
   checkUsernameCooldown, 
@@ -527,21 +528,20 @@ export default function ProfileModal({ isOpen, onClose }) {
                     <Award className="w-3.5 h-3.5 text-amber-500" />
                     {t('profilePirateTitle')}
                   </label>
-                  <select
+                  <CustomDropdown
                     value={pirateTitle}
-                    onChange={(e) => setPirateTitle(e.target.value)}
-                    className={`w-full px-3.5 py-2.5 rounded-xl border text-sm transition focus:outline-none cursor-pointer ${
-                      isDark 
-                        ? 'bg-neutral-900 border-neutral-700/80 focus:border-amber-500 text-white' 
-                        : 'bg-white border-neutral-300 focus:border-amber-500 text-neutral-900'
-                    }`}
-                  >
-                    <option value="Novato del East Blue">{t('profilePirateRankNovice')}</option>
-                    <option value="Peor Generación">{t('profilePirateRankWorstGen')}</option>
-                    <option value="Guerrero del Mar">{t('profilePirateRankWarlord')}</option>
-                    <option value="Comandante de Yonko">{t('profilePirateRankYonkoCommander')}</option>
-                    <option value="Rey de los Piratas">{t('profilePirateRankPirateKing')}</option>
-                  </select>
+                    onChange={(val) => setPirateTitle(val)}
+                    options={[
+                      { value: 'Novato del East Blue', label: t('profilePirateRankNovice') },
+                      { value: 'Peor Generación', label: t('profilePirateRankWorstGen') },
+                      { value: 'Guerrero del Mar', label: t('profilePirateRankWarlord') },
+                      { value: 'Comandante de Yonko', label: t('profilePirateRankYonkoCommander') },
+                      { value: 'Rey de los Piratas', label: t('profilePirateRankPirateKing') },
+                    ]}
+                    size="md"
+                    className="w-full"
+                    dropdownClassName="w-full"
+                  />
                 </div>
 
                 {/* Biografía / Frase Pirata */}

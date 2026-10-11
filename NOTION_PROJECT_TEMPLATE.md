@@ -8,12 +8,12 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.5)
+* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.6)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Donaciones Comunitarias:** [buymeacoffee.com/grandlinevault](https://buymeacoffee.com/grandlinevault)
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.6.5` (Minor: Hero Banner Grand Line estilo OPlayTCG, Paleta Náutica One Piece, Logo Log Pose & Enlace CardTrader Actualizado)
+* **Versión Actual:** `v0.6.6` (Minor: Selectores Flotantes Popover Sin Estilo Windows 11, Responsive Móvil 100% en iPhone 13 Pro/Opera GX & Efectos de Sonido Hápticos Diferenciados)
 
 ---
 
@@ -198,6 +198,13 @@ Cuentas con privilegios de pruebas para Killian:
 - Cambio de nombre de usuario en cualquier momento sin esperar 30 días.
 - Cambio y subida de fotos de avatar ilimitada.
 - Badge visual exclusivo de desarrollador en el modal de perfil.
+
+### ✨ v0.6.6 — Selectores Flotantes Popover, Responsive Móvil 100% & Sonidos de Estrellas y Fantasía (Completado)
+- [x] Eliminados el 100% de los elementos `<select>` nativos del navegador; implementado componente modular flotante `CustomDropdown.jsx` idéntico a las referencias de diseño.
+- [x] Corrección de desbordamiento horizontal (`overflow-x: hidden`) en smartphones (iPhone 13 Pro y navegador Opera GX) evitando el scroll lateral involuntario.
+- [x] Cabecera adaptativa móvil: accesos duplicados de Monedas y Backup ocultados en la barra superior móvil (ya presentes en el dock inferior fijo).
+- [x] Simplificación del Hero Banner: eliminada la tarjeta lateral "Ventajas del archivador" dejando limpio y panorámico el mapa celeste.
+- [x] Efectos de sonido diferenciados con Web Audio API: chimes de estrellas ascendentes para añadir a colección (+1) y arpa mágica de fantasía con vibrato armónico para favoritos/wishlist.
 
 ### 🧭 v0.6.5 — Hero Banner Grand Line, Paleta Náutica Anime/Manga & Logo Log Pose (Completado)
 - [x] Banner interactivo estilo OPlayTCG en la página principal con textura de mapa celeste y accesos directos al Catálogo, Tablón P2P y CardTrader.

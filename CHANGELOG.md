@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Versión](https://img.shields.io/badge/version-v0.6.5--minor-blue?style=for-the-badge&logo=git)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/version-v0.6.6--minor-blue?style=for-the-badge&logo=git)](CHANGELOG.md)
 [![Web en Vivo](https://img.shields.io/badge/Live_Demo-grand--line--vault--tcg.vercel.app-000000?style=for-the-badge&logo=vercel)](https://grand-line-vault-tcg.vercel.app)
 [![Portfolio](https://img.shields.io/badge/Creator-Killian_Torrell-000000?style=for-the-badge&logo=vercel)](https://killiantr.vercel.app)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-grandlinevault-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/grandlinevault)
@@ -30,6 +30,24 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 * **MAJOR (ej. `2.0.0`):** Expansión mayor (*Major Update*). Rediseño estructural, nueva arquitectura de base de datos, salto de versión o cambio que rompe compatibilidad (equivalente a las expansiones del WoW como *The War Within* o *Dragonflight*).
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
+
+---
+
+## [0.6.6] - 2026-10-11
+### ✨ Minor Update — Selectores Flotantes Popover (Sin Estilo Windows 11), Responsive Móvil 100% & Sonidos de Estrellas y Fantasía
+
+#### ✨ Nuevas Características & Experiencia de Usuario (Features & UX)
+* **Menús Desplegables Flotantes (`CustomDropdown.jsx`):**
+  * Reemplazados todos los elementos `<select>` nativos del navegador por menús flotantes estilo popover con bordes redondeados y sombras de profundidad, idénticos a los estándares modernos y al ejemplo proporcionado por el usuario.
+  * Eliminada por completo la apariencia tosca y el azul predeterminado de Windows 11 en la ordenación del álbum y los 6 filtros del catálogo.
+  * Scrollbars ultra-delgadas personalizadas con tono dorado ámbar y azul abisal que se integran con naturalidad en el diseño.
+* **Optimización Responsive Móvil (iPhone 13 Pro & Opera GX):**
+  * Solucionado el desbordamiento horizontal (`overflow-x`) que permitía desplazar la pantalla a izquierda y derecha en smartphones.
+  * Cabecera adaptativa: ocultados los accesos duplicados de Estadísticas y Backup en la barra superior móvil (ya disponibles en la barra inferior fija).
+  * Simplificación del banner principal: eliminada la tarjeta lateral de "Ventajas del archivador" a petición del usuario para dejar despejado el mapa náutico.
+* **Nuevos Efectos de Sonido Háptico Diferenciados (Web Audio API):**
+  * **Añadir Carta a la Colección (+1):** Chime estelar ascendente de tesoro conseguido (arpegio de notas brillantes C6, E6, G6, C7).
+  * **Añadir Carta a Favoritos / Wishlist:** Acorde etéreo de arpa mágica de fantasía con shimmer y vibrato armónico (F#5, B5, D#6, F#6).
 
 ---
 
@@ -242,6 +260,22 @@ All notable versions and milestones for **Grand Line Vault** are documented here
 * **MAJOR (e.g. `2.0.0`):** Major Expansion (*Major Update*). Structural redesign, database schema overhaul, breaking changes, or major architectural jumps (analogous to WoW expansions like *The War Within* or *Dragonflight*).
 * **MINOR (e.g. `0.1.0`):** Feature or Content Patch (*Minor Update*). Substantial new features added in a backward-compatible manner (such as custom binders, trading boards, advanced filters).
 * **PATCH (e.g. `0.0.1`):** Hotfix / Bug Fix (*Patch*). Fast code repairs, visual styling adjustments, performance tweaks, or minor text polish.
+
+## [0.6.6] - 2026-10-11
+### ✨ Minor Update — Custom Floating Popover Dropdowns (Zero Windows 11 Styling), 100% Mobile Responsive & Star & Fantasy Audio Effects
+
+#### ✨ New Features & User Experience (Features & UX)
+* **Custom Floating Popover Dropdowns (`CustomDropdown.jsx`):**
+  * Replaced 100% of native HTML `<select>` elements across the entire application with custom floating popover dropdowns featuring smooth rounded corners (`rounded-2xl`), deep ocean navy / parchment styling, and depth elevation shadows matching the user's provided design.
+  * Completely eliminated the harsh, default Windows 11 blue select menu appearance from the binder sorting dropdown and all 6 catalog filter selects.
+  * Implemented sleek custom scrollbars with antique amber gold accents and abyssal navy tones that integrate seamlessly into the One Piece aesthetic.
+* **Mobile Viewport Responsive Overhaul (iPhone 13 Pro & Opera GX):**
+  * Fixed horizontal canvas overflow (`overflow-x: hidden`) that caused accidental left-right page swiping on mobile viewports.
+  * Adaptive guest header bar: hid redundant Coins & Backup buttons on mobile screens (fully accessible via the fixed bottom dock) to keep the navigation bar compact.
+  * Streamlined hero banner: removed the right-hand "Ventajas del archivador" card to give full prominence to the panoramic celestial Grand Line sea chart.
+* **Differentiated Haptic Synthesized Sound Effects (Web Audio API):**
+  * **Add Card to Collection (+1):** Ascending star sparkle / pirate treasure chime (bright arpeggio on C6, E6, G6, C7).
+  * **Add Card to Wishlist / Favorites:** Dreamy fantasy harp shimmer chord with harmonic vibrato (F#5, B5, D#6, F#6).
 
 ---
 

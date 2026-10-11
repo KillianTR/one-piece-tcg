@@ -120,3 +120,82 @@ export function playCardSnapSound() {
     // Fallback quietly if audio is blocked by browser policy
   }
 }
+
+/**
+ * Play an uplifting "Star Sparkle / Treasure Acquired" sound when adding a card to collection
+ * Distinctive energetic anime star chime (ascending sparkling triad arpeggio)
+ */
+export function playAddToCollectionSound() {
+  if (!soundEnabled) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  try {
+    const now = ctx.currentTime;
+    // Ascending star chime frequencies: C6, E6, G6, C7
+    const notes = [1046.5, 1318.5, 1567.98, 2093.0];
+
+    notes.forEach((freq, idx) => {
+      const noteTime = now + idx * 0.055;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, noteTime);
+
+      gain.gain.setValueAtTime(0.0001, noteTime);
+      gain.gain.linearRampToValueAtTime(0.09, noteTime + 0.015);
+      gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 0.28);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(noteTime);
+      osc.stop(noteTime + 0.3);
+    });
+  } catch (e) {
+    // Audio context policy fallback
+  }
+}
+
+/**
+ * Play an enchanting "Fantasy Wish / Magic Shimmer" sound when toggling a favorite / wishlist
+ * Ethereal, dreamy fantasy chime with dual resonant harmonics
+ */
+export function playAddToWishlistSound() {
+  if (!soundEnabled) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  try {
+    const now = ctx.currentTime;
+    // Dreamy fantasy harp chords: F#5 (739.99), B5 (987.77), D#6 (1244.5), F#6 (1479.98)
+    const notes = [739.99, 987.77, 1244.5, 1479.98];
+
+    notes.forEach((freq, idx) => {
+      const noteTime = now + idx * 0.065;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      // Triangle oscillator gives a softer, warmer magical harp feel
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, noteTime);
+      // Subtle pitch bend for magical shimmer
+      osc.frequency.exponentialRampToValueAtTime(freq * 1.015, noteTime + 0.05);
+      osc.frequency.exponentialRampToValueAtTime(freq, noteTime + 0.35);
+
+      gain.gain.setValueAtTime(0.0001, noteTime);
+      gain.gain.linearRampToValueAtTime(0.075, noteTime + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 0.45);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(noteTime);
+      osc.stop(noteTime + 0.48);
+    });
+  } catch (e) {
+    // Audio context policy fallback
+  }
+}
+

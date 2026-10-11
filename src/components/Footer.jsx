@@ -65,7 +65,7 @@ export default function Footer({ onOpenVersionModal, onOpenBugReport }) {
                 isDark ? 'bg-[#0e1628] border-slate-800/80' : 'bg-[#faf6ed] border-[#dfd4c0]'
               }`}
             >
-              v0.6.5
+              v0.6.6
             </button>
           </div>
         </div>

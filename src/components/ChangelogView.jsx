@@ -21,13 +21,83 @@ const GITHUB_CHANGELOG_URL = 'https://github.com/KillianTR/one-piece-tcg/blob/ma
 
 const CHANGELOG_DATA = [
   {
-    version: 'v0.6.5',
+    version: 'v0.6.6',
     date: '11/10/2026',
     dateFormatted: {
       es: '11 de octubre de 2026',
       en: 'October 11, 2026'
     },
     isLatest: true,
+    tagType: 'minor',
+    tagLabel: {
+      es: 'Dropdowns Flotantes, Responsive Móvil & Sonidos Distintivos',
+      en: 'Floating Dropdowns, Mobile Responsive & Distinctive Sounds'
+    },
+    title: {
+      es: 'Menús Desplegables Flotantes con Scroll Náutico, Responsive Móvil 100% y Sonidos de Estrellas y Fantasía',
+      en: 'Floating Popover Selects with Nautical Scrollbars, Mobile Responsive & Fantasy/Star Sounds'
+    },
+    summary: {
+      es: 'Sustitución de todos los selectores nativos por menús desplegables flotantes estilizados sin interfaz de Windows 11, solución integral al desbordamiento horizontal en pantallas móviles (iPhone/Opera GX), simplificación del hero banner eliminando la sección de ventajas, y nuevos efectos de sonido Web Audio API diferenciados para favoritos (fantasía mágica) y colección (chime de estrellas pirata).',
+      en: 'Replaced all native select elements with custom floating popover menus with smooth custom scrollbars, solved horizontal overflow across mobile viewports, streamlined the hero banner by removing the highlights side card, and implemented differentiated synthesized sounds for favorites (magical fantasy shimmer) and collection (pirate treasure star chime).'
+    },
+    sections: [
+      {
+        category: { es: 'Dropdowns Flotantes & Scroll Náutico Personalizado', en: 'Floating Popovers & Custom Nautical Scrollbars' },
+        icon: '✨',
+        items: {
+          es: [
+            'Sustitución del select nativo de ordenación en el archivador y de los 6 filtros del catálogo por componentes CustomDropdown flotantes con bordes redondeados y sombra.',
+            'Eliminación de la apariencia tosca y azul por defecto de Windows 11 en los selectores.',
+            'Scrollbars ultra-finas y redondeadas integradas con la paleta de oro viejo y azul marino abisal.'
+          ],
+          en: [
+            'Replaced native select elements in the binder and card catalog with floating CustomDropdown popovers featuring smooth rounded borders and shadows.',
+            'Completely eliminated the harsh native Windows 11 blue select styling.',
+            'Ultra-thin rounded scrollbars integrated with pirate gold and midnight navy nautical palette.'
+          ]
+        }
+      },
+      {
+        category: { es: 'Optimización Móvil & Sin Desplazamiento Horizontal', en: 'Mobile Responsive & Zero Horizontal Overflow' },
+        icon: '📱',
+        items: {
+          es: [
+            'Eliminado el desbordamiento horizontal (swipe izquierda/derecha) en dispositivos móviles como iPhone 13 Pro y navegadores móviles.',
+            'Barra de navegación de invitados optimizada en móviles ocultando botones redundantes (Estadísticas y Backup ya están en la barra inferior).',
+            'Banner principal simplificado: retirada la tarjeta lateral de ventajas del archivador a petición del usuario para maximizar el área visual de la carta marina.'
+          ],
+          en: [
+            'Eliminated horizontal viewport overflow and unintentional panning on mobile screens like iPhone 13 Pro.',
+            'Compact guest header bar on mobile, hiding duplicate stats/backup buttons already present in the bottom mobile dock.',
+            'Simplified hero banner: removed the binder highlights side card to prioritize clean display of the celestial sea map.'
+          ]
+        }
+      },
+      {
+        category: { es: 'Audio Háptico Diferenciado (Colección vs Favoritos)', en: 'Distinctive Haptic Audio (Collection vs Wishlist)' },
+        icon: '🎵',
+        items: {
+          es: [
+            'Añadir a Colección: arpegio ascendente brillante de estrellas/tesoro conseguido (chimes C6, E6, G6, C7).',
+            'Añadir a Favorita / Wishlist: acorde mágico etéreo estilo arpa de fantasía (notas F#5, B5, D#6, F#6 con vibrato y shimmer).'
+          ],
+          en: [
+            'Add to Collection: energetic star chime arpeggio evoking treasure discovery (C6, E6, G6, C7).',
+            'Add to Favorite / Wishlist: ethereal fantasy harp shimmer (notes F#5, B5, D#6, F#6 with subtle vibrato).'
+          ]
+        }
+      }
+    ]
+  },
+  {
+    version: 'v0.6.5',
+    date: '11/10/2026',
+    dateFormatted: {
+      es: '11 de octubre de 2026',
+      en: 'October 11, 2026'
+    },
+    isLatest: false,
     tagType: 'minor',
     tagLabel: {
       es: 'Banner Grand Line, Temática Náutica & Identidad Visual',

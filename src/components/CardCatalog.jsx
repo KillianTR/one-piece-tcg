@@ -12,6 +12,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { SETS, COLORS, RARITIES, CARDTRADER_BASE_URL } from '../data/mockCards';
 import { playCardSnapSound } from '../utils/audioEffects';
+import CustomDropdown from './CustomDropdown';
 
 export default function CardCatalog() {
   const { 
@@ -178,26 +179,22 @@ export default function CardCatalog() {
           </div>
         </div>
 
-        {/* Filter Pills Grid (6 dropdowns) */}
+        {/* Filter Pills Grid (6 dropdowns flotantes) */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-4 border-t border-neutral-800/80">
           {/* 1. Expansión */}
           <div>
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
               {t('catalogFilterSet')}
             </label>
-            <select
+            <CustomDropdown
               value={selectedSet}
-              onChange={(e) => setSelectedSet(e.target.value)}
-              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer ${
-                isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
-              }`}
-            >
-              {SETS.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.id === 'ALL' ? t('binderAllSets') : `${s.id} (${s.name.split(':')[1] || s.name})`}
-                </option>
-              ))}
-            </select>
+              onChange={(val) => setSelectedSet(val)}
+              options={SETS.map((s) => ({
+                value: s.id,
+                label: s.id === 'ALL' ? t('binderAllSets') : `${s.id} (${s.name.split(':')[1] || s.name})`
+              }))}
+              size="sm"
+            />
           </div>
 
           {/* 2. Tipo de Carta */}
@@ -205,20 +202,19 @@ export default function CardCatalog() {
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
               {t('catalogFilterCategory')}
             </label>
-            <select
+            <CustomDropdown
               value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer ${
-                isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
-              }`}
-            >
-              <option value="ALL">{t('catalogAllCategories')}</option>
-              <option value="Leader">{t('catalogCategoryLeader')}</option>
-              <option value="Character">{t('catalogCategoryCharacter')}</option>
-              <option value="Event">{t('catalogCategoryEvent')}</option>
-              <option value="Stage">{t('catalogCategoryStage')}</option>
-              <option value="DON!!">{t('catalogCategoryDon')}</option>
-            </select>
+              onChange={(val) => setSelectedCategory(val)}
+              options={[
+                { value: 'ALL', label: t('catalogAllCategories') },
+                { value: 'Leader', label: t('catalogCategoryLeader') },
+                { value: 'Character', label: t('catalogCategoryCharacter') },
+                { value: 'Event', label: t('catalogCategoryEvent') },
+                { value: 'Stage', label: t('catalogCategoryStage') },
+                { value: 'DON!!', label: t('catalogCategoryDon') }
+              ]}
+              size="sm"
+            />
           </div>
 
           {/* 3. Color */}
@@ -226,20 +222,15 @@ export default function CardCatalog() {
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
               {t('catalogFilterColor')}
             </label>
-            <select
+            <CustomDropdown
               value={selectedColor}
-              onChange={(e) => setSelectedColor(e.target.value)}
-              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer ${
-                isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
-              }`}
-            >
-              <option value="ALL">{t('catalogAllColors')}</option>
-              {COLORS.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.name}
-                </option>
-              ))}
-            </select>
+              onChange={(val) => setSelectedColor(val)}
+              options={[
+                { value: 'ALL', label: t('catalogAllColors') },
+                ...COLORS.map((c) => ({ value: c.id, label: c.name }))
+              ]}
+              size="sm"
+            />
           </div>
 
           {/* 4. Rareza */}
@@ -247,20 +238,15 @@ export default function CardCatalog() {
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
               {t('catalogFilterRarity')}
             </label>
-            <select
+            <CustomDropdown
               value={selectedRarity}
-              onChange={(e) => setSelectedRarity(e.target.value)}
-              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer ${
-                isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
-              }`}
-            >
-              <option value="ALL">{t('catalogAllRarities')}</option>
-              {RARITIES.map((r) => (
-                <option key={r.id} value={r.id}>
-                  {r.name} ({r.id})
-                </option>
-              ))}
-            </select>
+              onChange={(val) => setSelectedRarity(val)}
+              options={[
+                { value: 'ALL', label: t('catalogAllRarities') },
+                ...RARITIES.map((r) => ({ value: r.id, label: `${r.name} (${r.id})` }))
+              ]}
+              size="sm"
+            />
           </div>
 
           {/* 5. Coste */}
@@ -268,21 +254,19 @@ export default function CardCatalog() {
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
               {t('catalogFilterCost')}
             </label>
-            <select
+            <CustomDropdown
               value={selectedCost}
-              onChange={(e) => setSelectedCost(e.target.value)}
-              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer ${
-                isDark ? 'bg-neutral-950 border-neutral-800 text-neutral-200' : 'bg-neutral-50 border-neutral-300 text-neutral-800'
-              }`}
-            >
-              <option value="ALL">{t('catalogAllCosts')}</option>
-              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((cost) => (
-                <option key={cost} value={cost}>
-                  {t('cardCost')} {cost}
-                </option>
-              ))}
-              <option value="10+">{t('cardCost')} 10+</option>
-            </select>
+              onChange={(val) => setSelectedCost(val)}
+              options={[
+                { value: 'ALL', label: t('catalogAllCosts') },
+                ...[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((cost) => ({
+                  value: cost,
+                  label: `${t('cardCost')} ${cost}`
+                })),
+                { value: '10+', label: `${t('cardCost')} 10+` }
+              ]}
+              size="sm"
+            />
           </div>
 
           {/* 6. Ordenar por */}
@@ -290,21 +274,20 @@ export default function CardCatalog() {
             <label className="block text-[11px] uppercase font-bold text-neutral-400 mb-1.5">
               {t('catalogSortBy')}
             </label>
-            <select
+            <CustomDropdown
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className={`w-full border text-xs rounded-xl px-2.5 py-2 focus:outline-none focus:border-amber-500 cursor-pointer font-medium ${
-                isDark ? 'bg-neutral-950 border-neutral-800 text-amber-400' : 'bg-neutral-50 border-neutral-300 text-amber-700'
-              }`}
-            >
-              <option value="id-asc">{t('catalogSortIdAsc')}</option>
-              <option value="cost-asc">{t('catalogSortCostAsc')}</option>
-              <option value="cost-desc">{t('catalogSortCostDesc')}</option>
-              <option value="power-desc">{t('catalogSortPowerDesc')}</option>
-              <option value="rarity-desc">{t('catalogSortRarityDesc')}</option>
-              <option value="price-desc">{t('catalogSortPriceDesc')}</option>
-              <option value="name-asc">{t('catalogSortNameAsc')}</option>
-            </select>
+              onChange={(val) => setSortBy(val)}
+              options={[
+                { value: 'id-asc', label: t('catalogSortIdAsc') },
+                { value: 'cost-asc', label: t('catalogSortCostAsc') },
+                { value: 'cost-desc', label: t('catalogSortCostDesc') },
+                { value: 'power-desc', label: t('catalogSortPowerDesc') },
+                { value: 'rarity-desc', label: t('catalogSortRarityDesc') },
+                { value: 'price-desc', label: t('catalogSortPriceDesc') },
+                { value: 'name-asc', label: t('catalogSortNameAsc') }
+              ]}
+              size="sm"
+            />
           </div>
         </div>
 

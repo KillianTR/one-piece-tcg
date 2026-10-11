@@ -101,16 +101,16 @@ export default function Navbar({
         ? 'bg-[#0a0f1d]/90 border-slate-800/80 shadow-black/40' 
         : 'bg-[#faf6ed]/95 border-[#dfd4c0] shadow-sm'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 h-18 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
         {/* ========================================================= */}
         {/* 1. BRAND / LOGO                                           */}
         {/* ========================================================= */}
         <div 
-          className="flex items-center gap-3 cursor-pointer shrink-0 select-none group" 
+          className="flex items-center gap-2 sm:gap-3 cursor-pointer shrink-0 select-none group" 
           onClick={() => setActiveTab('binder')}
         >
-          <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-600 via-amber-500 to-yellow-400 p-0.5 shadow-lg shadow-amber-500/20 flex items-center justify-center transition group-hover:scale-105">
-            <div className={`w-full h-full rounded-[14px] overflow-hidden flex items-center justify-center ${
+          <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-amber-600 via-amber-500 to-yellow-400 p-0.5 shadow-lg shadow-amber-500/20 flex items-center justify-center transition group-hover:scale-105 shrink-0">
+            <div className={`w-full h-full rounded-[10px] sm:rounded-[14px] overflow-hidden flex items-center justify-center ${
               isDark ? 'bg-neutral-950' : 'bg-neutral-900'
             }`}>
               <img 
@@ -122,8 +122,8 @@ export default function Navbar({
             </div>
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className={`font-black text-lg sm:text-xl tracking-tight flex items-center gap-1.5 font-sans ${
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className={`font-black text-sm sm:text-lg md:text-xl tracking-tight flex items-center gap-1 font-sans ${
                 isDark ? 'text-white' : 'text-neutral-900'
               }`}>
                 GRAND LINE <span className="text-amber-500 dark:text-amber-400">VAULT</span>
@@ -523,7 +523,7 @@ export default function Navbar({
                       <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                       <span>{t('versionModalTitle') || 'Registro de Cambios & Novedades'}</span>
                     </div>
-                    <span className="text-[10px] font-mono font-bold text-amber-500/90">v0.6.5 →</span>
+                    <span className="text-[10px] font-mono font-bold text-amber-500/90">v0.6.6 →</span>
                   </button>
 
                   <div className={`my-1 border-t ${isDark ? 'border-neutral-800' : 'border-neutral-200'}`} />
@@ -547,9 +547,9 @@ export default function Navbar({
             </div>
           ) : (
             /* SI ES UN VISITANTE NO REGISTRADO */
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               {/* Idioma rápido para invitados */}
-              <div className={`flex items-center border p-0.5 rounded-xl text-xs font-bold ${
+              <div className={`flex items-center border p-0.5 rounded-xl text-[11px] sm:text-xs font-bold ${
                 isDark 
                   ? 'bg-neutral-900 border-neutral-800' 
                   : 'bg-neutral-100 border-neutral-200'
@@ -557,7 +557,7 @@ export default function Navbar({
                 <button
                   type="button"
                   onClick={() => setLanguage('es')}
-                  className={`px-2 py-1 rounded-lg transition cursor-pointer ${
+                  className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-lg transition cursor-pointer ${
                     language === 'es'
                       ? 'bg-amber-500 text-neutral-950 shadow-sm'
                       : isDark ? 'text-neutral-400 hover:text-white' : 'text-neutral-600 hover:text-neutral-900'
@@ -569,7 +569,7 @@ export default function Navbar({
                 <button
                   type="button"
                   onClick={() => setLanguage('en')}
-                  className={`px-2 py-1 rounded-lg transition cursor-pointer ${
+                  className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-lg transition cursor-pointer ${
                     language === 'en'
                       ? 'bg-amber-500 text-neutral-950 shadow-sm'
                       : isDark ? 'text-neutral-400 hover:text-white' : 'text-neutral-600 hover:text-neutral-900'
@@ -580,11 +580,11 @@ export default function Navbar({
                 </button>
               </div>
 
-              {/* Estadísticas para invitados */}
+              {/* Estadísticas para invitados (Oculto en móvil, accesible abajo) */}
               <button
                 type="button"
                 onClick={() => setIsStatsModalOpen(true)}
-                className={`p-2 rounded-xl border transition cursor-pointer ${
+                className={`hidden sm:flex p-2 rounded-xl border transition cursor-pointer ${
                   isDark 
                     ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-emerald-400' 
                     : 'bg-neutral-100 border-neutral-200 text-neutral-700 hover:text-emerald-600'
@@ -595,11 +595,11 @@ export default function Navbar({
                 <Coins className="w-4 h-4 text-emerald-500" />
               </button>
 
-              {/* Copia de Seguridad para invitados */}
+              {/* Copia de Seguridad para invitados (Oculto en móvil, accesible abajo) */}
               <button
                 type="button"
                 onClick={() => setIsBackupModalOpen(true)}
-                className={`p-2 rounded-xl border transition cursor-pointer ${
+                className={`hidden sm:flex p-2 rounded-xl border transition cursor-pointer ${
                   isDark 
                     ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-amber-400' 
                     : 'bg-neutral-100 border-neutral-200 text-neutral-700 hover:text-amber-600'
@@ -614,7 +614,7 @@ export default function Navbar({
               <button
                 type="button"
                 onClick={toggleTheme}
-                className={`p-2 rounded-xl border transition cursor-pointer ${
+                className={`p-1.5 sm:p-2 rounded-xl border transition cursor-pointer ${
                   isDark 
                     ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-amber-400' 
                     : 'bg-neutral-100 border-neutral-200 text-neutral-700 hover:text-amber-600'
@@ -622,21 +622,22 @@ export default function Navbar({
                 title={isDark ? t('themeLight') : t('themeDark')}
                 aria-label="Toggle Theme"
               >
-                {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-neutral-800" />}
+                {isDark ? <Sun className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" /> : <Moon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-800" />}
               </button>
 
               {/* Botón Entrar / Registro */}
               <button
                 type="button"
                 onClick={onOpenAuthModal}
-                className={`flex items-center gap-1.5 px-3.5 py-2 rounded-2xl border text-xs font-bold transition shadow-sm whitespace-nowrap cursor-pointer ${
+                className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl border text-xs font-bold transition shadow-sm whitespace-nowrap cursor-pointer ${
                   isDark 
                     ? 'bg-neutral-900 hover:bg-neutral-800 border-neutral-700/70 text-amber-400' 
                     : 'bg-neutral-100 hover:bg-neutral-200 border-neutral-300 text-amber-700'
                 }`}
+                title={t('navSignIn')}
               >
                 <User className="w-3.5 h-3.5" />
-                <span>{t('navSignIn')}</span>
+                <span className="hidden xs:inline sm:inline">{t('navSignIn')}</span>
               </button>
             </div>
           )}
