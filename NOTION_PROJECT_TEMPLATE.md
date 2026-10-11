@@ -8,12 +8,12 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.6)
+* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.7)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Donaciones Comunitarias:** [buymeacoffee.com/grandlinevault](https://buymeacoffee.com/grandlinevault)
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.6.6` (Minor: Selectores Flotantes Popover Sin Estilo Windows 11, Responsive Móvil 100% en iPhone 13 Pro/Opera GX & Efectos de Sonido Hápticos Diferenciados)
+* **Versión Actual:** `v0.6.7` (Minor: Diseño Panorámico de Lado a Lado Estilo OPlayTCG, Corrección de Dropdowns Cortados & Barra de Carga de Arriba a Abajo)
 
 ---
 
@@ -198,6 +198,14 @@ Cuentas con privilegios de pruebas para Killian:
 - Cambio de nombre de usuario en cualquier momento sin esperar 30 días.
 - Cambio y subida de fotos de avatar ilimitada.
 - Badge visual exclusivo de desarrollador en el modal de perfil.
+
+### 🌊 v0.6.7 — Diseño Panorámico de Lado a Lado, Fix Dropdowns Cortados & Barra de Carga de Arriba a Abajo (Completado)
+- [x] Corrección definitiva del corte inferior en menús desplegables (`CustomDropdown.jsx`): detección inteligente del viewport para desplegarse hacia arriba si falta espacio y elevación de capas z-index (`z-30`/`z-50`) sobre el archivador.
+- [x] Aumento de capacidad de listado (`max-h-80` / `max-h-96`) para mostrar todas las opciones de ordenación de una vez sin truncamiento.
+- [x] Diseño fluido de lado a lado de la pantalla (inspirado en `oplaytcg.com/es`), eliminando márgenes restrictivos en cabecera, archivador, catálogo, trades y footer (`w-full px-2 sm:px-6 lg:px-8 xl:px-10`).
+- [x] Cuadrícula del catálogo de cartas ampliada hasta 6 y 7 columnas en resoluciones panorámicas (XL y 2XL).
+- [x] Barra de carga superior de arriba a abajo (`ScrollProgress.jsx`) con resplandor dorado ámbar y chispa de avance sincronizada con el scroll.
+- [x] Animaciones de entrada en cascada (`.scroll-load-down`) que cargan y revelan las secciones de arriba a abajo al bajar por la web.
 
 ### ✨ v0.6.6 — Selectores Flotantes Popover, Responsive Móvil 100% & Sonidos de Estrellas y Fantasía (Completado)
 - [x] Eliminados el 100% de los elementos `<select>` nativos del navegador; implementado componente modular flotante `CustomDropdown.jsx` idéntico a las referencias de diseño.

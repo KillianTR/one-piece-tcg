@@ -59,9 +59,9 @@ export default function TradeBoard() {
   const [showNewTradeModal, setShowNewTradeModal] = useState(false);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-6">
+    <div className="w-full px-2 sm:px-6 lg:px-8 xl:px-10 py-6">
       {/* Header Banner */}
-      <div className={`border rounded-3xl p-6 sm:p-8 mb-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 ${
+      <div className={`scroll-load-down border rounded-3xl p-6 sm:p-8 mb-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 ${
         isDark 
           ? 'bg-gradient-to-r from-neutral-900 via-neutral-900 to-amber-950/40 border-neutral-800' 
           : 'bg-gradient-to-r from-white via-neutral-50 to-amber-50 border-neutral-200'

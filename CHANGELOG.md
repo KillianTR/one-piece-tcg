@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Versión](https://img.shields.io/badge/version-v0.6.6--minor-blue?style=for-the-badge&logo=git)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/version-v0.6.7--minor-blue?style=for-the-badge&logo=git)](CHANGELOG.md)
 [![Web en Vivo](https://img.shields.io/badge/Live_Demo-grand--line--vault--tcg.vercel.app-000000?style=for-the-badge&logo=vercel)](https://grand-line-vault-tcg.vercel.app)
 [![Portfolio](https://img.shields.io/badge/Creator-Killian_Torrell-000000?style=for-the-badge&logo=vercel)](https://killiantr.vercel.app)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-grandlinevault-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/grandlinevault)
@@ -30,6 +30,24 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 * **MAJOR (ej. `2.0.0`):** Expansión mayor (*Major Update*). Rediseño estructural, nueva arquitectura de base de datos, salto de versión o cambio que rompe compatibilidad (equivalente a las expansiones del WoW como *The War Within* o *Dragonflight*).
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
+
+---
+
+## [0.6.7] - 2026-10-12
+### 🌊 Minor Update — Diseño Panorámico de Lado a Lado (Estilo OPlayTCG), Corrección de Dropdowns Cortados & Barra de Carga de Arriba a Abajo
+
+#### ✨ Nuevas Características & Experiencia de Usuario (Features & UX)
+* **Corrección de Menús Desplegables Cortados (`CustomDropdown.jsx`):**
+  * **Posicionamiento inteligente auto-inverso:** Detecta automáticamente el espacio disponible entre el selector y el borde inferior de la pantalla; si no hay espacio suficiente, el menú se despliega automáticamente hacia arriba evitando cualquier corte visual.
+  * **Ampliación de altura máxima:** Incrementada la altura del listado a `max-h-80` / `max-h-96` para que todas las opciones de ordenación se muestren limpias sin truncar el final.
+  * **Elevación de capas (`z-index`):** Asignado nivel de apilamiento prioritario (`z-30` en barra de controles y `z-50` en dropdown) garantizando que el menú flote siempre por encima de la barra de progreso, pespuntes y marco del archivador.
+* **Diseño Fluido de Lado a Lado (Estilo oplaytcg.com/es):**
+  * Eliminada la limitación de anchura estrecha (`max-w-7xl`), expandiendo toda la web de lado a lado de la pantalla con paddings responsivos fluidos (`w-full px-2 sm:px-6 lg:px-8 xl:px-10`).
+  * La barra de navegación superior, el banner principal de navegación, el archivador virtual, el catálogo de cartas, el tablón de intercambios y el pie de página ahora aprovechan el ancho panorámico de pantallas grandes.
+  * Cuadrícula del catálogo expandida para acomodar hasta 6 y 7 columnas de cartas en resoluciones XL y 2XL.
+* **Barra de Carga Superior de Arriba a Abajo & Animaciones en Cascada:**
+  * **Barra de carga dorada (`ScrollProgress.jsx`):** Nueva barra indicadora fijada en la parte superior de la pantalla con resplandor dorado ámbar y chispa de avance que se carga de arriba a abajo en sincronía con el desplazamiento del usuario.
+  * **Animaciones de entrada en cascada (`.scroll-load-down`):** Entrada suave y natural de elementos de arriba a abajo conforme se navega por la página.
 
 ---
 
@@ -259,7 +277,23 @@ All notable versions and milestones for **Grand Line Vault** are documented here
 
 * **MAJOR (e.g. `2.0.0`):** Major Expansion (*Major Update*). Structural redesign, database schema overhaul, breaking changes, or major architectural jumps (analogous to WoW expansions like *The War Within* or *Dragonflight*).
 * **MINOR (e.g. `0.1.0`):** Feature or Content Patch (*Minor Update*). Substantial new features added in a backward-compatible manner (such as custom binders, trading boards, advanced filters).
-* **PATCH (e.g. `0.0.1`):** Hotfix / Bug Fix (*Patch*). Fast code repairs, visual styling adjustments, performance tweaks, or minor text polish.
+## [0.6.7] - 2026-10-12
+### 🌊 Minor Update — Full-Width Edge-to-Edge Layout (OPlayTCG Style), Dropdown Overflow Fix & Top-to-Bottom Scroll Progress Loader
+
+#### ✨ New Features & User Experience (Features & UX)
+* **Dropdown Overflow & Bottom Clipping Fix (`CustomDropdown.jsx`):**
+  * **Smart upward auto-placement:** Automatically calculates available viewport space below the trigger; if space is tight, the popover flips upwards, preventing clipping at the bottom edge.
+  * **Increased maximum list height:** Expanded list capacity to `max-h-80` / `max-h-96`, cleanly accommodating all sort criteria and filters without truncation.
+  * **Elevated stacking context (`z-index`):** Raised stacking hierarchy (`z-30` on controls and `z-50` on popovers) ensuring dropdowns always float cleanly above the binder leather, stitching, and progress bars.
+* **Full-Width Edge-to-Edge Fluid Layout (Inspired by oplaytcg.com/es):**
+  * Removed restrictive container widths (`max-w-7xl`), letting the application span fluidly from side to side of the screen (`w-full px-2 sm:px-6 lg:px-8 xl:px-10`).
+  * Navbar, hero celestial banner, virtual binder, card catalog, trade board, and footer now utilize modern panoramic monitor widths.
+  * Card catalog grid dynamically scales up to 6 and 7 columns on xl and 2xl screens.
+* **Top-to-Bottom Scroll Progress Loader & Cascading Animations:**
+  * **Golden scroll progress loader (`ScrollProgress.jsx`):** Ambient pirate treasure progress bar fixed to the top of the viewport, filling smoothly from top to bottom as users scroll through the page.
+  * **Cascading scroll reveal animations (`.scroll-load-down`):** Smooth downward slide and fade-in transitions revealing content as users move down the page.
+
+---
 
 ## [0.6.6] - 2026-10-11
 ### ✨ Minor Update — Custom Floating Popover Dropdowns (Zero Windows 11 Styling), 100% Mobile Responsive & Star & Fantasy Audio Effects

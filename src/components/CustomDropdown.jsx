@@ -15,6 +15,7 @@ export default function CustomDropdown({
   size = 'sm'
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [openUpward, setOpenUpward] = useState(false);
   const containerRef = useRef(null);
   const { isDark } = useTheme();
 
@@ -33,6 +34,20 @@ export default function CustomDropdown({
 
   const selectedOption = normalizedOptions.find((opt) => String(opt.value) === String(value));
   const displayLabel = selectedOption ? selectedOption.label : placeholder;
+
+  // Auto-detect whether to open upwards or downwards to prevent screen clipping
+  useEffect(() => {
+    if (isOpen && containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+      if (spaceBelow < 280 && spaceAbove > spaceBelow) {
+        setOpenUpward(true);
+      } else {
+        setOpenUpward(false);
+      }
+    }
+  }, [isOpen]);
 
   // Close on click outside or Escape
   useEffect(() => {
@@ -64,7 +79,7 @@ export default function CustomDropdown({
   };
 
   return (
-    <div ref={containerRef} className={`relative inline-block text-left ${className}`}>
+    <div ref={containerRef} className={`relative inline-block text-left ${isOpen ? 'z-50' : 'z-10'} ${className}`}>
       {/* Trigger Button */}
       <button
         type="button"
@@ -98,13 +113,15 @@ export default function CustomDropdown({
       {isOpen && (
         <div
           role="listbox"
-          className={`absolute ${align === 'right' ? 'right-0' : 'left-0'} mt-1.5 z-50 min-w-[180px] max-w-[92vw] w-max rounded-2xl border shadow-2xl backdrop-blur-xl p-1.5 transition-all duration-150 animate-in fade-in zoom-in-95 ${
+          className={`absolute ${align === 'right' ? 'right-0' : 'left-0'} ${
+            openUpward ? 'bottom-full mb-1.5' : 'top-full mt-1.5'
+          } z-[100] min-w-[200px] max-w-[92vw] w-max rounded-2xl border shadow-2xl backdrop-blur-xl p-1.5 transition-all duration-150 animate-in fade-in zoom-in-95 ${
             isDark
               ? 'bg-[#0d1527]/98 border-amber-500/30 text-neutral-200 shadow-black/80'
               : 'bg-[#faf6ed]/98 border-[#d8c8ab] text-[#142036] shadow-[#382b14]/15'
           } ${dropdownClassName}`}
         >
-          <div className="max-h-60 overflow-y-auto custom-scrollbar space-y-0.5 pr-0.5">
+          <div className="max-h-80 sm:max-h-96 overflow-y-auto custom-scrollbar space-y-0.5 pr-0.5">
             {normalizedOptions.map((opt) => {
               const isSelected = String(opt.value) === String(value);
               return (

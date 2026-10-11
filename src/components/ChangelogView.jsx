@@ -21,13 +21,85 @@ const GITHUB_CHANGELOG_URL = 'https://github.com/KillianTR/one-piece-tcg/blob/ma
 
 const CHANGELOG_DATA = [
   {
+    version: 'v0.6.7',
+    date: '12/10/2026',
+    dateFormatted: {
+      es: '12 de octubre de 2026',
+      en: 'October 12, 2026'
+    },
+    isLatest: true,
+    tagType: 'minor',
+    tagLabel: {
+      es: 'Diseño Pantalla Completa, Dropdown Fix & Carga de Arriba a Abajo',
+      en: 'Full-Width Layout, Dropdown Overflow Fix & Top-to-Bottom Scroll Loader'
+    },
+    title: {
+      es: 'Diseño de Lado a Lado (Estilo OPlayTCG), Corrección de Menús Desplegables Cortados y Barra de Carga de Scroll de Arriba a Abajo',
+      en: 'Edge-to-Edge Screen Layout, Dropdown Overflow Fix & Top-to-Bottom Scroll Progress Loader'
+    },
+    summary: {
+      es: 'Ampliación de la web de lado a lado de la pantalla sin márgenes restrictivos al estilo oplaytcg.com/es, corrección del corte inferior en menús desplegables con posicionamiento inteligente auto-inverso y elevación de capas z-index, e integración de barra de carga superior dorada con seguimiento del scroll y animaciones de cascada de arriba a abajo.',
+      en: 'Expanded website layout edge-to-edge inspired by oplaytcg.com/es, solved dropdown popover bottom clipping with smart upward placement and elevated stacking context, and introduced a glowing golden top-to-bottom scroll progress loader with cascading reveal animations.'
+    },
+    sections: [
+      {
+        category: { es: 'Corrección de Menús Desplegables Cortados', en: 'Dropdown Overflow & Clipping Fix' },
+        icon: '🛡️',
+        items: {
+          es: [
+            'Detección inteligente del espacio inferior de la pantalla: si el menú colisiona con el borde inferior, se abre automáticamente hacia arriba.',
+            'Aumento de altura máxima (max-h-80/96) para mostrar todas las opciones de ordenación sin truncamiento.',
+            'Elevación del contexto de apilamiento (z-index) para que las tarjetas desplegables floten por encima del marco y pespuntes del álbum.'
+          ],
+          en: [
+            'Smart viewport space detection: dropdowns automatically flip upwards if approaching the bottom edge of the screen.',
+            'Increased maximum list height (max-h-80/96) to display all sort and filter options without truncation.',
+            'Elevated stacking context (z-index) ensuring popover dropdown cards float cleanly above binder borders and leather stitching.'
+          ]
+        }
+      },
+      {
+        category: { es: 'Diseño Panorámico de Lado a Lado', en: 'Full-Width Edge-to-Edge Layout' },
+        icon: '🌊',
+        items: {
+          es: [
+            'Adaptación de toda la web de lado a lado de la pantalla sin cajas estrechas, aprovechando monitores panorámicos como oplaytcg.com/es.',
+            'Ampliación de la cuadrícula de cartas del catálogo a 6 y 7 columnas en pantallas grandes.',
+            'Barra de navegación, archivador virtual, catálogo, tablón de intercambio y pie de página fluidos.'
+          ],
+          en: [
+            'Adapted the application to span edge-to-edge without restrictive max-width constraints, matching oplaytcg.com/es on large displays.',
+            'Expanded the card catalog grid to support 6 and 7 columns on xl and 2xl screens.',
+            'Fluid full-width navbar, virtual binder, card catalog, trade board, and footer.'
+          ]
+        }
+      },
+      {
+        category: { es: 'Barra de Carga de Scroll & Animación de Cascada', en: 'Scroll Progress Loader & Cascading Animations' },
+        icon: '⚡',
+        items: {
+          es: [
+            'Barra de carga dorada fija en la cabecera (ScrollProgress.jsx) que se llena de arriba a abajo al desplazarse por la web.',
+            'Efecto de resplandor y chispa de avance en oro del Grand Line.',
+            'Animaciones de entrada de arriba a abajo (.scroll-load-down) que revelan suavemente las secciones a medida que se baja por la página.'
+          ],
+          en: [
+            'Fixed glowing golden top progress bar (ScrollProgress.jsx) tracking scroll progress as you navigate down the page.',
+            'One Piece pirate gold ember glow with a leading edge traveling spark.',
+            'Cascading top-to-bottom entrance animations (.scroll-load-down) smoothly revealing content.'
+          ]
+        }
+      }
+    ]
+  },
+  {
     version: 'v0.6.6',
     date: '11/10/2026',
     dateFormatted: {
       es: '11 de octubre de 2026',
       en: 'October 11, 2026'
     },
-    isLatest: true,
+    isLatest: false,
     tagType: 'minor',
     tagLabel: {
       es: 'Dropdowns Flotantes, Responsive Móvil & Sonidos Distintivos',

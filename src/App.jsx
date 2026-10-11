@@ -14,6 +14,7 @@ import VersionModal from './components/VersionModal';
 import AuthModal from './components/AuthModal';
 import ProfileModal from './components/ProfileModal';
 import BugReportModal from './components/BugReportModal';
+import ScrollProgress from './components/ScrollProgress';
 import Footer from './components/Footer';
 
 function MainApp() {
@@ -54,6 +55,9 @@ function MainApp() {
     <div className={`min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-neutral-950 transition-colors duration-200 ${
       isDark ? 'bg-[#0a0f1d] text-slate-100' : 'bg-[#f5efe1] text-[#142036]'
     }`}>
+      {/* Scroll-Driven Top Progress Bar */}
+      <ScrollProgress />
+
       <div>
         {/* Navigation Bar */}
         <Navbar 

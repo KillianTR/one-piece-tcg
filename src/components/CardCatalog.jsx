@@ -124,9 +124,9 @@ export default function CardCatalog() {
     ownershipFilter !== 'ALL';
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-6">
+    <div className="w-full px-2 sm:px-6 lg:px-8 xl:px-10 py-6">
       {/* Search & Filter Header */}
-      <div className={`border rounded-3xl p-4 sm:p-6 mb-8 shadow-xl ${
+      <div className={`scroll-load-down relative z-30 border rounded-3xl p-4 sm:p-6 mb-8 shadow-xl ${
         isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-white border-neutral-200'
       }`}>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-5">
@@ -319,7 +319,7 @@ export default function CardCatalog() {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-5">
+        <div className="scroll-load-down grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-3 sm:gap-5">
           {filteredCards.map((card) => {
             const count = getCardCount(card.id);
             const owned = count > 0;

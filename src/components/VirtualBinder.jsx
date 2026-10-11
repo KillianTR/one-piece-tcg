@@ -238,14 +238,14 @@ export default function VirtualBinder({ onNavigateTab }) {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-6">
+    <div className="w-full px-2 sm:px-6 lg:px-8 xl:px-10 py-6">
       {/* Hero Banner (OPlayTCG style with Celestial Sea Map) */}
       <HeroBanner onNavigateTab={onNavigateTab} />
 
       {/* ========================================================= */}
       {/* 1. MODO DE ARCHIVADOR: OFICIAL VS MIS CARPETAS            */}
       {/* ========================================================= */}
-      <div className="flex items-center justify-between flex-wrap gap-3 mb-5">
+      <div className="scroll-load-down flex items-center justify-between flex-wrap gap-3 mb-5">
         <div className={`p-1 rounded-2xl border flex items-center gap-1.5 ${
           isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-200'
         }`}>
@@ -344,7 +344,7 @@ export default function VirtualBinder({ onNavigateTab }) {
       {/* ========================================================= */}
       {binderMode === 'official' ? (
         /* MODO OFICIAL: SELECTOR DE EXPANSIÓN (CON 'TODAS') Y ORDENACIÓN */
-        <div className={`flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 sm:gap-4 mb-6 p-3.5 sm:p-4 rounded-2xl backdrop-blur-md border ${
+        <div className={`scroll-load-down relative z-30 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 sm:gap-4 mb-6 p-3.5 sm:p-4 rounded-2xl backdrop-blur-md border ${
           isDark ? 'bg-neutral-900/90 border-neutral-800' : 'bg-white/90 border-neutral-200 shadow-md'
         }`}>
           {/* Expansiones (Incluye 'TODAS') */}
@@ -446,7 +446,7 @@ export default function VirtualBinder({ onNavigateTab }) {
         </div>
       ) : (
         /* MODO CARPETAS PERSONALIZADAS: GESTIÓN DE CARPETAS & PÁGINAS */
-        <div className={`flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 sm:gap-4 mb-6 p-3.5 sm:p-4 rounded-2xl backdrop-blur-md border ${
+        <div className={`scroll-load-down relative z-30 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 sm:gap-4 mb-6 p-3.5 sm:p-4 rounded-2xl backdrop-blur-md border ${
           isDark ? 'bg-neutral-900/90 border-neutral-800' : 'bg-white/90 border-neutral-200 shadow-md'
         }`}>
           {/* Selector de Carpetas y Botón Nueva Carpeta */}
@@ -576,7 +576,7 @@ export default function VirtualBinder({ onNavigateTab }) {
 
       {/* Progress Bar (Visible en Modo Oficial) */}
       {binderMode === 'official' && (
-        <div className={`mb-6 p-4 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-lg ${
+        <div className={`scroll-load-down relative z-20 mb-6 p-4 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-lg ${
           isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-white border-neutral-200'
         }`}>
           <div className="flex items-center gap-3">
@@ -612,7 +612,7 @@ export default function VirtualBinder({ onNavigateTab }) {
       {/* ========================================================= */}
       {/* 3. EL ARCHIVADOR VAULT X (PIEL, PESPUNTES & PÁGINAS)       */}
       {/* ========================================================= */}
-      <div className={`relative rounded-2xl sm:rounded-3xl p-2.5 sm:p-8 lg:p-10 shadow-2xl border-2 sm:border-4 ${
+      <div className={`scroll-load-down relative z-10 rounded-2xl sm:rounded-3xl p-2.5 sm:p-8 lg:p-10 shadow-2xl border-2 sm:border-4 ${
         isDark 
           ? 'binder-leather border-neutral-900' 
           : 'binder-leather-light border-neutral-300 shadow-neutral-400/30'

@@ -101,7 +101,7 @@ export default function Navbar({
         ? 'bg-[#0a0f1d]/90 border-slate-800/80 shadow-black/40' 
         : 'bg-[#faf6ed]/95 border-[#dfd4c0] shadow-sm'
     }`}>
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 h-18 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
+      <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-10 h-18 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
         {/* ========================================================= */}
         {/* 1. BRAND / LOGO                                           */}
         {/* ========================================================= */}
@@ -523,7 +523,7 @@ export default function Navbar({
                       <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                       <span>{t('versionModalTitle') || 'Registro de Cambios & Novedades'}</span>
                     </div>
-                    <span className="text-[10px] font-mono font-bold text-amber-500/90">v0.6.6 →</span>
+                    <span className="text-[10px] font-mono font-bold text-amber-500/90">v0.6.7 →</span>
                   </button>
 
                   <div className={`my-1 border-t ${isDark ? 'border-neutral-800' : 'border-neutral-200'}`} />
