@@ -31,8 +31,9 @@ import {
   isSoundEnabled, 
   toggleSound 
 } from '../utils/audioEffects';
+import HeroBanner from './HeroBanner';
 
-export default function VirtualBinder() {
+export default function VirtualBinder({ onNavigateTab }) {
   const { 
     cards, 
     isCardOwned, 
@@ -237,6 +238,9 @@ export default function VirtualBinder() {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-6">
+      {/* Hero Banner (OPlayTCG style with Celestial Sea Map) */}
+      <HeroBanner onNavigateTab={onNavigateTab} />
+
       {/* ========================================================= */}
       {/* 1. MODO DE ARCHIVADOR: OFICIAL VS MIS CARPETAS            */}
       {/* ========================================================= */}

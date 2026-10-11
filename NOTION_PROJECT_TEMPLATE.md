@@ -8,12 +8,12 @@
 
 * **Nombre del Proyecto:** Grand Line Vault — One Piece TCG Tracker & Binder
 * **Creador & Desarrollador:** Killian Torrell ([https://killiantr.vercel.app](https://killiantr.vercel.app))
-* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.4)
+* **Estado:** 🟢 En Producción & Desarrollo Activo (Minor v0.6.5)
 * **Despliegue Oficial:** Vercel (`https://grand-line-vault-tcg.vercel.app`)
 * **Repositorio GitHub:** `https://github.com/KillianTR/one-piece-tcg.git`
 * **Donaciones Comunitarias:** [buymeacoffee.com/grandlinevault](https://buymeacoffee.com/grandlinevault)
 * **Stack Principal:** React 19 + Vite 8 + Tailwind CSS v4 + Supabase (PostgreSQL & Auth) + Vercel
-* **Versión Actual:** `v0.6.4` (Minor: Botón Flotante Reportar Error estilo OPlayTCG, Despacho por Correo & Changelog Bilingüe GitHub)
+* **Versión Actual:** `v0.6.5` (Minor: Hero Banner Grand Line estilo OPlayTCG, Paleta Náutica One Piece, Logo Log Pose & Enlace CardTrader Actualizado)
 
 ---
 
@@ -198,6 +198,13 @@ Cuentas con privilegios de pruebas para Killian:
 - Cambio de nombre de usuario en cualquier momento sin esperar 30 días.
 - Cambio y subida de fotos de avatar ilimitada.
 - Badge visual exclusivo de desarrollador en el modal de perfil.
+
+### 🧭 v0.6.5 — Hero Banner Grand Line, Paleta Náutica Anime/Manga & Logo Log Pose (Completado)
+- [x] Banner interactivo estilo OPlayTCG en la página principal con textura de mapa celeste y accesos directos al Catálogo, Tablón P2P y CardTrader.
+- [x] Transformación de colores a la paleta auténtica de One Piece: Modo oscuro en azul marino abisal del Grand Line (`#0a0f1d`) con oro de tesoro (`#e5b842`), y modo claro en pergamino envejecido (`#f5efe1` / `#faf6ed`) con tinta marítima (`#142036`).
+- [x] Adopción oficial del logo Log Pose / Brújula náutica dorada en alta resolución (`glv-logo-square.jpg`).
+- [x] Enlace directo de CardTrader actualizado a `https://www.cardtrader.com/es-ES/one-piece`.
+- [x] Retirada la pestaña de 'Novedades' del header principal; accesible limpiamente desde el badge del avatar de usuario y el enlace de Changelog del footer.
 
 ### 🐛 v0.6.4 — Botón Flotante Reportar Error (OPlayTCG) & Changelog Bilingüe GitHub (Completado)
 - [x] Botón flotante fijado en esquina inferior derecha con icono de Bug y estilo responsivo idéntico al de `oplaytcg.com/es`.

@@ -88,7 +88,7 @@ export default function TradeBoard() {
             {t('tradesPostButton')}
           </button>
           <a
-            href="https://www.cardtrader.com/es/games/one-piece-card-game"
+            href="https://www.cardtrader.com/es-ES/one-piece"
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center justify-center gap-2 px-5 py-3 rounded-2xl border font-semibold text-xs transition ${

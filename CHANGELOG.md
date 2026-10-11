@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Versión](https://img.shields.io/badge/version-v0.6.4--minor-blue?style=for-the-badge&logo=git)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/version-v0.6.5--minor-blue?style=for-the-badge&logo=git)](CHANGELOG.md)
 [![Web en Vivo](https://img.shields.io/badge/Live_Demo-grand--line--vault--tcg.vercel.app-000000?style=for-the-badge&logo=vercel)](https://grand-line-vault-tcg.vercel.app)
 [![Portfolio](https://img.shields.io/badge/Creator-Killian_Torrell-000000?style=for-the-badge&logo=vercel)](https://killiantr.vercel.app)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-grandlinevault-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/grandlinevault)
@@ -30,6 +30,27 @@ Todas las versiones notables de este proyecto están documentadas en este archiv
 * **MAJOR (ej. `2.0.0`):** Expansión mayor (*Major Update*). Rediseño estructural, nueva arquitectura de base de datos, salto de versión o cambio que rompe compatibilidad (equivalente a las expansiones del WoW como *The War Within* o *Dragonflight*).
 * **MINOR (ej. `0.1.0`):** Nueva característica o módulo (*Minor Update*). Se añade funcionalidad sustancial (nuevo álbum virtual, tablón de intercambio, filtros avanzados) de forma compatible.
 * **PATCH (ej. `0.0.1`):** Corrección o parche (*Hotfix*). Arreglo de bugs, optimización de estilos visuales, hotfixes de rendimiento o pequeñas mejoras en el código existente.
+
+---
+
+## [0.6.5] - 2026-10-11
+### 🧭 Minor Update — Banner Principal Estilo OPlayTCG, Paleta Náutica de One Piece & Logo Log Pose
+
+#### ✨ Nuevas Características & Experiencia de Usuario (Features & UX)
+* **Banner Principal Interactivo con Carta Marina Celestial (`HeroBanner.jsx`):**
+  * Diseñado e integrado un banner panorámico al estilo **[oplaytcg.com/es](https://oplaytcg.com/es)** situado en la cabecera de la vista principal del archivador.
+  * Fondo con textura de carta marina celestial en azul índigo del Grand Line (`/grand-line-map-banner.jpg`) procesada en alta definición.
+  * Accesos rápidos interactivos: botón directo para saltar al Catálogo de Cartas, acceso al Tablón de Intercambios P2P y enlace externo oficial al portal de One Piece en CardTrader.
+  * Tarjeta de métricas y ventajas del archivador en el lateral: selector de 9/12 bolsillos, sonido háptico Web Audio API y sincronización en la nube con Supabase.
+* **Transformación de Paleta de Colores — Estética Fiel al Mundo de One Piece:**
+  * **Modo Oscuro:** Sustituido el negro genérico digital `#090a0f` por el azul marino abisal y noche en alta mar del Grand Line (`#0a0f1d` / `#0e1628`) combinado con toques de oro de tesoro pirata (`#e5b842`) y brújula Log Pose, evocando la navegación nocturna en el Grand Line.
+  * **Modo Claro:** Sustituido el blanco plano de software moderno por pergamino envejecido y carta náutica antigua (`#f5efe1` / `#faf6ed`) con tinta marítima oscura (`#142036`) y pespuntes de cuero color bronce.
+  * **Textura del Archivador Vault X:** Acabado de cuero de cuaderno de bitácora con costuras punteadas doradas y lomo con relieve de galeón.
+* **Adopción del Logo Oficial Log Pose / Brújula Náutica:**
+  * El logo principal de la aplicación pasa a ser la brújula dorada Log Pose (`glv-logo-square.jpg`), manteniendo la esencia de navegación y descubrimiento de tesoros de la obra de Eiichiro Oda.
+* **Limpieza de Cabecera & Enlaces Externos:**
+  * **Reorganización del Changelog:** Retirada la pestaña de "Novedades" del menú principal de navegación superior para evitar saturación visual. Se mantiene accesible de forma elegante a través del badge con versión en el menú de usuario del avatar y mediante el enlace de Changelog en el footer.
+  * **CardTrader Oficial:** Enlace directo de compra e inspección actualizado a la URL directa de One Piece: `https://www.cardtrader.com/es-ES/one-piece`.
 
 ---
 
@@ -221,6 +242,27 @@ All notable versions and milestones for **Grand Line Vault** are documented here
 * **MAJOR (e.g. `2.0.0`):** Major Expansion (*Major Update*). Structural redesign, database schema overhaul, breaking changes, or major architectural jumps (analogous to WoW expansions like *The War Within* or *Dragonflight*).
 * **MINOR (e.g. `0.1.0`):** Feature or Content Patch (*Minor Update*). Substantial new features added in a backward-compatible manner (such as custom binders, trading boards, advanced filters).
 * **PATCH (e.g. `0.0.1`):** Hotfix / Bug Fix (*Patch*). Fast code repairs, visual styling adjustments, performance tweaks, or minor text polish.
+
+---
+
+## [0.6.5] - 2026-10-11
+### 🧭 Minor Update — OPlayTCG-Style Hero Banner, Authentic One Piece Nautical Palette & Log Pose Logo
+
+#### ✨ New Features & User Experience (Features & UX)
+* **Interactive Celestial Sea Chart Hero Banner (`HeroBanner.jsx`):**
+  * Designed and integrated a panoramic banner inspired by **[oplaytcg.com/es](https://oplaytcg.com/es)** at the top of the main binder view.
+  * High-definition celestial sea chart background texture in Grand Line indigo navy (`/grand-line-map-banner.jpg`).
+  * One-click action buttons: explore Card Catalog, jump to P2P Trade Board, and visit the official CardTrader One Piece directory.
+  * Interactive features badge card: 9/12 pocket toggles, Web Audio API haptics, and Supabase cloud sync.
+* **Color Palette Overhaul — Authentic One Piece World Aesthetic:**
+  * **Dark Mode:** Replaced sterile digital black `#090a0f` with deep abyssal Grand Line midnight ocean navy (`#0a0f1d` / `#0e1628`) accented with pirate treasure gold (`#e5b842`) and Log Pose brass.
+  * **Light Mode:** Replaced modern clinical white with vintage treasure map parchment and antique ivory (`#f5efe1` / `#faf6ed`) with dark maritime indigo ink (`#142036`).
+  * **Vault X Binder Textures:** Captain's logbook leather styling with antique gold perimeter stitching and galleon spine accents.
+* **Official Log Pose Compass Brand Mark:**
+  * Primary application logo updated to the high-resolution golden Log Pose nautical compass variant (`glv-logo-square.jpg`).
+* **Streamlined Navigation & Direct External Links:**
+  * **Changelog Navigation:** Removed the desktop "Changelog" button from the main header for a cleaner navigation bar; kept accessible via the version badge in the user profile dropdown and the footer link.
+  * **CardTrader Direct Portal:** Updated CardTrader footer and binder links directly to `https://www.cardtrader.com/es-ES/one-piece`.
 
 ---
 

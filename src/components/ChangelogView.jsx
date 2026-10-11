@@ -21,13 +21,85 @@ const GITHUB_CHANGELOG_URL = 'https://github.com/KillianTR/one-piece-tcg/blob/ma
 
 const CHANGELOG_DATA = [
   {
+    version: 'v0.6.5',
+    date: '11/10/2026',
+    dateFormatted: {
+      es: '11 de octubre de 2026',
+      en: 'October 11, 2026'
+    },
+    isLatest: true,
+    tagType: 'minor',
+    tagLabel: {
+      es: 'Banner Grand Line, Temática Náutica & Identidad Visual',
+      en: 'Grand Line Banner, Nautical Theme & Visual Identity'
+    },
+    title: {
+      es: 'Banner Principal con Carta Marina Celestial, Temática Náutica One Piece y Nuevo Logo Log Pose',
+      en: 'Celestial Sea Chart Hero Banner, Authentic One Piece Nautical Palette & Log Pose Logo'
+    },
+    summary: {
+      es: 'Rediseño estético completo inspirado en el mundo de One Piece: banner interactivo en la página principal con mapa náutico celeste estilo OPlayTCG, paleta de colores oceánica del Grand Line en modo oscuro y pergamino cartográfico en modo claro, adopción del logo oficial Log Pose, y reorganización limpia del menú de novedades.',
+      en: 'Comprehensive aesthetic redesign authentic to the One Piece universe: interactive celestial sea chart hero banner on home view inspired by OPlayTCG, deep Grand Line ocean navy palette in dark mode and weathered nautical chart parchment in light mode, official Log Pose compass logo adoption, and streamlined navigation.'
+    },
+    sections: [
+      {
+        category: { es: 'Banner Principal Interactivo (Estilo OPlayTCG)', en: 'Interactive Hero Banner (OPlayTCG Style)' },
+        icon: '🗺️',
+        items: {
+          es: [
+            'Nuevo banner panorámico con textura de carta marina celestial en azul índigo del Grand Line en la vista principal.',
+            'Accesos rápidos con un solo clic al Catálogo de Cartas, Tablón de Intercambios P2P y enlace oficial a CardTrader.',
+            'Tarjeta flotante con métricas clave del archivador: formatos de 9 y 12 bolsillos, sonido háptico Web Audio API y sincronización en la nube.'
+          ],
+          en: [
+            'New widescreen hero banner featuring an authentic celestial sea map texture in Grand Line indigo navy on the home binder view.',
+            'One-click direct navigation to the Card Catalog, P2P Trade Board, and official CardTrader portal.',
+            'Floating highlights card showing key binder features: 9 & 12 pocket layouts, Web Audio API haptic sounds, and cloud synchronization.'
+          ]
+        }
+      },
+      {
+        category: { es: 'Paleta Náutica Fiel al Anime / Manga', en: 'Authentic Anime & Manga Nautical Palette' },
+        icon: '🎨',
+        items: {
+          es: [
+            'Modo Oscuro: sustituido el negro plano digital por azul marino abisal del Grand Line (#0a0f1d) y oro de tesoro pirata (#e5b842), evocando la navegación nocturna en alta mar.',
+            'Modo Claro: sustituido el blanco frío genérico por pergamino envejecido y marfil de carta marina (#f5efe1 / #faf6ed) con tinta índigo marítima (#142036).',
+            'Texturas de archivador Vault X actualizadas con pespuntes en oro viejo y acabado de cuero de bitácora.'
+          ],
+          en: [
+            'Dark Mode: replaced flat digital black with abyssal Grand Line midnight ocean navy (#0a0f1d) and pirate treasure gold (#e5b842), capturing night sailing on the Grand Line.',
+            'Light Mode: replaced cold generic white with weathered treasure map parchment and antique ivory (#f5efe1 / #faf6ed) with maritime navy ink (#142036).',
+            'Vault X binder leather textures updated with antique brass stitching and captain logbook leather finish.'
+          ]
+        }
+      },
+      {
+        category: { es: 'Identidad Visual, Enlaces & Navegación', en: 'Visual Identity, External Links & Navigation' },
+        icon: '🧭',
+        items: {
+          es: [
+            'Logo principal actualizado a la variante Log Pose / Brújula náutica en alta resolución.',
+            'Enlace de CardTrader en el pie de página actualizado a la URL directa oficial de One Piece (cardtrader.com/es-ES/one-piece).',
+            'Pestaña de Novedades retirada del encabezado principal para una barra más limpia; accesible desde el badge del menú de usuario y el enlace Changelog del footer.'
+          ],
+          en: [
+            'Primary logo updated to the high-definition Log Pose / nautical compass variant.',
+            'CardTrader footer link updated to the direct official One Piece directory (cardtrader.com/es-ES/one-piece).',
+            'Changelog tab removed from the main header navigation for a cleaner desktop bar; accessible via user profile badge and footer changelog link.'
+          ]
+        }
+      }
+    ]
+  },
+  {
     version: 'v0.6.4',
     date: '08/10/2026',
     dateFormatted: {
       es: '8 de octubre de 2026',
       en: 'October 8, 2026'
     },
-    isLatest: true,
+    isLatest: false,
     tagType: 'minor',
     tagLabel: {
       es: 'Soporte & Reporte de Errores',

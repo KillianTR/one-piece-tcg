@@ -98,8 +98,8 @@ export default function Navbar({
   return (
     <header className={`sticky top-0 z-40 w-full backdrop-blur-xl border-b transition-colors duration-200 ${
       isDark 
-        ? 'bg-neutral-950/90 border-neutral-800' 
-        : 'bg-white/95 border-neutral-200 shadow-sm'
+        ? 'bg-[#0a0f1d]/90 border-slate-800/80 shadow-black/40' 
+        : 'bg-[#faf6ed]/95 border-[#dfd4c0] shadow-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
         {/* ========================================================= */}
@@ -142,8 +142,8 @@ export default function Navbar({
         {/* ========================================================= */}
         <nav className={`hidden lg:flex items-center gap-1 p-1.5 rounded-2xl border transition ${
           isDark 
-            ? 'bg-neutral-900/90 border-neutral-800' 
-            : 'bg-neutral-100 border-neutral-200'
+            ? 'bg-[#0e1628]/90 border-slate-800/80' 
+            : 'bg-[#ede3cf]/90 border-[#dfd4c0]'
         }`}>
           <button
             type="button"
@@ -188,21 +188,6 @@ export default function Navbar({
           >
             <Repeat className="w-4 h-4" />
             {t('navTrades')}
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab('changelog')}
-            className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer ${
-              activeTab === 'changelog'
-                ? 'bg-amber-500 text-neutral-950 shadow-md shadow-amber-500/20'
-                : isDark 
-                  ? 'text-neutral-400 hover:text-white hover:bg-neutral-800' 
-                  : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/80'
-            }`}
-          >
-            <Sparkles className="w-4 h-4" />
-            {t('navChangelog')}
           </button>
         </nav>
 
@@ -535,10 +520,10 @@ export default function Navbar({
                     }`}
                   >
                     <div className="flex items-center gap-2">
-                      <Info className="w-3.5 h-3.5 text-amber-500" />
-                      <span>{t('versionModalTitle') || 'Sistema SemVer'}</span>
+                      <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                      <span>{t('versionModalTitle') || 'Registro de Cambios & Novedades'}</span>
                     </div>
-                    <span className="text-[10px] font-mono font-bold text-amber-500/90">v0.6.0 →</span>
+                    <span className="text-[10px] font-mono font-bold text-amber-500/90">v0.6.5 →</span>
                   </button>
 
                   <div className={`my-1 border-t ${isDark ? 'border-neutral-800' : 'border-neutral-200'}`} />

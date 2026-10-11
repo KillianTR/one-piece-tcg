@@ -52,7 +52,7 @@ function MainApp() {
 
   return (
     <div className={`min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-neutral-950 transition-colors duration-200 ${
-      isDark ? 'bg-[#090a0f] text-neutral-100' : 'bg-[#f8fafc] text-neutral-900'
+      isDark ? 'bg-[#0a0f1d] text-slate-100' : 'bg-[#f5efe1] text-[#142036]'
     }`}>
       <div>
         {/* Navigation Bar */}
@@ -66,7 +66,7 @@ function MainApp() {
 
         {/* Main Workspace Views */}
         <main className="transition-all duration-300">
-          {activeTab === 'binder' && <VirtualBinder />}
+          {activeTab === 'binder' && <VirtualBinder onNavigateTab={handleTabChange} />}
           {activeTab === 'catalog' && <CardCatalog />}
           {activeTab === 'trades' && <TradeBoard />}
           {activeTab === 'changelog' && <ChangelogView onBack={() => handleTabChange('binder')} />}

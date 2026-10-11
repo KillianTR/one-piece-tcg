@@ -39,7 +39,7 @@ export default function Footer({ onOpenVersionModal, onOpenBugReport }) {
 
   return (
     <footer className={`mt-20 border-t py-10 px-4 text-xs transition-colors ${
-      isDark ? 'border-neutral-800 bg-neutral-950/60 text-neutral-400' : 'border-neutral-200 bg-white/70 text-neutral-600'
+      isDark ? 'border-slate-800/80 bg-[#070b14]/90 text-slate-400' : 'border-[#dfd4c0] bg-[#eee4ce]/90 text-[#2f3e58]'
     }`}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Left: Branding & SemVer note */}
@@ -62,10 +62,10 @@ export default function Footer({ onOpenVersionModal, onOpenBugReport }) {
               onClick={onOpenVersionModal}
               title={t('versionModalTitle')}
               className={`font-mono text-amber-500 hover:text-amber-400 font-bold px-2 py-0.5 rounded border transition cursor-pointer ${
-                isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-300'
+                isDark ? 'bg-[#0e1628] border-slate-800/80' : 'bg-[#faf6ed] border-[#dfd4c0]'
               }`}
             >
-              v0.6.4
+              v0.6.5
             </button>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function Footer({ onOpenVersionModal, onOpenBugReport }) {
         {/* Right: Links */}
         <div className="flex items-center gap-4">
           <a
-            href="https://www.cardtrader.com/es/games/one-piece-card-game"
+            href="https://www.cardtrader.com/es-ES/one-piece"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 hover:text-amber-500 transition"
